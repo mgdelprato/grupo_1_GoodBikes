@@ -1,6 +1,6 @@
 # Grupo1-TrabajoIntegrador
 
-## Poductos:
+## Productos:
 E-commmerse de rodados no motorizados, bicicletas, monopatines. (accesorios afines) 
 Apuntamos a personas que necesiten movilidad para actividades de esparcimiento, recreación o entrenamiento profesional, con gusto por actividades al aire libre. Con una franja etarea de 2 a 100 años.
 
