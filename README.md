@@ -10,7 +10,7 @@ Nos presentamos
 
 - **Nano**: El motor del equipo, empuja con o sin fuerzas, imposible no triunfar con él en equipo.
 
-- **Nahuel**: Diseño una web para su madre en su temprana edad sin saber leer. 
+- **Nahuel**: Diseñó una web para su madre en su temprana edad sin saber leer. 
 
 - **Mauro**: Multitarea infinito, pura actitud.
 
