@@ -9,7 +9,27 @@ Somos un equipo innovadores en busca de soluciones informáticas para un mercado
 Nos presentamos
 
 Nano: El motor del equipo, empuja con o sin fuerzas, imposible no triunfar con él en equipo.
+
 Nahuel: Diseño una web para su madre en su temprana edad sin saber leer. 
+
 Mauro: Multitarea infinito, pura actitud.
 
 Todos adictos al Mate para laburar.
+
+## Sitios de referencia:
+
+https://www.nitrobikes.com.ar/
+https://advancebikes.com/
+https://www.tiendabike.com.ar/
+https://www.racycles.com/
+https://www.mercadolibre.com.ar/
+https://goldenbike.com.ar/bicicletas/
+
+## Paleta de colores
+
+https://coolors.co/ffffff-ebebeb-5697fa-000000-333333-666666-bb0a21-66c674
+
+
+## Tipografías:
+font-family: 'Roboto', sans-serif;
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
