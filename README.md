@@ -1,4 +1,4 @@
-# Grupo1-TrabajoIntegrador
+# Grupo1-TrabajoIntegrador - GoodBike
 
 ## Productos:
 E-commmerse de rodados no motorizados, bicicletas, monopatines. (accesorios afines) 
