@@ -5,7 +5,7 @@ E-commmerse de rodados no motorizados, bicicletas, monopatines. (accesorios afin
 Apuntamos a personas que necesiten movilidad para actividades de esparcimiento, recreación o entrenamiento profesional, con gusto por actividades al aire libre. Con una franja etarea de 2 a 100 años.
 
 ## Una breve descripción de los integrantes del equipo:
-Somos un equipo innovadores en busca de soluciones informáticas para un mercado en auge y crecimiento. }
+Somos un equipo innovadores en busca de soluciones informáticas para un mercado en auge y crecimiento. 
 Nos presentamos
 
 - **Nano**: El motor del equipo, empuja con o sin fuerzas, imposible no triunfar con él en equipo.
