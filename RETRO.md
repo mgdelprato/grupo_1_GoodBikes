@@ -1,0 +1,1 @@
+- Mejorar comunicacion y division de tareas para evitar retrabajos o realizar la misma tarea
