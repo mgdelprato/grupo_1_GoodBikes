@@ -36,3 +36,7 @@ https://coolors.co/ffffff-ebebeb-5697fa-000000-333333-666666-bb0a21-66c674
 
 font-family: 'Roboto', sans-serif;
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+
+## Link tablero Trello
++ https://trello.com/b/txvDZNXI/full-stack-digital-house
