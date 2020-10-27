@@ -8,21 +8,21 @@ const path = require('path');
 app.use( express.static( path.join(__dirname, './public') ) )
 
 app.get('/', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/index.html') )
+    res.sendFile( path.join(__dirname, './src/views/index.html') )
 })
 
 app.get('/login', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/login.html') )
+    res.sendFile( path.join(__dirname, './src/views/login.html') )
 })
 
 app.get('/productCart', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/productCart.html') )
+    res.sendFile( path.join(__dirname, './src/views/productCart.html') )
 })
 app.get('/productDetail', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/productDetail.html') )
+    res.sendFile( path.join(__dirname, './src/views/productDetail.html') )
 })
 app.get('/register', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/register.html') )
+    res.sendFile( path.join(__dirname, './src/views/register.html') )
 })
 
 app.listen(3000, function() {
