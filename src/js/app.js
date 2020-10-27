@@ -16,15 +16,15 @@ app.get('/login', function(req, res) {
 })
 
 app.get('/productCart', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/productCart.html') )
+    res.sendFile( path.join(__dirname, './src/views/productCart.html') )
 })
 app.get('/productDetail', function(req, res) {
-    res.sendFile( path.join(__dirname, './views/productDetail.html') )
+    res.sendFile( path.join(__dirname, './src/views/productDetail.html') )
 })
 app.get('/register', function(req, res) {
     res.sendFile( path.join(__dirname, './views/register.html') )
 })
 
-app.listen(3000, function() {
-    console.log('Servidor corriendo en el puerto 3000')
+app.listen(5000, function() {
+    console.log('Servidor corriendo en el puerto 5000')
 })
