@@ -2,30 +2,48 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- CDN materialized -->
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    
     <link rel="stylesheet" href="/css/productDetail.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <title>Detalle de producto</title>
 </head>
 
 <body>
 <header>
-    <img src="/desing/logo-goodBikes.png" alt="logo-goodBikes">
-   
+    
     <form action="">
         <input type="text"> 
         <a href=""></a>
         
     </form>
-
+    
     
     <a href="">Login</a>
     <a href="">Registrate</a>
     <a href="">Carrito</a>
-
+    
 </header>
-<nav>
+
+
+<nav class="nav-wrapper">
     <div>
-        <ul>
+        <!-- <a><img class="hide-on-med-and-down" id="logoimg" src="/desing/logo-goodBikes.png" alt="logo-goodBikes"></a> -->
+        
+        
+        <a href="#" data-tarjet="menu-responsive" class="sidenav-trigger">
+            <i class="material-icons">menu</i>
+        </a>
+        
+        <ul class="right hide-on-med-and-down">
             <li><a href="#">Rodados</a></li>
             <li><a href="#">Equipamiento</a></li>
             <li><a href="#">Indumentaria</a></li>
@@ -35,6 +53,16 @@
     </div>
 </nav>
 
+<ul class="sidenav" id="menu-responsive">
+    <li><a href="#">Rodados</a></li>
+    <li><a href="#">Equipamiento</a></li>
+    <li><a href="#">Indumentaria</a></li>
+    <li><a href="#">Accesorios</a></li>
+    <li><a href="#">Taller</a></li>
+</ul>
+
+
+
 <form action="">
     <div id="galeria"></div>
     <div id="imagen"></div>
@@ -42,13 +70,36 @@
     <div></div>
 </form>
 
+
+
+<script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    // var elems = document.querySelectorAll('.sidenav');
+    // var instances = M.Sidenav.init(elems);
+    M.AutoInit();
+});
+
+// Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+// var collapsibleElem = document.querySelector('.collapsible');
+// var collapsibleInstance = M.Collapsible.init(collapsibleElem, options);
+
+// Or with jQuery
+
+//   $(document).ready(function(){
+    //     $('.sidenav').sidenav();
+    //   });
+    
+    
+</script>
+
+
 <footer>
     <!-- redes sociales
     contacto
     mapa/menu -->
+
 </footer>
-
-
-
+<script type="text/javascript" src="js/materialize.min.js"></script>
 </body>
 </html>
