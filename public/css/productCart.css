@@ -1,8 +1,153 @@
-ul li{
-    display: inline;
+
+/*=============
+    GENERAL
+==============*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+*{
+    box-sizing: border-box;
+    margin: 0;
 }
 
-.formSearch{
-   align-content: center; 
-   width: 35%;
+body{
+    font-family: 'Roboto';
+    font-weight: 400;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 200px;
+    background-color: #EBEBEB;
+}
+
+
+/*=============
+    HEADER
+==============*/
+
+header{
+    background-color: #5697FA;
+    padding: 25px 70px 15px 70px;
+}
+
+.logo {
+    height: 150px;
+}
+
+header .seccionSuperior form{
+    width: 50%;
+    display: inline-block;
+    height: 50px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    margin-left: 10%;
+
+    
+}
+
+header .seccionSuperior form input[type="text"]{
+    width: 90%;
+    border: none;
+    font-size: 18px;
+    
+}
+
+header .seccionSuperior form button {
+    width: 10%;
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #686868;
+    border-left: 1px solid;
+    padding: 0;
+    text-align: center;
+
+
+}
+
+header nav{
+
+}
+
+header nav ul{
+    text-align: right;
+}
+
+header nav ul li{
+    display: inline-block;
+    margin: 5px;
+
+}
+
+.vinculoLista{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 15px;
+}
+
+
+
+.seccionMedio nav{
+margin-top: 15px;
+}
+
+.seccionMedio nav ul{
+    text-align: center;
+}
+
+.seccionMedio nav ul li{
+    display: inline-block;
+    margin: 25px;
+
+}
+
+.subMenu{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+
+.imagenCarrito{
+    height: 100px;
+    display: inline-block;
+    padding-left: 10%;
+    margin-top: 75px;
+}
+
+.resumenPro{
+    display:inline-block;
+    padding-left: 15%;
+    margin-top: 50px;
+}
+
+.cantidad{
+    display:inline-block;
+    padding-left: 15%;
+    margin-top: 50px;
+}
+
+.precio{
+    
+   display:inline-block;
+    padding-left: 15%;
+    margin-top: 50px;
+}
+
+.tacho{
+    display:inline-block;
+    padding-left: 5%;
+    margin-top: 50px;
+}
+
+.seccionInferior{
+    text-align: right;
+    margin-top: 15%;
+    margin-right: 15%;
+    
+
+    
 }

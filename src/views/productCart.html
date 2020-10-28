@@ -3,88 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
           
     <link rel="stylesheet" href="/css/productCart.css">
-    <title>Carrito</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>Good Bikes</title>
 </head>
 <body>
 
 
 <header>
-  <div>
-    <a href="/"><img src="/desing/logo-goodBikes.png" alt=" logo-goodBikes"></a>
-    <form action="" class="formSearch">
-      <input type="text" name="" id="textSearch" placeholder="Buscá productos, marcas">
-      <button type="submit">Buscar</button>
+  <div class="seccionSuperior">
+    <a href="/"><img src="/desing/logo-goodBikes.png" alt=" logo-goodBikes" class="logo"></a>
+    <form action="">
+      <input type="text" placeholder="Buscar poductos y marcas"><button type="submit"><i class="fas fa-search"></i>
+      </button>
     </form>
   </div>
-  <div>
-    
-    <ul class="right hide-on-med-and-down">
-      <li><a href="login.html">Login</a></li>
-      <li><a href="register.html">Registrate</a></li>
-      <li><a href="collapsible.html">Carrito</a></li>
-    </ul>
   
-
-  </div>
+  <nav>
+    <ul>
+      <li><a class="vinculoLista" href="login.html">Login</a></li>
+      <li><a class="vinculoLista" href="register.html">Registrate</a></li>
+      <li><a class="vinculoLista" href="collapsible.html">Carrito</a></li>
+    </ul>
+  </nav>
 </header>
 
 
+<div class="seccionMedio">
+  <nav>
 
 
-<!--    
-      <div class="container">
-      <div class="nav-wrapper">
-        <nav>
-              <form>
-                <div class="input-field">
-                  <a href="#!" class="brand-logo" >
-                    <img src="/desing/logo-goodBikes.png" alt="logo-goodBikes" class="logo" style="max-width:20%;width:auto;height:auto;">
-                  </a>
-                  <input id="search" type="search" required  placeholder="Buscar productos">
-                  <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                  <ul class="right hide-on-med-and-down">
-                    <li><a href="sass.html">Login</a></li>
-                    <li><a href="badges.html">Registrate</a></li>
-                    <li><a href="collapsible.html">Carrito</a></li>
-                  </ul>
-          </nav>
-            <nav>
-                  <i class="material-icons">close</i>
-                </div>
-              </form>
-          </nav>
-            </div>
-          </div>
-           -->
+    <ul>
+      <li><a class="subMenu" href="#">Rodados</a></li>
+      <li><a class="subMenu" href="#">Equipamiento</a></li>
+      <li><a class="subMenu" href="#">Indumentaria</a></li>
+      <li><a class="subMenu" href="#">Accesorios</a></li>
+      <li><a class="subMenu" href="#">Taller</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+
     
    
 
     <form action="">
         <div>
-            <img src="" alt="">
-            <p>Resumen del producto</p>
-            <p>
+            <img class="imagenCarrito" src="/desing/logo-goodBikes.png" alt="producto carrito">
+            <p class="resumenPro">Resumen del producto</p>
+            <p class="cantidad">
                 <button>+</button>
                 cantidad
                 <button>-</button>
                
             </p>
-            <p>Precio</p>
-            <a href="">Tacho</a>
+            <p class="precio">Precio</p>
+            <a class="tacho" href="">Tacho</a>
            
-            <div>
+            <div class="seccionInferior">
                 <button>Comprar</button>
                 <p>Total</p>
             </div>
         </div>
     </form>
+
     <footer>Detalles corporativos</footer>
 </body>
 </html>
