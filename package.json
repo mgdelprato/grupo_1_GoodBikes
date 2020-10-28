@@ -2,7 +2,7 @@
   "name": "grupo_1_goodbikes",
   "version": "1.0.0",
   "description": "E-commmerse de rodados no motorizados, bicicletas, monopatines. (accesorios afines) \r Apuntamos a personas que necesiten movilidad para actividades de esparcimiento, recreación o entrenamiento profesional, con gusto por actividades al aire libre. Con una franja etarea de 2 a 100 años.",
-  "main": "./src/js/app.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
