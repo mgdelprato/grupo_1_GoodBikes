@@ -1,8 +1,8 @@
-header{
-    background-color: #5697fa;
+ul li{
+    display: inline;
 }
 
-.input-field{
-
-
+.formSearch{
+   align-content: center; 
+   width: 35%;
 }
