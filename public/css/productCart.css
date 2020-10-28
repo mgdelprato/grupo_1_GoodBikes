@@ -24,7 +24,7 @@ body{
 ==============*/
 
 header{
-    background-color: #5697FA;
+    background-color: #bb0a21;
     padding: 25px 70px 15px 70px;
 }
 
@@ -40,6 +40,7 @@ header .seccionSuperior form{
     padding: 15px;
     border-radius: 6px;
     margin-left: 10%;
+    ;
 
     
 }
@@ -98,7 +99,7 @@ margin-top: 15px;
 
 .seccionMedio nav ul li{
     display: inline-block;
-    margin: 25px;
+    margin: 55px;
 
 }
 
@@ -139,8 +140,9 @@ margin-top: 15px;
 
 .tacho{
     display:inline-block;
-    padding-left: 5%;
+    padding-left: 15%;
     margin-top: 50px;
+    font-size: 25px;
 }
 
 .seccionInferior{
@@ -148,6 +150,15 @@ margin-top: 15px;
     margin-top: 15%;
     margin-right: 15%;
     
+    
 
     
+}
+
+.seccionInferior p {
+    display: inline-block
+}
+footer{
+    text-align: center;
+    margin-top: 5%;
 }
