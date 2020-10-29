@@ -76,7 +76,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         flex-direction: row;
         height: 40px;        
-        width: 200px;
+        width: 250px;
         margin:0px 0px 0px 8% }
 
     .ingresar ul{
@@ -95,11 +95,14 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     .ingresar ul li a  {
         color:white;
+        text-decoration: none;
+        font-size: 15px;
     }
 
     /*Carrito*/
     .ingresar ul li a i  {  
         color:white;
+        font-size: 15px;
     }
 
     /*NAV*/
