@@ -83,14 +83,16 @@ header nav ul li{
     text-decoration: none;
     color: black;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 20px;
     padding: 15px;
 }
 
 
-
+/*=============
+  SEccion principal
+==============*/
 .seccionMedio nav{
-margin-top: 15px;
+margin-top: 5px;
 }
 
 .seccionMedio nav ul{
@@ -121,26 +123,26 @@ margin-top: 15px;
 
 .resumenPro{
     display:inline-block;
-    padding-left: 15%;
+    padding-left: 10%;
     margin-top: 50px;
 }
 
 .cantidad{
     display:inline-block;
-    padding-left: 15%;
+    padding-left: 10%;
     margin-top: 50px;
 }
 
 .precio{
     
    display:inline-block;
-    padding-left: 15%;
+    padding-left: 10%;
     margin-top: 50px;
 }
 
 .tacho{
     display:inline-block;
-    padding-left: 15%;
+    padding-left: 10%;
     margin-top: 50px;
     font-size: 25px;
 }
@@ -158,6 +160,10 @@ margin-top: 15px;
 .seccionInferior p {
     display: inline-block
 }
+
+/*=============
+  Footer
+==============*/
 footer{
     text-align: center;
     margin-top: 5%;
