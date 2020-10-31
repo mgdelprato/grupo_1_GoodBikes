@@ -150,30 +150,62 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     background-color: #d1caca;
     
 }
-  #DetalleCompleto {
-    display: inline-flexbox;
 
-    justify-content: center;
-  }
+main section{
+    width: 210px;
+    height: 250px;
+    border-style: solid;
+    border-width: 0px;
+    border-radius: 10px;
+    border-color: #666666;
+    background-color: #ebebeb;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+    #DetalleCompleto {
+        width: 800px;
+        /* height: 250px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin:0%;
+        padding: 0%;
+        flex-direction: column;
+    }
+
+        #cuadrosSuperiores{
+            border: solid;
+            width: 750px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: flex-end;
+        }
+            #CuadroCentro {
+                width: 310px;
+            }
+            
+            #CuadroIzquierdo{} 
+
+        #CuadroHorizontal{
+        width: 750px;
+        height: 200px;
+        border-radius: 10px;
+        overflow: hidden;
+        padding: 1%;
+        border: solid;
+        margin: 0% 0% 1% 0%;
+        }
+
+        
 
 
-  main section{
-      width: 210px;
-      height: 250px;
-      border-style: solid;
-      border-width: 0px;
-      border-radius: 10px;
-      border-color: #666666;
-      background-color: #ebebeb;
-      margin-left: 2%;
-      margin-right: 2%;
-      margin-top: 1%;
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: center;
-      
-  }
   
 
   main section img{
@@ -206,49 +238,46 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     height: 50px;
   }
 
-  #CuadroHorizontal{
-    width: 810px;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 1%;
-  }
 
-  #CuadroCentro {
-    width: 310px;
-  }
+ 
 
-  /* #CuadroIzquierdo{} */
+ 
   
-  #cuadrosSuperiores{
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      justify-content: center;
-      align-items: flex-end;
-  }
  
   footer{
     height: 90px;
     position: relative;
     justify-content: space-around;
     align-items: center;
-    text-align: left;
-    font-weight: bold;
+    text-align: center;
+    font-weight: 300;
+    
     text-decoration: none;
     display: flex;
     margin-top: 5%;
-    background-color: #ebebeb;  
+    background-color: #bb0a21;  
     margin-bottom: 0%;
     padding-top: 1%;
   }
 
+/* footer > * { preguntar herencia
+    color:white;
+} */
+
   footer ul {
-      text-decoration: none;
       list-style-type: none;
-  }
+      
+ }
 
   footer ul a {
       text-decoration: none;
+      color: white;
+      letter-spacing: 0.1em;
   }
 
+    footer ul li a i {
+    font-size: 15px;
+    font-weight: 200;
+    color: inherit;
+ }
 }
