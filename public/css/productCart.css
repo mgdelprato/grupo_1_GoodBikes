@@ -239,20 +239,67 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
          
     }
     /*FOOTER*/
-    footer{
-        position: relative;
+    /* footer{
+        display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
         margin-top: 5%;
         background-color: #ebebeb;  
-        height: 50px;
+        height: 500px;
         margin-bottom: 0%;
-        padding-top: 1%;}
+        padding-top: 1%;
+        background-color: #bb0a21;
+    } */
 
+    footer{
+        background-color: #bb0a21;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+    }
+
+    footer .container{
+        background-color: bb0a21;
+        display: flex;
+        flex-direction: column;
+        width: 800px;
+        justify-content: center;
+        align-items: center;
+      
+      
+    
+    }
+
+    footer .container .rrss{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        
+        
+    }
+ 
+    
+  .container div ul li a i{
+      font-size: 25px;
+     
+  }
+
+#visa{
+    font-size: 25px;
+    
 }
 
-
+#master{
+    font-size: 25px;
+}
+#amex{
+    font-size: 25px;
+}
 
 /*CSS Mobile Version
 @media screen and (min-width: 200px) and (max-width: 800px) 
