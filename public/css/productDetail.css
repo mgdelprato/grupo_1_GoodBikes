@@ -17,12 +17,13 @@
 
 
 /*Aplicación de estilos Genéricos por defecto*/
-*{  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: 'Roboto', sans-serif; 
-  font-size: 12px;
-  color: #000000;
+* { 
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
 }
 
 
@@ -31,9 +32,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-@media screen and (min-width: 801px)
-{ 
-    .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+@media screen and (min-width: 801px) {
+
+    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+    .Contenedor{width: 80%;display: flex;}    
 
 
     /*HEADER*/
@@ -148,9 +150,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     background-color: #d1caca;
     
 }
-  /* #DetalleCompleto {
-    padding: px;
-  } */
+  #DetalleCompleto {
+    display: inline-flexbox;
+
+    justify-content: center;
+  }
 
 
   main section{
@@ -170,16 +174,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
       align-items: center;
       
   }
-  #CuadroHorizontal{
-    width: 810px;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 1%;
-  }
-
-  #CuadroCentro {
-    width: 310px;
-  }
+  
 
   main section img{
       height: 140px; 
@@ -206,19 +201,54 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
   main section ul li:hover{
       color: #333333;
   }
+  .imagenIzquierda {
+    width: 50px;  
+    height: 50px;
+  }
 
+  #CuadroHorizontal{
+    width: 810px;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 1%;
+  }
 
+  #CuadroCentro {
+    width: 310px;
+  }
+
+  /* #CuadroIzquierdo{} */
+  
+  #cuadrosSuperiores{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+      align-items: flex-end;
+  }
  
   footer{
+    height: 90px;
     position: relative;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    text-align: center;
+    text-align: left;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
     margin-top: 5%;
     background-color: #ebebeb;  
-    height: 50px;
     margin-bottom: 0%;
     padding-top: 1%;
+  }
+
+  footer ul {
+      text-decoration: none;
+      list-style-type: none;
+  }
+
+  footer ul a {
+      text-decoration: none;
   }
 
 }
