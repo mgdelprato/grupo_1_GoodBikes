@@ -161,7 +161,7 @@ main section{
     background-color: #ebebeb;
     margin-left: 2%;
     margin-right: 2%;
-    margin-top: 1%;
+    /* margin-top: 1%; */
     display: inline-flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -180,7 +180,6 @@ main section{
     }
 
         #cuadrosSuperiores{
-            border: solid;
             width: 750px;
             display: flex;
             flex-direction: row;
@@ -191,7 +190,7 @@ main section{
                 width: 310px;
             }
             
-            #CuadroIzquierdo{} 
+            /* #CuadroIzquierdo{}  */
 
         #CuadroHorizontal{
         width: 750px;
@@ -199,14 +198,8 @@ main section{
         border-radius: 10px;
         overflow: hidden;
         padding: 1%;
-        border: solid;
         margin: 0% 0% 1% 0%;
         }
-
-        
-
-
-  
 
   main section img{
       height: 140px; 
@@ -238,10 +231,6 @@ main section{
     height: 50px;
   }
 
-
- 
-
- 
   
  
   footer{
