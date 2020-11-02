@@ -202,19 +202,57 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     }
 
     
-    /*FOOTER*/
-    footer{
+      /*FOOTER*/
+
+      footer{
+        height: 80px;
         position: relative;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         text-align: center;
-        margin-top: 5%;
-        background-color: #ebebeb;  
-        height: 50px;
+        font-weight: 300;
+        
+        
+        text-decoration: none;
+        display: flex;
+        margin-top: 6%;
+        background-color: #bb0a21;  
         margin-bottom: 0%;
-        padding-top: 1%;}
-
-}
+        padding-top: 1%;
+      }
+    
+     
+    /* footer > * { preguntar herencia
+        color:white;
+    } */
+    
+      footer ul {
+          list-style-type: none;
+          
+          
+     }
+    
+      footer ul li p {
+          text-decoration: none;
+          color: white;
+          letter-spacing: 0.1em;
+          margin: 5px;
+        
+      }
+      footer ul li a {
+        text-decoration: none;
+        color: white;
+        letter-spacing: 0.1em;
+       
+      
+    }
+    
+        footer ul li a i {
+        font-size: 15px;
+        font-weight: 200;
+        color: inherit;
+        margin: 5px;
+     }
 
 
 /*CSS Mobile Version

@@ -42,7 +42,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         background-color: #bb0a21;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: space-around;
         flex-direction: row;
         height: 80px;}
 
@@ -91,6 +91,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         font-size: 15px;
     }
 
+    .ingresar ul li a i {
+        color:white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+
     /*NAV*/
     nav{
         background-color: #ebebeb;
@@ -126,15 +133,16 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         height: 200px;
         margin-bottom: 11%;
         background-color: #ebebeb;  
-        width: 25%;
+        width: 50%;
         border-radius: 6px; 
 
     }
         .campos {
             border: none;
-            margin:2px;
+            margin:5px;
             height: 10%;
             padding: 2px;
+            width: 60%;
         }
 
 
@@ -145,6 +153,17 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         align-items: center;
         justify-content: center;
         
+    }
+
+    main div button{
+        margin: 10px;
+        height: 30px;
+        width: 25%;
+        font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 15px;
+    }
     }
 
     
