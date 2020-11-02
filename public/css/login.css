@@ -127,8 +127,16 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         margin-bottom: 11%;
         background-color: #ebebeb;  
         width: 25%;
+        border-radius: 6px; 
 
     }
+        .campos {
+            border: none;
+            margin:2px;
+            height: 10%;
+            padding: 2px;
+        }
+
 
     main{
         display: flex;
