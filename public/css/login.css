@@ -125,16 +125,17 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     /*MAIN PRINCIPAL*/
     .principal{
+        width: 50%;
+        height: 250px;
+        background-color: #ebebeb;  
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         margin-top: 10%;
-        height: 200px;
         margin-bottom: 11%;
-        background-color: #ebebeb;  
-        width: 50%;
         border-radius: 6px; 
+        
 
     }
         .campos {
@@ -164,7 +165,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         letter-spacing: 0.1em;
         font-size: 15px;
     }
-    }
+    
 
     
 
@@ -208,6 +209,5 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         font-weight: 200;
         color: inherit;
      }
-
 }
 
