@@ -159,10 +159,10 @@ main section{
     border-radius: 10px;
     border-color: #666666;
     background-color: #ebebeb;
-    margin-left: 2%;
-    margin-right: 2%;
+    margin-left: 1%;
+    margin-right: 1%;
     /* margin-top: 1%; */
-    display: inline-flex;
+    /* display: inline-flex; */
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
@@ -180,18 +180,28 @@ main section{
     }
 
         #cuadrosSuperiores{
-            width: 750px;
+            width: 800px;
             display: flex;
             flex-direction: row;
+            flex-flow: wrap;
             justify-content: center;
             align-items: flex-end;
         }
             #CuadroCentro {
-                width: 310px;
+                width: 290px;
             }
             
-            /* #CuadroIzquierdo{}  */
-
+            #CuadroIzquierdo{
+                align-items: center;
+            }
+             
+            #CuadroDerecho{
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+             
+            
         #CuadroHorizontal{
         width: 750px;
         height: 200px;
