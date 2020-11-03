@@ -13,20 +13,24 @@
   <div id='Contenedor'>
 
     <header> 
-      <a href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
-        <form action="">
-            <input type="text" placeholder="¡Encuentra tu Good Bike!">
-        </form>
-        <div class="ingresar">
+      <div class="logo">
+          <a href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
+          <p>GoodBikes</p>
+      </div>
+      
+      <form action="">
+          <input type="text" placeholder="¡Encuentra tu Good Bike!">
+      </form>
+      <div id="Contenedor_Ingresar" class="ingresar">
 
-            <ul>
-                <li><a href="login">Login</a></li>
-                <li><a href="register">Registrate</a></li>
-                <li><a href="productCart"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
+          <ul>
+              <li id="Tag_Login"><a href="login">Login</a></li>
+              <li id="Tag_Register"><a href="register">Registrate</a></li>
+              <li><a href="productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
+          </ul>
 
-        </div>
-    </header>
+      </div>
+  </header>
 
     <nav> 
       <ul>
@@ -83,6 +87,7 @@
           <i class="fas fa-trash-alt"></i>
         </div>
       </section>
+      
 
       <section id="total">
         <p class="precio">Total</p>

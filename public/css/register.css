@@ -42,7 +42,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         background-color: #bb0a21;
         display: flex;
         align-items: center;
-        justify-content: space-around;
+        justify-content: space-between;
         flex-direction: row;
         height: 80px;}
 
@@ -53,7 +53,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         } 
 
         header div{
-            margin-left: 15%;
             font-family: 'Roboto', sans-serif;
             font-size: 13px;
             font-weight: 400; /*Negrita*/
@@ -97,6 +96,19 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         font-size: 15px;
     }
 
+    .logo{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo p{
+        color: white;
+        font-size: 17px;
+    }
     /*NAV*/
     nav{
         background-color: #ebebeb;
@@ -126,7 +138,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /* MAIN */
 
 .contenedor{
-    height: 510px;
+    height: 457px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
