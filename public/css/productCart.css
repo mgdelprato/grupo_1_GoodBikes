@@ -230,8 +230,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #total{
         width: 150px;
         margin-top: 3%;
-       align-items:center;
-       align-self: flex-end;
+        align-items:center;
+        align-self: flex-end;
         margin-right: 15%;
         display: flex;
         justify-content: space-between;
