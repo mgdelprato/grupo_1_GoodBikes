@@ -14,19 +14,20 @@
             <form action="">
                 <input type="text" placeholder="¡Encuentra tu Good Bike!">
             </form>
-            <div class="ingresar">
+            <div id="Contenedor_Ingresar" class="ingresar">
 
                 <ul>
-                    <li><a href="login">Login</a></li>
-                    <li><a href="register">Registrate</a></li>
-                    <li><a href="productCart"><i class="fas fa-shopping-cart"></i></a></li>
+                    <li id="Tag_Login"><a href="login">Login</a></li>
+                    <li id="Tag_Register"><a href="register">Registrate</a></li>
+                    <li><a href="productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
                 </ul>
 
             </div>
         </header>
 
         <nav> 
-            <ul>
+            <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+            <ul id="Lista_Nav">
                 <li>Rodados</li>
                 <li>Equipamiento</li>
                 <li>Indumentaria</li>
@@ -35,8 +36,19 @@
             </ul>           
         </nav>
 
+<script>
+function myFunction() {
+  var x = document.getElementById("Lista_Nav");
+  if (x.style.display === "none") {
+    x.style.display = "flex";
+  } else {
+    x.style.display = "none";
+  }
+}
+</script>
+
         <section id='Ofertas' class='ContenedorOfertas'>            
-            <figure id='Oferta1' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta0' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
             <figure id='Oferta1' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
             <figure id='Oferta2' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
             <figure id='Oferta3' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
