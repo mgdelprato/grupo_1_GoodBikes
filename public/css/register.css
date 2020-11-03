@@ -126,36 +126,36 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /* MAIN */
 
 .contenedor{
+    height: 510px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-content: center;
 }
 main{
+    width: 50%;
+    height: 60vh;
+    background-color: #ebebeb;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-content:center;
-    height: 50%;
-    width: 50%;
-  
-    background-color: #ebebeb;
-    margin-top: 10%;
-
+    border-radius: 6px;
 }
+
 main .datos{
+    width: 50%;
+    height: 75%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 50%;
 }
 
 main div{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 30%;
-
- 
-    
+    height: 30%;  
         
 }
 
@@ -172,6 +172,8 @@ main div button{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 15px;
+    border: none;
+    background-color: #5697fa;
 }
 
 .datos input{
@@ -184,18 +186,15 @@ main div button{
         footer{
             height: 80px;
             position: relative;
+            background-color: #bb0a21;  
+            display: flex;
             justify-content: space-between;
             align-items: center;
             text-align: center;
             font-weight: 300;
-            
-            
             text-decoration: none;
-            display: flex;
-            margin-top: 6%;
-            background-color: #bb0a21;  
             margin-bottom: 0%;
-            padding-top: 1%;
+            
           }
         
          

@@ -253,6 +253,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     text-transform: uppercase;
     letter-spacing: 0.1em;
     font-size: 15px;
+    background-color: #5697fa;
+    border: none;
     
     }
      /*FOOTER*/
