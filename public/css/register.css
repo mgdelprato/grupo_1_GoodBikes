@@ -39,6 +39,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #Goodbikes{display: none;}
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
+    .ocultoMovil{display: none;}
    
     /*HEADER*/
     header{
@@ -251,7 +252,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 @media screen and (min-width: 200px) and (max-width: 800px) {
     #GoobBikes_en_el_menu{display: none;}
     #Al_Home{display: none;}
-    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em}
+    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
+    
     
     
     body
@@ -327,7 +329,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     height: 40vh;
                     width: 25vh;
                     padding-left: 2vh;
-                    border-radius: 10px;}
+                    padding-right: 6px;
+                    border-radius: 10px;
+                    
+                }
+                    nav ul li a {text-decoration: none;}
 
         
         .contenedor_del_Main{
