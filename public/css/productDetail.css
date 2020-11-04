@@ -26,6 +26,7 @@
     font-size: 12px;
 }
 
+#Goodbikes{display: none;}
 
 
 body{background-color: #ffffff;}  /*Color de fondo del sitio*/
@@ -35,7 +36,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 @media screen and (min-width: 801px) {
 
     /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
-    .Contenedor{width: 80%;display: flex;}    
+    .Contenedor{width: 80%;display: flex;}
+    #Bars{display: none;}
 
 
     /*HEADER*/

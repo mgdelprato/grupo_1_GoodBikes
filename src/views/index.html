@@ -12,7 +12,7 @@
         <header> 
             <div class="logo">
                 <a href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
-                <p>GoodBikes</p>
+                <p id="GoobBikes_en_el_menu">GoodBikes</p>
             </div>
             
             <form action="">
@@ -32,6 +32,7 @@
         <nav> 
             <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
             <ul id="Lista_Nav">
+                <li id="Goodbikes">Goodbikes</li>
                 <li>Rodados</li>
                 <li>Equipamiento</li>
                 <li>Indumentaria</li>
@@ -40,16 +41,16 @@
             </ul>           
         </nav>
 
-<script>
-function myFunction() {
-  var x = document.getElementById("Lista_Nav");
-  if (x.style.display === "none") {
-    x.style.display = "flex";
-  } else {
-    x.style.display = "none";
-  }
-}
-</script>
+        <script>
+            function myFunction() {
+            var x = document.getElementById("Lista_Nav");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+            }
+        </script>
 
         <section id='Ofertas' class='ContenedorOfertas'>            
             <figure id='Oferta0' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
