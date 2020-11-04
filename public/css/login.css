@@ -25,7 +25,7 @@
     color: #000000;
 }
 
-#Goodbikes{display: none;}
+
 
 
 body{background-color: #ffffff;}  /*Color de fondo del sitio*/
@@ -36,7 +36,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
-        /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+    #Goodbikes{display: none;}
+    
+    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
    
     /*HEADER*/
@@ -246,6 +248,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 @media screen and (min-width: 200px) and (max-width: 800px) {
 
     #GoobBikes_en_el_menu{display: none;}
+    #Al_Home{display: none;}
+    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em}
+
 
     body
         {display: flex; 
