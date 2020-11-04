@@ -17,12 +17,13 @@
 
 
 /*Aplicación de estilos Genéricos por defecto*/
-*{  margin: 0px;
+*{  
+    margin: 0px;
     padding: 0px;
+    color: #000000;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif; 
     font-size: 12px;
-    color: #000000;
 }
 
 
@@ -46,7 +47,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             justify-content: space-between;
             flex-direction: row;
             height: 80px;
-            }
+    }
 
             #Bars{visibility: hidden;}
 

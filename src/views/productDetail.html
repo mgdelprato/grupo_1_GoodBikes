@@ -1,60 +1,60 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/productDetail.css">
-    <link rel="icon" type="image/png" href="desing/Logo-en-Blanco.ico" sizes="16x16">
-    <title>Detalle de producto</title>
+    <link rel="stylesheet" href="css/productDetail.css" type="text/css" media="screen"><!--Estilos-->
+    <title>Goodbikes</title>
 </head>
 <body>
-<div id="contenedor">
-    <header> 
-        <a  id="Al_Home"  href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
-        <form action="">
-            <input type="text" placeholder="¡Encuentra tu Good Bike!">
-        </form>
-        <div class="ingresar">
+    <div id='Contenedor'>  
+        <header> 
+            <div class="logo">
+                <a id="Al_Home" href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
+                <p id="GoobBikes_en_el_menu">GoodBikes</p>
+            </div>
+            
+            <form action="">
+                <input type="text" placeholder="¡Encuentra tu Good Bike!">
+            </form>
+            <div id="Contenedor_Ingresar" class="ingresar">
 
-            <ul>
-                <li><a href="login">Login</a></li>
-                <li><a href="register">Registrate</a></li>
-                <li><a href="productCart"><i class="fas fa-shopping-cart"></i></a></li>
-            </ul>
+                <ul>
+                    <li id="Tag_Login"><a href="login">Login</a></li>
+                    <li id="Tag_Register"><a href="register">Registrate</a></li>
+                    <li><a href="productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
+                </ul>
 
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <nav> 
-        <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
-        <ul id="Lista_Nav">
-            <li id="Goodbikes">Goodbikes</li>
-            <li>Rodados</li>
-            <li>Equipamiento</li>
-            <li>Indumentaria</li>
-            <li>Accesorios</li>
-            <li>Taller</li>
-        </ul>           
-    </nav>
+        <nav> 
+            <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+            <ul id="Lista_Nav">
+                <li id="Goodbikes">Goodbikes</li>
+                <li>Rodados</li>
+                <li>Equipamiento</li>
+                <li>Indumentaria</li>
+                <li>Accesorios</li>
+                <li>Taller</li>
+            </ul>           
+        </nav>
 
-    <script>
-        function myFunction() {
-        var x = document.getElementById("Lista_Nav");
-        if (x.style.display === "none") {
-            x.style.display = "flex";
-        } else {
-            x.style.display = "none";
-        }
-        }
-    </script>
-    
+        <script>
+            function myFunction() {
+            var x = document.getElementById("Lista_Nav");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+            }
+        </script>
     <main>
         <div id="DetalleCompleto">
         
         <div id="cuadrosSuperiores">     
-
-        
 
             <section id='CuadroIzquierdo'>
                     <figure  ><img class='imagenIzquierda'src="images/products/bike1.PNG" alt="Principal1"></figure>
@@ -77,7 +77,7 @@
                 <span>$657.438,09</span>
                 <ul>
                     <li>+Info</li>
-                    <li>Agregar</li>
+                    <li><button type="submit">Agregar</button></li>
                 </ul>  
             </section>
 

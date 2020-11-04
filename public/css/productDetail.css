@@ -44,12 +44,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     /*HEADER*/
     header{
-            background-color: #bb0a21;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: row;
-            height: 80px;}
+        background-color: #bb0a21;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 80px;
+    }
+
+    #Bars{visibility: hidden;}
 
     header img{ 
             width: 70px; height: 60px;
@@ -58,18 +61,19 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
        
     header input{
             height: 25px;
-            width: 350px;
+            width: 400px;
             border-style: solid;
             border-width: 0px;
             border-radius: 5px;
-            color: #000000;}
+            color: #000000;
+            padding-left: 5px;}
 
     header input::placeholder{
             text-align: center;
             color: #666666;}
     
     header div{
-            margin-left: 15%;
+            
             font-family: 'Roboto', sans-serif;
             font-size: 13px;
             font-weight: 400; /*Negrita*/
@@ -84,8 +88,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         flex-direction: row;
         height: 40px;        
-        width: 250px;
-        margin:0px 0px 0px 8% }
+        } 
 
     .ingresar ul{
         list-style:none;
@@ -113,6 +116,21 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         font-size: 15px;
     }
 
+
+    .logo{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo p{
+        color: white;
+        font-size: 17px;
+    }
+
     /*NAV*/
     nav{
         background-color: #ebebeb;
@@ -137,41 +155,42 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         }
     nav ul li:hover{color: #bb0a21;}
 
+
     main{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      margin-top: 1%;
-  }
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 1%;
+    }
 
-  main div {
-    width: 90%;
-    padding: 12px;
-    display: inline-block;
-    text-align: center;
-    border-radius: 10px;
-    background-color: #d1caca;
-    
-}
+    main div {
+        width: 90%;
+        padding: 12px;
+        display: flex;
+        text-align: center;
+        border-radius: 10px;
+        background-color: #d1caca;
 
-main section{
-    width: 210px;
-    height: 250px;
-    border-style: solid;
-    border-width: 0px;
-    border-radius: 10px;
-    border-color: #666666;
-    background-color: #ebebeb;
-    margin-left: 1%;
-    margin-right: 1%;
-    /* margin-top: 1%; */
-    /* display: inline-flex; */
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    
-}
+    }
+
+    main section{
+        width: 210px;
+        height: 250px;
+        border-style: solid;
+        border-width: 0px;
+        border-radius: 10px;
+        border-color: #666666;
+        background-color: #ebebeb;
+        margin-left: 1%;
+        margin-right: 1%;
+        /* margin-top: 1%; */
+        /* display: inline-flex; */
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        
+    }
     #DetalleCompleto {
         width: 800px;
         /* height: 250px; */
@@ -204,7 +223,17 @@ main section{
                 justify-content: center;
                 display: flex;
             }
-             
+            #CuadroDerecho button{
+                height: 30px;
+                padding: 2px 22px 2px 22px;
+                background-color: #5697fa;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                font-size: 15px;
+                border: none;
+                border-radius: 3px;
+            }
             
         #CuadroHorizontal{
         width: 750px;
