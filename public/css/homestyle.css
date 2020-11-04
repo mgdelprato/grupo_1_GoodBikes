@@ -230,7 +230,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
       footer{
         height: 80px;
         position: relative;
-        justify-content: space-around;
+        justify-content: space-between;
         align-items: center;
         text-align: center;
         font-weight: 300;
