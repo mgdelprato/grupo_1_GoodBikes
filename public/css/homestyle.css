@@ -34,10 +34,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
+    
     #Goodbikes{display: none;}
-
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
+    .ocultoMovil{display: none;}
+
 
     /*HEADER*/
     header{
@@ -224,6 +226,36 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         color: #333333;
     }
 
+    main section div button{
+        width: 55%;
+        height: 30px;
+        margin: 10px;
+        font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 15px;
+        border: none;
+        border-radius: 6px;
+        background-color: #5697fa;
+    }
+
+    main section div {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        text-align: center;
+        padding: 0px 5px;
+        align-items: center;
+    }
+
+    .price {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-top: 3px;
+    }
+
+
+
     
       /*FOOTER*/
 
@@ -343,7 +375,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             top: 6%; 
             left: 5%; 
             }
-
             nav ul {
                 background-color: #ebebeb;
                 border-color: #666666;
@@ -357,7 +388,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 height: 40vh;
                 width: 25vh;
                 padding-left: 2vh;
-                border-radius: 10px;}
+                padding-right: 6px;
+                border-radius: 10px;
+                
+            }
+                nav ul li a {text-decoration: none;}
+            
+            
 
         .ContenedorOfertas{
             display: block;

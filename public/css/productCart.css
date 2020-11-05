@@ -32,11 +32,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
-
     #Goodbikes{display: none;}
-
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
+    .ocultoMovil{display: none;}
 
     /*HEADER*/
     header{
@@ -404,7 +403,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 height: 40vh;
                 width: 25vh;
                 padding-left: 2vh;
-                border-radius: 10px;}
+                padding-right: 6px;
+                border-radius: 10px;
+                
+            }
+                nav ul li a {text-decoration: none;}
+            
 
         .ContenedorOfertas{
             display: block;
