@@ -312,7 +312,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
             nav{position: absolute;
-                top: 6%; 
+                top: 5%; 
                 left: 5%; 
                 }
 
@@ -348,6 +348,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         .principal{display: flex; flex-direction: column;justify-content: space-around;}
         .principal input{margin-top: 2vh;}
         .principal button{margin-top: 2vh;}
+        .principal a{margin-top: 2vh;align-self: center;}
+        
 
         
        
