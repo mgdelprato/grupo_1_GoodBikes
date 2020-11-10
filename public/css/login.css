@@ -31,16 +31,14 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-
-
-/*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
-    #Goodbikes{display: none;}
+#Goodbikes{display: none;}
+#Bars{display: none;}
+.ocultoMovil{display: none;}
+    
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
-    #Bars{display: none;}
-    .ocultoMovil{display: none;}
-   
+
     /*HEADER*/
     header{
         background-color: #bb0a21;
@@ -50,70 +48,71 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         flex-direction: row;
         height: 80px;}
 
-    header img{ 
-        width: 70px; height: 60px;
-        margin-right: 15%; 
-        margin-left: 0%;
-        } 
+        header img{ 
+            width: 70px; height: 60px;
+            margin-right: 15%; 
+            margin-left: 0%;
+            } 
 
-        header div{
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-            font-weight: 400; /*Negrita*/
-            letter-spacing: 0.1em; /*Espaciado entre caracteres*/
-            color: #ebebeb;}
+            header div{
+                font-family: 'Roboto', sans-serif;
+                font-size: 13px;
+                font-weight: 400; /*Negrita*/
+                letter-spacing: 0.1em; /*Espaciado entre caracteres*/
+                color: #ebebeb;}
 
-        header div:hover{color: #666666;}
+            header div:hover{color: #666666;}
             
-    .ingresar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        width: 250px;
-        margin:0px 0px 0px 8% }
+                .ingresar{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: row;
+                    height: 40px;        
+                    width: 250px;
+                    margin:0px 0px 0px 8% }
 
-    .ingresar ul{
-        list-style:none;
-        text-align: center;}
+                .ingresar ul{
+                    list-style:none;
+                    text-align: center;}
 
-    .ingresar ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 10px 0px 10px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        color: white;
-    }
+                .ingresar ul li{
+                    display: inline-block;   
+                    text-align: center;
+                    margin: 0px 10px 0px 10px;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    color: white;
+                }
 
-    .ingresar ul li a  {
-        color:white;
-        text-decoration: none;
-        font-size: 15px;
-    }
+                .ingresar ul li a  {
+                    color:white;
+                    text-decoration: none;
+                    font-size: 15px;
+                }
 
-    .ingresar ul li a i {
-        color:white;
-        text-decoration: none;
-        font-size: 15px;
-    }
+                .ingresar ul li a i {
+                    color:white;
+                    text-decoration: none;
+                    font-size: 15px;
+                }
 
-    .logo{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo p{
-        color: white;
-        font-size: 17px;
-    }
-    /*NAV*/
+                .logo{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    
+                    text-align: center;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .logo p{
+                    color: white;
+                    font-size: 17px;
+                }
+    
+                /*NAV*/
     nav{
         background-color: #ebebeb;
         display: flex;
@@ -148,53 +147,59 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         align-content: center;
     }
-    main{
-        width: 50%;
-        height: 60vh;
-        background-color: #ebebeb;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-content:center;
-        border-radius: 6px;
-    }
+        main{
+            width: 50%;
+            height: 60vh;
+            background-color: #ebebeb;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content:center;
+            border-radius: 6px;
+        }
 
-    main .principal{
-        width: 50%;
-        height: 75%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+            main .principal{
+                width: 50%;
+                height: 75%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
 
-    main div{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        height: 30%;  
-            
-    }
+            main div{
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                height: 30%;  
+                    
+            }
 
-    main div input{
-        padding: 5px;
-        margin: 5px;
-        
-    }
+            main div input{
+                padding: 5px;
+                margin: 5px;
+                
+            }
 
-    main div button{
-        margin: 10px;
-        height: 30px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 15px;
-        border: none;
-        background-color: #5697fa;
-    }
+            main div button{
+                margin: 10px;
+                height: 30px;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 15px;
+                border: none;
+                background-color: #5697fa;
+            }
 
-    .datos input{
-        border: none;
-    }
+            main div button:hover{
+                background-color: #66c674;
+            }
+
+                .datos input{
+                    border: none;
+                }
+
+                #Olvido{text-align: center;}
 
 
         /*FOOTER*/
@@ -253,19 +258,17 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #GoobBikes_en_el_menu{display: none;}
     #Al_Home{display: none;}
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
-    
-    
-    
-    body
-        {display: flex; 
-        justify-content: center;
-        flex-direction: column;}
+      
 
         #Contenedor_Body
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;} 
+            height: 100vh;
+            width: 100vw;
+            background-color: #ebebeb;
+            padding: 0px 0px 0px 0px; 
+            margin: 0px 0px 0px 0px;}
 
             header{
                 height: 15vh;
@@ -347,16 +350,32 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
         .principal{display: flex; flex-direction: column;justify-content: space-around;}
         .principal input{margin-top: 2vh;}
-        .principal button{margin-top: 2vh;}
+        
+        .campos{border: none;}
+        
+        .principal button {
+            margin-top: 2vh;
+            height: 30px;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 15px;
+            border: none;
+            background-color: #5697fa;
+        }
+        
+        main div button:hover{
+            background-color: #66c674;
+        }
+        
         .principal a{margin-top: 2vh;align-self: center;}
         
-
-        
        
-        footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;padding-bottom: 5%;
+        footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;;
             bottom: 0px;width: 100vw;}
                 footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
                 footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
                 footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
-           
+                
+                #Ultimo{margin-bottom: 2vh;}
 }

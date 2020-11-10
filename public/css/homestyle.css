@@ -26,455 +26,436 @@
     font-size: 12px;
 }
 
-
-
 body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
-    
-    #Goodbikes{display: none;}
+#Goodbikes{display: none;}
+#Bars{display: none;}
+.ocultoMovil{display: none;}
+
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
-    #Bars{display: none;}
-    .ocultoMovil{display: none;}
+
+        /*HEADER*/
+        header{
+                background-color: #bb0a21;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                height: 80px;
+                }
+
+                header img{ 
+                        width: 70px; height: 60px;
+                        margin-right: 15%; 
+                        margin-left: 0%;}
+                
+                header input{
+                        height: 25px;
+                        width: 400px;
+                        border-style: solid;
+                        border-width: 0px;
+                        border-radius: 5px;
+                        color: #000000;
+                        padding-left: 5px;}
+
+                header input::placeholder{
+                        text-align: center;
+                        color: #666666;}
+                
+                header div{
+                        
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 13px;
+                        font-weight: 400; /*Negrita*/
+                        letter-spacing: 0.1em; /*Espaciado entre caracteres*/
+                        color: #ebebeb;}
+
+                    header div:hover{color: #666666;}
+
+            .logo{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+                .logo p{
+                    color: white;
+                    font-size: 17px;
+                }
+
+            .ingresar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                height: 40px;        
+                } 
+
+                .ingresar ul{
+                    list-style:none;
+                    text-align: center;}
+
+                .ingresar ul li{
+                    display: inline-block;   
+                    text-align: center;
+                    margin: 0px 10px 0px 10px;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    color: white;
+                }
+
+                .ingresar ul li a  {
+                    color:white;
+                    text-decoration: none;
+                    font-size: 15px;
+                }
+
+                /*Carrito*/
+                .ingresar ul li a i  {  
+                    color:white;
+                    font-size: 15px;
+                }
 
 
-    /*HEADER*/
-    header{
-            background-color: #bb0a21;
+        /*NAV*/
+        nav{
+            background-color: #ebebeb;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             flex-direction: row;
-            height: 80px;
-    }
-
-            #Bars{visibility: hidden;}
-
-    header img{ 
-            width: 70px; height: 60px;
-            margin-right: 15%; 
-            margin-left: 0%;}
-       
-    header input{
-            height: 25px;
-            width: 400px;
-            border-style: solid;
-            border-width: 0px;
-            border-radius: 5px;
-            color: #000000;
-            padding-left: 5px;}
-
-    header input::placeholder{
-            text-align: center;
-            color: #666666;}
-    
-    header div{
+            height: 40px;        
+            width: 100%;}
             
-            font-family: 'Roboto', sans-serif;
-            font-size: 13px;
-            font-weight: 400; /*Negrita*/
-            letter-spacing: 0.1em; /*Espaciado entre caracteres*/
-            color: #ebebeb;}
+            nav ul{
+                list-style:none;
+                text-align: center;}
 
-    header div:hover{color: #666666;}
+                nav ul li{
+                    display: inline-block;   
+                    text-align: center;
+                    margin: 0px 50px 0px 50px;
+                    font-family: 'Anton', sans-serif;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    }
+
+                nav ul li:hover{color: #bb0a21;}
+
+
+        /*OFERTAS*/
+        .ContenedorOfertas{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1%;}
             
-    .ingresar{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        } 
-
-    .ingresar ul{
-        list-style:none;
-        text-align: center;}
-
-    .ingresar ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 10px 0px 10px;
-        font-family: 'Roboto', sans-serif;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        color: white;
-    }
-
-    .ingresar ul li a  {
-        color:white;
-        text-decoration: none;
-        font-size: 15px;
-    }
-
-    /*Carrito*/
-    .ingresar ul li a i  {  
-        color:white;
-        font-size: 15px;
-    }
-
-
-    .logo{
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: row;
-        
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-    }
-    .logo p{
-        color: white;
-        font-size: 17px;
-    }
-
-    /*NAV*/
-    nav{
-        background-color: #ebebeb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        width: 100%;}
-    nav ul{
-        list-style:none;
-        text-align: center;}
-
-    nav ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 50px 0px 50px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        }
-    nav ul li:hover{color: #bb0a21;}
-
-
-    /*OFERTAS*/
-    .ContenedorOfertas{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin-top: 1%;}
-        
-    .Oferton{
-        width: 120px; 
-        height:90px;
-        margin: 0% 15px 0% 15px;
-        border-style: solid;
-        border-width: 1px;
-        border-color: #666666;  
-        border-radius: 10px; 
-    }
-    .Oferton:hover{transform: scale(1.1);}
-
-
-    /*MAIN*/
-     main{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin-top: 1%;
-    }
-
-    main section{
-        width: 210px;
-        height: 250px;
-        border-style: solid;
-        border-width: 0px;
-        border-radius: 10px;
-        background-color: #ebebeb;
-        border-color: #666666;
-        margin-left: 2%;
-        margin-right: 2%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-    }
-
-    main section img{
-        height: 140px; 
-        width: 180px;
-        margin-top: 5%;
-     
-    }
-
-    main section img:hover{
-        border-style: solid;
-        border-color: #5697fa;
-    }
-
-    main section ul{    
-        list-style:none;
-        text-align: center;
-        line-height: 30px;}
-    
-    main section ul li{
-        font-weight: 500;
-        color: #66c674;
-    }
-
-    main section ul li:hover{
-        color: #333333;
-    }
-
-    main section div button{
-        width: 55%;
-        height: 30px;
-        margin: 10px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        font-size: 15px;
-        border: none;
-        border-radius: 6px;
-        background-color: #5697fa;
-    }
-
-    main section div {
-        display: flex;
-        flex-direction: column;
-        flex-wrap: wrap;
-        text-align: center;
-        padding: 0px 5px;
-        align-items: center;
-    }
-
-    .price {
-        font-size: 1.5rem;
-        font-weight: bold;
-        margin-top: 3px;
-    }
-
-
-
-    
-      /*FOOTER*/
-
-      footer{
-        height: 80px;
-        position: relative;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        font-weight: 300;
-        
-        
-        text-decoration: none;
-        display: flex;
-        margin-top: 6%;
-        background-color: #bb0a21;  
-        margin-bottom: 0%;
-        padding-top: 1%;
-      }
-    
-     
-    /* footer > * { preguntar herencia
-        color:white;
-    } */
-    
-      footer ul {
-          list-style-type: none;
-          
-          
-     }
-    
-      footer ul li p {
-          text-decoration: none;
-          color: white;
-          letter-spacing: 0.1em;
-          margin: 5px;
-        
-      }
-      footer ul li a {
-        text-decoration: none;
-        color: white;
-        letter-spacing: 0.1em;
-       
-      
-    }
-    
-        footer ul li a i {
-        font-size: 15px;
-        font-weight: 200;
-        color: inherit;
-        margin: 5px;
-     }
-}
-
-/*CSS Mobile Version*/
-@media screen and (min-width: 200px) and (max-width: 800px) {
-    
-    #GoobBikes_en_el_menu{display: none;}
-    #Al_Home{display: none;}
-    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
-    
-
-    body
-        {display: flex; 
-        justify-content: center;
-        flex-direction: column;}
-    #Contenedor
-        {display: flex; 
-        flex-direction: column;
-        justify-content: flex-start;} 
-
-        header{
-            height: 15vh;
-            background-color: #bb0a21;
-            display: flex; 
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;}
-
-            #Contenedor_Ingresar
-            {position: relative;
-                bottom: 20%; 
-                width: 50px;}
-
-                    #Tag_Login{
-                    position:relative; 
-                    visibility: hidden;}
-
-                    #Tag_Register
-                    {position:relative; 
-                    visibility: hidden;}
-
-                    #Tag_Cart{font-size: 26px;color: #ebebeb;align-self: center;}
-                
-                header div ul {list-style-type: none;}
-
-                header img{
-                    visibility: hidden;
-                    width: 35px; 
-                    height: 80px;}
-
-            header input{
-                height: 4vh;
-                width: 30vh;
-                border-radius: 5px;
-                border-color: none; 
-                border-style: none;}
-
-        #Bars{font-size: 24px; 
-            color: #ebebeb;
-            text-align: center;} 
-               
-            #Bars:hover{color: #66c674;}
-
-
-        nav{position: absolute;
-            top: 6%; 
-            left: 5%; 
-            }
-            nav ul {
-                background-color: #ebebeb;
-                border-color: #666666;
+            .Oferton{
+                width: 120px; 
+                height:90px;
+                margin: 0% 15px 0% 15px;
                 border-style: solid;
                 border-width: 1px;
-                list-style-type: none;
-                margin-top: 10%;
-                display: none;
-                flex-direction: column;
-                justify-content: space-around;
-                height: 40vh;
-                width: 25vh;
-                padding-left: 2vh;
-                padding-right: 6px;
-                border-radius: 10px;
-                
+                border-color: #666666;  
+                border-radius: 10px; 
             }
-                nav ul li a {text-decoration: none;}
-            
-            
+                .Oferton:hover{transform: scale(1.1);}
 
-        .ContenedorOfertas{
-            display: block;
-            text-align: center;
-            padding: 10%;
-            background-color: #ebebeb;
-            }
 
-            #Oferta0{align-self: center;}
-                .Oferton{border-radius: 10px;}
-            #Oferta1{display: none;}
-            #Oferta2{display: none;}
-            #Oferta3{display: none;}
-            #Oferta4{display: none;}
-            #Oferta5{display: none;}
+        /*MAIN*/
+        main{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            margin-top: 1%;}
 
-    main{display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;}
-
-        main figure{display: flex; flex-direction: column;justify-content: center;}
-        main img{
-            border-radius: 10px;
-            border-style: solid; 
-            margin-top: 5%;
-            margin-bottom: 5%; 
-            border-color: #666666;
-            border-width: 3px;
-            width: 30vh;}
-        
             main section{
-                width: 100%;
+                width: 210px;
                 height: 250px;
                 border-style: solid;
                 border-width: 0px;
                 border-radius: 10px;
                 background-color: #ebebeb;
                 border-color: #666666;
-                margin: 1% 2% 2% 1%;
+                margin-left: 2%;
+                margin-right: 2%;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                align-items: center;
-            }
-        main section ul li{
-            display: flex; 
-            justify-content: center;
-            color: #66c674;}
-            main section div button{
-                width: 55%;
-                height: 30px;
-                margin: 10px;
-                font-family: 'Anton', sans-serif;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                font-size: 15px;
-                border: none;
-                border-radius: 6px;
-                background-color: #5697fa;
-            }
-        
-            main section div {
-                display: flex;
-                flex-direction: column;
-                flex-wrap: wrap;
-                text-align: center;
-                padding: 0px 5px;
-                align-items: center;
-            }
-        
-            .price {
-                font-size: 1.5rem;
-                font-weight: bold;
-                margin-top: 3px;
-            }
+                align-items: center;}
+
+                main section img{
+                    height: 140px; 
+                    width: 180px;
+                    margin-top: 5%;}
+
+                    main section img:hover{
+                        border-style: solid;
+                        border-color: #5697fa;}
+
+                main section ul{    
+                    list-style:none;
+                    text-align: center;
+                    line-height: 30px;}
+                
+                    main section ul li{
+                        font-weight: 500;
+                        color: #66c674;}
+
+                        main section ul li:hover{
+                            color: #333333;}
+
+                main section div button{
+                    width: 55%;
+                    height: 30px;
+                    margin: 10px;
+                    font-family: 'Anton', sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    font-size: 15px;
+                    border: none;
+                    border-radius: 6px;
+                    background-color: #5697fa;}
+                    
+                    main section div button:hover{background-color: #66c674;}
+
+                main section div {
+                    display: flex;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    text-align: center;
+                    padding: 0px 5px;
+                    align-items: center;}
+
+                    .price {
+                        font-size: 1.5rem;
+                        font-weight: bold;
+                        margin-top: 3px;}
+    
+        /*FOOTER*/
+
+        footer{
+            height: 80px;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            font-weight: 300;
+            text-decoration: none;
+            display: flex;
+            margin-top: 6%;
+            background-color: #bb0a21;  
+            margin-bottom: 0%;
+            padding-top: 1%;}
+
+            footer ul {
+                list-style-type: none;}
             
-    footer{background-color: #bb0a21; text-align: center; padding-top: 5%;padding-bottom: 5%;}
-            footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
-            footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
-            footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
-           
-}
+                footer ul li p {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 0.1em;
+                    margin: 5px;}
+                    
+                footer ul li a {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 0.1em;}
+                
+                        footer ul li a i {
+                        font-size: 15px;
+                        font-weight: 200;
+                        color: inherit;
+                        margin: 5px;}
+
+}/*Cierre de llave de vista para PC */
+
+
+
+/*CSS Mobile Version*/
+@media screen and (min-width: 200px) and (max-width: 800px) 
+{
+
+#GoobBikes_en_el_menu{display: none;}
+#Tag_Login{display: none;}
+#Tag_Register{display: none;}
+#Oferta1{display: none;}
+#Oferta2{display: none;}
+#Oferta3{display: none;}
+#Oferta4{display: none;}
+#Oferta5{display: none;}
+
+
+    
+    #Contenedor{
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+        background-color: #ebebeb;} 
+        
+        header{
+            height: 15vh;
+            width: auto;
+            background-color: #bb0a21;
+            display: flex; 
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;}
+            
+            header img{
+                width: auto; 
+                height: 8vh;}/*Logo*/
+            
+            nav{position: absolute;
+                top: 5.5%; 
+                left: 16%;} /*Contiene a las bars y a todo lo desplegable*/
+                
+                #Bars{font-size: 24px; 
+                    color: #ebebeb;
+                    text-align: center;} 
+                    
+                    #Bars:hover{color: #66c674;}
+
+                    nav ul {
+                        background-color: #ebebeb;
+                        border-color: #666666;
+                        border-style: solid;
+                        border-width: 1px;
+                        list-style-type: none;
+                        margin-top: 10%;
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 40vh;
+                        width: 25vh;
+                        padding-left: 2vh;
+                        padding-right: 6px;
+                        border-radius: 10px;}
+                        
+                        nav ul li a {text-decoration: none;}
+                        
+                        /*Texto corporativo dentro del Bars*/ 
+                        #Goodbikes{display: flex;
+                            font-family: 'Anton', sans-serif;
+                            color: #bb0a21;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em; 
+                            text-decoration: none;}
+                        
+                            
+                            
+            header input{
+                height: 4vh;
+                width: 28vh;
+                margin: 0px 0px 0px 2vw;
+                border-radius: 5px;
+                border-color: none; 
+                border-style: none;}
+                
+                ::-webkit-input-placeholder { 
+                    text-align: center; 
+                } 
+                
+            #Contenedor_Ingresar{display: flex;}/*Todo para el carrito*/
+                header div ul {list-style-type: none;}
+                #Tag_Cart{
+                    font-size: 28px;
+                    color: #ebebeb;
+                    margin: 0px 8vw 0px 0px;}
+                                
+                                
+
+            .ContenedorOfertas{
+                display: block;
+                text-align: center;
+                padding: 10%;
+                background-color: #ebebeb;
+                }
+
+                #Oferta0{align-self: center;}
+                    .Oferton{border-radius: 10px;}
+
+
+            main{display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;}
+
+                main section{
+                    width: 75%;
+                    height: auto;
+                    border-style: solid;
+                    border-width: 0px;
+                    border-radius: 10px;
+                    background-color: #ebebeb;
+                    border-color: #666666;
+                    margin: 1% 2% 2% 1%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;}
+
+                main img{
+                    border-radius: 10px;
+                    border-style: solid; 
+                    margin-top: 5%;
+                    margin-bottom: 5%; 
+                    border-color: #666666;
+                    border-width: 3px;
+                    width: 30vh;}
+                
+
+                        main section ul li{
+                            display: flex; 
+                            justify-content: center;
+                            color: #66c674;}
+
+
+                
+                        main section div {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            text-align: center;
+                            padding: 0px 5px;
+                            align-items: center;
+                        }
+
+                            main section div button{
+                                width: 55%;
+                                height: 30px;
+                                margin: 10px;
+                                font-family: 'Anton', sans-serif;
+                                text-transform: uppercase;
+                                letter-spacing: 0.1em;
+                                font-size: 15px;
+                                border: none;
+                                border-radius: 6px;
+                                background-color: #5697fa;}
+                                
+                                main section div button:hover{background-color: #66c674;}
+
+                                    .price {
+                                        font-size: 1.5rem;
+                                        font-weight: bold;
+                                        margin-top: 3px;
+                                    }
+                    
+            footer{background-color: #bb0a21; text-align: center; padding-top: 5%;padding-bottom: 5%;}
+                    footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
+                    footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
+                    footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
+            
+    }/*Fin de llava de vista MOBILE*/
