@@ -138,11 +138,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
                 main div h1 {
-                    font-family: 'Anton', sans-serif;
+                    font-family: 'Roboto', sans-serif;
                     text-transform: uppercase;
                     font-size: 20px;
                     letter-spacing: 0.1em;
-                    font-weight: normal;
+                    font-weight: bold;
                 }
 
                 main .divTabla{
@@ -151,26 +151,74 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     font-size: 10px;
                     letter-spacing: 0.1em;
                     margin-top: 5%;
+                    margin: 5% 10% 0% 10%;
                     display: flex;
-                    justify-content: center;
+                    justify-content: space-between;
                     align-items: center;
-                    width: 100%;
-                    background-color: #ebebeb;                 
                     
                 }
 
-                main .divTabla table div{
-                    display:flex;
-                    justify-content: space-between;
-                    align-content: space-between;
-                   
-                
-                }
-
                 main .divTabla table{
-                    border-spacing: 10px 10px;
+                    display: flex;
+                    flex-flow: column nowrap;
+                    font-size: .8rem;
+                    margin: 0.5rem;
+                    line-height: 1.5;
+                    border-bottom: 1px solid #d0d0d0;
+                    flex: 1 1 auto;
+                    margin-bottom: 6%;
+                    border: 3px solid #d0d0d0;
+                    
                 }
 
+                main .divTabla table tr{
+                    width: 100%;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    
+                }
+
+                main .divTabla table tr:nth-of-type(odd){
+                    background-color: #f2f2f2;
+                }
+
+                main .divTabla table tr:nth-of-type(even){
+                    background-color: #ffffff;
+                }
+
+                main .divTabla table tr th{
+                    white-space: normal;
+                    justify-content: center;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    flex-grow: 1;
+                    flex-basis: 0;
+                    padding: 0.5em;
+                    word-break: break-word;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    min-width: 0px;
+                    white-space: nowrap;
+                    font-size: 15px;
+                    border-bottom: 3px solid #d0d0d0;
+                    
+                  
+                }
+                main .divTabla table tr td{
+                    white-space: normal;
+                    justify-content: center;
+                    display: flex;
+                    flex-flow: row nowrap;
+                    flex-grow: 1;
+                    flex-basis: 0;
+                    padding: 0.5em;
+                    word-break: break-word;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    min-width: 0px;
+                    white-space: nowrap;
+                   
+                }
               
 
 
@@ -185,7 +233,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-weight: 300;
             text-decoration: none;
             display: flex;
-            margin-top: 6%;
             background-color: #bb0a21;  
             margin-bottom: 0%;
             padding-top: 1%;}
