@@ -265,7 +265,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;} 
+            height: 100vh;
+            width: 100vw;
+            background-color: #ebebeb;} 
 
             header{
                 height: 15vh;
@@ -346,12 +348,22 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }
 
         .datos{display: flex; flex-direction: column;justify-content: space-around;}
-        .datos input{margin-top: 2vh;}
-        .datos button{margin-top: 2vh;}
-
-        
+        .datos input{margin-top: 2vh;border-style: none;}
+        .datos button{margin-top: 2vh;
+            width: auto;
+            height: 30px;
+            margin: 10px;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #5697fa;}
+            
+            .datos button:hover{background-color: #66c674;}
        
-        footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;padding-bottom: 5%;
+        footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;padding-bottom: 3%;
             bottom: 0px;width: 100vw;}
                 footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
                 footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
