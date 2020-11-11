@@ -12,18 +12,33 @@ app.get('/', function(req, res) {
 })
 
 app.get('/login', function(req, res) {
-    res.sendFile( path.join(__dirname, './src/views/login.html') )
+    res.sendFile( path.join(__dirname, './src/views/users/login.html') )
 })
 
 app.get('/productCart', function(req, res) {
-    res.sendFile( path.join(__dirname, './src/views/productCart.html') )
+    res.sendFile( path.join(__dirname, './src/views/products/productCart.html') )
 })
 app.get('/productDetail', function(req, res) {
-    res.sendFile( path.join(__dirname, './src/views/productDetail.html') )
+    res.sendFile( path.join(__dirname, './src/views/products/productDetail.html') )
 })
 app.get('/register', function(req, res) {
-    res.sendFile( path.join(__dirname, './src/views/register.html') )
+    res.sendFile( path.join(__dirname, './src/views/users/register.html') )
 })
+
+app.get('/productList', function(req, res) {
+    res.sendFile( path.join(__dirname, './src/views/products/productList.html') )
+})
+
+app.get('/productCreate', function(req, res) {
+    res.sendFile( path.join(__dirname, './src/views/products/productCreate.html') )
+})
+
+app.get('/productEdit', function(req, res) {
+    res.sendFile( path.join(__dirname, './src/views/products/productEdit.html') )
+})
+
+
+
 
 app.listen(5000, function() {
     console.log('Servidor corriendo en el puerto 5000')

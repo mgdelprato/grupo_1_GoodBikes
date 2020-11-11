@@ -1,0 +1,170 @@
+/*Configuraciones*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*Listado de colores*/
+#color1{background-color: #5697fa;}
+#color2{background-color: #bb0a21;}
+#color3{background-color: #66c674;}
+#color4{background-color: #ffffff;}
+#color5{background-color: #ebebeb;}
+#color6{background-color: #333333;}
+#color7{background-color: #666666;}
+#color8{background-color: #000000;}
+ 
+/*Listado de fuentes*/
+#fuente1{font-family: 'Anton', sans-serif;}
+#fuente2{font-family: 'Roboto', sans-serif;}
+
+
+/*Aplicación de estilos Genéricos por defecto*/
+*{  
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+}
+
+body{background-color: #ffffff;}  /*Color de fondo del sitio*/
+
+
+/*Configuraciones para CSS Desktop Version*/
+@media screen and (min-width: 801px)
+{ 
+#Goodbikes{display: none;}
+#Bars{display: none;}
+.ocultoMovil{display: none;}
+
+    .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+
+        /*HEADER*/
+        header{
+                background-color: #bb0a21;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                flex-direction: row;
+                height: 80px;
+                }
+
+                header img{ 
+                        width: 70px; height: 60px;
+                        margin-right: 15%; 
+                        margin-left: 0%;}
+                
+                header input{
+                        height: 25px;
+                        width: 400px;
+                        border-style: solid;
+                        border-width: 0px;
+                        border-radius: 5px;
+                        color: #000000;
+                        padding-left: 5px;}
+
+                header input::placeholder{
+                        text-align: center;
+                        color: #666666;}
+                
+                header div{
+                        
+                        font-family: 'Roboto', sans-serif;
+                        font-size: 13px;
+                        font-weight: 400; /*Negrita*/
+                        letter-spacing: 0.1em; /*Espaciado entre caracteres*/
+                        color: #ebebeb;}
+
+                    header div:hover{color: #666666;}
+
+            .logo{
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: row;
+                
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+            }
+                .logo p{
+                    color: white;
+                    font-size: 17px;
+                }
+
+            .ingresar{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: row;
+                height: 40px;        
+                } 
+
+                .ingresar ul{
+                    list-style:none;
+                    text-align: center;}
+
+                .ingresar ul li{
+                    display: inline-block;   
+                    text-align: center;
+                    margin: 0px 10px 0px 10px;
+                    font-family: 'Roboto', sans-serif;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    color: white;
+                }
+
+                .ingresar ul li a  {
+                    color:white;
+                    text-decoration: none;
+                    font-size: 15px;
+                }
+
+                /*Carrito*/
+                .ingresar ul li a i  {  
+                    color:white;
+                    font-size: 15px;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+
+           
+              
+
+
+                 /*FOOTER*/
+
+        footer{
+            height: 80px;
+            position: relative;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            font-weight: 300;
+            text-decoration: none;
+            display: flex;
+            margin-top: 6%;
+            background-color: #bb0a21;  
+            margin-bottom: 0%;
+            padding-top: 1%;}
+
+            footer ul {
+                list-style-type: none;}
+            
+                footer ul li p {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 0.1em;
+                    margin: 5px;}
+                    
+                footer ul li a {
+                    text-decoration: none;
+                    color: white;
+                    letter-spacing: 0.1em;}
+                
+                        footer ul li a i {
+                        font-size: 15px;
+                        font-weight: 200;
+                        color: inherit;
+                        margin: 5px;}
+
+            }

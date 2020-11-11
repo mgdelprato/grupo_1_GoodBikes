@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Ingresá a GoodBikes</title>
+</head>
+<body>
+    <div id='Contenedor_Body'> 
+        <header>
+            <div class="logo">
+                <a  id="Al_Home" href="/"><img src="desing/Logo-en-Blanco.png" alt="Logo GoodBikes"></a>
+                <p id="GoobBikes_en_el_menu">GoodBikes</p>  
+            </div>
+            <div id="Contenedor_Ingresar" class="ingresar">
+                
+                <ul>
+                    <li id="Tag_Login"><a href="login">Login</a></li>
+                    <li id="Tag_Register"><a href="register">Registrate</a></li>
+                    <li><a href="productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
+                </ul>
+                
+            </div>
+        </header>
+        
+        <nav> 
+            <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+            <ul id="Lista_Nav">
+                <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+                <li class="ocultoMovil"><a href="login">Login</a></li>
+                <li class="ocultoMovil"><a href="register">Registrate</a></li>
+                <hr class="ocultoMovil">
+                <li>Rodados</li>
+                <li>Equipamiento</li>
+                <li>Indumentaria</li>
+                <li>Accesorios</li>
+                <li>Taller</li>
+            </ul>           
+        </nav>
+    
+
+        <script>
+            function myFunction() {
+            var x = document.getElementById("Lista_Nav");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+            }
+        </script>
+        
+        <div class="contenedor_del_Main"> 
+            <main>
+                <div class="principal">
+                    <input class="campos" type="email" placeholder="Email">
+                    <input class="campos" type="password" placeholder="Password">
+                    <button type="submit">Ingresar</button>
+                    <a href="#">¿Olvidó su password?</a>
+                </div>
+            </main>
+        </div>
+            
+        <footer>
+
+            <ul>
+                <li><a href="https://www.instagram.com"><i class="fab fa-instagram"></i> @goodbikes</a></li>
+                <li><a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i> /goodbikes</a></li>
+                <li><a href="https://www.twitter.com"><i class="fab fa-twitter-square"></i> @goodbikes</a></li>
+            </ul>
+        
+
+            <ul>
+                <li><a href="#"><i class="fas fa-phone"></i> 11-2349-1915</a></li>
+                <li><a href="https://www.google.com/maps/place/Av.+Monroe+860,+Buenos+Aires/data=!4m2!3m1!1s0x95bcb436f18dc22f:0x36090a5d367889c6?sa=X&ved=2ahUKEwj28e2ghN7sAhWgJLkGHTuuCosQ8gEwAHoECAsQAQ"><i class="fas fa-map-marker-alt"></i> Salta 2547, CABA</a></li>
+                <li><a href="#"><i class="far fa-envelope"></i> email@googbikes.com</a></li>
+            </ul>
+
+            <ul>
+                <li><p>Creado con DH curso</p></li>
+                <li><p>© Copyright GoobBikes - 2020</p></li>
+                <li><p>Todos los derechos reservados.</p></li>
+        
+            </ul>
+        
+            
+        </footer>
+    </div>
+
+
+    
+</body>
+</html>
