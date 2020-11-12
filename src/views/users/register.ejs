@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/register.css">
+    <title>Registrate en GoodBikes</title>
+</head>
+<body>
+  <div id='Contenedor_Body'>  
+    <%- include('../partials/header')%>
+
+    <nav> 
+        <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+        <ul id="Lista_Nav">
+            <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+            <li class="ocultoMovil"><a href="login">Login</a></li>
+            <li class="ocultoMovil"><a href="register">Registrate</a></li>
+            <hr class="ocultoMovil">
+            <li>Rodados</li>
+            <li>Equipamiento</li>
+            <li>Indumentaria</li>
+            <li>Accesorios</li>
+            <li>Taller</li>
+        </ul>           
+    </nav>
+
+    <script>
+        function myFunction() {
+        var x = document.getElementById("Lista_Nav");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+        }
+    </script>
+
+
+    <div class="contenedor_del_Main"> 
+      <main>
+        <div class="datos">
+          <input type="text" name="nombre" id="nombre" placeholder="Nombre">
+          <input type="text" name="apellido" id="apellido" placeholder="Apellido">
+          <input type="email" name="email" id="email" placeholder="Email">
+          <input type="text" name="dni" id="dni" placeholder="DNI">
+          <input type="password" name="password" id="password" placeholder="Password">
+          <input type="password" name="repetirPass" id="repetirPass" placeholder="Repetir Password">
+          <button type="submit">Crear cuenta</button>
+        </div>
+      </main>
+    </div>
+    
+    <%- include('../partials/footer')%>
+
+  </div>
+</body>
+</html>

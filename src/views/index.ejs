@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/homestyle.css" type="text/css" media="screen"><!--Estilos-->
+    <title>Goodbikes</title>
+</head>
+<body>
+    <div id='Contenedor'>  
+        <%- include('./partials/header')%>
+
+        <nav> 
+            <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+            <ul id="Lista_Nav">
+                <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+                <li class="ocultoMovil"><a href="login">Login</a></li>
+                <li class="ocultoMovil"><a href="register">Registrate</a></li>
+                <hr class="ocultoMovil">
+                <li>Rodados</li>
+                <li>Equipamiento</li>
+                <li>Indumentaria</li>
+                <li>Accesorios</li>
+                <li>Taller</li>
+            </ul>           
+        </nav>
+            
+            <script>
+                function myFunction() {
+                var x = document.getElementById("Lista_Nav");
+                if (x.style.display === "none") {
+                    x.style.display = "flex";
+                } else {
+                    x.style.display = "none";
+                }
+                }
+            </script>
+
+        <section id='Ofertas' class='ContenedorOfertas'>            
+            <figure id='Oferta0' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta1' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta2' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta3' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta4' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+            <figure id='Oferta5' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
+        </section>
+
+        <main>
+            <section id='CuadroIzquierdo'>
+                <figure id='Principal1' ><a href="productDetail"><img src="images/products/bike1.PNG" alt="Principal1"></a></figure>
+                <div>
+                    <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
+                    <span class="price">u$s 60.045,01</span>
+                    <button type="submit">Comprar</button>
+               </div>       
+            </section>
+            
+            <section id='CuadroCentro'>
+                <figure id='Principal1' ><img src="images/products/bike1.PNG" alt="Principal1"></figure>
+                <div>
+                    <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
+                    <span class="price">$ 50.597,00</span>
+                    <button type="submit">Comprar</button>
+               </div>
+            </section>
+
+            <section id='CuadroDerecho'>
+                <figure id='Principal1' ><img src="images/products/bike1.PNG" alt="Principal1"></figure>
+                <div>
+                     <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
+                     <span class="price">$ 720.000,00</span>
+                     <button type="submit">Comprar</button>
+                </div>
+            </section>
+
+        </main>
+        <%- include('./partials/footer')%>
+        
+
+
+    </div>
+</body>
+</html>
+
+
+

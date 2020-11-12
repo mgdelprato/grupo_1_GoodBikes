@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/productEdit.css" type="text/css" media="screen"><!--Estilos-->
+    <title>Listado de productos</title>
+</head>
+<body>
+    <div class="contenedor">
+        <%- include('../partials/header')%>
+        <main>
+            <div>
+                <h1>Administración de Productos</h1>
+                <h2>Editar producto</h2>
+            </div>
+            <div>
+                <h4>Categoria</h4>
+                <input type="text">                <h4>Producto</h4>
+                <input type="text">
+                <h4>Precio</h4>
+                <input type="text">
+                <h4>Descripción</h4>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+                <div>
+                    <h4>Imagenes</h4>
+                    <input type="file" id="myfile" name="myfile">
+                    <button><i class="fas fa-trash"></i></button>
+                </div>
+                <div>
+                    <button type="submit">Guardar</button>
+                </div>
+            </div>
+
+        </main>
+        
+        <%- include('../partials/footer')%>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/productDetail.css" type="text/css" media="screen"><!--Estilos-->
+    <title>Goodbikes</title>
+</head>
+<body>
+    <div id='Contenedor'>  
+        <%- include('../partials/header')%>
+
+        <nav> 
+            <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
+            <ul id="Lista_Nav">
+                <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+                <li class="ocultoMovil"><a href="login">Login</a></li>
+                <li class="ocultoMovil"><a href="register">Registrate</a></li>
+                <hr class="ocultoMovil">
+                <li>Rodados</li>
+                <li>Equipamiento</li>
+                <li>Indumentaria</li>
+                <li>Accesorios</li>
+                <li>Taller</li>
+            </ul>           
+        </nav>
+        
+
+        <script>
+            function myFunction() {
+            var x = document.getElementById("Lista_Nav");
+            if (x.style.display === "none") {
+                x.style.display = "flex";
+            } else {
+                x.style.display = "none";
+            }
+            }
+        </script>
+    <main>
+        <div id="DetalleCompleto">
+        
+        <div id="cuadrosSuperiores">     
+
+            <section id='CuadroIzquierdo'>
+                    <figure  ><img class='imagenIzquierda'src="images/products/bike1.PNG" alt="Principal1"></figure>
+                    <figure  ><img class='imagenIzquierda'src="images/products/bike1.PNG" alt="Principal1"></figure>
+                    <figure  ><img class='imagenIzquierda'src="images/products/bike1.PNG" alt="Principal1"></figure>
+                               
+            </section>
+            
+            <section id='CuadroCentro'>
+                <figure id='Principal1' ><img src="images/products/bike1.PNG" alt="Principal1"></figure>
+            
+                <ul>
+                    <li>+Info</li>
+                    <li>Agregar</li>
+                </ul>  
+            </section>
+            
+            <section id='CuadroDerecho'>
+                <h1>BICICLETA GIANT XTC ADVANCED</h1>
+                <span>$657.438,09</span>
+                <ul>
+                    <li>+Info</li>
+                    <li><button type="submit">Agregar</button></li>
+                </ul>  
+            </section>
+
+        </div>  
+
+        <section id='CuadroHorizontal'>
+            <h3>MARCA SBK</h3>
+            <h3>MODELO MT200</h3>
+            <h3>ESPECIFICACIONES TECNICAS:</h3>
+            <br>
+            
+            <p>CUADRO DE ALUMINIO 29" EN TALLES 15/17/19/21 S/T:34.9 PARA PORTASILLA 27.2MM RAW
+                HORQUILLA DE ACERO 29" STEEL CROWN DE SUSPENSION ( DIAMETRO 28.6), LEG ( 35,THREADLESS STEM: DIAMETRO 25.4* X 28.6 * 190mm, RECORRIDO 120MM
+                JUEGO DE DIRECCION DE ACERO 10PCS, 1-1/8" * 44 * 30,H:9mm WITH WASHERS 10mm*28.6 2PCS
+                MANUBRIO DE ACERO RECTO STRAIGHT TYPE, W:650MM, DIAMETRO 31.8MM, 6° ACABADO MATE
+                STEM DE ALUMINIO MTB, E:90,H=37, 10° : 31.8, ACABADO MATE
+                MANIJAS DE FRENO DE ALUMINIO EF500 L/R:V 2-3 SHIMANO
+                SET DE FRENOS DE ALUMINIO D: 10MM, A DISCO MECANICO YINXING
+                CABLES DE FRENO CHHECKING SIZE NEGRO
+                PUÑOS GRIP PVC L=130mm, NEGROS
+                
+            </p>
+            <ul>
+                <li>+Info</li>
+            </ul>  
+        </section>
+
+        </div>
+        
+    </main>
+    
+    <form action="">
+        <div id="galeria"></div>
+        <div id="imagen"></div>
+        <div id="compra"></div>
+        <div></div>
+    </form>
+    
+    
+    
+    
+    <%- include('../partials/footer')%>
+
+    </div>        
+</body>
+</html>
