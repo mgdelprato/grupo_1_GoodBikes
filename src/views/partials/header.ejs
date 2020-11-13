@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/header.css">
+<link rel="stylesheet" href="css/header.css">
 
 <header> 
     <div class="logo">
@@ -19,8 +19,7 @@
 
     </div>
 </header>
-
-<nav> 
+    <nav> 
     <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>
     <ul id="Lista_Nav">
         <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
@@ -34,3 +33,14 @@
         <li>Taller</li>
     </ul>           
 </nav>
+    
+    <script>
+        function myFunction() {
+        var x = document.getElementById("Lista_Nav");
+        if (x.style.display === "none") {
+            x.style.display = "flex";
+        } else {
+            x.style.display = "none";
+        }
+        }
+    </script>

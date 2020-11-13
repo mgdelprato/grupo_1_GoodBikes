@@ -35,7 +35,7 @@ app.get('/productCreate', function(req, res) {
 })
 
 app.get('/productEdit', function(req, res) {
-    res.sendFile( path.join(__dirname, './src/views/products/productEdit.ejs') )
+    res.render( path.join(__dirname, './src/views/products/productEdit.ejs') )
 })
 
 

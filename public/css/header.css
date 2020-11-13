@@ -1,6 +1,8 @@
 /*Configuraciones*/
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+
+
 /*Listado de colores*/
 #color1{background-color: #5697fa;}
 #color2{background-color: #bb0a21;}
@@ -124,9 +126,37 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     font-size: 15px;
                 }
 
-}
 
-/*CSS Mobile Version*/
+        /*NAV*/
+        nav{
+            background-color: #ebebeb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: row;
+            height: 40px;        
+            width: 100%;}
+            
+            nav ul{
+                list-style:none;
+                text-align: center;}
+
+                nav ul li{
+                    display: inline-block;   
+                    text-align: center;
+                    margin: 0px 50px 0px 50px;
+                    font-family: 'Anton', sans-serif;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    letter-spacing: 0.1em;
+                    }
+
+                nav ul li:hover{color: #bb0a21;}
+    }
+
+
+
+    /*CSS Mobile Version*/
 @media screen and (min-width: 200px) and (max-width: 800px) 
 {
 
@@ -147,6 +177,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: space-between;
         margin: 0px 0px 0px 0px;
         background-color: #ebebeb;} 
+
+
         
         header{
             height: 15vh;
@@ -160,5 +192,65 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             header img{
                 width: auto; 
                 height: 8vh;}/*Logo*/
+
+
             
-}/*Fin de llava de vista MOBILE*/
+            
+            nav{position: absolute;
+                top: 5.5%; 
+                left: 16%;} /*Contiene a las bars y a todo lo desplegable*/
+                
+                #Bars{font-size: 24px; 
+                    color: #ebebeb;
+                    text-align: center;} 
+                    
+                    #Bars:hover{color: #66c674;}
+
+                    nav ul {
+                        background-color: #ebebeb;
+                        border-color: #666666;
+                        border-style: solid;
+                        border-width: 1px;
+                        list-style-type: none;
+                        margin-top: 10%;
+                        display: none;
+                        flex-direction: column;
+                        justify-content: space-around;
+                        height: 40vh;
+                        width: 25vh;
+                        padding-left: 2vh;
+                        padding-right: 6px;
+                        border-radius: 10px;}
+                        
+                        nav ul li a {text-decoration: none;}
+                        
+                        /*Texto corporativo dentro del Bars*/ 
+                        #Goodbikes{display: flex;
+                            font-family: 'Anton', sans-serif;
+                            color: #bb0a21;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em; 
+                            text-decoration: none;}
+                        
+                            
+                            
+            header input{
+                height: 4vh;
+                width: 28vh;
+                margin: 0px 0px 0px 2vw;
+                border-radius: 5px;
+                border-color: none; 
+                border-style: none;}
+                
+                ::-webkit-input-placeholder { 
+                    text-align: center; 
+                } 
+
+                #Contenedor_Ingresar{display: flex;}/*Todo para el carrito*/
+                header div ul {list-style-type: none;}
+                #Tag_Cart{
+                    font-size: 28px;
+                    color: #ebebeb;
+                    margin: 0px 8vw 0px 0px;}
+                                
+}
