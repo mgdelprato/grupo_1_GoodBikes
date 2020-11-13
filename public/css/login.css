@@ -1,6 +1,7 @@
 /*Configuraciones*/
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+
 /*Listado de colores*/
 #color1{background-color: #5697fa;}
 #color2{background-color: #bb0a21;}
@@ -39,33 +40,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
-    /*HEADER--->header.css*/
-    /*NAV*/
-    nav{
-        background-color: #ebebeb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        width: 100%;}
-    nav ul{
-        list-style:none;
-        text-align: center;}
-
-    nav ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 50px 0px 50px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        }
-    nav ul li:hover{color: #bb0a21;}
-
-
-
+    
     /* MAIN */
 
     .contenedor_del_Main{
@@ -184,7 +159,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 /*CSS Mobile Version*/
 @media screen and (min-width: 200px) and (max-width: 800px) {
     #GoobBikes_en_el_menu{display: none;}
-    #Al_Home{display: none;}
+    /* #Al_Home{display: none;} */
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
       
 
@@ -198,32 +173,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             padding: 0px 0px 0px 0px; 
             margin: 0px 0px 0px 0px;}
 
-            /*HEADER--->header.css*/
-
-
-            nav{position: absolute;
-                top: 5%; 
-                left: 5%; 
-                }
-
-                nav ul {
-                    background-color: #ebebeb;
-                    border-color: #666666;
-                    border-style: solid;
-                    border-width: 1px;
-                    list-style-type: none;
-                    margin-top: 10%;
-                    display: none;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    height: 40vh;
-                    width: 25vh;
-                    padding-left: 2vh;
-                    padding-right: 6px;
-                    border-radius: 10px;
-                    
-                }
-                    nav ul li a {text-decoration: none;}
+           
 
         
         .contenedor_del_Main{

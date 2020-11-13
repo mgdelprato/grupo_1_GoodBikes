@@ -40,7 +40,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /*HEADER--->header.css*/
     
     /*NAV*/
-    nav{
+    /* nav{
         background-color: #ebebeb;
         display: flex;
         align-items: center;
@@ -62,7 +62,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         letter-spacing: 0.1em;
         }
     nav ul li:hover{color: #bb0a21;}
-
+ */
 
     
 
@@ -260,7 +260,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
  /*CSS Mobile Version*/
 @media screen and (min-width: 200px) and (max-width: 800px) {
 #GoobBikes_en_el_menu{display: none;}
-#Al_Home{display: none;}
+/* #Al_Home{display: none;} */
 #Oferta1{display: none;}
 #Oferta2{display: none;}
 #Oferta3{display: none;}
@@ -283,7 +283,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         
 
 
-        nav{position: absolute;
+        /* nav{position: absolute;
             top: 6%; 
             left: 5%; 
             }
@@ -306,7 +306,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 
             }
                 nav ul li a {text-decoration: none;}
-            
+             */
 
         .ContenedorOfertas{
             display: block;
