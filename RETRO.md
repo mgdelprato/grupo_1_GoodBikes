@@ -5,6 +5,7 @@
 
 2. Hacer más
     Mayor comunicación
+    Mejorar los criterios de escritura en el código (ejemplo en los css)
 
 3. Continuar haciendo
     Reuniones de equipo para coordinar avances y destrabar conflicos.
