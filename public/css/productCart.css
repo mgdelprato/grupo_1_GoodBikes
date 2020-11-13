@@ -270,43 +270,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
     
 
-    #Contenedor
-        {display: flex; 
-        flex-direction: column;
-        justify-content: space-between;
-        background-color: #ebebeb;
-        height: 100vh;
-        width: 100vw;}
-        
-        /*HEADER--->header.css*/
 
         
 
-
-        /* nav{position: absolute;
-            top: 6%; 
-            left: 5%; 
-            }
-
-            nav ul {
-                background-color: #ebebeb;
-                border-color: #666666;
-                border-style: solid;
-                border-width: 1px;
-                list-style-type: none;
-                margin-top: 10%;
-                display: none;
-                flex-direction: column;
-                justify-content: space-around;
-                height: 40vh;
-                width: 25vh;
-                padding-left: 2vh;
-                padding-right: 6px;
-                border-radius: 10px;
-                
-            }
-                nav ul li a {text-decoration: none;}
-             */
 
         .ContenedorOfertas{
             display: block;
