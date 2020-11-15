@@ -39,7 +39,144 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
         /*HEADER--->header.css*/
+       
+        /*MAIN*/
+
+        main{
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+            
+            
+        }
+
+        main .titulos{
+            margin-bottom: 3%;
+        }
+        main .divCarga{
+            background-color: #ebebeb ;
+            width: 80%;
+            margin: 0% 10% 0% 10%;     
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;     
+            padding-bottom: 10px; 
+        }
+
+
+        main div h1 {
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 20px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            align-self: left;
+        }
+       
+        main div h2{
+            font-family: 'Roboto', sans-serif;
+            text-transform: uppercase;
+            font-size: 18px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+   
+
+        }
+       
+        main div:nth-last-child(2){
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 10px;
+        }
+
+        main div:nth-last-child(2) h4{
+            font-size: 18px;
+            text-align: left;
+            width: 50%;
+           
+        }
+        main div:nth-last-child(2) select{
+            font-size: 15px;
+        }
+
+       
+        main div:nth-last-child(2) .valores{
+            width: 50%;
+            margin-bottom: 10px;
+           
+        }
         
+        main div:nth-last-child(2) input{
+            height: 20px; 
+        }
+
+
+      main div:nth-child(3){
+        
+
+        
+      }
+
+      main div:nth-child(3) h4{
+        
+        font-size: 18px;
+        text-align: left;
+        width: 50%;
+        
+        }
+
+        main div:nth-child(3) button[type="submit"]{
+            width: 20%;
+            height: 30px;
+            margin: 10px;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 15px;
+            border: none;
+            border-radius: 6px;
+            background-color: #5697fa;
+        }
+
+        main div:nth-child(3) input{
+            margin-right: 10px;
+        }
+ 
+
+        main div:nth-child(3) #tacho{
+           border: none;
+         
+        }
+
+        main div:nth-child(3) button i{
+            font-size: 25px;
+            color: red;
+           
+            
+            
+        }
+
+        main div:nth-child(3) button[type="file"]{
+         margin-left: 20px;
+        }
+        main div:nth-child(3) #guardar{
+            align-self: center;
+            justify-content: center;
+            margin-left: 40%;
+            
+        }
+   
+       
+       
+       
+
+
+
+
+       
+       
         /*FOOTER*/
 
         footer{
@@ -76,4 +213,4 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         color: inherit;
                         margin: 5px;}
 
-            }
+}

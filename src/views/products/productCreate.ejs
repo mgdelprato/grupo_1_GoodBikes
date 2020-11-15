@@ -12,28 +12,33 @@
         <%- include('../partials/header')%>
 
         <main>
-            <div>
+            <div class="titulos">
                 <h1>Administración de Productos</h1>
                 <h2>Alta de producto</h2>
             </div>
-            <div>
+            <div class="divCarga">
                 <h4>Categoria</h4>
-                <input type="text">
-                <h4>Producto</h4>
-                <input type="text">
+                <select class="valores" >
+                    <option value=Rodado>Rodado</option>
+                    <option value=Equipamiento>Equipamiento</option>
+                    <option value=Indumentaria>Indumentaria</option>
+                    <option value=Accesorios>Accesorios</option>
+                    <option value=Taller>Taller</option>
+                </select>
+                <h4 >Producto</h4>
+                <input type="text" class="valores">
                 <h4>Precio</h4>
-                <input type="text">
+                <input type="text" class="valores">
                 <h4>Descripción</h4>
-                <textarea name="" id="" cols="30" rows="10"></textarea>
+                <textarea name="" id="" cols="30" rows="10" class="valores"></textarea>
             </div>
-            <div>
-                <div>
+            <div class="divCarga">
+                 <div enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
                     <h4>Imagenes</h4>
-                    <input type="file" id="myfile" name="myfile">
-                    <button><i class="fas fa-trash"></i></button>
-                </div>
-                <div>
-                    <button type="submit">Guardar</button>
+                    <input type="file" multiple name="files[]">
+                    <button type="submit">Adjuntar</button>
+                    <button id="tacho"><i class="fas fa-trash"></i></button>
+                    <button type="submit" id="guardar">Guardar</button>
                 </div>
             </div>
 
