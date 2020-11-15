@@ -80,6 +80,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             main div input{
                 padding: 5px;
                 margin: 5px;
+                border: none;   
                 
             }
 
