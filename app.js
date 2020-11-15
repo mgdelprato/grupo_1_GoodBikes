@@ -41,8 +41,8 @@ app.get('/productEdit', function(req, res) {
 
 
 
-app.listen(5000, function() {
-    console.log('Servidor corriendo en el puerto 5000')
+app.listen(process.env.PORT || 5000, function() {
+    console.log(`Servidor corriendo en el puerto 5000`);
 })
 
 app.set('view engine', 'ejs');
