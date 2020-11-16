@@ -30,7 +30,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-/* @media screen and (min-width: 801px) {*/
+ @media screen and (min-width: 801px) {*/
 
 #Goodbikes{display: none;}
 #Bars{display: none;}
@@ -46,16 +46,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             display:flex;
             flex-wrap: wrap;
             flex-direction: column;
-            width: 100%;
-            
+            width: 100%
             
         }
 
-        main .titulos{
-            margin: 0% 0% 3% 2%;
-            text-transform: capitalize;
-        }
-            
+      
         
         main .divCarga{
             background-color: #ebebeb ;
@@ -75,6 +70,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             letter-spacing: 0.1em;
             font-weight: bold;
             align-self: left;
+            margin: 0% 0% 0% 2%;
         }
        
         main div h2{
@@ -83,8 +79,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-size: 18px;
             letter-spacing: 0.1em;
             font-weight: bold;
-   
-
+            margin: 0% 0% 3% 2%;
         }
        
         main div:nth-last-child(2){
@@ -143,18 +138,20 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         main div:nth-child(3) input{
             margin-right: 10px;
             background-color: #ffffff;
-            padding: 0% 2% 0% 0%
+            padding: 0% 2% 0% 0%;
+            font-weight: bold;
         }
 
         main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
             height: 25px;
-            width: 20%;
+            width: 40%;
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 13px;
             border: none;
             background-color: #5697fa;
+            
         }
  
 
@@ -181,15 +178,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             margin-left: 40%;
             
         }
-   
-       
-       
-       
 
-
-
-
-       
        
         /*FOOTER*/
 
@@ -227,4 +216,226 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         color: inherit;
                         margin: 5px;}
 
-/* } */
+ }
+
+
+
+
+/*CSS Mobile Version*/
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    #GoobBikes_en_el_menu{display: none;}
+    /* #Al_Home{display: none;} */
+    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
+    
+    
+    
+    body
+        {display: flex; 
+        justify-content: center;
+        flex-direction: column;}
+
+        #Contenedor_Body
+            {display: flex; 
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            width: 100vw;
+            background-color: #ebebeb;} 
+
+            
+
+
+            nav{position: absolute;
+                top: 5%; 
+                left: 5%; 
+                }
+
+                nav ul {
+                    background-color: #ebebeb;
+                    border-color: #666666;
+                    border-style: solid;
+                    border-width: 1px;
+                    list-style-type: none;
+                    margin-top: 10%;
+                    display: none;
+                    flex-direction: column;
+                    justify-content: space-around;
+                    height: 40vh;
+                    width: 25vh;
+                    padding-left: 2vh;
+                    padding-right: 6px;
+                    border-radius: 10px;
+                    
+                }
+                    nav ul li a {text-decoration: none;}
+
+        
+        .contenedor_del_Main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 100vw;
+
+            }
+
+
+         
+        main div h1 {
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            align-self: left;
+            margin-left: 2%;
+        }
+       
+        main div h2{
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            margin: 0% 0% 3% 2%;
+        }
+
+        main{
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+            background-color: #ebebeb ;
+        }
+        
+        main .divCarga{
+            
+            width: 100%;
+            /* margin: 0% 10% 0% 10%;      */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;     
+            
+        }
+
+        main div:nth-last-child(2){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            }
+    
+            main div:nth-last-child(2) h4{
+                font-size: 18px;
+                text-align: left;
+                width: 70%;
+               
+            }
+            main div:nth-last-child(2) select{
+                font-size: 15px;
+                width: 60%;
+            }
+    
+           
+            main div:nth-last-child(2) .valores{
+                width: 70%;
+                margin-bottom: 10px;
+                border:none;
+               
+            }
+            
+            main div:nth-last-child(2) input{
+                height: 20px; 
+            }
+    
+    
+       
+    
+          main div:nth-child(3) h4{
+            
+            font-size: 18px;
+            text-align: left;
+            width: 70%;
+            
+            }
+    
+            main div:nth-child(3) button[type="submit"]{
+                width: 30%;
+                height: 30px;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 15px;
+                border: none;
+                border-radius: 6px;
+                background-color: #5697fa;
+            }
+    
+            main div:nth-child(3) input{
+                margin-right: 10px;
+                background-color: #ffffff;
+                padding: 0% 2% 0% 0%;
+                font-weight: bold;
+                display: flex;
+            }
+    
+            main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+                height: 25px;
+                width: 40%;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 13px;
+                border: none;
+                background-color: #5697fa;
+                
+                
+            }
+     
+    
+            main div:nth-child(3) #tacho{
+               border: none;    
+             
+            }
+    
+            main div:nth-child(3) button i{
+                font-size: 25px;
+                color: red;
+               
+                
+                
+            }
+    
+            main div:nth-child(3) button[type="file"]{
+             margin-left: 20px;
+             
+            }
+            main div:nth-child(3) #adjuntar{
+                display: inline-block;
+             
+                
+            }
+            main div:nth-child(3) #guardar{
+                align-self: center;
+                justify-content: center;
+                margin-left: 40%;
+                
+            }
+
+            .zonaInferior{
+                justify-items: center;
+                align-content: center;
+            }
+
+
+
+
+
+
+            footer{background-color: #bb0a21; text-align: center;margin-top: 0%; padding-top: 5%;padding-bottom: 3%;
+              bottom: 0px;width: 100vw;}
+               footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
+               footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
+                    footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
+                
+ }

@@ -30,8 +30,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-@media screen and (min-width: 801px)
-{ 
+/* @media screen and (min-width: 801px) {*/
+
 #Goodbikes{display: none;}
 #Bars{display: none;}
 .ocultoMovil{display: none;}
@@ -52,8 +52,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         }
 
         main .titulos{
-            margin-bottom: 3%;
+            margin: 0% 0% 3% 2%;
+            text-transform: capitalize;
         }
+            
+        
         main .divCarga{
             background-color: #ebebeb ;
             width: 80%;
@@ -67,7 +70,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
         main div h1 {
             font-family: 'Roboto', sans-serif;
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-size: 20px;
             letter-spacing: 0.1em;
             font-weight: bold;
@@ -76,7 +79,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
        
         main div h2{
             font-family: 'Roboto', sans-serif;
-            text-transform: uppercase;
+            text-transform: capitalize;
             font-size: 18px;
             letter-spacing: 0.1em;
             font-weight: bold;
@@ -105,6 +108,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         main div:nth-last-child(2) .valores{
             width: 50%;
             margin-bottom: 10px;
+            border:none;
            
         }
         
@@ -113,11 +117,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         }
 
 
-      main div:nth-child(3){
-        
-
-        
-      }
+   
 
       main div:nth-child(3) h4{
         
@@ -142,6 +142,21 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
         main div:nth-child(3) input{
             margin-right: 10px;
+            background-color: #ffffff;
+            padding: 0% 2% 0% 0%;
+            font-weight: bold;
+        }
+
+        main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+            height: 25px;
+            width: 40%;
+            font-family: 'Anton', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 13px;
+            border: none;
+            background-color: #5697fa;
+            
         }
  
 
@@ -160,6 +175,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
         main div:nth-child(3) button[type="file"]{
          margin-left: 20px;
+         
         }
         main div:nth-child(3) #guardar{
             align-self: center;
@@ -213,4 +229,4 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         color: inherit;
                         margin: 5px;}
 
-}
+/* } */

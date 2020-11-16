@@ -51,10 +51,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
                 main div h1 {
                     font-family: 'Roboto', sans-serif;
-                    text-transform: uppercase;
+                    text-transform: capitalize;
                     font-size: 20px;
                     letter-spacing: 0.1em;
                     font-weight: bold;
+                    margin: 0% 0% 0% 2%;
                 }
 
                 main .divTabla{
@@ -142,14 +143,19 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 }
               
                 main .divTabla table tr td a i{
-                    font-size: 15px;
+                    font-size: 20px;
                     margin-right: 10px;
                 }
 
                 main .divTabla table tr td i{
-                    font-size: 15px;
-                    color: red;
+                    font-size: 20px;
+                 }
+                 main .divTabla table tr td i:nth-child(1):hover {
+                    color: green;
                 }
+                 main .divTabla table tr td i:nth-child(2):hover {
+                     color: red;
+                 }
 
 
                  /*FOOTER*/
