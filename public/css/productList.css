@@ -112,10 +112,19 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     min-width: 0px;
                     white-space: nowrap;
                     font-size: 15px;
-                    border-bottom: 3px solid #d0d0d0;
-                    
-                  
+                    border-bottom: 3px solid #d0d0d0;    
                 }
+
+              
+                main .divTabla table tr th i{
+                    font-size: 20px;
+                    color: green;
+
+
+
+
+                }
+
                 main .divTabla table tr td{
                     white-space: normal;
                     justify-content: center;
@@ -132,6 +141,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                    
                 }
               
+                main .divTabla table tr td a i{
+                    font-size: 15px;
+                    margin-right: 10px;
+                }
+
+                main .divTabla table tr td i{
+                    font-size: 15px;
+                    color: red;
+                }
 
 
                  /*FOOTER*/
