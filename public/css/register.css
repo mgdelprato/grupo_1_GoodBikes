@@ -110,6 +110,17 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         margin: 5px;
         
     }
+    /* Chrome, Safari, Edge, Opera */
+    main div input#dni::-webkit-outer-spin-button,
+    main div input#dni::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    main div input#dni[type=number] {
+      -moz-appearance: textfield;
+    }
 
     main div button{
         margin: 10px;
