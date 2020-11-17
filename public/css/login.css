@@ -106,54 +106,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 #Olvido{text-align: center;}
 
 
-        /*FOOTER*/
-
-        footer{
-            height: 80px;
-            position: relative;
-            background-color: #bb0a21;  
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-weight: 300;
-            text-decoration: none;
-            margin-bottom: 0%;
-            
-          }
-        
-         
-        /* footer > * { preguntar herencia
-            color:white;
-        } */
-        
-          footer ul {
-              list-style-type: none;
-              
-              
-         }
-        
-          footer ul li p {
-              text-decoration: none;
-              color: white;
-              letter-spacing: 0.1em;
-              margin: 5px;
-            
-          }
-          footer ul li a {
-            text-decoration: none;
-            color: white;
-            letter-spacing: 0.1em;
-           
-          
-        }
-        
-            footer ul li a i {
-            font-size: 15px;
-            font-weight: 200;
-            color: inherit;
-            margin: 5px;
-    }
 
 }
 
@@ -209,11 +161,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         .principal a{margin-top: 2vh;align-self: center;}
         
        
-        footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;;
-            bottom: 0px;width: 100vw;}
-                footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
-                footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
-                footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
+
                 
                 #Ultimo{margin-bottom: 2vh;}
 }

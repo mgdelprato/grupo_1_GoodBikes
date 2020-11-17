@@ -36,7 +36,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Bars{display: none;}
 .ocultoMovil{display: none;}
 
-    .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+.Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
         /*HEADER--->header.css*/
         /*MAIN*/
@@ -158,39 +158,5 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                  }
 
 
-                 /*FOOTER*/
-
-        footer{
-            height: 80px;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-weight: 300;
-            text-decoration: none;
-            display: flex;
-            background-color: #bb0a21;  
-            margin-bottom: 0%;
-            padding-top: 1%;}
-
-            footer ul {
-                list-style-type: none;}
-            
-                footer ul li p {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;
-                    margin: 5px;}
-                    
-                footer ul li a {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;}
-                
-                        footer ul li a i {
-                        font-size: 15px;
-                        font-weight: 200;
-                        color: inherit;
-                        margin: 5px;}
 
             }
