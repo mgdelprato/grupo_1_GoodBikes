@@ -33,7 +33,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-@media screen and (min-width: 801px) {
+/* @media screen and (min-width: 801px) { */
     #Goodbikes{display: none;}
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
@@ -236,7 +236,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     color: inherit;
     margin: 5px;
  }
-}
+/* } */
 
 
 /*CSS Mobile Version*/
