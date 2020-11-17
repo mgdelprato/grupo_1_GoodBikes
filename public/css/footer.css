@@ -1,0 +1,76 @@
+/*Configuraciones*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+ 
+/*Listado de fuentes*/
+#fuente1{font-family: 'Anton', sans-serif;}
+#fuente2{font-family: 'Roboto', sans-serif;}
+
+
+/*Aplicación de estilos Genéricos por defecto*/
+*{  
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+}
+
+body{background-color: #ffffff;}  /*Color de fondo del sitio*/
+
+/*Configuraciones para CSS Desktop Version*/
+@media screen and (min-width: 801px)
+{ 
+
+     footer{
+        height: 80px;
+        position: relative;
+        justify-content: space-between;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        font-weight: 300;
+        text-decoration: none;
+        background-color: #bb0a21;
+        margin-bottom: 0%;
+        padding-top: 1%;
+        margin-top: 6%;
+        }
+
+      footer ul {
+          list-style-type: none;  
+         }
+    
+      footer ul li p {
+          text-decoration: none;
+          color: white;
+          letter-spacing: 0.1em;
+          margin: 5px;
+          }
+     
+        footer ul li a {
+        text-decoration: none;
+        color: white;
+        letter-spacing: 0.1em;
+         }
+    
+        footer ul li a i {
+        font-size: 15px;
+        font-weight: 200;
+        color: inherit;
+        margin: 5px;
+        }
+}
+
+
+
+ /*CSS Mobile Version*/
+ @media screen and (min-width: 200px) and (max-width: 800px) {
+    
+    footer{background-color: #bb0a21; text-align: center;padding: 2% 0% 2% 0%;}
+           
+        footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}
+        footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;}
+        footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;}
+
+ }

@@ -256,8 +256,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: flex-start;} 
 
         /*HEADER--->header.css*/
-        
-
 
         nav{position: absolute;
             top: 6%; 
@@ -304,6 +302,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         align-items: center;}
 
+        #cuadrosSuperiores{display: flex;flex-direction: column;justify-content: space-between;align-items: center;}
+
         main figure{display: flex; flex-direction: column;justify-content: center;}
         main img{
             border-radius: 10px;
@@ -318,6 +318,23 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             display: flex; 
             justify-content: center;
             color: #66c674;}
+
+            #CuadroHorizontal h3{text-align: center; margin: 1vh;}
+            #CuadroHorizontal p{text-align: center;}
+
+            button{
+                height: 30px;
+                margin: 1vh;
+                padding: 2px 22px 2px 22px;
+                background-color: #5697fa;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1rem;
+                font-size: 15px;
+                border: none;
+                border-radius: 3px;
+                }
+
             
     footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;padding-bottom: 5%;}
             footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   

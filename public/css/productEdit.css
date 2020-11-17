@@ -30,11 +30,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-/* @media screen and (min-width: 801px) {*/
+@media screen and (min-width: 801px) {*/
 
-#Goodbikes{display: none;}
-#Bars{display: none;}
-.ocultoMovil{display: none;}
+    #Goodbikes{display: none;}
+    #Bars{display: none;}
+    .ocultoMovil{display: none;}
 
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
@@ -47,8 +47,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             flex-wrap: wrap;
             flex-direction: column;
             width: 100%;
-            
-            
+                      
         }
 
         main .titulos{
@@ -83,8 +82,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-size: 18px;
             letter-spacing: 0.1em;
             font-weight: bold;
-   
-
         }
        
         main div:nth-last-child(2){
@@ -109,15 +106,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             width: 50%;
             margin-bottom: 10px;
             border:none;
-           
         }
         
         main div:nth-last-child(2) input{
             height: 20px; 
         }
-
-
-   
 
       main div:nth-child(3) h4{
         
@@ -156,21 +149,16 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-size: 13px;
             border: none;
             background-color: #5697fa;
-            
         }
  
 
         main div:nth-child(3) #tacho{
            border: none;
-         
         }
 
         main div:nth-child(3) button i{
             font-size: 25px;
-            color: red;
-           
-            
-            
+            color: red;        
         }
 
         main div:nth-child(3) button[type="file"]{
@@ -183,50 +171,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             margin-left: 40%;
             
         }
-   
-       
-       
        
 
-
-
-
-       
-       
-        /*FOOTER*/
-
-        footer{
-            height: 80px;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-weight: 300;
-            text-decoration: none;
-            display: flex;
-            margin-top: 6%;
-            background-color: #bb0a21;  
-            margin-bottom: 0%;
-            padding-top: 1%;}
-
-            footer ul {
-                list-style-type: none;}
-            
-                footer ul li p {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;
-                    margin: 5px;}
-                    
-                footer ul li a {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;}
-                
-                        footer ul li a i {
-                        font-size: 15px;
-                        font-weight: 200;
-                        color: inherit;
-                        margin: 5px;}
-
-/* } */
+}

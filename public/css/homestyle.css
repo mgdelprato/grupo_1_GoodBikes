@@ -132,41 +132,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         font-weight: bold;
                         margin-top: 3px;}
     
-        /*FOOTER*/
-
-        footer{
-            height: 80px;
-            position: relative;
-            justify-content: space-between;
-            align-items: center;
-            text-align: center;
-            font-weight: 300;
-            text-decoration: none;
-            display: flex;
-            margin-top: 6%;
-            background-color: #bb0a21;  
-            margin-bottom: 0%;
-            padding-top: 1%;}
-
-            footer ul {
-                list-style-type: none;}
-            
-                footer ul li p {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;
-                    margin: 5px;}
-                    
-                footer ul li a {
-                    text-decoration: none;
-                    color: white;
-                    letter-spacing: 0.1em;}
-                
-                        footer ul li a i {
-                        font-size: 15px;
-                        font-weight: 200;
-                        color: inherit;
-                        margin: 5px;}
 
 }/*Cierre de llave de vista para PC */
 
@@ -274,10 +239,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                                         font-weight: bold;
                                         margin-top: 3px;
                                     }
-                    
-            footer{background-color: #bb0a21; text-align: center; padding-top: 5%;padding-bottom: 5%;}
-                    footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
-                    footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
-                    footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
+                   
+
             
     }/*Fin de llava de vista MOBILE*/
