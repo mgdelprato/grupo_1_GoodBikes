@@ -27,16 +27,16 @@
                     <option value=Taller>Taller</option>
                 </select>
                 <h4 >Producto</h4>
-                <input type="text" class="valores">
+                <input type="text" class="valores" name="producto">
                 <h4>Precio</h4>
-                <input type="text" class="valores">
+                <input type="text" class="valores" name="precio">
                 <h4>Descripción</h4>
-                <textarea name="" id="" cols="30" rows="10" class="valores"></textarea>
+                <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea>
             </div>
             <div class="divCarga">
                  <div enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
                     <h4>Imagenes</h4>
-                    <input type="file" multiple name="files[]">
+                    <input type="file" multiple name="files[]" name="archivo">
                     <button type="submit">Adjuntar</button>
                     <button id="tacho"><i class="fas fa-trash"></i></button>
                     <button type="submit" id="guardar">Guardar</button>
