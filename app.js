@@ -47,6 +47,7 @@ app.use('/products',productsRouter);
 /*Inicializar puerto de escucha del servidor*/
 app.listen(process.env.PORT || 5000, function() {
     console.log(`Servidor corriendo en el puerto 5000`);
+    console.log(`http://localhost:5000`);
 })
 
 
