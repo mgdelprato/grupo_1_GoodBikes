@@ -6,7 +6,11 @@ let usersController ={
     },
     registrar: function(req, res) {
         res.render( path.join(__dirname, '../views/users/register.ejs') )
+    },
+    perfil: function(req, res) {
+        res.render( path.join(__dirname, '../views/users/profile.ejs') )
     }
+    
 }
 
 module.exports = usersController
