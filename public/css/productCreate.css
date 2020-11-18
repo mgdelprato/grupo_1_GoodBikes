@@ -52,132 +52,152 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
       
         
-        main .divCarga{
-            background-color: #ebebeb ;
-            width: 80%;
-            margin: 0% 10% 0% 10%;     
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;     
-            padding-bottom: 10px; 
-        }
+            main .divCarga{
+                background-color: #ebebeb ;
+                width: 80%;
+                margin: 0% 10% 0% 10%;     
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;     
+                padding-bottom: 10px; 
+            }
 
 
-        main div h1 {
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 20px;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            align-self: left;
-            margin: 0% 0% 0% 2%;
-        }
-       
-        main div h2{
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 18px;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            margin: 0% 0% 3% 2%;
-        }
-       
-        main div:nth-last-child(2){
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-top: 10px;
-        }
-
-        main div:nth-last-child(2) h4{
-            font-size: 18px;
-            text-align: left;
-            width: 50%;
-           
-        }
-        main div:nth-last-child(2) select{
-            font-size: 15px;
-        }
-
-       
-        main div:nth-last-child(2) .valores{
-            width: 50%;
-            margin-bottom: 10px;
-            border:none;
-           
-        }
+            main div h1 {
+                font-family: 'Roboto', sans-serif;
+                text-transform: capitalize;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                font-weight: bold;
+                text-align: center;
+                margin: 2% 0% 0% 1%;
+            }
         
-        main div:nth-last-child(2) input{
-            height: 20px; 
-        }
-
-
-   
-
-      main div:nth-child(3) h4{
+            main div h2{
+                font-family: 'Roboto', sans-serif;
+                text-transform: capitalize;
+                font-size: 18px;
+                letter-spacing: 0.1em;
+                font-weight: bold;
+                margin: 0% 0% 3% 2%;
+                text-align: center;
+            }
         
-        font-size: 18px;
-        text-align: left;
-        width: 50%;
-        
-        }
+                main div:nth-last-child(2){
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-top: 10px;
+                }
 
-        main div:nth-child(3) button[type="submit"]{
-            width: 20%;
-            height: 30px;
-            margin: 10px;
-            font-family: 'Anton', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 15px;
-            border: none;
-            border-radius: 6px;
-            background-color: #5697fa;
-        }
+                main div:nth-last-child(2) h4{
+                    font-size: 18px;
+                    text-align: left;
+                    width: 50%;
+                
+                }
+                main div:nth-last-child(2) select{
+                    font-size: 15px;
+                }
 
-        main div:nth-child(3) input{
-            margin-right: 10px;
-            background-color: #ffffff;
-            padding: 0% 2% 0% 0%;
-            font-weight: bold;
-        }
-
-        main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
-            height: 25px;
-            width: 40%;
-            font-family: 'Anton', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 13px;
-            border: none;
-            background-color: #5697fa;
             
-        }
- 
+                main div:nth-last-child(2) .valores{
+                    width: 50%;
+                    margin-bottom: 10px;
+                    border:none;
+                
+                }
+                
+                main div:nth-last-child(2) input{
+                    height: 20px; 
+                    border-style: solid;
+                    border-color: rgb(212, 92, 13);
+                }
 
-        main div:nth-child(3) #tacho{
-           border: none;
-         
-        }
+                
+                
+                main div:nth-child(3) h4{
+                    font-size: 18px;
+                    text-align: left;
+                    width: 50%;
+                    
+                }
+                
+                    .zonaInferior{display: flex;
+                        width: 100%;
+                        height: 10vh;
+                        justify-content: center;
+                        position: relative;
+                    }                               /*Contenedor de los botones de abajo*/
+                                        
+                    
+                    main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+                        height: 30px;
+                        width: 120px;
+                        font-family: 'Anton', sans-serif;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-size: 13px;
+                        background-color: #5697fa;
+                        border-radius: 6px;
+                        border-style: none;
+                    }                                   /*Botón Elegir archivo*/
+                    
+                        main div:nth-child(3) input{
+                                margin-right: 10px;
+                                background-color: #ffffff;
+                                padding: 0% 2% 0% 0%;
+                                font-weight: bold;
+                                height: 30px;
+                            }                           /*Input*/
+                    
+                        main div:nth-child(3) #adjuntar{display: flex; 
+                            justify-content: center;align-items: center; /*Boton Adjuntar*/
+                        }
+                        
+                        main div:nth-child(3) button[type="submit"]{
+                            width: 10vw;
+                            height: 30px;
+                            font-family: 'Anton', sans-serif;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                            font-size: 15px;
+                            background-color: #5697fa;
+                            border-radius: 6px;
+                            border-style: none;
+                        }                                           /*Dos botones azules*/
 
-        main div:nth-child(3) button i{
-            font-size: 25px;
-            color: red;
-           
-            
-            
-        }
+                        
+                        main div:nth-child(3) #guardar{
+                            align-self: center;
+                            justify-content: center;
+                            position: absolute;                     /*Botón Publicar*/
+                            right: 2vw;
+                            bottom: 5px;
+                        }
 
-        main div:nth-child(3) button[type="file"]{
-         margin-left: 20px;
-         
-        }
-        main div:nth-child(3) #guardar{
-            align-self: center;
-            justify-content: center;
-            margin-left: 40%;
-            
-        }
+
+                
+
+                        main div:nth-child(3) #tacho{
+                        border: none;
+                        align-self: start;
+                        padding: 1px 0% 0% 1%;
+                        
+                        }
+
+                        main div:nth-child(3) button i{
+                            font-size: 25px;
+                            color: red;
+                        
+                            
+                            
+                        }
+
+                        main div:nth-child(3) button[type="file"]{
+                        margin-left: 20px;
+                        
+                        }
 
        
 
@@ -206,33 +226,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             height: 100vh;
             width: 100vw;
             background-color: #ebebeb;} 
+           
 
-            
 
-
-            nav{position: absolute;
-                top: 5%; 
-                left: 5%; 
-                }
-
-                nav ul {
-                    background-color: #ebebeb;
-                    border-color: #666666;
-                    border-style: solid;
-                    border-width: 1px;
-                    list-style-type: none;
-                    margin-top: 10%;
-                    display: none;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    height: 40vh;
-                    width: 25vh;
-                    padding-left: 2vh;
-                    padding-right: 6px;
-                    border-radius: 10px;
-                    
-                }
-                    nav ul li a {text-decoration: none;}
 
         
         .contenedor_del_Main{
@@ -252,14 +248,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-size: 15px;
             letter-spacing: 0.1em;
             font-weight: bold;
-            align-self: left;
-            margin-left: 2%;
+            text-align: center;
+            margin: 2%;
         }
        
         main div h2{
             font-family: 'Roboto', sans-serif;
             text-transform: capitalize;
             font-size: 13px;
+            text-align: center;
             letter-spacing: 0.1em;
             font-weight: bold;
             margin: 0% 0% 3% 2%;
@@ -344,53 +341,90 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 display: flex;
             }
     
+     
+
+
+
+
+
+            .zonaInferior{display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 25vh;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }                               /*Contenedor de los botones de abajo*/
+            
+            
             main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
-                height: 25px;
-                width: 40%;
+                height: 30px;
+                width: 20vw;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 13px;
-                border: none;
                 background-color: #5697fa;
+                border-radius: 6px;
+                border-style: none;
+            }                                   /*Botón Elegir archivo*/
+            
+                main div:nth-child(3) input{
+                        margin-right: 10px;
+                        background-color: #ffffff;
+                        padding: 0% 2% 0% 0%;
+                        font-weight: bold;
+                        height: 30px;
+                        width: 70vw;
+                    }                           /*Input*/
+            
+                main div:nth-child(3) #adjuntar{
+                    align-items: center; 
+                    width: 25vw;
+                                                /*Boton Adjuntar*/
+                }
                 
-                
-            }
-     
-    
-            main div:nth-child(3) #tacho{
-               border: none;    
-             
-            }
-    
-            main div:nth-child(3) button i{
-                font-size: 25px;
-                color: red;
-               
-                
-                
-            }
-    
-            main div:nth-child(3) button[type="file"]{
-             margin-left: 20px;
-             
-            }
-            main div:nth-child(3) #adjuntar{
-                display: inline-block;
-             
-                
-            }
-            main div:nth-child(3) #guardar{
-                align-self: center;
-                justify-content: center;
-                margin-left: 40%;
-                
-            }
+                main div:nth-child(3) button[type="submit"]{
+                    height: 30px;
+                    font-family: 'Anton', sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    font-size: 15px;
+                    background-color: #5697fa;
+                    border-radius: 6px;
+                    border-style: none;
+                    
+                }                                           /*Dos botones azules*/
 
-            .zonaInferior{
-                justify-items: center;
-                align-content: center;
-            }
+                
+                main div:nth-child(3) #guardar{
+                    width: 25vw;
+                    margin-bottom: 3%;                      /*Boton Publicar*/
+ 
+                }
+
+
+        
+
+                main div:nth-child(3) #tacho{
+                border: none;
+                align-self: center;
+                padding: 1px 0% 0% 1%;
+                
+                }
+
+                main div:nth-child(3) button i{
+                    font-size: 25px;
+                    color: red;
+                
+                    
+                    
+                }
+
+                main div:nth-child(3) button[type="file"]{
+                margin-left: 20px;
+                
+                }
 
 
 
