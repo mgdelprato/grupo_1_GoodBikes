@@ -52,6 +52,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         flex-direction: row;
         height: 40px;        
         width: 100%;}
+
+
+
     nav ul{
         list-style:none;
         text-align: center;}
@@ -78,6 +81,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         align-content: center;
     }
+
+
     main{
         width: 50%;
         height: 60vh;
@@ -89,7 +94,18 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         border-radius: 6px;
     }
 
-    main .datos{
+    main form{
+        width: 100%;
+        height: 60vh;
+        background-color: #ebebeb;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content:center;
+        border-radius: 6px;
+    }
+
+    main form .datos{
         width: 50%;
         height: 75%;
         display: flex;
@@ -97,7 +113,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
     }
 
-    main div{
+    main form div{
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -105,24 +121,34 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             
     }
 
-    main div input{
+    main form div h1{
+        text-align: center;
+        margin-bottom: 15%;
+        font-family: 'Roboto', sans-serif;
+        font-size: 20px;
+        letter-spacing: 0.1em;
+        font-weight: bold;
+        
+    }
+
+    main form div input{
         padding: 5px;
         margin: 5px;
         
     }
     /* Chrome, Safari, Edge, Opera */
-    main div input#dni::-webkit-outer-spin-button,
-    main div input#dni::-webkit-inner-spin-button {
+    main form div input#dni::-webkit-outer-spin-button,
+    main form div input#dni::-webkit-inner-spin-button {
       -webkit-appearance: none;
       margin: 0;
     }
 
     /* Firefox */
-    main div input#dni[type=number] {
+    main form div input#dni[type=number] {
       -moz-appearance: textfield;
     }
 
-    main div button{
+    main form div button{
         margin: 10px;
         height: 30px;
         font-family: 'Anton', sans-serif;

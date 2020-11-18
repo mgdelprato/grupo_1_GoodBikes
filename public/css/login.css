@@ -52,16 +52,29 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     }
         main{
             width: 50%;
-            height: 60vh;
+            height: 50vh;
             background-color: #ebebeb;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-content:center;
             border-radius: 6px;
+            
         }
 
-            main .principal{
+        main form{
+            width: 100%;
+            height: 50vh;
+            background-color: #ebebeb;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content:center;
+            border-radius: 6px;
+
+        }
+
+            main form .principal{
                 width: 50%;
                 height: 75%;
                 display: flex;
@@ -69,22 +82,31 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 justify-content: center;
             }
 
-            main div{
+            main form div{
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-end;
                 height: 30%;  
                     
             }
+            main form div h1{
+                text-align: center;
+                margin-bottom: 20%;
+                font-family: 'Roboto', sans-serif;
+                font-size: 20px;
+                letter-spacing: 0.1em;
+                font-weight: bold;
+                
+            }
 
-            main div input{
+            main form div input{
                 padding: 5px;
                 margin: 5px;
                 border: none;   
                 
             }
 
-            main div button{
+            main form div button{
                 margin: 10px;
                 height: 30px;
                 font-family: 'Anton', sans-serif;
@@ -95,7 +117,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 background-color: #5697fa;
             }
 
-            main div button:hover{
+            main form div button:hover{
                 background-color: #66c674;
             }
 

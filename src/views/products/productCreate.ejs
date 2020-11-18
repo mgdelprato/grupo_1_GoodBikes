@@ -12,36 +12,37 @@
         <%- include('../partials/header')%>
 
         <main>
-            <div class="titulos">
-                <h1>Administración de Productos</h1>
-                <h2>Alta de producto</h2>
-            </div>
-            <div class="divCarga">
-                <h4>Categoria</h4>
-                <select class="valores" >
-                    <option value=Rodado>Rodado</option>
-                    <option value=Equipamiento>Equipamiento</option>
-                    <option value=Indumentaria>Indumentaria</option>
-                    <option value=Accesorios>Accesorios</option>
-                    <option value=Taller>Taller</option>
-                </select>
-                <h4 >Producto</h4>
-                <input type="text" class="valores">
-                <h4>Precio</h4>
-                <input type="text" class="valores">
-                <h4>Descripción</h4>
-                <textarea name="" id="" cols="30" rows="10" class="valores"></textarea>
-                <h4 class="valores  ">Imagenes</h4>
-            </div>
-            <div class="divCarga">
-                <div class ="zonaInferior" enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
-                    <input type="file" multiple name="files[]">
-                    <button id="adjuntar" type="submit">Adjuntar</button>
-                    <button id="tacho"><i class="fas fa-trash"></i></button>
-                    <button type="submit" id="guardar">Publicar</button>
+            <form action="" method="">
+                <div class="titulos">
+                    <h1>Administración de Productos</h1>
+                    <h2>Alta de producto</h2>
                 </div>
-            </div>
-
+                <div class="divCarga">
+                    <h4>Categoria</h4>
+                    <select class="valores" >
+                        <option value=Rodado>Rodado</option>
+                        <option value=Equipamiento>Equipamiento</option>
+                        <option value=Indumentaria>Indumentaria</option>
+                        <option value=Accesorios>Accesorios</option>
+                        <option value=Taller>Taller</option>
+                    </select>
+                    <h4 >Producto</h4>
+                    <input type="text" class="valores">
+                    <h4>Precio</h4>
+                    <input type="text" class="valores">
+                    <h4>Descripción</h4>
+                    <textarea name="" id="" cols="30" rows="10" class="valores"></textarea>
+                    <h4 class="valores  ">Imagenes</h4>
+                </div>
+                <div class="divCarga">
+                    <div class ="zonaInferior" enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
+                        <input type="file" multiple name="files[]">
+                        <button id="adjuntar" type="submit">Adjuntar</button>
+                        <button id="tacho"><i class="fas fa-trash"></i></button>
+                        <button type="submit" id="guardar">Publicar</button>
+                    </div>
+                </div>
+            </form>
         </main>
         <%- include('../partials/footer')%>
         

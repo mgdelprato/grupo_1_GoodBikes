@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const productsRouter = require('./src/routes/products');
+const usersRouter = require('./src/routes/users')
 
 
 // Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
@@ -19,13 +20,10 @@ app.get('/', function(req, res) {
 
 /* USUARIOS */
 
-app.get('/login', function(req, res) {
-    res.render( path.join(__dirname, './src/views/users/login.ejs') )
-})
 
-app.get('/register', function(req, res) {
-    res.render( path.join(__dirname, './src/views/users/register.ejs') )
-})
+app.use('/users', usersRouter);
+
+
 
 /*AGREGAR VIEW DE MI CUENTA!!!!!! */
 
@@ -40,10 +38,18 @@ app.use('/products',productsRouter);
 /*---------------------------------------------------------------------------------- */
 
 
+/* Esto se agrega para cuando trabajamos con metodos http*/
 
+// app.use(express.urlenconded({extended:false}));
+// app.use(express.json());
+/*---------------------------------------------------------------------------------- */
 
+/*Inicializar puerto de escucha del servidor*/
 app.listen(process.env.PORT || 5000, function() {
     console.log(`Servidor corriendo en el puerto 5000`);
 })
 
+
+/*---------------------------------------------------------------------------------- */
+/*EJS*/
 app.set('view engine', 'ejs');

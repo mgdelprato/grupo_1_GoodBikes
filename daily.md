@@ -15,3 +15,10 @@
 
 - Revisión para unificación de header y footer (html y css)
 - Definir tareas para continuar
+
+
+# "Daily 4"
+
+- Asignación de tareas pendientes
+- Revisión despliegue en heroku
+- Armado de estructura MVC en el proyecto
