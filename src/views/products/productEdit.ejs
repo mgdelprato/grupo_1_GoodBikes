@@ -34,11 +34,11 @@
                 <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea>
             </div>
             <div class="divCarga">
-                 <div enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
-                    <h4>Imagenes</h4>
+                 <div id="ContenedorElementosDeAbajo" enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
+                    <h4 id="tituloImagenes">Imagenes</h4>
                     <input type="file" multiple name="files[]" name="archivo">
                     <button type="submit">Adjuntar</button>
-                    <button id="tacho"><i class="fas fa-trash"></i></button>
+                    <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
                     <button type="submit" id="guardar">Guardar</button>
                 </div>
             </div>
