@@ -9,11 +9,11 @@ router.get('/productCart', productsController.carritoCompras);
 
 router.get('/productDetail', productsController.detalleProducto);
 
-router.get('/productCreate', productsController.crearProducto)
+router.get('/productCreate', productsController.crearProducto);
 
-router.get('/productEdit', productsController.editarProducto),
+router.get('/productEdit', productsController.editarProducto);
 
-router.get('/productList', productsController.listarProducto)
+router.get('/productList', productsController.listarProducto);
 
 module.exports = router;
 
