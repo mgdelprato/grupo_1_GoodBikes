@@ -36,7 +36,14 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Bars{display: none;}
 .ocultoMovil{display: none;}
 
-.Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+#Contenedor
+{display: flex; 
+flex-direction: column;
+justify-content: space-between;
+height: 100vh;
+width: 100vw;
+background-color: #ebebeb;} 
+
 
         /*HEADER--->header.css*/
         /*MAIN*/
@@ -56,6 +63,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     letter-spacing: 0.1em;
                     font-weight: bold;
                     margin: 0% 0% 0% 2%;
+                    text-align: center;
                 }
 
                 main .divTabla{
@@ -160,3 +168,235 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
             }
+
+
+/*CSS Mobile Version*/
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    #GoobBikes_en_el_menu{display: none;}
+    /* #Al_Home{display: none;} */
+    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
+    
+    
+    
+    body
+        {display: flex; 
+        justify-content: center;
+        flex-direction: column;}
+
+        #Contenedor
+            {display: flex; 
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            width: 100vw;
+            background-color: #ebebeb;} 
+           
+
+
+
+        
+        .divTabla{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+            width: 100vw;
+
+            }
+
+            table{width: 90%;}
+
+
+         
+        main div h1 {
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 15px;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            text-align: center;
+            margin: 2%;
+        }
+       
+        main div h2{
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 13px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            margin: 0% 0% 3% 2%;
+        }
+
+        main{
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            width: 100%;
+            background-color: #ebebeb ;
+        }
+        
+        main .divCarga{
+            
+            width: 100%;
+            /* margin: 0% 10% 0% 10%;      */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;     
+            
+        }
+
+        main div:nth-last-child(2){
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            }
+    
+            main div:nth-last-child(2) h4{
+                font-size: 18px;
+                text-align: left;
+                width: 70%;
+               
+            }
+            main div:nth-last-child(2) select{
+                font-size: 15px;
+                width: 60%;
+            }
+    
+           
+            main div:nth-last-child(2) .valores{
+                width: 70%;
+                margin-bottom: 10px;
+                border:none;
+               
+            }
+            
+            main div:nth-last-child(2) input{
+                height: 20px; 
+            }
+    
+    
+       
+    
+          main div:nth-child(3) h4{
+            
+            font-size: 18px;
+            text-align: left;
+            width: 70%;
+            
+            }
+    
+            main div:nth-child(3) button[type="submit"]{
+                width: 30%;
+                height: 30px;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 15px;
+                border: none;
+                border-radius: 6px;
+                background-color: #5697fa;
+            }
+    
+            main div:nth-child(3) input{
+                margin-right: 10px;
+                background-color: #ffffff;
+                padding: 0% 2% 0% 0%;
+                font-weight: bold;
+                display: flex;
+            }
+    
+     
+
+
+
+
+
+            .zonaInferior{display: flex;
+                flex-direction: column;
+                width: 100%;
+                height: 25vh;
+                justify-content: space-between;
+                align-items: center;
+                flex-wrap: wrap;
+            }                               /*Contenedor de los botones de abajo*/
+            
+            
+            main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+                height: 30px;
+                width: 20vw;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 13px;
+                background-color: #5697fa;
+                border-radius: 6px;
+                border-style: none;
+            }                                   /*Botón Elegir archivo*/
+            
+                main div:nth-child(3) input{
+                        margin-right: 10px;
+                        background-color: #ffffff;
+                        padding: 0% 2% 0% 0%;
+                        font-weight: bold;
+                        height: 30px;
+                        width: 70vw;
+                    }                           /*Input*/
+            
+                main div:nth-child(3) #adjuntar{
+                    align-items: center; 
+                    width: 25vw;
+                                                /*Boton Adjuntar*/
+                }
+                
+                main div:nth-child(3) button[type="submit"]{
+                    height: 30px;
+                    font-family: 'Anton', sans-serif;
+                    text-transform: uppercase;
+                    letter-spacing: 0.1em;
+                    font-size: 15px;
+                    background-color: #5697fa;
+                    border-radius: 6px;
+                    border-style: none;
+                    
+                }                                           /*Dos botones azules*/
+
+                
+                main div:nth-child(3) #guardar{
+                    width: 25vw;
+                    margin-bottom: 3%;                      /*Boton Publicar*/
+ 
+                }
+
+
+        
+
+                main div:nth-child(3) #tacho{
+                border: none;
+                align-self: center;
+                padding: 1px 0% 0% 1%;
+                
+                }
+
+                table tbody tr td i{
+                    font-size: 16px;
+                    color: red;
+                    margin-left: 2vw;
+                
+                    
+                    
+                }
+
+                main div:nth-child(3) button[type="file"]{
+                margin-left: 20px;
+                
+                }
+
+
+
+
+
+
+                
+ }
