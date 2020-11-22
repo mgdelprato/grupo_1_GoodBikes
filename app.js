@@ -3,6 +3,7 @@ const app = express();
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
 const methodOverride = require('method-override');
+const router = express.Router();
 
 // Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
 const path = require('path');
@@ -38,9 +39,8 @@ app.use('/users', usersRouter);
 
 app.use('/products',productsRouter);
 
-
-
 /*---------------------------------------------------------------------------------- */
+
 
 
 /* Esto se agrega para cuando trabajamos con metodos http*/
@@ -59,3 +59,4 @@ app.listen(process.env.PORT || 5000, function() {
 /*---------------------------------------------------------------------------------- */
 /*EJS*/
 app.set('view engine', 'ejs');
+

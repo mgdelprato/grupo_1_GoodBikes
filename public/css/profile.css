@@ -91,11 +91,127 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         display:flex;
         flex-direction: column;
         flex-wrap: wrap;
-        justify-content: ;
         border-radius: 6px;
 
     }
 
-    main form div {
-        
+ 
+
+    main form div h2{
+        font-size: 20px;
+        display: inline-block;
+        margin-bottom: 3%;
+        margin-left: 1%;
     }
+
+    main form #Superior div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: start;
+        margin-bottom: 2%;
+        flex-wrap: wrap;
+
+    }
+
+    
+    main form #Superior div #email{
+        margin-left: 1%;
+        width: 32%;
+    }
+
+    main form #Superior div #labelemail{
+        font-size: 15px;
+        /* margin-left: 14%; */
+    }
+
+    main form #Superior div #password{
+        margin-right: 3%;
+        margin-left: 1%;
+        width: 20%;
+    }
+
+    main form #Superior div #labelpass{
+        font-size: 15px;
+        margin-left: 3%;
+    }
+
+    main form #Superior div #nombre{
+        margin-left: 1%;
+        width: 30%;
+    }
+
+    main form #Superior div #labelnombre{
+        font-size: 15px;
+        margin-left: -20%;
+    }
+
+    main form #Superior div #apellido{
+      
+        margin-left: 1%;
+        width: 20%;
+    }
+
+    main form #Superior div #labelapp{
+        font-size: 15px;
+        margin-left: 3%;
+    }
+
+    main form #Superior div button{
+        margin: 10px;
+        height: 30px;
+        font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 15px;
+        border: none;
+        background-color: #5697fa;
+    }
+
+    main form #Inferior{
+        display: flex;
+        flex-direction: row;
+        align-self: start;
+        flex-wrap: wrap;
+    }
+
+    main form #Inferior div{
+        display: flex;
+        position: relative;
+        flex-direction: row;
+
+    }
+
+
+    main form #Inferior div img{
+        width: 10%;
+        height: 100%;
+        display: flex;
+        align-self: flex-start ;
+        margin-left: 3%;
+        margin-bottom: 1%;
+    }
+
+    main form #Inferior .detalles{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 1%;
+    }
+
+    main form #Inferior div p{
+        display: flex;
+        margin-left: 1%;
+        justify-self: flex-start;
+        font-size: 15px;
+        width: max-content;
+
+    }
+
+    main form #Inferior div #precio{
+        font-weight: bold;
+        text-align: center;
+    }
+
+
+}

@@ -15,6 +15,8 @@ router.get('/productEdit', productsController.editarProducto);
 
 router.get('/productList', productsController.listarProducto);
 
+
+
 module.exports = router;
 
 
