@@ -74,7 +74,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main {
         width: 100%;
-        height: 60vh;
+        height: 70vh;
         background-color: #ffffff;
         display: flex;
         flex-wrap: wrap;
@@ -86,11 +86,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main form {
         width: 80%;
-        height: 80%;
+        height: 90%;
         background-color: #ebebeb;
         display:flex;
         flex-direction: column;
-        flex-wrap: wrap;
         border-radius: 6px;
 
     }
@@ -110,7 +109,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         align-items: center;
         align-self: start;
         margin-bottom: 2%;
-        flex-wrap: wrap;
+       
+       
 
     }
 
