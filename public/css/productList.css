@@ -177,6 +177,7 @@ background-color: #ebebeb;}
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
     
     
+   
     
     body
         {display: flex; 
@@ -200,7 +201,7 @@ background-color: #ebebeb;}
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            width: 100vw;
+            width: 95vw;
 
             }
 
@@ -234,6 +235,27 @@ background-color: #ebebeb;}
             flex-direction: column;
             width: 100%;
             background-color: #ebebeb ;
+        }
+
+
+        main .divTabla table{
+            display: flex;
+            flex-flow: column nowrap;
+            font-size: .8rem;
+            margin: 0.5rem;
+            line-height: 1.5;
+            border-bottom: 1px solid #d0d0d0;
+            flex: 1 1 auto;
+            margin-bottom: 6%;
+            border: 3px solid #d0d0d0;
+        }
+
+        main .divTabla table tr:nth-of-type(odd){
+            background-color: #f2f2f2;
+        }
+
+        main .divTabla table tr:nth-of-type(even){
+            background-color: #ffffff;
         }
         
         main .divCarga{
@@ -309,10 +331,7 @@ background-color: #ebebeb;}
     
      
 
-
-
-
-
+         
             .zonaInferior{display: flex;
                 flex-direction: column;
                 width: 100%;

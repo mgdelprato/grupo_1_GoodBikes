@@ -108,9 +108,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         align-items: center;
         align-self: start;
-        margin-bottom: 2%;
-       
-       
+        margin-bottom: 2%; 
 
     }
 
@@ -213,5 +211,170 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         text-align: center;
     }
 
+
+}
+
+
+/*CSS Mobile Version*/
+@media screen and (min-width: 200px) and (max-width: 800px) {
+    #GoobBikes_en_el_menu{display: none;}
+    /* #Al_Home{display: none;} */
+    #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
+    
+    
+    
+    body
+        {display: flex; 
+        justify-content: center;
+        flex-direction: column;}
+
+        #contenedor
+            {display: flex; 
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100vh;
+            width: 100vw;
+            background-color: #ebebeb;} 
+
+            
+            main {
+                width: 100%;
+                height: 100%;
+                background-color: #ebebeb;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-content:center;
+                
+        
+            }
+        
+            main form {
+                width: 80%;
+                height: 90%;
+                background-color: #ebebeb;
+                display:flex;
+                flex-direction: column;
+                border-radius: 6px;
+        
+            }
+
+            main form div h2{
+                font-size: 20px;
+                display: inline-block;
+                margin-bottom: 3%;
+                margin-left: 1%;
+            }
+
+
+            
+             main form #Superior div{
+                display: flex;
+                flex-direction: column;
+                justify-content: left;
+                align-items: left;
+                margin-bottom: 2%; 
+
+             }
+
+             main form #Superior div #email{
+                margin-left: 1%;
+                margin-bottom: 5%;
+            }
+
+             main form #Superior div #labelemail{
+                font-size: 15px;
+                /* margin-left: 14%; */
+            }
+
+            main form #Superior div #password{
+                margin-bottom: 3%;
+                margin-left: 1%;
+                
+            }
+            main form #Superior div a{
+                text-align: center;
+            }
+
+            main form #Superior div #labelpass{
+                font-size: 15px;
+               
+            }
+
+            main form #Superior div #nombre{
+                margin-left: 1%;
+                margin-bottom: 5%;
+              
+            }
+
+            main form #Superior div #labelnombre{
+                font-size: 15px;
+               
+            }
+
+            main form #Superior div #apellido{
+                margin-left: 1%;
+                margin-bottom: 5%;
+            }
+
+            main form #Superior div #labelapp{
+                font-size: 15px;
+            }
+
+            main form #Superior div button{
+                margin-left: 30%;
+                margin-bottom: 10%;
+                height: 30px;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 15px;
+                border: none;
+                background-color: #5697fa;
+                width: 50%;
+            }
+        
+            main form #Inferior{
+                display: flex;
+                flex-direction: column;
+                flex-wrap: wrap;
+            }
+
+            main form #Inferior div{
+                display: flex;
+                flex-direction: column;        
+            }
+
+            main form #Inferior div img{
+                width: 30%;
+                height: 30%;
+                display: flex;
+                align-self: center ;
+                margin-left: 3%;
+                margin-bottom: 1%;
+            }
+
+            main form #Inferior .detalles{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-left: 1%;
+            }
+
+            
+            main form #Inferior div p{
+                display: flex;
+                margin-left: 1%;
+                justify-self: flex-start;
+                font-size: 15px;
+                width: max-content;
+                margin-bottom: 5%;
+
+            }
+
+            main form #Inferior div #precio{
+                font-weight: bold;
+                text-align: center;
+            }
 
 }
