@@ -112,6 +112,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     }
 
+    main form #Superior input{
+        height: 25px;
+        border: none;
+        border-radius: 6px;
+    }
     
     main form #Superior div #email{
         margin-left: 1%;
@@ -158,6 +163,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     main form #Superior div button{
         margin: 10px;
         height: 30px;
+        width: 10%;
         font-family: 'Anton', sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.1em;
@@ -266,7 +272,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 margin-left: 1%;
             }
 
-
+            main form #Superior input{
+                height: 25px;
+                border: none;
+                border-radius: 6px;
+            }
             
              main form #Superior div{
                 display: flex;
@@ -325,6 +335,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 margin-left: 30%;
                 margin-bottom: 10%;
                 height: 30px;
+                width: 10%;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;

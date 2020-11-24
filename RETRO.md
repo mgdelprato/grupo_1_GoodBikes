@@ -1,4 +1,4 @@
-#RETRO
+#RETRO Sprint 2
 
 1. Comenzar a hacer
     Reflejar avances en tareas en progreso en el tablero trello
@@ -16,3 +16,23 @@
 5. Dejar de hacer
     Retrabajo o realizar la misma tarea
 
+
+
+#RETRO Sprint 3
+
+1. Comenzar a hacer
+    Reflejar avances en tareas en progreso en el tablero trello
+    Preparar la web para el ruteo
+
+2. Hacer más
+    Mayor comunicación
+    Mejorar los criterios de escritura en el código (ejemplo en los css)
+
+3. Continuar haciendo
+    Reuniones de equipo para coordinar avances y destrabar conflicos.
+
+4. Hacer menos
+   Cambios de definición sobre la marcha o cambios en los diseños
+
+5. Dejar de hacer
+    Trabajar en el mismo archivo que puedan generar conflictos

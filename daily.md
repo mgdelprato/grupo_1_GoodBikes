@@ -22,3 +22,10 @@
 - Asignación de tareas pendientes
 - Revisión despliegue en heroku
 - Armado de estructura MVC en el proyecto
+
+
+# "Daily 5"
+- Revisión de css para profile
+- Mejoras en css de login y register
+- Avanzar con el ruteo
+
