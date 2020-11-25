@@ -359,7 +359,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             
             main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
                 height: 30px;
-                width: 20vw;
+                width: 30vw;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
@@ -376,6 +376,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         font-weight: bold;
                         height: 30px;
                         width: 70vw;
+                        
                     }                           /*Input*/
             
                 main div:nth-child(3) #adjuntar{

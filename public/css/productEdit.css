@@ -132,7 +132,12 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                             position: relative;
                         }                               /*Contenedor de los botones de abajo*/
                     
-                    #tituloImagenes{position: absolute; top: 1px;left: 50%;}/*Tocas esto y se descajeta la parte de abajo*/
+                    #tituloImagenes{
+                        position: absolute;
+                        top: 1px;
+                        left: 50%;
+                        margin-bottom: 1%;
+                    }/*Tocas esto y se descajeta la parte de abajo*/
                     
                         main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
                             height: 30px;
@@ -355,12 +360,12 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             #ContenedorElementosDeAbajo{
                 display: flex;
                 flex-direction: column;
-                width: 60%;/*Tocas esto y se rompe todo*/
+                width: 100%;/*Tocas esto y se rompe todo*/
                 height: 25vh;
                 justify-content: space-between;
                 align-items: center;
                 flex-wrap: wrap;
-                margin: 3vh; /*Toca esto y se descajeta el boton guardar*/
+                /*Toca esto y se descajeta el boton guardar*/
             }
 
 
@@ -383,8 +388,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                         padding: 0% 2% 0% 0%;
                         font-weight: bold;
                         height: 30px;
-                        width: 100%;
-                        margin-bottom: 1vh;
+                        width: 70vw;
+                        
                     }                           /*Todo el Input*/
             
                 main #adjuntar{
