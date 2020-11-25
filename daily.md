@@ -29,3 +29,7 @@
 - Mejoras en css de login y register
 - Avanzar con el ruteo
 
+
+# "Daily 6"
+- Ajuste final sprint3
+
