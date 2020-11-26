@@ -202,12 +202,13 @@ width: 100vw;
             align-items: center;
             justify-content: space-around;
             width: 95vw;
+            
 
             }
 
-            table{width: 90%;}
-
-
+            table{width: 90%;}/**/
+            table tbody{align-self: center;width: auto;} /**/
+            table tbody td {padding: 0% 8px 0% 8px} /* Centrando la tabla y acomodando sus elementos*/
          
         main div h1 {
             font-family: 'Roboto', sans-serif;
@@ -245,9 +246,10 @@ width: 100vw;
             margin: 0.5rem;
             line-height: 1.5;
             border-bottom: 1px solid #d0d0d0;
-            flex: 1 1 auto;
+            /* flex: 1 1 auto; */
             margin-bottom: 6%;
             border: 3px solid #d0d0d0;
+            width: 90vw;
         }
 
         main .divTabla table tr:nth-of-type(odd){
@@ -278,17 +280,17 @@ width: 100vw;
             main div:nth-last-child(2) h4{
                 font-size: 18px;
                 text-align: left;
-                width: 70%;
+                width: 90%;
                
             }
             main div:nth-last-child(2) select{
                 font-size: 15px;
-                width: 60%;
+                width: 80%;
             }
     
            
             main div:nth-last-child(2) .valores{
-                width: 70%;
+                width: 80%;
                 margin-bottom: 10px;
                 border:none;
                
