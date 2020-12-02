@@ -1,12 +1,10 @@
+//Todos los requires
 const express = require('express');
 const app = express();
+const path = require('path'); // Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
 const methodOverride = require('method-override');
-const router = express.Router();
-
-// Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
-const path = require('path');
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
 app.use( express.static( path.join(__dirname, './public') ) )
@@ -26,10 +24,7 @@ app.get('/', function(req, res) {
 
 /* USUARIOS */
 
-
 app.use('/users', usersRouter);
-
-
 
 /*AGREGAR VIEW DE MI CUENTA!!!!!! */
 
@@ -45,8 +40,8 @@ app.use('/products',productsRouter);
 
 /* Esto se agrega para cuando trabajamos con metodos http*/
 
-// app.use(express.urlenconded({extended:false}));
-// app.use(express.json());
+app.use(express.urlencoded({extended: false}));
+app.use(express.json())
 /*---------------------------------------------------------------------------------- */
 
 /*Inicializar puerto de escucha del servidor*/
