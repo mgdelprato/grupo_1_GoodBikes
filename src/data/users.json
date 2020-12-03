@@ -174,5 +174,26 @@
         "email": "mauro@gmail.com",
         "password": "$2a$12$FLJJAwj5ZdVDgcBxAGLt0et8rAXCd50RaIX6hBG14zY/dpf/mwF2W",
         "avatar": "Consumo edesur.png"
+    },
+    {
+        "id": 23,
+        "first_name": "Mauro",
+        "last_name": "de",
+        "email": "mauro@mail.com",
+        "password": "$2a$12$dSxZgQrlTz/aY3pZs8C/ieYSbhDte3sdXf.gxA5BP21az3vU2t1pC"
+    },
+    {
+        "id": 24,
+        "first_name": "mauro",
+        "last_name": "delprato",
+        "email": "mauro@mail.com",
+        "password": "$2a$12$MshLMKu03mqInoVX4kAsd.217YHHvZ1/Hr2Q3h9mxqPhq3sQX86BS"
+    },
+    {
+        "id": 25,
+        "first_name": "pepe",
+        "last_name": "cosa",
+        "email": "pepe@mail.io",
+        "password": "$2a$12$AiqRp1HZBnkwF3Tx5XKJE.2F9O/2g1Gcw7cyupz5LZGxRx2BWncoi"
     }
 ]
