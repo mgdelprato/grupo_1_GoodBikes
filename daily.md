@@ -1,3 +1,5 @@
+SPRINT 3
+
 # "Daily 1"
 
 -Revisión de cosignas de sprint 3.
@@ -33,3 +35,13 @@
 # "Daily 6"
 - Ajuste final sprint3
 
+**************************************************
+
+SPRINT 4
+# "Daily 1"
+- Revisión de enunciado del sprint
+- División de tareas
+
+# "Daily 2"
+- Revisión y nueva definición de campos usuarios y productos
+- Revisión y adaptación de diseños
