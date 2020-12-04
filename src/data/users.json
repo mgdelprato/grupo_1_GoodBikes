@@ -181,5 +181,29 @@
         "last_name": "rodriguez",
         "email": "nahu@gmail.com",
         "password": "$2a$12$YLHH/UoV2f9G1rK92bbhgehFmVe4bZCgpMc4sMvB7CMP5JZrnGKMy"
+    },
+    {
+        "id": 24,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "password": "$2a$12$Z1fSIBsrUUBo/DT7rwigjOe9MTIU.uNygO8FLBgZMs2y0m5T1a/nG",
+        "avatar": ""
+    },
+    {
+        "id": 25,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "password": "$2a$12$/fCGgGdUspnq.BdFcPjSEeRNFGz4hSQevZf9mJCUcdTYHHL0vD.ES",
+        "avatar": ""
+    },
+    {
+        "id": 26,
+        "first_name": "",
+        "last_name": "",
+        "email": "",
+        "password": "$2a$12$sNC2wxSUS9UwC7ImYEXaVeECeqsJHD5PmQJeRECgzf43HqoOzTtDm",
+        "avatar": ""
     }
 ]
