@@ -40,8 +40,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
-       
-        /*OFERTAS*/
+
+    #Banner{width: 100%; height: auto;}
+
+            /*OFERTAS*/
         .ContenedorOfertas{
             display: flex;
             align-items: center;
