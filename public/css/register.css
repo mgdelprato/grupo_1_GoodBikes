@@ -75,7 +75,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /* MAIN */
 
     .contenedor_del_Main{
-        height: 600px; 
+        height: 457px;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -85,7 +85,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main{
         width: 50%;
-        height: 70vh;
+        height: 60vh;
         background-color: #ebebeb;
         display: flex;
         flex-wrap: wrap;
@@ -96,39 +96,25 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main form{
         width: 100%;
-        height: 80%;
+        height: 60vh;
         background-color: #ebebeb;
         display: flex;
-        flex-wrap: nowrap;
+        flex-wrap: wrap;
         justify-content: center;
         align-content:center;
         border-radius: 6px;
     }
 
     main form .datos{
-        width: 50vw;
-        height: 75%;
+        width: 60%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        
     }
 
-    #labelAvatar{width: 100px;height: auto;}
-
-    #avatar{
-        margin-top: 2vh;
-        border-style: none;
-        height: 25px;
-        width: 200px;
-        margin: 0px;
-        padding: 0px;
-        color: #000000;
-        font-family: 'Roboto', sans-serif;
-        font-size: 12px;
-        display: inline-block;
-    }
+    #labelAvatar{text-align: center;margin: 2%;font-weight: bold;font-size: 14px;}
+    #avatar{align-self: center;}
 
     main form div{
         display: flex;
@@ -140,7 +126,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main form div h1{
         text-align: center;
-        margin-bottom: 15%;
+        margin-bottom: 8%;
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
         letter-spacing: 0.1em;
@@ -151,11 +137,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     main form div input{
         padding: 5px;
         margin: 5px;
-        width: 250px;
         
-    } /*ACA ESTAMOS*/
-
-
+    }
     /* Chrome, Safari, Edge, Opera */
     main form div input#dni::-webkit-outer-spin-button,
     main form div input#dni::-webkit-inner-spin-button {
@@ -178,29 +161,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         border: none;
         background-color: #5697fa;
     }
-    /*
-    .datos input{margin-top: 2vh;border-style: none;height: 25px;width: 200px;}
-
-        .datos button{margin-top: 2vh;
-            width: auto;
-            height: 30px;
-            margin: 10px;
-            font-family: 'Anton', sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            font-size: 15px;
-            border: none;
-            border-radius: 6px;
-            background-color: #5697fa;}
-            
-            .datos button:hover{background-color: #66c674;}
-    */
 
     .datos input{
         border: none;
     }
-
-    
 
 
 }
@@ -226,8 +190,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             width: 100vw;
             background-color: #ebebeb;} 
 
-            
+            main{
+                width: 80vw;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+            }
 
+            #avatar{width: auto;}
 
             nav{position: absolute;
                 top: 5%; 
@@ -273,25 +244,34 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 
             }
 
-        .datos{display: flex; flex-direction: column;
-            justify-content: space-around}
+        .datos{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            }
 
-        .datos input{margin-top: 2vh;border-style: none;height: 25px;width: 200px;}
-
+        .datos input{margin-top: 2vh;border-style: none;;height: 25px;width: 200px;}
         .datos button{margin-top: 2vh;
-            width: auto;
+            width: 60%;
             height: 30px;
             margin: 10px;
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            font-size: 15px;
+            font-size: 14px;
             border: none;
             border-radius: 6px;
             background-color: #5697fa;}
             
             .datos button:hover{background-color: #66c674;}
        
+            #labelAvatar {
+                text-align: center;
+                margin: 2%;
+                font-weight: bold;
+                font-size: 14px;
+            }
 
            
 }
