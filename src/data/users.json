@@ -174,5 +174,12 @@
         "email": "mauro@gmail.com",
         "password": "$2a$12$FLJJAwj5ZdVDgcBxAGLt0et8rAXCd50RaIX6hBG14zY/dpf/mwF2W",
         "avatar": "Consumo edesur.png"
+    },
+    {
+        "id": 23,
+        "first_name": "nahuel",
+        "last_name": "rodriguez",
+        "email": "nahu@gmail.com",
+        "password": "$2a$12$YLHH/UoV2f9G1rK92bbhgehFmVe4bZCgpMc4sMvB7CMP5JZrnGKMy"
     }
 ]
