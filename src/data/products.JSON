@@ -74,5 +74,35 @@
         "Titulo": "producto 3",
         "Imagen": "producto 3-1607229732329.JPG",
         "Precio": "124444"
+    },
+    {
+        "ID": 1,
+        "Categoria": "Equipamiento",
+        "Titulo": "producto 4",
+        "Marca": "marca",
+        "Modelo": "modelo",
+        "Detalles": "detalleee",
+        "Imagen": "producto 4-1607281765091.JPG",
+        "Precio": "2222"
+    },
+    {
+        "ID": 1,
+        "Categoria": "Rodado",
+        "Titulo": "producto 5",
+        "Marca": "marca cinco",
+        "Modelo": "modelo cinco",
+        "Detalles": "detalle cinco\r\n",
+        "Imagen": "producto 5-1607283699333.JPG",
+        "Precio": "222"
+    },
+    {
+        "ID": 6,
+        "Categoria": "Rodado",
+        "Titulo": "producto 6",
+        "Marca": "marca seis",
+        "Modelo": "modelo seis",
+        "Detalles": "detalle seis",
+        "Imagen": "producto 6-1607283975459.JPG",
+        "Precio": "5555"
     }
 ]

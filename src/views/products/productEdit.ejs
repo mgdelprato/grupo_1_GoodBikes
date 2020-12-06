@@ -31,11 +31,18 @@
                 <h4>Precio</h4>
                 <input type="text" class="valores" name="precio">
                 <h4>Descripción</h4>
-                <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea>
-                <div name="descripcionD"></div>
+                <!-- <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea> -->
+                <div name="descripcionD" id="divDescripcion">
+
+                    <input placeholder="Marca" type="text" class="descripcion" name="marca">
+                    <input placeholder="Modelo" type="text" class="descripcion" name="modelo">
+                    <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
+                    <textarea placeholder="Detalle" name="detalle" id="" cols="30" rows="9" class="descripcion"></textarea>
+
+                </div>
             </div>
             <div class="divCarga">
-                 <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
+                <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
                     <h4 id="tituloImagenes">Imagenes</h4>
                     <input type="file" multiple name="files[]" name="archivo">
                     <button type="submit">Adjuntar</button>

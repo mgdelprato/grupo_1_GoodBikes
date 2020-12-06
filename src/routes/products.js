@@ -25,8 +25,8 @@ router.get('/productDetail', productsController.detalleProducto);
 router.get('/productCreate', productsController.crearProducto);
 router.post('/productCreate', upload.any(), productsController.grabarProducto);
 
-router.get('/:id/productEdit/', productsController.editarProducto);
-router.put('/:id/productEdit/', productsController.editarProducto);
+router.get('/:id/productEdit/', productsController.editarProducto); //analizar si hay que modificar la ruta
+router.put('/:id/productEdit/', productsController.editarProducto); //analizar si hay que modificar la ruta
 router.delete('/:id',productsController.borrarProducto);
 
 router.get('/productList', productsController.listarProducto);

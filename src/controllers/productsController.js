@@ -6,13 +6,15 @@ const { validationResult } = require('express-validator');
 let productos = fs.readFileSync(path.join(__dirname,'../data/products.json'),'utf-8');
 productos = JSON.parse(productos);
 
+
 let ultimoId = 0
 for(let i=0; i<productos.length ; i++){
-    if(ultimoId<productos[i].id){
-        ultimoId=productos[i].id;
+    if(ultimoId<productos[i].ID){
+        ultimoId=productos[i].ID;
     }
 }
 
+console.log(ultimoId);
 let productsController = {
 
     carritoCompras: function(req, res) {
@@ -30,7 +32,7 @@ let productsController = {
         let error  = validationResult(req);
         if(error.isEmpty()){
             let nuevoProducto ={
-                ID: ultimoId + 1,
+                ID: ultimoId +1,
                 Categoria: req.body.categoria,
                 Titulo: req.body.producto,
                 Marca: req.body.marca,
@@ -39,8 +41,8 @@ let productsController = {
                 Imagen:req.files[0].filename,
                 Precio: req.body.precio,
                 Cantidad: req.body.cantidad
-                
             }
+            console.log(nuevoProducto);
 
             productos.push(nuevoProducto);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
@@ -56,8 +58,6 @@ let productsController = {
     editarProducto: function(req, res) {
        
         res.render( path.join(__dirname, '../views/products/productEdit.ejs') )
-       
-       
        
     },
 

@@ -11,6 +11,7 @@ for(let i=0; i<usuarios.length;i++){
     if(ultimoId<usuarios[i].id){
         ultimoId=usuarios[i].id;
     }
+    console.log(ultimoId);
 }
 
 
