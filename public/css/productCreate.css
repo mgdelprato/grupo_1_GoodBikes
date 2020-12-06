@@ -105,17 +105,37 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     width: 50%;
                     margin-bottom: 10px;
                     border:none;
+                    
+                    
                 
                 }
                 
                 main div:nth-last-child(2) input{
                     height: 20px; 
                     border-style: solid;
-                    border-color: rgb(212, 92, 13);
+                    
                 }
 
+                main div div:nth-last-child(2){
+                    background-color: #ffffff;
+                    width: 50%;
+                    height: 36vh;
+                    display: flex;
+                    align-items: flex-start;
+                    padding: 1%;
+                }
+
+                main div div .descripcion{
+                    border: none;                    
+                    width: 100%;
+
+                }
                 
-                
+                main div div textarea{
+                    padding-top: 0.7%;
+                }
+
+
                 main div:nth-child(3) h4{
                     font-size: 18px;
                     text-align: left;
@@ -309,7 +329,22 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             main div:nth-last-child(2) input{
                 height: 20px; 
             }
-    
+
+            main div div:nth-last-child(2){
+                background-color: #ffffff;
+                width: 70%;
+                height: 36vh;
+                display: flex;
+                align-items: flex-start;
+                padding: 1%;
+            }
+
+            main div div .descripcion{
+                border: none;                    
+                width: 100%;
+                
+            }
+            
     
        
     
