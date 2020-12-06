@@ -7,6 +7,7 @@ let productos = fs.readFileSync(path.join(__dirname,'../data/products.json'),'ut
 productos = JSON.parse(productos);
 
 
+
 let ultimoId = 0
 for(let i=0; i<productos.length ; i++){
     if(ultimoId<productos[i].ID){
@@ -14,7 +15,7 @@ for(let i=0; i<productos.length ; i++){
     }
 }
 
-console.log(ultimoId);
+
 let productsController = {
 
     carritoCompras: function(req, res) {
@@ -42,7 +43,7 @@ let productsController = {
                 Precio: req.body.precio,
                 Cantidad: req.body.cantidad
             }
-            console.log(nuevoProducto);
+          
 
             productos.push(nuevoProducto);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
@@ -56,9 +57,12 @@ let productsController = {
     },
 
     editarProducto: function(req, res) {
-       
-        res.render( path.join(__dirname, '../views/products/productEdit.ejs') )
-       
+
+        let productoEditar = req.params.id;
+        productoEditar = productos[productoEditar];
+        console.log(productoEditar);
+        res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
+
     },
 
     listarProducto: function(req, res) {
@@ -66,9 +70,22 @@ let productsController = {
     },
     
     borrarProducto: function(req, res) {
-        res.send('Producto Borrado')
-    },
-    
+
+        let error  = validationResult(req);
+        if(error.isEmpty()){
+            let productoEliminar = req.params.id;
+                   
+                productos.pop(productoEliminar)    
+
+                fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
+                res.redirect('/products/productList')
+
+        }else{
+            return res.render(path.join(__dirname,'../views/products/productList')), {
+                errors: errors.mapped()
+                 }
+            }
+    }
     
 
 }
