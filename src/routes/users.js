@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const usersController = require ('../controllers/usersController');
 const multer = require('multer');
+const path = require('path');
 
 
 //Multer para guardar los avatars
@@ -22,7 +23,7 @@ router.get('/login', usersController.login)
 
 //Register
 router.get('/register', usersController.registrar)
-router.post('/register', usersController.save)
+router.post('/register', upload.any(),usersController.save)
 
 //Profile
 router.get('/profile', usersController.perfil)

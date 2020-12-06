@@ -114,7 +114,30 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     }
 
     #labelAvatar{text-align: center;margin: 2%;font-weight: bold;font-size: 14px;}
-    #avatar{align-self: center;}
+    
+    #avatar{
+        background-color: #ffffff;
+        margin-right: 10px;
+        background-color: #ffffff;
+        padding: 0% 2% 0% 0%;
+        font-weight: bold;
+        height: 30px;
+        border-radius: 6px;
+    }
+
+    #avatar::-webkit-file-upload-button{
+        height: 30px;
+        width: 15vw;
+        font-family: 'Anton', sans-serif;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 13px;
+        background-color: #5697fa;
+        border-radius: 6px;
+        border-style: none;
+    }   
+
+    
 
     main form div{
         display: flex;
@@ -272,6 +295,30 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 font-weight: bold;
                 font-size: 14px;
             }
+
+            #avatar{
+               
+                    margin-right: 10px;
+                    background-color: #ffffff;
+                    padding: 0% 2% 0% 0%;
+                    font-weight: bold;
+                    height: 30px;
+                    width: 100%;
+                    border-radius: 6px;
+
+            }
+
+            #avatar::-webkit-file-upload-button{
+                height: 30px;
+                width: 30vw;
+                font-family: 'Anton', sans-serif;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 10px;
+                background-color: #5697fa;
+                border-radius: 6px;
+                border-style: none;
+            }  
 
            
 }

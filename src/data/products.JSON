@@ -1,57 +1,78 @@
 [
     {
-          "ID":1,
-          "Categoria":"Bicicleta",
-          "Titulo":"Mountain Bike Firebird R29 Doble suspension",
-          "Marca":"Firebird",
-          "Modelo":"R29 Doble suspension",
-          "Detalles":"Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k",
-          "Imagen":"FireBird-doble-suspension-R29.jpeg",
-          "Precio":71999,
-          "Cantidad":50
+        "ID": 1,
+        "Categoria": "Bicicleta",
+        "Titulo": "Mountain Bike Firebird R29 Doble suspension",
+        "Marca": "Firebird",
+        "Modelo": "R29 Doble suspension",
+        "Detalles": "Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k",
+        "Imagen": "FireBird-doble-suspension-R29.jpeg",
+        "Precio": 71999,
+        "Cantidad": 50
     },
     {
-          "ID":2,
-          "Categoria":"Bicicleta",
-          "Titulo":"Todoterreno Aurora Bacota",
-          "Marca":"Aurora",
-          "Modelo":"Bacota",
-          "Detalles":"Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 7, Tipo de freno: Disco mecanico Shimano, Suspension: Doble, Rodado: Especial 26x4, Modelo: Bacota, Tipo: Mountain Bike, Manubrio: Chopero Acero",
-          "Imagen":"Aurora-bacota.jpg",
-          "Precio":98000,
-          "Cantidad":30
+        "ID": 2,
+        "Categoria": "Bicicleta",
+        "Titulo": "Todoterreno Aurora Bacota",
+        "Marca": "Aurora",
+        "Modelo": "Bacota",
+        "Detalles": "Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 7, Tipo de freno: Disco mecanico Shimano, Suspension: Doble, Rodado: Especial 26x4, Modelo: Bacota, Tipo: Mountain Bike, Manubrio: Chopero Acero",
+        "Imagen": "Aurora-bacota.jpg",
+        "Precio": 98000,
+        "Cantidad": 30
     },
     {
-          "ID":3,
-          "Categoria":"Bicicleta",
-          "Titulo":"Mountain Kike Teknial Tarpan 100er",
-          "Marca":"Teknial",
-          "Modelo":"Tarpan 100er",
-          "Detalles":"Genero: Hombre, Material del cuadro: Aluminio, Numero de cambios: 21, Tipo de freno: Disco mecanico Shimano, Suspension: Simple, Rodado: 29, Modelo: Tarpan, Tipo: Mountain Bike, Manubrio: Acero MTB, Pedal: Plasticos",
-          "Imagen":"mountain-bike-teknial-tarpan-100er-2021.jpg",
-          "Precio":52000,
-          "Cantidad":50
+        "ID": 3,
+        "Categoria": "Bicicleta",
+        "Titulo": "Mountain Kike Teknial Tarpan 100er",
+        "Marca": "Teknial",
+        "Modelo": "Tarpan 100er",
+        "Detalles": "Genero: Hombre, Material del cuadro: Aluminio, Numero de cambios: 21, Tipo de freno: Disco mecanico Shimano, Suspension: Simple, Rodado: 29, Modelo: Tarpan, Tipo: Mountain Bike, Manubrio: Acero MTB, Pedal: Plasticos",
+        "Imagen": "mountain-bike-teknial-tarpan-100er-2021.jpg",
+        "Precio": 52000,
+        "Cantidad": 50
     },
     {
-          "ID":4,
-          "Categoria":"Bicicleta",
-          "Titulo":"Electrica plegable Ride Daily 250W 13AH",
-          "Marca":"Ride Daily",
-          "Modelo":"ID V",
-          "Detalles":"Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 6, Tipo de freno: Disco mecanico, Suspension: Delantera, Rodado: 20, Modelo: ID V, Tipo: Electrica, Manubrio: Aluminio, Pedal: Plastico, Peso: 15 kg",
-          "Imagen":"Ride-Daily-250W-13AH.jpeg",
-          "Precio":248800,
-          "Cantidad":20
+        "ID": 4,
+        "Categoria": "Bicicleta",
+        "Titulo": "Electrica plegable Ride Daily 250W 13AH",
+        "Marca": "Ride Daily",
+        "Modelo": "ID V",
+        "Detalles": "Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 6, Tipo de freno: Disco mecanico, Suspension: Delantera, Rodado: 20, Modelo: ID V, Tipo: Electrica, Manubrio: Aluminio, Pedal: Plastico, Peso: 15 kg",
+        "Imagen": "Ride-Daily-250W-13AH.jpeg",
+        "Precio": 248800,
+        "Cantidad": 20
     },
     {
-          "ID":5,
-          "Categoria":"Bicicleta",
-          "Titulo":"Playera Randers BKE-001",
-          "Marca":"RANDERS",
-          "Modelo":"BKE-001",
-          "Detalles":"Genero: Unisex, Material del cuadro: Acero, Numero de cambios: Sin cambios, Tipo de freno: Contrapedal, Suspension: Sin suspension, Rodado: 26, Modelo: BKE-001-B, Tipo: Urbana, Manubrio: Acero, Pedal: Plastico, Peso: 1",
-          "Imagen":"Playera-Randers-BKE-001.jpg",
-          "Precio":28000,
-          "Cantidad":50
-    }   
+        "ID": 5,
+        "Categoria": "Bicicleta",
+        "Titulo": "Playera Randers BKE-001",
+        "Marca": "RANDERS",
+        "Modelo": "BKE-001",
+        "Detalles": "Genero: Unisex, Material del cuadro: Acero, Numero de cambios: Sin cambios, Tipo de freno: Contrapedal, Suspension: Sin suspension, Rodado: 26, Modelo: BKE-001-B, Tipo: Urbana, Manubrio: Acero, Pedal: Plastico, Peso: 1",
+        "Imagen": "Playera-Randers-BKE-001.jpg",
+        "Precio": 28000,
+        "Cantidad": 50
+    },
+    {
+        "ID": 1,
+        "Categoria": "Rodado",
+        "Titulo": "titulo",
+        "Imagen": "undefined-1607229102803.JPG",
+        "Precio": "precio dle producto"
+    },
+    {
+        "ID": 1,
+        "Categoria": "Equipamiento",
+        "Titulo": "producto 2",
+        "Imagen": "producto 2-1607229627754.JPG",
+        "Precio": "123"
+    },
+    {
+        "ID": 1,
+        "Categoria": "Rodado",
+        "Titulo": "producto 3",
+        "Imagen": "producto 3-1607229732329.JPG",
+        "Precio": "124444"
+    }
 ]
