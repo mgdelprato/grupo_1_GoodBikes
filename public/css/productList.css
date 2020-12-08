@@ -129,9 +129,6 @@ width: 100vw;
                     font-size: 20px;
                     color: green;
 
-
-
-
                 }
 
                 main .divTabla table tr td{
@@ -161,7 +158,11 @@ width: 100vw;
                  main .divTabla table tr td i:nth-child(1):hover {
                     color: green;
                 }
-                 main .divTabla table tr td i:nth-child(2):hover {
+
+                #btnTacho{
+                 border: none   
+                }
+                 #tacho {
                      color: red;
                  }
 

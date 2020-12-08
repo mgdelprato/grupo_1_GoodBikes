@@ -59,14 +59,36 @@ let productsController = {
     editarProducto: function(req, res) {
 
         let productoEditar = req.params.id;
-        productoEditar = productos[productoEditar];
         console.log(productoEditar);
+        productoEditar = productos[productoEditar];
+
         res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
 
     },
 
+    actualizarProducto: function(req,res){
+        let productoEditar = req.params.id;
+        let error  = validationResult(req);
+        if(error.isEmpty()){
+
+
+        console.log(req.body);
+
+            productos[productoEditar].push(productoModificado);
+            fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
+            res.redirect('/products/productList')
+        }else{
+            // hay errores. Entonces...
+            return res.render(path.join(__dirname,'../views/products/productEdit/:id'), {
+                errors: errors.mapped()
+            })
+        }
+    },
+
     listarProducto: function(req, res) {
-        res.render( path.join(__dirname, '../views/products/productList.ejs') )
+        
+        res.render( path.join(__dirname, '../views/products/productList.ejs'),{productos:productos} )
+        
     },
     
     borrarProducto: function(req, res) {
@@ -74,8 +96,10 @@ let productsController = {
         let error  = validationResult(req);
         if(error.isEmpty()){
             let productoEliminar = req.params.id;
-                   
-                productos.pop(productoEliminar)    
+                   console.log(productos.id);
+                   console.log(productoEliminar);
+                productos = productos.filter(productos=>productos.ID!=productoEliminar)   
+               
 
                 fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
                 res.redirect('/products/productList')
