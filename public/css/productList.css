@@ -89,9 +89,10 @@ width: 100vw;
                     flex: 1 1 auto;
                     margin-bottom: 6%;
                     border: 3px solid #d0d0d0;
+                   
                     
                 }
-
+              
                 main .divTabla table tr{
                     width: 100%;
                     display: flex;
@@ -123,6 +124,8 @@ width: 100vw;
                     font-size: 15px;
                     border-bottom: 3px solid #d0d0d0;    
                 }
+
+             
 
               
                 main .divTabla table tr th i{

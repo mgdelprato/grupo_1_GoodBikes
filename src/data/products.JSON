@@ -60,15 +60,5 @@
         "Titulo": "titulo",
         "Imagen": "undefined-1607229102803.JPG",
         "Precio": "precio dle producto"
-    },
-    {
-        "ID": 9,
-        "Categoria": "Equipamiento",
-        "Titulo": "producto 4",
-        "Marca": "marca",
-        "Modelo": "modelo",
-        "Detalles": "detalleee",
-        "Imagen": "producto 4-1607281765091.JPG",
-        "Precio": "2222"
     }
 ]
