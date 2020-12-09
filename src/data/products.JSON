@@ -55,10 +55,31 @@
         "Cantidad": 50
     },
     {
-        "ID": 6,
-        "Categoria": "Rodado",
-        "Titulo": "titulo",
-        "Imagen": "undefined-1607229102803.JPG",
-        "Precio": "precio dle producto"
+        "ID": "8",
+        "Categoria": "Indumentaria",
+        "Titulo": "rodado bici nuevo",
+        "Marca": "marca rodado",
+        "Modelo": "modelo rodado",
+        "Detalles": "detalle rodado",
+        "Precio": "1022222222222"
+    },
+    {
+        "ID": 9,
+        "Categoria": "Equipamiento",
+        "Titulo": "equipo 1",
+        "Marca": "marca equipo",
+        "Modelo": "modelo equipo",
+        "Detalles": "detalle  equipo",
+        "Imagen": "equipo 1-1607451624252.JPG",
+        "Precio": "222221212"
+    },
+    {
+        "ID": "10",
+        "Categoria": "Equipamiento",
+        "Titulo": "producto 10",
+        "Marca": "marca 10",
+        "Modelo": "modelo 10",
+        "Detalles": "fklasfjkla 1000",
+        "Precio": "2222"
     }
 ]

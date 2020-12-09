@@ -59,22 +59,47 @@ let productsController = {
     editarProducto: function(req, res) {
 
         let productoEditar = req.params.id;
-        console.log(productoEditar);
-        productoEditar = productos[productoEditar];
+        let posicionArrayProductos
+        for(let i=0; i<productos.length;i++){
+            if(productoEditar == productos[i].ID){
+                
+                posicionArrayProductos = i 
+
+            } 
+        }
+  
+        productoEditar = productos[posicionArrayProductos];
 
         res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
 
     },
 
     actualizarProducto: function(req,res){
-        let productoEditar = req.params.id;
+        let productoEditar = req.params.id; 
+        let productoModificado ={}
         let error  = validationResult(req);
-        if(error.isEmpty()){
-
-
         console.log(req.body);
+        
+        if(error.isEmpty()){
+        for (let i=0; i<productos.length;i++){
+            if(productoEditar==productos[i].ID){
+                productos[i] = {
+                    ID: productoEditar,
+                    Categoria: req.body.categoria,
+                    Titulo: req.body.producto,
+                    Marca: req.body.marca,
+                    Modelo: req.body.modelo,
+                    Detalles: req.body.detalle,
+                    Imagen:req.files[0].filename,
+                    Precio: req.body.precio,
+                    Cantidad: req.body.cantidad
 
-            productos[productoEditar].push(productoModificado);
+                }
+                console.log( productos[i]);
+            }
+        }
+           
+
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
             res.redirect('/products/productList')
         }else{
