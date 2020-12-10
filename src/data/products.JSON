@@ -104,5 +104,15 @@
         "Detalles": "detalle seis",
         "Imagen": "producto 6-1607283975459.JPG",
         "Precio": "5555"
+    },
+    {
+        "ID": 7,
+        "Categoria": "Rodado",
+        "Titulo": "Bicla BMX",
+        "Marca": "Venzo",
+        "Modelo": "Amphion",
+        "Detalles": " Frenos a DISCO MECANICOS\r\n• 24 Velocidades\r\n• Full ALUMINIO\r\n• Rodado 26\"\r\n• Colores y Talles Disponibles:\r\n\r\n16\"(S): Naranja / Verde / Rosa\r\n\r\n______________________________________________________________\r\n\r\nESPECIFICACIONES:\r\n\r\n• Cuadro MTB aluminio VENZO super liviano 6061 RODADO 27.5\r\n• Asiento competición\r\n• Manija de cambio y frenos SHIMANO\r\n• Frenos a Disco mecanicos delanteros y traseros\r\n• Horquilla delantera con suspensión diamondback R26\r\n• Forma descenso aluminio\r\n• Juego Dirección Integrado 1 1/8\r\n• Ahead de aluminio 31.8 mm\r\n• Maza delantera y trasera shimano\r\n• Ruedas Reforzadas Doble Pared Aluminio con tacos rodado 26\r\n______________________________________________________________",
+        "Imagen": "Bicla BMX-1607342106697.jpg",
+        "Precio": "40000"
     }
 ]
