@@ -92,7 +92,7 @@ let productsController = {
                     Detalles: req.body.detalle,
                     Imagen:req.files[0].filename,
                     Precio: req.body.precio,
-                    Cantidad: req.body.cantidad
+                    Cantidad: req.body.cantidad 
 
                 }
                 console.log( productos[i]);
