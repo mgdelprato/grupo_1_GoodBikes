@@ -134,7 +134,13 @@ let productsController = {
                 errors: errors.mapped()
                  }
             }
+    },
+    getProducto: function(req,res){
+        let productoAMostrar = req.params.id;
+        return res.send(productoAMostrar);
     }
+
+
     
 
 }
