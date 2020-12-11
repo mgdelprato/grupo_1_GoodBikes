@@ -20,6 +20,8 @@ var upload = multer({ storage: storage })
 router.get('/productCart', productsController.carritoCompras);
 
 router.get('/productDetail', productsController.detalleProducto);
+router.get('/productDetail/:id', productsController.getProducto);
+
 // router.get('/productDetail/:id', productsController.detalleProducto); //Revisar esto a ver si está ok o directamente va el parametro
 
 router.get('/productCreate', productsController.crearProducto);
