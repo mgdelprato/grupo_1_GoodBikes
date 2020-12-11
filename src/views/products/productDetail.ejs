@@ -25,7 +25,7 @@
                 </section>
                 
                 <section id='CuadroCentro'>
-                    <figure id='Principal1' ><img src="/images/products/bike1.PNG" alt="Principal1"></figure>
+                    <figure id='Principal1' ><img src="/uploads/products/<%= producto.Imagen %>" alt="Principal1"></figure>
                 
                     <ul>
                         <li>+Info</li>
@@ -34,8 +34,8 @@
                 </section>
                 
                 <section id='CuadroDerecho'>
-                    <h1>BICICLETA GIANT XTC ADVANCED</h1>
-                    <span>$657.438,09</span>
+                    <h1><%= producto.Titulo %></h1>
+                    <span><%= producto.Precio %></span>
                     <ul>
                         <li>+Info</li>
                         <li><button type="submit">Agregar</button></li>

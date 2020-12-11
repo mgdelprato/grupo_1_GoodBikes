@@ -22,7 +22,7 @@ let productsController = {
                  res.render( path.join(__dirname, '../views/products/productCart.ejs') )
                 },
 
-    detalleProducto: function(req, res) {
+    detalle_Producto: function(req, res) {
         res.render( path.join(__dirname, '../views/products/productDetail.ejs') )
     },
 
@@ -135,9 +135,10 @@ let productsController = {
                  }
             }
     },
-    getProducto: function(req,res){
-        let productoAMostrar = req.params.id;
-        return res.send(productoAMostrar);
+    detalleProducto: function(req,res){
+        console.log(productos.find(productos => productos.ID == req.params.id));
+        return res.render( path.join(__dirname, '../views/products/productDetail.ejs'), { producto : productos.find(productos => productos.ID == req.params.id) } )
+        
     }
 
 

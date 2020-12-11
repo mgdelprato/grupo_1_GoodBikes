@@ -7,8 +7,8 @@ let productos = fs.readFileSync(path.join(__dirname,'../data/products.json'),'ut
 productos = JSON.parse(productos);
 
 let mainController = {
-    index: function(req,res){
-        res.render( path.join(__dirname, '../views/index.ejs'),{productos:productos} )
+    index: function(req,  res){
+        res.render( path.join(__dirname, '../views/index.ejs'), {productos:productos} )
         }
 }
 

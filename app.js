@@ -8,8 +8,7 @@ const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
-app.use( express.static( path.join(__dirname, './public') ) )
-
+app.use(express.static( path.join(__dirname, './public') ) )
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
