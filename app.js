@@ -5,6 +5,7 @@ const path = require('path'); // Este modulo me va a permitir escribir rutas de 
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
 const methodOverride = require('method-override');
+const mainRouter = require('./src/routes/index')
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
 app.use( express.static( path.join(__dirname, './public') ) )
@@ -16,10 +17,7 @@ app.use(express.urlencoded({extended:false}));
 app.use(methodOverride('_method'));
 
 /* HOME */
-app.get('/', function(req, res) {
-    res.render( path.join(__dirname, './src/views/index.ejs') )
-})
-
+app.get('/', mainRouter)
 /*---------------------------------------------------------------------------------- */
 
 /* USUARIOS */

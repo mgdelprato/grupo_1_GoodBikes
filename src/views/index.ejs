@@ -13,10 +13,15 @@
         <%- include('./partials/header')%>
         
         
+        <div id='Hero_IMG' class='juntitos2'>                
+            <img src="/images/Fondos/Fondo1.PNG" height="40%" width="100%">
+
+        </div>
         
-        <video id='Video_Home' autoplay="true" loop="true" id="header-video" class="header-video" muted>
-            <source src="https://bike.shimano.com/content/dam/productsite/shimano-northamerica/video/Brave%20Banner.mp4" type="video/mp4">
+            <video id='Video_Home' autoplay="true" loop="true" id="header-video" class="header-video" muted>
+                <source src="/images/Video_Banner.webm" type="video/mp4">
             </video>
+
             <p id='Text_Hero'>¡Encuentra tu Goodbike!</p>
             
             <div id='juntitos' class='juntitos'>
@@ -39,38 +44,51 @@
             </div>
 
             <main>
-                <section id='CuadroIzquierdo'>
-                    <figure id='Principal1' ><a href="products/productDetail"><img src="images/products/z-img8.png" alt="Principal1"></a></figure>
+                <% for(let i=0; i < 2; i++){ %>
+                <section id=<%= productos[i].ID %>>
+                    <figure id='Principal1' ><a href="products/productDetail"><img src="uploads/products/<%= productos[i].Imagen%>"alt="Principal1"></a></figure>
                     <div>
-                        <p>Bicicleta Giant Xtc Advanced Sl 1 29er Azul Talle M (2020)</p>
-                        <span class="price">u$s 60.045,01</span>
+                        <p><%= productos[i].Titulo %></p>
+                        <span class="price"><%= productos[i].Precio %></span>
                         <button type="submit">Comprar</button>
                     </div>       
                 </section>
+                <% } %> 
                 
-            <section id='CuadroCentro'>
-                <figure id='Principal1' ><img src="images/products/15500_800.jpg" alt="Principal1"></figure>
-                <div>
-                    <p>Bicicleta Giant Xtc Advanced Sl 1 29er Azul Talle M (2020)</p>
-                    <span class="price">$ 50.597,00</span>
-                    <button type="submit">Comprar</button>
-                </div>
-            </section>
-            
-            <section id='CuadroDerecho'>
-                <figure id='Principal1' ><img src="images/products/z-img7b.PNG" alt="Principal1"></figure>
-                <div>
-                     <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
-                     <span class="price">$ 720.000,00</span>
-                     <button type="submit">Comprar</button>
+                <section id='CuadroCentro'>
+                    <figure id='Principal1' ><img src="images/products/15500_800.jpg" alt="Principal1"></figure>
+                    <div>
+                        <p>Bicicleta Giant Xtc Advanced Sl 1 29er Azul Talle M (2020)</p>
+                        <span class="price">$ 50.597,00</span>
+                        <button type="submit">Comprar</button>
                     </div>
                 </section>
                 
+                <section id='CuadroDerecho'>
+                    <figure id='Principal1' ><img src="images/products/z-img7b.PNG" alt="Principal1"></figure>
+                    <div>
+                        <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
+                        <span class="price">$ 720.000,00</span>
+                        <button type="submit">Comprar</button>
+                        </div>
+                    </section>
+                    
             </main>
-            <%- include('./partials/footer')%>
+
+ 
+            <div id='juntitos2' class='juntitos2'>                
+                <img src="/images/Fondos/Fondo1.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo2.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo3.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo4.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo5.PNG" height="200px" width="200px">
+            </div>
+
+            <div>
+               <%- include('./partials/footer')%>
+            </div>
             
-            
-            
+                
         </div>
     </body>
     </html>
