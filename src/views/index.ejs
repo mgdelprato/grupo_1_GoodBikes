@@ -28,14 +28,10 @@
                 <img src="images/Ofertas.png" height="25px" alt="Oferta1">
                 <p id='Ofertas_text' class="Resaltado">Ofertas</p>            
             </div>
-
             <section id='Ofertas' class='ContenedorOfertas'>
-                <figure id='Oferta0' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-                <figure id='Oferta1' ><img src="images/products/z-img1b.png" class='Oferton' alt="Oferta1"></figure>
-                <figure id='Oferta2' ><img src="images/products/z-img2b.png" class='Oferton' alt="Oferta1"></figure>
-                <figure id='Oferta3' ><img src="images/products/z-img3.png" class='Oferton' alt="Oferta1"></figure>
-                <figure id='Oferta4' ><img src="images/products/z-img4b.png" class='Oferton' alt="Oferta1"></figure>
-                <figure id='Oferta5' ><img src="images/products/z-img5.jpg" class='Oferton' alt="Oferta1"></figure>
+            <% for(let i=9; i<productos.length; i++){ %>
+                <figure id='Oferta0' ><img src="uploads/products/<%= productos[i].Imagen%>" class='Oferton' alt="Oferta1"></figure>
+                <% } %> 
             </section>
 
             <div id='juntitos2' class='juntitos'>
@@ -44,7 +40,7 @@
             </div>
 
             <main>
-                <% for(let i=0; i < 2; i++){ %>
+                <% for(let i=0; i < 4; i++){ %>
                 <section id=<%= productos[i].ID %>>
                     <figure id='Principal1' ><a href="products/productDetail"><img src="uploads/products/<%= productos[i].Imagen%>"alt="Principal1"></a></figure>
                     <div>
@@ -54,25 +50,6 @@
                     </div>       
                 </section>
                 <% } %> 
-                
-                <section id='CuadroCentro'>
-                    <figure id='Principal1' ><img src="images/products/15500_800.jpg" alt="Principal1"></figure>
-                    <div>
-                        <p>Bicicleta Giant Xtc Advanced Sl 1 29er Azul Talle M (2020)</p>
-                        <span class="price">$ 50.597,00</span>
-                        <button type="submit">Comprar</button>
-                    </div>
-                </section>
-                
-                <section id='CuadroDerecho'>
-                    <figure id='Principal1' ><img src="images/products/z-img7b.PNG" alt="Principal1"></figure>
-                    <div>
-                        <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
-                        <span class="price">$ 720.000,00</span>
-                        <button type="submit">Comprar</button>
-                        </div>
-                    </section>
-                    
             </main>
 
  
