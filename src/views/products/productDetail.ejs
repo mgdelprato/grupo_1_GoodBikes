@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/productDetail.css" type="text/css" media="screen"><!--Estilos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="manifest" href="/icon/site.webmanifest">
+
     <title>Goodbikes</title>
 </head>
 <body>
+
+    
     <div id='Contenedor'>  
         <%- include('../partials/header')%>
         <!-- <img id='Banner' src='/images/Banner11.png' width='100%'>
-         -->
+        -->
+        <img src='/images/Banner11.png' width='100%' id='Banner_Product_Detail_web'>
+        <img src='/images/Fondos/Fondo1.png' width='100%' id='Banner_Product_Detail_mobile'>
+        <p id='Text_Hero_Mobile'>Lo mejor es Goodbike</p>
+        <h3 id='Detalle_Producto'>Detalles del producto</h3>
     <main>
         <div id="DetalleCompleto">
         
             <div id="cuadrosSuperiores">     
-
                 <section id='CuadroIzquierdo'>
                     <% for(let i=0; i < producto.Imagen.length; i++){ %>
                         <figure><img class='imagenIzquierda'src="/uploads/products/<%= producto.Imagen[i] %>" alt="Principal1"></figure>
@@ -29,7 +40,7 @@
                 </section>
                 
                 <section id='CuadroDerecho'>
-                    <h1><%= producto.Titulo %></h1>
+                    <h1><%= producto.Titulo %></h1><br>
                     <span><%= producto.Precio %></span>
                     <ul>
                         <li>+Info</li>
