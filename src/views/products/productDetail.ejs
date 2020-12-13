@@ -18,11 +18,9 @@
             <div id="cuadrosSuperiores">     
 
                 <section id='CuadroIzquierdo'>
-      
-                        <figure><img class='imagenIzquierda'src="/uploads/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
-                        <figure><img class='imagenIzquierda'src="/uploads/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
-                        <figure><img class='imagenIzquierda'src="/uploads/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
-                    
+                    <% for(let i=0; i < producto.Imagen.length; i++){ %>
+                        <figure><img class='imagenIzquierda'src="/uploads/products/<%= producto.Imagen[i] %>" alt="Principal1"></figure>
+                    <% } %>     
                 </section>
                 <section id='CuadroCentro'>
                     <figure id='Principal1' ><img src="/uploads/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
