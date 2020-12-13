@@ -45,3 +45,9 @@ SPRINT 4
 # "Daily 2"
 - Revisión y nueva definición de campos usuarios y productos
 - Revisión y adaptación de diseños
+
+# "Daily 3"
+- Revisión y arreglo de productDetail
+- Acuerdos de diseño para userProfile
+- Nuevo manejo de imágenes en productos
+- Disparar revisión de imágenes en todo el sitio

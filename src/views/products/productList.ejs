@@ -15,34 +15,34 @@
                 <div>
                     <h1>Administración de productos</h1>
                 </div>
+            <form action="" method="">
                 <div class="divTabla">
                     <table>
                             <tr>
+                                <th id="id">ID</th>
                                 <th>Categoria</th>
                                 <th>Producto</th>
                                 <th>Precio</th>
                                 <th><a href="productCreate"><i class="fas fa-plus"></i></a></th>
                             </tr>
-                            <tr>
-                                <td>Rodado</td>
-                                <td>Bicicleta MB Rod 29</td>
-                                <td>$34.659,23</td>
-                                <td><a href="productEdit"><i class="fas fa-edit"></i></a><i class="fas fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Accesorio</td>
-                                <td>Viela + Pedal</td>
-                                <td>$1.875,32</td>
-                                <td><a href="productCreate"><i class="fas fa-edit"></i></a><i class="fas fa-trash"></i></td>
-                            </tr>
-                            <tr>
-                                <td>Indumentaria</td>
-                                <td>Calza Venzo</td>
-                                <td>$3.568,00</td>
-                                <td><a href="productEdit"><i class="fas fa-edit"></i></a><i class="fas fa-trash"></i></td>
-                            </tr>
+                            <% for(let i=0; i < productos.length; i++){ %>
+
                             
+                            <tr>
+                                <td><%= productos[i].ID %></td>
+                                <td><%= productos[i].Categoria %></td>
+                                <td><%= productos[i].Titulo %></td>
+                                <td><%= productos[i].Precio %></td>
+                                <td><a href="productEdit/<%=productos[i].ID %>"><i class="fas fa-edit"></i></a>
+                                    <form action="delete/<%=productos[i].ID %>?_method=DELETE" method="POST">
+                                       <button type="submit" id="btnTacho">
+                                        <i class="fas fa-trash" id="tacho"></i></td>
+                                        </button>
+                                    </form>
+                            </tr>
+                            <% } %>                            
                     </table>
+                </form>
         </main>
         <%- include('../partials/footer')%>
     </div>

@@ -12,31 +12,39 @@
         <%- include('../partials/header')%>
 
         <main>
-            <form action="" method="">
+            <form action="/products/productEdit/<%= productoEditar.ID%>?_method=PUT" method="POST">
             <div class="titulos">
                 <h1>Administración de Productos</h1>
                 <h2>Modificación de producto</h2>
             </div>
             <div class="divCarga">
                 <h4>Categoria</h4>
-                <select class="valores" >
-                    <option value=Rodado>Rodado</option>
+                <select class="valores" name="categoria">
+                    <option value="<%= productoEditar.Categoria%>"><%= productoEditar.Categoria%></option>
                     <option value=Equipamiento>Equipamiento</option>
                     <option value=Indumentaria>Indumentaria</option>
                     <option value=Accesorios>Accesorios</option>
                     <option value=Taller>Taller</option>
                 </select>
                 <h4 >Producto</h4>
-                <input type="text" class="valores" name="producto">
+                <input type="text" class="valores" name="producto" value="<%= productoEditar.Titulo%>">
                 <h4>Precio</h4>
-                <input type="text" class="valores" name="precio">
+                <input type="text" class="valores" name="precio" value="<%= productoEditar.Precio%>">
                 <h4>Descripción</h4>
-                <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea>
+                <!-- <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea> -->
+                <div name="descripcionD" id="divDescripcion">
+
+                    <input placeholder="Marca" type="text" class="descripcion" name="marca" value="<%= productoEditar.Marca%>">
+                    <input placeholder="Modelo" type="text" class="descripcion" name="modelo" value="<%= productoEditar.Modelo%>">
+                    <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
+                    <textarea placeholder="Detalle" name="detalle" id="" cols="30" rows="9" class="descripcion" value="<%= productoEditar.Detalles%>"><%= productoEditar.Detalles%></textarea>
+
+                </div>
             </div>
             <div class="divCarga">
-                 <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
+                <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
                     <h4 id="tituloImagenes">Imagenes</h4>
-                    <input type="file" multiple name="files[]" name="archivo">
+                    <input type="file" multiple name="files[]" name="archivo" value="<%= productoEditar.Imagen%>">
                     <button type="submit">Adjuntar</button>
                     <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
                     <button type="submit" id="guardar">Guardar</button>

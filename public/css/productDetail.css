@@ -43,30 +43,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /*HEADER--->header.css*/
     
 
-    /*NAV*/
-    nav{
-        background-color: #ebebeb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        width: 100%;}
-    nav ul{
-        list-style:none;
-        text-align: center;}
-
-    nav ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 50px 0px 50px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-        }
-    nav ul li:hover{color: #bb0a21;}
-
+ 
 
     main{
         width: 100%;
@@ -82,7 +59,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         display: flex;
         text-align: center;
         border-radius: 10px;
-        background-color: #d1caca;
+        background-color: #ebebeb;
 
     }
 
@@ -93,13 +70,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         border-width: 0px;
         border-radius: 10px;
         border-color: #666666;
-        background-color: #ebebeb;
+        background-color: #ffffff;
         margin-left: 1%;
         margin-right: 1%;
         /* margin-top: 1%; */
-        /* display: inline-flex; */
+        display: inline-flex;
         flex-direction: column;
-        justify-content: flex-start;
+        justify-content: center;
         align-items: center;
         
     }
@@ -120,21 +97,34 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             flex-direction: row;
             flex-flow: wrap;
             justify-content: center;
-            align-items: flex-end;
+            align-items: center;
         }
             #CuadroCentro {
                 width: 290px;
+                display:flex;
+                flex-wrap: wrap;
+                
             }
             
             #CuadroIzquierdo{
-                align-items: center;
+                justify-content: space-evenly;
             }
              
             #CuadroDerecho{
-                align-items: center;
-                justify-content: center;
                 display: flex;
+                align-items: center;
+                font-size: 20px;
             }
+            
+            #CuadroDerecho h1{
+               font-size: 18px;
+            }
+            
+            #CuadroDerecho span{
+               font-size: 18px;
+            }
+            
+            
             #CuadroDerecho button{
                 height: 30px;
                 padding: 2px 22px 2px 22px;
@@ -155,13 +145,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         padding: 1%;
         margin: 0% 0% 1% 0%;
         }
-
-  main section img{
-      height: 140px; 
-      width: 180px;
-      margin-top: 5%;
-   
-  }
+main section figure{
+    display:flex; 
+    justify-content: center;
+    align-items: center; 
+}
+main div div section figure img{
+    width: 80%;
+      
+}
 
   main section img:hover{
       border-style: solid;
@@ -182,8 +174,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
       color: #333333;
   }
   .imagenIzquierda {
-    width: 50px;  
-    height: 50px;
+    width: 35%;  
   }
 
   

@@ -12,14 +12,15 @@
         <%- include('../partials/header')%>
 
         <main>
-            <form action="" method="" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="titulos">
                     <h1>Administración de Productos</h1>
                     <h2>Alta de producto</h2>
                 </div>
                 <div class="divCarga">
                     <h4>Categoria</h4>
-                    <select class="valores" >
+                    <select class="valores" name="categoria">
+                        <option value=Bicicleta>Bicicleta</option>
                         <option value=Rodado>Rodado</option>
                         <option value=Equipamiento>Equipamiento</option>
                         <option value=Indumentaria>Indumentaria</option>
@@ -30,8 +31,18 @@
                     <input type="text" class="valores" name="producto">
                     <h4>Precio</h4>
                     <input type="text" class="valores" name="precio">
+                    <h4>Cantidad</h4>
+                    <input  type="number" class="valores" name="cantidad">
                     <h4>Descripción</h4>
-                    <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea>
+                    <div name="descripcionD">
+                        
+                        <input placeholder="Marca" type="text" class="descripcion" name="marca">
+                        <input placeholder="Modelo" type="text" class="descripcion" name="modelo">
+                        
+                        <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
+                        <textarea placeholder="Detalle" name="detalle" id="" cols="30" rows="9" class="descripcion"></textarea>
+
+                    </div>
                     <h4 class="valores  ">Imagenes</h4>
                 </div>
                 <div class="divCarga">

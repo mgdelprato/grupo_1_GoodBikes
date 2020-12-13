@@ -9,56 +9,67 @@
 </head>
 <body>
     <div id='Contenedor'>  
-        <%- include('./partials/header')%>
-
-            
-            
-
-        <section id='Ofertas' class='ContenedorOfertas'>            
-            <figure id='Oferta0' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-            <figure id='Oferta1' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-            <figure id='Oferta2' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-            <figure id='Oferta3' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-            <figure id='Oferta4' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-            <figure id='Oferta5' ><img src="images/products/bike1.PNG" class='Oferton' alt="Oferta1"></figure>
-        </section>
-
-        <main>
-            <section id='CuadroIzquierdo'>
-                <figure id='Principal1' ><a href="products/productDetail"><img src="images/products/bike1.PNG" alt="Principal1"></a></figure>
-                <div>
-                    <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
-                    <span class="price">u$s 60.045,01</span>
-                    <button type="submit">Comprar</button>
-               </div>       
-            </section>
-            
-            <section id='CuadroCentro'>
-                <figure id='Principal1' ><img src="images/products/bike1.PNG" alt="Principal1"></figure>
-                <div>
-                    <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
-                    <span class="price">$ 50.597,00</span>
-                    <button type="submit">Comprar</button>
-               </div>
-            </section>
-
-            <section id='CuadroDerecho'>
-                <figure id='Principal1' ><img src="images/products/bike1.PNG" alt="Principal1"></figure>
-                <div>
-                     <p>BICICLETA GIANT XTC ADVANCED SL 1 29ER AZUL TALLE M (2020)</p>
-                     <span class="price">$ 720.000,00</span>
-                     <button type="submit">Comprar</button>
-                </div>
-            </section>
-
-        </main>
-        <%- include('./partials/footer')%>
         
+        <%- include('./partials/header')%>
+        
+        
+        <div id='Hero_IMG' class='juntitos2'>                
+            <img src="/images/Fondos/Fondo1.PNG" height="40%" width="100%">
 
+        </div>
+        
+            <video id='Video_Home' autoplay="true" loop="true" id="header-video" class="header-video" muted>
+                <source src="/images/Video_Banner.webm" type="video/mp4">
+            </video>
 
-    </div>
-</body>
-</html>
+            <p id='Text_Hero'>¡Encuentra tu Goodbike!</p>
+            
+            <div id='juntitos' class='juntitos'>
+                <img src="images/Ofertas.png" height="25px" alt="Oferta1">
+                <p id='Ofertas_text' class="Resaltado">Ofertas</p>            
+            </div>
+            <section id='Ofertas' class='ContenedorOfertas'>
+            <% for(let i=9; i<15; i++){ %>
+                <figure id='Oferta0' ><a href="products/productDetail/<%= productos[i].ID %>"><img src="uploads/products/<%= productos[i].Imagen%>" class='Oferton' alt="Oferta1"></a></figure>
+                <% } %> 
+            </section>
 
+            <div id='juntitos2' class='juntitos'>
+                <img src="images/Destacados.png" height="28px" alt="Oferta1">
+                <p id='Ofertas_text' class="Resaltado">Destacados</p>            
+            </div>
 
+            <main>
+                <% for(let i=0; i < 4; i++){ %>
+                <section id=<%= productos[i].ID %>>
+                    <figure id='Principal1' ><a href="products/productDetail/<%= productos[i].ID %>"><img src="uploads/products/<%= productos[i].Imagen%>"alt="Principal1"></a></figure>
+                    <div>
+                        <p><%= productos[i].Titulo %></p>
+                        <span class="price"><%= productos[i].Precio %></span>
+                        <button type="submit">Comprar</button>
+                    </div>       
+                </section>
+                <% } %> 
+            </main>
 
+ 
+            <div id='juntitos2' class='juntitos2'>                
+                <img src="/images/Fondos/Fondo1.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo2.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo3.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo4.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo5.PNG" height="200px" width="200px">
+            </div>
+
+            <div>
+               <%- include('./partials/footer')%>
+            </div>
+            
+                
+        </div>
+    </body>
+    </html>
+    
+    
+    
+    

@@ -44,3 +44,13 @@ font-family: 'Roboto', sans-serif;
 
 ## Link Heroku
 + https://com23goodbikes.herokuapp.com/
+
+
+## Modulos Utilizados
+ nodemon
+ express
+ ejs --save
+ method-override --save
+ multer
+ express-validator
+ bcryptjs

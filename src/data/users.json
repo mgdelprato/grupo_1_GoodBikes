@@ -1,14 +1,15 @@
 [
     {
         "id": 1,
-        "first_name": "Car",
-        "last_name": "Dargue",
-        "email": "cdargue0@discovery.com",
-        "password": "lMms3hMYk",
-        "avatar": "user_1.jpg"
+        "first_name": "Damian",
+        "last_name": "Scorciapino",
+        "email": "damian_scorciapino@hotmail.com",
+        "password": "$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382",
+        "avatar": "damian_scorciapino@hotmail.com-1607660650203.JPG"
     },
     {
         "id": 2,
+<<<<<<< HEAD
         "first_name": "Corena",
         "last_name": "McMillian",
         "email": "cmcmillian1@nasa.gov",
@@ -195,5 +196,12 @@
         "last_name": "cosa",
         "email": "pepe@mail.io",
         "password": "$2a$12$AiqRp1HZBnkwF3Tx5XKJE.2F9O/2g1Gcw7cyupz5LZGxRx2BWncoi"
+=======
+        "first_name": "Mauro",
+        "last_name": "Delprato",
+        "email": "mgdelprato@gmail.com",
+        "password": "$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG",
+        "avatar": "mgdelprato@gmail.com-1607660700823.JPG"
+>>>>>>> desa
     }
 ]

@@ -89,9 +89,10 @@ width: 100vw;
                     flex: 1 1 auto;
                     margin-bottom: 6%;
                     border: 3px solid #d0d0d0;
+                   
                     
                 }
-
+              
                 main .divTabla table tr{
                     width: 100%;
                     display: flex;
@@ -124,13 +125,12 @@ width: 100vw;
                     border-bottom: 3px solid #d0d0d0;    
                 }
 
+             
+
               
                 main .divTabla table tr th i{
                     font-size: 20px;
                     color: green;
-
-
-
 
                 }
 
@@ -161,7 +161,11 @@ width: 100vw;
                  main .divTabla table tr td i:nth-child(1):hover {
                     color: green;
                 }
-                 main .divTabla table tr td i:nth-child(2):hover {
+
+                #btnTacho{
+                 border: none   
+                }
+                 #tacho {
                      color: red;
                  }
 

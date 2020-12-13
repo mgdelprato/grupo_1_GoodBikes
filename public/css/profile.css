@@ -43,34 +43,6 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
    
     /*HEADER--->header.css*/
 
-    /*NAV*/
-    nav{
-        background-color: #ebebeb;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: row;
-        height: 40px;        
-        width: 100%;}
-
-
-
-    nav ul{
-        list-style:none;
-        text-align: center;}
-
-    nav ul li{
-        display: inline-block;   
-        text-align: center;
-        margin: 0px 50px 0px 50px;
-        font-family: 'Anton', sans-serif;
-        text-transform: uppercase;
-        font-size: 14px;
-        letter-spacing: 0.1em;
-    }
-
-    nav ul li:hover{color: #bb0a21;}
-
 
     main {
         width: 100%;
