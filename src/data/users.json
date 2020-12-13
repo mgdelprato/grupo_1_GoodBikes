@@ -1,18 +1,18 @@
 [
     {
         "id": 1,
-        "first_name": "Nano",
-        "last_name": "pino",
-        "email": "nano@gmail.com",
-        "password": "$2a$12$.CfaOCjOSyIWZxpDVSdOIO22oubm.v6EAUZGxoowUEDaiqLuHTS6O",
-        "avatar": "nano@gmail.com-1607223769581.JPG"
+        "first_name": "Damian",
+        "last_name": "Scorciapino",
+        "email": "damian_scorciapino@hotmail.com",
+        "password": "$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382",
+        "avatar": "damian_scorciapino@hotmail.com-1607660650203.JPG"
     },
     {
         "id": 2,
-        "first_name": "nano",
-        "last_name": "dos",
-        "email": "dos@mail.com",
-        "password": "$2a$12$20e2SdBeH/Vi3g5mMz4qRu9y3omH3TGU/z0zizHcIPUjOFg9lSmDy",
-        "avatar": "dos@mail.com-1607224229100.JPG"
+        "first_name": "Mauro",
+        "last_name": "Delprato",
+        "email": "mgdelprato@gmail.com",
+        "password": "$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG",
+        "avatar": "mgdelprato@gmail.com-1607660700823.JPG"
     }
 ]

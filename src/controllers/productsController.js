@@ -31,6 +31,15 @@ let productsController = {
     },
     grabarProducto: function(req, res) {
         let error  = validationResult(req);
+        let arrayImagen =[];
+        const insertarImagen  = ()=>{
+            for(let i=0; i<req.files.length; i++){
+                arrayImagen.push(req.files[i].filename)
+         
+            }
+        }
+        insertarImagen();
+
         if(error.isEmpty()){
             let nuevoProducto ={
                 ID: ultimoId +1,
@@ -39,11 +48,11 @@ let productsController = {
                 Marca: req.body.marca,
                 Modelo: req.body.modelo,
                 Detalles: req.body.detalle,
-                Imagen:req.files[0].filename,
                 Precio: req.body.precio,
-                Cantidad: req.body.cantidad
+                Cantidad: req.body.cantidad,
+                Imagen: arrayImagen
             }
-          
+
 
             productos.push(nuevoProducto);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
@@ -78,7 +87,7 @@ let productsController = {
         let productoEditar = req.params.id; 
         let productoModificado ={}
         let error  = validationResult(req);
-        console.log(req.body);
+  
         
         if(error.isEmpty()){
         for (let i=0; i<productos.length;i++){
@@ -95,7 +104,7 @@ let productsController = {
                     Cantidad: req.body.cantidad 
 
                 }
-                console.log( productos[i]);
+              
             }
         }
            
@@ -121,8 +130,7 @@ let productsController = {
         let error  = validationResult(req);
         if(error.isEmpty()){
             let productoEliminar = req.params.id;
-                   console.log(productos.id);
-                   console.log(productoEliminar);
+                
                 productos = productos.filter(productos=>productos.ID!=productoEliminar)   
                
 
@@ -137,8 +145,8 @@ let productsController = {
     },
     detalleProducto: function(req,res){
         console.log(productos.find(productos => productos.ID == req.params.id));
+
         return res.render( path.join(__dirname, '../views/products/productDetail.ejs'), { producto : productos.find(productos => productos.ID == req.params.id) } )
-        
     }
 
 
