@@ -145,7 +145,7 @@ let productsController = {
     },
     detalleProducto: function(req,res){
         console.log(productos.find(productos => productos.ID == req.params.id));
-
+       
         return res.render( path.join(__dirname, '../views/products/productDetail.ejs'), { producto : productos.find(productos => productos.ID == req.params.id) } )
     }
 
