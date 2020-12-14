@@ -8,7 +8,7 @@
 #color3{background-color: #66c674;}
 #color4{background-color: #ffffff;}
 #color5{background-color: #ebebeb;}
-#color6{background-color: #333333;}
+#color6{background-color: #3E3D40;}
 #color7{background-color: #666666;}
 #color8{background-color: #000000;}
  
@@ -35,14 +35,18 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 /*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px) {
-    #Goodbikes{display: none;}
+
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+    
+    #Goodbikes{display: none;}
     #Bars{display: none;}
     .ocultoMovil{display: none;}
+    #Banner_Product_Detail_mobile{display:none}
+    #Text_Hero_Mobile{display: none;}
 
     /*HEADER--->header.css*/
     
-
+    #Detalle_Producto{font-size: 2.1em;font-weight: bold;margin: 4vh 0vh;text-align: center;}
  
 
     main{
@@ -128,10 +132,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             #CuadroDerecho button{
                 height: 30px;
                 padding: 2px 22px 2px 22px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: white;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
-                letter-spacing: 0.1rem;
+                letter-spacing: 0.2rem;
                 font-size: 15px;
                 border: none;
                 border-radius: 3px;
@@ -235,6 +240,8 @@ main div div section:nth-child(2) figure img{
 @media screen and (min-width: 200px) and (max-width: 800px) {
     
     #GoobBikes_en_el_menu{display: none;}
+    #Banner_Product_Detail_web{display:none}
+
     /* #Al_Home{display: none;} */
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
      
@@ -249,29 +256,16 @@ main div div section:nth-child(2) figure img{
 
         /*HEADER--->header.css*/
 
-        nav{position: absolute;
-            top: 6%; 
-            left: 5%; 
-            }
+        #Text_Hero_Mobile{
+            color: #ffffff;
+            font-family: 'Anton', sans-serif;
+            font-size: 24px;
+            text-align: left;
+            text-indent: 5vw;
+            margin-top:-10vh;
+            margin-bottom:10vh;}
 
-            nav ul {
-                background-color: #ebebeb;
-                border-color: #666666;
-                border-style: solid;
-                border-width: 1px;
-                list-style-type: none;
-                margin-top: 10%;
-                display: none;
-                flex-direction: column;
-                justify-content: space-around;
-                height: 40vh;
-                width: 25vh;
-                padding-left: 2vh;
-                padding-right: 6px;
-                border-radius: 10px;
-                
-            }
-                nav ul li a {text-decoration: none;}
+        #Detalle_Producto{font-size: 2.1em;font-weight: bold;margin: 4vh 0vh;text-align: center;}
             
 
         .ContenedorOfertas{
@@ -304,7 +298,7 @@ main div div section:nth-child(2) figure img{
             margin-bottom: 5%; 
             border-color: #666666;
             border-width: 3px;
-            width: 30vh;}
+            width: 80vw;}
             
         main section ul li{
             display: flex; 
@@ -318,7 +312,8 @@ main div div section:nth-child(2) figure img{
                 height: 30px;
                 margin: 1vh;
                 padding: 2px 22px 2px 22px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1rem;
@@ -327,10 +322,8 @@ main div div section:nth-child(2) figure img{
                 border-radius: 3px;
                 }
 
+                h1{font-size: 2em;text-align: center;} /*Título de descripción*/
+                section span{font-size: 18px;text-align:center;align-self: center;width: 100%;} /*Precio*/
             
-    footer{background-color: #bb0a21; text-align: center;margin-top: 5%; padding-top: 5%;padding-bottom: 5%;}
-            footer ul li a{color: #ffffff;text-decoration: none;font-size: 10px;}   
-            footer ul li p{color: #ffffff;text-decoration: none;font-size: 10px;} 
-            footer ul li i{color: #ffffff;text-decoration: none;font-size: 10px;} 
            
 }

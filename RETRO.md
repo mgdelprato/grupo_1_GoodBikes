@@ -36,3 +36,24 @@
 
 5. Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
+
+
+
+#RETRO Sprint 4
+
+1. Comenzar a hacer
+   Profundizar conceptos (ejemplo: Login)
+
+2. Hacer más
+   Actualizacion  de tarjetas trello
+   Mejor uso de buenas prácticas
+
+3. Continuar haciendo
+    Reuniones de equipo para coordinar avances y destrabar conflicos
+    Seguimiento de features
+
+4. Hacer menos
+   Cambios de definición sobre la marcha o cambios en los diseños
+
+5. Dejar de hacer
+    Trabajar en el mismo archivo que puedan generar conflictos
