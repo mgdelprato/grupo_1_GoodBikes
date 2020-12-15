@@ -24,6 +24,7 @@
     font-family: 'Roboto', sans-serif; 
     font-size: 12px;
     color: #000000;
+    text-align: center; /*Este agregado es único para el login*/
 }
 
 
@@ -44,12 +45,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /* MAIN */
 
     .contenedor_del_Main{
-        height: 457px;
+        height: auto;
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
         align-content: center;
     }
+
+    #img_login{margin-bottom: -5vh;width:15%; height:auto}
+
         main{
             width: 50%;
             height: 50vh;
@@ -91,7 +95,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }
             main form div h1{
                 text-align: center;
-                margin-bottom: 20%;
+                margin-bottom: 10%;
                 font-family: 'Roboto', sans-serif;
                 font-size: 20px;
                 letter-spacing: 0.1em;
@@ -108,24 +112,28 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
             main form div button{
                 margin: 10px;
+                width: 80%;
                 height: 30px;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 15px;
-                border: none;
-                background-color: #5697fa;
+                border-radius: 6px;
+                background-color: #3E3D40;
+                color: #ffffff;
+                align-self: center;
+
             }
 
             main form div button:hover{
-                background-color: #66c674;
+                background-color: #882345;
             }
 
                 .datos input{
                     border: none;
                 }
 
-                #Olvido{text-align: center;}
+                
 
 
 
@@ -138,11 +146,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
       
 
-        #Contenedor_Body
+    #img_login{margin-bottom: -5vh;align-self: center;width:20%; height:auto}
+
+            #Contenedor_Body
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
+            height: auto;
             width: 100vw;
             background-color: #ebebeb;
             padding: 0px 0px 0px 0px; 
@@ -157,6 +167,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             align-items: center;
             justify-content: space-around;
             width: 100vw;
+            margin: 2vh 0px;
 
             }
 
@@ -164,16 +175,18 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             display: flex; 
             flex-direction: column;
             justify-content: space-around;
-            width: 200px
+            width: 70vw;
+            margin: 3vh 0px;
             ;}
 
             main form div h1{
                 text-align: center;
-            
                 font-family: 'Roboto', sans-serif;
             
                 letter-spacing: 0.1em;
                 font-weight: bold;
+                font-size: 1.5em;
+                
                 
             }
             
@@ -187,17 +200,21 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         
         .principal button {
             margin-top: 2vh;
+            width: 80%;
+            align-self: center;
             height: 30px;
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
             letter-spacing: 0.1em;
             font-size: 15px;
             border: none;
-            background-color: #5697fa;
+            background-color: #3E3D40;
+            border-radius: 6px;
+            color: #ffffff;
         }
         
         main div button:hover{
-            background-color: #66c674;
+            background-color: #882345;
         }
         
         .principal a{margin-top: 2vh;align-self: center;}
