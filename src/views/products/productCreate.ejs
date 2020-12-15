@@ -36,7 +36,7 @@
                     <h4 >Producto</h4>
                     <input type="text" class="valores" name="producto">
                     <h4>Precio</h4>
-                    <input type="text" class="valores" name="precio">
+                    <input type="text" class="valores" id="precio" name="precio" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57 || event.charCode == 44)" min="0" pattern="\d*"/>
                     <h4>Cantidad</h4>
                     <input  type="number" class="valores" name="cantidad">
                     <h4>Descripción</h4>
