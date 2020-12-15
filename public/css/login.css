@@ -29,7 +29,6 @@
 
 
 
-body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
@@ -146,19 +145,24 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     #Goodbikes{display: flex;font-family: 'Anton', sans-serif;color: #bb0a21;text-transform: uppercase;letter-spacing: 0.1em; text-decoration: none;}
       
 
+    #Contenedor_Body
+    {display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    width: auto;
+    background-color: #ebebeb;
+    padding: 0px 0px 0px 0px; 
+    margin: 0px 0px 0px 0px;}
+
     #img_login{margin-bottom: -5vh;align-self: center;width:20%; height:auto}
 
-            #Contenedor_Body
-            {display: flex; 
-            flex-direction: column;
-            justify-content: space-between;
-            height: auto;
-            width: 100vw;
-            background-color: #ebebeb;
-            padding: 0px 0px 0px 0px; 
-            margin: 0px 0px 0px 0px;}
 
-           
+    .fa-bars:before {
+       position: absolute;
+            top: 0px; 
+            left: 0px;}
+    }
 
         
         .contenedor_del_Main{
@@ -166,7 +170,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
-            width: 100vw;
+            width: auto;
             margin: 2vh 0px;
 
             }
