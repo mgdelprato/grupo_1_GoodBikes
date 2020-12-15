@@ -31,13 +31,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
 
 /*Configuraciones para CSS Desktop Version*/
-
-
-/*Configuraciones para CSS Desktop Version*/
 @media screen and (min-width: 801px)
 { 
     #Goodbikes{display: none;}
-    .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+    .Contenedor{width: 85%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
     #Bars{display: none;}
     .ocultoMovil{display: none;}
    
@@ -49,17 +46,19 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /* MAIN */
 
     .contenedor_del_Main{
-        height: 457px;
+        height: auto;
         display: flex;
-        flex-wrap: wrap;
+        /* flex-wrap: wrap; */
         justify-content: center;
         align-content: center;
+        margin-top:3vh;
     }
 
+    #img_login{width:15%; height:auto;display: block;align-self: center;margin-left: auto;margin-right: auto;margin-bottom: -5vh}
 
     main{
-        width: 50%;
-        height: 60vh;
+        width: 65%;
+        height: auto;
         background-color: #ebebeb;
         display: flex;
         flex-wrap: wrap;
@@ -70,7 +69,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main form{
         width: 100%;
-        height: 60vh;
+        height: auto;
+        margin-top: 3vh;
         background-color: #ebebeb;
         display: flex;
         flex-wrap: wrap;
@@ -81,7 +81,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     main form .datos{
         width: 60%;
-        height: 100%;
+        height: auto;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -101,12 +101,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
     #avatar::-webkit-file-upload-button{
         height: 30px;
-        width: 15vw;
+        width: auto;
         font-family: 'Anton', sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         font-size: 13px;
-        background-color: #5697fa;
+        background-color: #3E3D40;
+        color: #ffffff;
         border-radius: 6px;
         border-style: none;
     }   
@@ -117,13 +118,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
-        height: 30%;  
+        height: auto;  
             
     }
 
     main form div h1{
         text-align: center;
-        margin-bottom: 8%;
+        margin: 0% 0% 3vh 0%;
         font-family: 'Roboto', sans-serif;
         font-size: 20px;
         letter-spacing: 0.1em;
@@ -136,27 +137,31 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         margin: 5px;
         
     }
-    /* Chrome, Safari, Edge, Opera */
-    main form div input#dni::-webkit-outer-spin-button,
-    main form div input#dni::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
+            /* Chrome, Safari, Edge, Opera */
+            main form div input#dni::-webkit-outer-spin-button,
+            main form div input#dni::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+            }
 
-    /* Firefox */
-    main form div input#dni[type=number] {
-      -moz-appearance: textfield;
-    }
+            /* Firefox */
+            main form div input#dni[type=number] {
+            -moz-appearance: textfield;
+            }
 
     main form div button{
-        margin: 10px;
+        width: 60%;
+        align-self: center;
         height: 30px;
         font-family: 'Anton', sans-serif;
         text-transform: uppercase;
         letter-spacing: 0.1em;
         font-size: 15px;
         border: none;
-        background-color: #5697fa;
+        background-color: #3E3D40;
+        color: #ffffff;
+        margin: 2vh 0%;
+        border-radius: 6px;
     }
 
     .datos input{
@@ -179,11 +184,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         justify-content: center;
         flex-direction: column;}
 
+
+        #img_login{height:12vh; width:auto;display: block;align-self: center;margin-left: auto;margin-right: auto;}
+
+
         #Contenedor_Body
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
+            height: auto;
             width: 100vw;
             background-color: #ebebeb;} 
 
@@ -197,29 +206,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
             #avatar{width: auto;}
 
-            nav{position: absolute;
-                top: 5%; 
-                left: 5%; 
-                }
 
-                nav ul {
-                    background-color: #ebebeb;
-                    border-color: #666666;
-                    border-style: solid;
-                    border-width: 1px;
-                    list-style-type: none;
-                    margin-top: 10%;
-                    display: none;
-                    flex-direction: column;
-                    justify-content: space-around;
-                    height: 40vh;
-                    width: 25vh;
-                    padding-left: 2vh;
-                    padding-right: 6px;
-                    border-radius: 10px;
-                    
-                }
-                    nav ul li a {text-decoration: none;}
 
         
         .contenedor_del_Main{
@@ -233,11 +220,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
             main form div h1{
                 text-align: center;
-          
                 font-family: 'Roboto', sans-serif;
-       
                 letter-spacing: 0.1em;
                 font-weight: bold;
+                font-size: 16px;
+                margin: 2vh 0%;
                 
             }
 
@@ -249,9 +236,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }
 
         .datos input{margin-top: 2vh;border-style: none;;height: 25px;width: 200px;}
+
         .datos button{margin-top: 2vh;
-            width: 60%;
-            height: 30px;
+            width: 70%;
+            height: 25px;
             margin: 10px;
             font-family: 'Anton', sans-serif;
             text-transform: uppercase;
@@ -259,9 +247,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             font-size: 14px;
             border: none;
             border-radius: 6px;
-            background-color: #5697fa;}
+            background-color: #3E3D40;
+            color: #ffffff;
+            }
+
             
-            .datos button:hover{background-color: #66c674;}
+            .datos button:hover{background-color: #882345;}
        
             #labelAvatar {
                 text-align: center;
@@ -271,28 +262,28 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }
 
             #avatar{
-               
-                    margin-right: 10px;
-                    background-color: #ffffff;
-                    padding: 0% 2% 0% 0%;
+                    background-color: #ffffff;                
                     font-weight: bold;
-                    height: 30px;
+                    height: 25px;
                     width: 100%;
                     border-radius: 6px;
-
-            }
+                    }
 
             #avatar::-webkit-file-upload-button{
-                height: 30px;
-                width: 30vw;
+                height: 25px;
+                width: auto;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 10px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
                 border-radius: 6px;
                 border-style: none;
             }  
 
+            #avatar::-webkit-file-upload-button:hover{background-color: #882345;}
+
+            
            
 }
