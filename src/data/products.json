@@ -6,7 +6,9 @@
         "Marca": "Firebird",
         "Modelo": "R29 Doble suspension",
         "Detalles": "Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k",
-        "Imagen": ["Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg"],
+        "Imagen": [
+            "Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg"
+        ],
         "Precio": "$ 71999",
         "Cantidad": 50
     },
@@ -17,7 +19,9 @@
         "Marca": "Aurora",
         "Modelo": "Bacota",
         "Detalles": "Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 7, Tipo de freno: Disco mecanico Shimano, Suspension: Doble, Rodado: Especial 26x4, Modelo: Bacota, Tipo: Mountain Bike, Manubrio: Chopero Acer",
-        "Imagen": ["Todoterreno Aurora Bacota-1607637655880.jpg"],
+        "Imagen": [
+            "Todoterreno Aurora Bacota-1607637655880.jpg"
+        ],
         "Precio": "$ 98000",
         "Cantidad": 30
     },
@@ -28,7 +32,9 @@
         "Marca": "Teknial",
         "Modelo": "Tarpan 100er",
         "Detalles": "Genero: Hombre, Material del cuadro: Aluminio, Numero de cambios: 21, Tipo de freno: Disco mecanico Shimano, Suspension: Simple, Rodado: 29, Modelo: Tarpan, Tipo: Mountain Bike, Manubrio: Acero MTB, Pedal: Plasticos\",\r\n",
-        "Imagen": ["Mountain Kike Teknial Tarpan 100er-1607637771211.png"],
+        "Imagen": [
+            "Mountain Kike Teknial Tarpan 100er-1607637771211.png"
+        ],
         "Precio": "$ 52000",
         "Cantidad": 50
     },
@@ -39,7 +45,9 @@
         "Marca": "Ride Daily",
         "Modelo": "ID V",
         "Detalles": "Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 6, Tipo de freno: Disco mecanico, Suspension: Delantera, Rodado: 20, Modelo: ID V, Tipo: Electrica, Manubrio: Aluminio, Pedal: Plastico, Peso: 15 kg",
-        "Imagen": ["Electrica plegable Ride Daily 250W 13AH-1607655724523.jpeg"],
+        "Imagen": [
+            "Electrica plegable Ride Daily 250W 13AH-1607655724523.jpeg"
+        ],
         "Precio": "$ 248800",
         "Cantidad": "20"
     },
@@ -50,7 +58,9 @@
         "Marca": "RANDERS",
         "Modelo": "BKE-001",
         "Detalles": "Genero: Unisex, Material del cuadro: Acero, Numero de cambios: Sin cambios, Tipo de freno: Contrapedal, Suspension: Sin suspension, Rodado: 26, Modelo: BKE-001-B, Tipo: Urbana, Manubrio: Acero, Pedal: Plastico, Peso: 1",
-        "Imagen": ["Playera Randers BKE-001-1607655932537.jpg"],
+        "Imagen": [
+            "Playera Randers BKE-001-1607655932537.jpg"
+        ],
         "Precio": "$ 28000",
         "Cantidad": "50"
     },
@@ -61,7 +71,9 @@
         "Marca": "Columbia",
         "Modelo": "OmniHeat",
         "Detalles": "Tecnología Térmica Por Reflexión\r\n\r\n- Tejido Elástico En 4 Direcciones\r\n- Tratamiento Antimicrobiano Que Previene La Proliferación Bacteriana\r\n- Costuras Ergonómicas\r\n- Costuras Planas",
-        "Imagen": ["Remera Térmica-1607656205405.jpg"],
+        "Imagen": [
+            "Remera Térmica-1607656205405.jpg"
+        ],
         "Precio": "$ 3500",
         "Cantidad": "10"
     },
@@ -72,7 +84,9 @@
         "Marca": "Aurorita",
         "Modelo": "Princesa",
         "Detalles": "Bicicleta Aurorita Princesa, Rodado 12. Con rueditas, ideal para comenzar.",
-        "Imagen": ["Bicicleta infantil Princesa-1607656341856.jpg"],
+        "Imagen": [
+            "Bicicleta infantil Princesa-1607656341856.jpg"
+        ],
         "Precio": "$ 32000",
         "Cantidad": "15"
     },
@@ -83,7 +97,9 @@
         "Marca": "Torbal",
         "Modelo": "Me300",
         "Detalles": "Zapatilla ciclismo talle 42, resistente y flexible",
-        "Imagen": ["Zapatillas Ciclismo Mtb-1607656530693.jpg"],
+        "Imagen": [
+            "Zapatillas Ciclismo Mtb-1607656530693.jpg"
+        ],
         "Precio": "$16900",
         "Cantidad": "25"
     },
@@ -94,7 +110,9 @@
         "Marca": "Shimao",
         "Modelo": "Rodi200",
         "Detalles": "- Resistencia ajustable en 7 posiciones\r\n- Regulable Remotamente\r\n- Bastidor con sólidas patas traseras\r\n- Fácil montaje del sistema de frenado\r\n- Freno magnético y turbina\r\n- Diseño compacto y plegable\r\n- Muy fácil de instalar y usar.\r\n- Compatible con las ruedas: 700, 26, 27.5 y 29\r\n- Incluye un sistema de presión rápida",
-        "Imagen": ["Rodillo entrenamiento -1607656613014.jpg"],
+        "Imagen": [
+            "Rodillo entrenamiento -1607656613014.jpg"
+        ],
         "Precio": "$17020",
         "Cantidad": "3"
     },
@@ -105,7 +123,9 @@
         "Marca": "Trimove",
         "Modelo": "1000w R",
         "Detalles": "Modelo: 1000 R\r\nChasis: Monocasco en acero\r\nPotencia: 1000 watt\r\nMotor: Trimove PWT, sin escobillas, C.C.\r\nBatería: 625Wh (48v 13) Li-Ion SAMSUNG\r\nFrenos: Shimano Hidráulico, Disco 160mm, caliper 2 pist.\r\nSuspensión delantera: Horquilla Telescópica doble cristo, regulable Magnesio y Alum., eje Hueco 20mm\r\nSuspensión trasera: Monoshock hidráulico Regulable en compresión y rebote\r\nElectrónica: Controlador Programable Trimove\r\nModo conducción: Acelerador de puño - Pedaleo\r\nVelocidad máxima: 53 km/h\r\nAutonomía @ 30km/h sobre superf. plana: +45 km\r\nRueda delantera: 26” - Aro Aluminio doble pared\r\nRueda trasera: 26” - Aro Aluminio doble pared\r\nIntrumental: Display Color\r\nPeso: 29,7 Kg",
-        "Imagen": ["Ebike Trimove 1000w-1607656730235.jpeg"],
+        "Imagen": [
+            "Ebike Trimove 1000w-1607656730235.jpeg"
+        ],
         "Precio": "$ 300000",
         "Cantidad": "2"
     },
@@ -116,7 +136,9 @@
         "Marca": "Bontrager",
         "Modelo": "CIRCUIT",
         "Detalles": "Más protección\r\n* Revestimiento interior MIPS que mejora la protección de los impactos rotacionales.\r\n* Mayor cobertura en la parte trasera del casco para una protección adicional.\r\n* Adhesivos reflectantes de contraste en la parte posterior del casco que aumentan la visibilidad nocturna.",
-        "Imagen": ["Casco Bicileta Bontrager-1607656816490.jpg"],
+        "Imagen": [
+            "Casco Bicileta Bontrager-1607656816490.jpg"
+        ],
         "Precio": "$ 13500",
         "Cantidad": "10"
     },
@@ -127,7 +149,9 @@
         "Marca": "Nike",
         "Modelo": "CalBi",
         "Detalles": "HERMOSAS CALZAS REALIZADAS EN LYCRA PREMIUM REFORZADAS DE EXCELENTE CALCE, CON DOBLE COSTURAS, SUAVES Y NO SE HACEN PELOTITAS!!! CALCE PERFECTO",
-        "Imagen": ["Calza Mujer-1607656942322-2.jpg"],
+        "Imagen": [
+            "Calza Mujer-1607656942322-2.jpg"
+        ],
         "Precio": "$ 2500",
         "Cantidad": "5"
     },
@@ -138,7 +162,9 @@
         "Marca": "MONTY",
         "Modelo": "209 KAIZEN",
         "Detalles": "La bicicleta infantil Monty 209 Kaizen es el nuevo modelo de referencia Monty para los más pequeños! Cuenta con unos componentes y geometrías 100% escogidos para facilitar el pilotaje a todos los riders de hasta 140cm de estatura: ideal para dar los primeros pasos en el trial en bicicleta!",
-        "Imagen": ["BICICLETA MONTY 209-1607657296951.PNG"],
+        "Imagen": [
+            "BICICLETA MONTY 209-1607657296951.PNG"
+        ],
         "Precio": "$ 32500",
         "Cantidad": "3"
     },
@@ -149,7 +175,9 @@
         "Marca": "Santini",
         "Modelo": "DryCamp",
         "Detalles": "Protección térmica: construcción transpirable y cálida Thermofl Eece. Perfecto para paseos a mitad de temporada\r\nAjuste cómodo: diseñado para sentarse cómodamente en el cuerpo sin restricciones. Puños de doble manga para mayor calidez\r\nAlta visibilidad: detalles reflectantes de la chaqueta trasera para una alta visibilidad en la oscuridad",
-        "Imagen": ["Campera Ciclista DryFit-1607657479976.png"],
+        "Imagen": [
+            "Campera Ciclista DryFit-1607657479976.png"
+        ],
         "Precio": "$ 13.500",
         "Cantidad": "15"
     },
@@ -160,24 +188,11 @@
         "Marca": "Teknial",
         "Modelo": "Tarpan 100er",
         "Detalles": "Bicicleta Mountain Bike Rod 29 Teknial Tarpan 100er Shimano\r\n\r\n-29? ALUMINIO 6061 MTB\r\n-Horquilla TEKNIAL MD-711G\r\n-Cambio Shimano Tourney\r\n-Frenos de disco mecánico",
-        "Imagen": ["Bicicleta Mountain Bike Rod 29 Teknial Tarpan-1607657566041.PNG"],
+        "Imagen": [
+            "Bicicleta Mountain Bike Rod 29 Teknial Tarpan-1607657566041.PNG"
+        ],
         "Precio": "$ 64900",
         "Cantidad": "3"
-    },
-    {
-        "ID": 16,
-        "Categoria": "Bicicleta",
-        "Titulo": "fsafa",
-        "Marca": "lfjkas",
-        "Modelo": "fjklsa",
-        "Detalles": "lksafas",
-        "Precio": "11",
-        "Cantidad": "20",
-        "Imagen": [
-            "fsafa-1607828729614.JPG",
-            "fsafa-1607828729850.JPG",
-            "fsafa-1607828729918.JPG"
-        ]
     }
     
 ]

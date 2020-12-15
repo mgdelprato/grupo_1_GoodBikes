@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /*Listado de colores*/
-#color1{background-color: #5697fa;}
+#color1{background-color: #882345;}
 #color2{background-color: #bb0a21;}
 #color3{background-color: #66c674;}
 #color4{background-color: #ffffff;}
 #color5{background-color: #ebebeb;}
-#color6{background-color: #333333;}
+#color6{background-color: #3E3D40;}
 #color7{background-color: #666666;}
 #color8{background-color: #000000;}
  
@@ -151,14 +151,15 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     }                               /*Contenedor de los botones de abajo*/
                                         
                     
-                    main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+                    main div input[type=file]::-webkit-file-upload-button{
                         height: 30px;
                         width: 120px;
                         font-family: 'Anton', sans-serif;
                         text-transform: uppercase;
                         letter-spacing: 0.1em;
                         font-size: 13px;
-                        background-color: #5697fa;
+                        background-color: #3E3D40;
+                        color: #ffffff;
                         border-radius: 6px;
                         border-style: none;
                     }                                   /*Botón Elegir archivo*/
@@ -175,17 +176,18 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                             justify-content: center;align-items: center; /*Boton Adjuntar*/
                         }
                         
-                        main div:nth-child(3) button[type="submit"]{
+                        main button[type="submit"]{
                             width: 10vw;
                             height: 30px;
                             font-family: 'Anton', sans-serif;
                             text-transform: uppercase;
                             letter-spacing: 0.1em;
                             font-size: 15px;
-                            background-color: #5697fa;
+                            background-color: #3E3D40;
+                            color: #ffffff;
                             border-radius: 6px;
                             border-style: none;
-                        }                                           /*Dos botones azules*/
+                        }                                           /*Dos botones derecha*/
 
                         
                         main div:nth-child(3) #guardar{
@@ -237,13 +239,13 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     body
         {display: flex; 
         justify-content: center;
-        flex-direction: column;}
+        flex-direction: column;
+        background-color: #ebebeb ;        }
 
-        #Contenedor_Body
+        .contenedor
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
             width: 100vw;
             background-color: #ebebeb;} 
            
@@ -257,6 +259,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             align-items: center;
             justify-content: space-around;
             width: 100vw;
+            background-color: #ebebeb ;
 
             }
 
@@ -288,15 +291,18 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             flex-direction: column;
             width: 100%;
             background-color: #ebebeb ;
+            
         }
         
+        main form{background-color:#ebebeb;}
+
         main .divCarga{
             
             width: 100%;
-            /* margin: 0% 10% 0% 10%;      */
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;     
+            justify-content: center;
+            background-color: #ebebeb ;     
             
         }
 
@@ -331,7 +337,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }
 
             main div div:nth-last-child(2){
-                background-color: #ffffff;
+                /* background-color: #ffffff; */
                 width: 70%;
                 height: 36vh;
                 display: flex;
@@ -356,7 +362,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             
             }
     
-            main div:nth-child(3) button[type="submit"]{
+            main div button[type="submit"]{
                 width: 30%;
                 height: 30px;
                 font-family: 'Anton', sans-serif;
@@ -365,26 +371,21 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 font-size: 15px;
                 border: none;
                 border-radius: 6px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
             }
     
-            main div:nth-child(3) input{
-                margin-right: 10px;
-                background-color: #ffffff;
-                padding: 0% 2% 0% 0%;
-                font-weight: bold;
-                display: flex;
-            }
-    
-     
-
-
-
-
-
+            
+            
+            
+            
+            
+            
+            
+            
             .zonaInferior{display: flex;
                 flex-direction: column;
-                width: 100%;
+                width: auto;
                 height: 25vh;
                 justify-content: space-between;
                 align-items: center;
@@ -392,46 +393,48 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             }                               /*Contenedor de los botones de abajo*/
             
             
-            main div:nth-child(3) input[type=file]::-webkit-file-upload-button{
+            main div input[type=file]::-webkit-file-upload-button{
                 height: 30px;
                 width: 30vw;
                 font-family: 'Anton', sans-serif;
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 13px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
                 border-radius: 6px;
                 border-style: none;
             }                                   /*Botón Elegir archivo*/
             
-                main div:nth-child(3) input{
-                        margin-right: 10px;
-                        background-color: #ffffff;
-                        padding: 0% 2% 0% 0%;
-                        font-weight: bold;
-                        height: 30px;
-                        width: 70vw;
-                        
-                    }                           /*Input*/
+            main div:nth-child(3) input{
+                margin-right: 10px;
+                background-color: #ffffff;
+                padding: 0% 2% 0% 0%;
+                font-weight: bold;
+                display: flex;
+                height: 30px;
+                width: auto;
+            }
             
-                main div:nth-child(3) #adjuntar{
-                    align-items: center; 
+            main div:nth-child(3) #adjuntar{
+                align-items: center; 
                     width: 25vw;
-                                                /*Boton Adjuntar*/
+                    /*Boton Adjuntar*/
                 }
                 
-                main div:nth-child(3) button[type="submit"]{
+                main div button[type="submit"]{
                     height: 30px;
                     font-family: 'Anton', sans-serif;
                     text-transform: uppercase;
                     letter-spacing: 0.1em;
                     font-size: 15px;
-                    background-color: #5697fa;
+                    background-color: #3E3D40;
+                    color: #ffffff;
                     border-radius: 6px;
                     border-style: none;
                     
                 }                                           /*Dos botones azules*/
-
+                
                 
                 main div:nth-child(3) #guardar{
                     width: 25vw;
