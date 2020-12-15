@@ -2,12 +2,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /*Listado de colores*/
-#color1{background-color: #5697fa;}
+#color1{background-color: #882345;}
 #color2{background-color: #bb0a21;}
 #color3{background-color: #66c674;}
 #color4{background-color: #ffffff;}
 #color5{background-color: #ebebeb;}
-#color6{background-color: #333333;}
+#color6{background-color: #3E3D40;}
 #color7{background-color: #666666;}
 #color8{background-color: #000000;}
  
@@ -151,7 +151,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                             text-transform: uppercase;
                             letter-spacing: 0.1em;
                             font-size: 13px;
-                            background-color: #5697fa;
+                            background-color: #3E3D40;
+                            color: #ffffff;
                             border-radius: 6px;
                             border-style: none;
                         }                                   /*Botón Elegir archivo*/
@@ -175,7 +176,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                                 text-transform: uppercase;
                                 letter-spacing: 0.1em;
                                 font-size: 15px;
-                                background-color: #5697fa;
+                                background-color: #3E3D40;
+                                color: #ffffff;
                                 border-radius: 6px;
                                 border-style: none;
                             }                                           /*Dos botones azules*/
@@ -348,7 +350,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 font-size: 15px;
                 border: none;
                 border-radius: 6px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
             }
     
             main div:nth-child(3) input{
@@ -392,7 +395,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 text-transform: uppercase;
                 letter-spacing: 0.1em;
                 font-size: 13px;
-                background-color: #5697fa;
+                background-color: #3E3D40;
+                color: #ffffff;
                 border-radius: 6px;
                 border-style: none;
             }                                   /*Botón Elegir archivo*/
@@ -414,19 +418,21 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                                                 /*Boton Adjuntar*/
                 }
                 
-                main div:nth-child(3) button[type="submit"]{
+                main button[type="submit"]{
                     height: 30px;
                     font-family: 'Anton', sans-serif;
                     text-transform: uppercase;
                     letter-spacing: 0.1em;
                     font-size: 15px;
-                    background-color: #5697fa;
+                    background-color: #3E3D40;
+                    color: #ffffff;
                     border-radius: 6px;
                     border-style: none;
                     
                 }                                           /*Dos botones azules*/
 
-                
+                main button[type="submit"]:hover{background-color: #882345;}
+
                 main div:nth-child(3) #guardar{
                     width: 25vw;
                     margin-bottom: 3%;                      /*Boton Guardar*/
