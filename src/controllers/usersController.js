@@ -16,12 +16,28 @@ for(let i=0; i<usuarios.length;i++){
 
 
 let usersController ={
-    login:function(req, res) {
-        res.render( path.join(__dirname, '../views/users/login.ejs') )
-    },
     registrar: function(req, res) {
         res.render( path.join(__dirname, '../views/users/register.ejs') )
     },
+    
+    //Al ingresar al Login    
+    login:function(req, res) {
+        res.render( path.join(__dirname, '../views/users/login.ejs') )
+    },
+    
+    //Al intentar loguerse
+    chequearLogin: function(req,res){
+       if(true)
+       {res.render( path.join(__dirname, '../views/users/profile.ejs'))}
+       else // Logueo fallido 
+       {res.send('No pa')}
+    
+    }
+       
+    ,
+
+
+
     perfil: function(req, res) {
         res.render( path.join(__dirname, '../views/users/profile.ejs') )
     },
