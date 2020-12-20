@@ -14,5 +14,13 @@
         "email": "mgdelprato@gmail.com",
         "password": "$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG",
         "avatar": "mgdelprato@gmail.com-1607660700823.JPG"
+    },
+    {
+        "id": 3,
+        "first_name": "Nahuel",
+        "last_name": "Rodriguez",
+        "email": "nahuargentina@gmail.com",
+        "password": "$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG",
+        "avatar": "nahuargentina@gmail.com-1608501759446.JPG"
     }
 ]

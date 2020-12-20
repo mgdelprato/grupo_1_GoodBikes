@@ -1,8 +1,6 @@
 /*Configuraciones*/
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-
-
 /*Listado de colores*/
 #color1{background-color: #5697fa;}
 #color2{background-color: #bb0a21;}
@@ -16,6 +14,11 @@
 /*Listado de fuentes*/
 #fuente1{font-family: 'Anton', sans-serif;}
 #fuente2{font-family: 'Roboto', sans-serif;}
+
+/*Login de usuario*/
+#User_Name{display:none}
+#Tag_Login{display: inline-block;}
+#Tag_Register{display: inline-block;}
 
 
 /*Aplicación de estilos Genéricos por defecto*/
