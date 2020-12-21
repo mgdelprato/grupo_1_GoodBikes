@@ -52,3 +52,8 @@ app.listen(process.env.PORT || 5000, function() {
 /*EJS*/
 app.set('view engine', 'ejs');
 
+app.use(function (req, res, next) {
+    res.locals.username = req.user
+    
+    next()
+  })

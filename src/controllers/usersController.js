@@ -26,11 +26,22 @@ let usersController ={
     },
     
     //Al intentar loguerse
-    chequearLogin: function(req,res){
+    chequearLogin: function(req,res,next)
+    {
        if(true)
-       {res.render( path.join(__dirname, '../views/users/profile.ejs'))}
+       {
+          let BuscaUser = usuarios.find(function(usuarios) {
+          return usuarios.email == req.body.email})
+    
+        res.locals.username = BuscaUser.first_name
+        
+       
+        
+        res.render( path.join(__dirname, '../views/users/profile.ejs'));
+        
+        }
        else // Logueo fallido 
-       {res.send('No pa')}
+       {res.render( path.join(__dirname, '../views/users/login.ejs'))}
     
     }
        
