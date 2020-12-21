@@ -25,6 +25,12 @@
                 <form action="/users/login" method="POST">                   
                     <div class="principal">
                         <h1>Logueate en GoodBikes</h1>
+
+                        <%  if(locals.mensaje){ %>
+                            <small style="color: red;">
+                            El usuario <%= mensaje %> no se encuentra registrado     </small>
+                            <% } %> 
+
                         <input class="campos" type="email" placeholder="Email" name="email">
                     
                         <%  if(locals.errors && errors.email){ %>

@@ -32,41 +32,48 @@ let usersController ={
         
         let errors = validationResult(req);
 
-        if(errors.isEmpty()){
-        //Si no hay errores de carga de formulario
-        
-        
+        if(errors.isEmpty())
+        {
+        //Si no hay errores de carga de formulario  
 
-            //Busca al usuario
-            let BuscaUser = usuarios.find(function(usuarios) 
-            {return usuarios.email == req.body.email})
+        //Busca al usuario por su mail
+        let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
             
-            if(BuscaUser)
-            {
-            res.locals.username = BuscaUser.first_name
-            res.render( path.join(__dirname, '../views/users/profile.ejs'));
-            }
-            else // Logueo fallido 
-            {}   
+                //Si no encuentra al usuario avisa y detiene
+                if(!BuscaUser)
+                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
+                            
+                else        {
+                    //Si encuentra al usuario chequea contraseña
+                            let encriptada = BuscaUser.password
+                            let pass_ingresada = req.body.password
+                            
+                            console.log(encriptada);
+                            console.log(pass_ingresada);
+                    
+                            if(bcryptjs.compareSync(pass_ingresada,encriptada))
+                            {
+                            //Contraseña chequeada.  Carga first_name y redirige a profile
+                            res.locals.username = BuscaUser.first_name
+                            res.render( path.join(__dirname, '../views/users/profile.ejs'));
+                            }
+                            else
+                            {// Error en contraseña
+                            
+                            console.log(bcryptjs.compareSync(BuscaUser.password,req.body.password));
 
-            
-
-        }
+                            return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            }
+                    }                
+                }
+        
         else
         {//Si hay errores de carga, se renderiza el login compartiendo los errores
-            
            return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
-            
-
-          
+     
         }
         next()
-    }
-     
-    
-    ,
-
-
+    } ,
 
     perfil: function(req, res) {
         res.render( path.join(__dirname, '../views/users/profile.ejs') )
