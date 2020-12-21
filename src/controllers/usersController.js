@@ -32,9 +32,11 @@ let usersController ={
         
         let errors = validationResult(req);
 
-        if(errors.isEmpty){
+        if(errors.isEmpty()){
         //Si no hay errores de carga de formulario
         
+        
+
             //Busca al usuario
             let BuscaUser = usuarios.find(function(usuarios) 
             {return usuarios.email == req.body.email})
@@ -45,15 +47,20 @@ let usersController ={
             res.render( path.join(__dirname, '../views/users/profile.ejs'));
             }
             else // Logueo fallido 
-            {res.render( path.join(__dirname, '../views/users/register.ejs'))}   
+            {}   
 
-            next()
+            
 
         }
         else
-        {//Si hay errores de carga
+        {//Si hay errores de carga, se renderiza el login compartiendo los errores
+            
+           return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
+            
 
+          
         }
+        next()
     }
      
     
