@@ -16,8 +16,13 @@ app.use(express.urlencoded({extended:false}));
 //Method-Override para metodos PUT Y DELETE
 app.use(methodOverride('_method'));
 
-/* HOME */
-app.get('/', mainRouter)
+/* SESSION */
+app.use(session({secret: "Esta es la clave secreta"}))
+
+app.use(function(req, res, next) {
+    res.locals.user = req.session.user;
+    next();
+  });
 /*---------------------------------------------------------------------------------- */
 
 /* USUARIOS */
@@ -31,6 +36,9 @@ app.use('/users', usersRouter);
 /* PRODUCTS */
 
 app.use('/products',productsRouter);
+
+/* HOME */
+app.get('/', mainRouter)
 
 /*---------------------------------------------------------------------------------- */
 
@@ -52,6 +60,3 @@ app.listen(process.env.PORT || 5000, function() {
 /*---------------------------------------------------------------------------------- */
 /*EJS*/
 app.set('view engine', 'ejs');
-
-/* SESSION */
-app.use(session({secret: "Esta es la clave secreta"}))

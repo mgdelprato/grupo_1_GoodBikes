@@ -2,6 +2,8 @@ const path = require('path')
 const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const {check, validationResult, body } = require('express-validator');
+const session = require('express-session')
+
 
 let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
 usuarios = JSON.parse(usuarios);
@@ -54,7 +56,10 @@ let usersController ={
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
                             //Contraseña chequeada.  Carga first_name y redirige a profile
-                            res.locals.username = BuscaUser.first_name
+                            //res.locals.username = BuscaUser.first_name
+                            req.session.user = BuscaUser.first_name
+                                                 
+
                             res.render( path.join(__dirname, '../views/users/profile.ejs'));
                             }
                             else
@@ -76,7 +81,7 @@ let usersController ={
     } ,
 
     perfil: function(req, res) {
-        res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                res.render( path.join(__dirname, '../views/users/profile.ejs') )
     },
     save: function(req, res,next) {
         let errors = validationResult(req);

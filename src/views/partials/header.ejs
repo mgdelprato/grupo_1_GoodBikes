@@ -12,9 +12,13 @@
     <div id="Contenedor_Ingresar" class="ingresar">
 
         <ul>
-           <li id="User_Name"> <%= locals.username %> </a></li>          
-            <li id="Tag_Login"><a href="/users/login">Login</a></li>
+           
+            <li id="User_Name"> <% if(locals.user) %>  </li>
+ 
+           <li id="Tag_Login"><a href="/users/login">Login</a></li>          
             <li id="Tag_Register"><a href="/users/register">Registrate</a></li>
+
+
             <li><a href="/products/productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
         </ul>
         
