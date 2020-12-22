@@ -6,6 +6,7 @@ const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
 const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
+const session = require('express-session')
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
 app.use(express.static( path.join(__dirname, './public') ) )
@@ -52,3 +53,5 @@ app.listen(process.env.PORT || 5000, function() {
 /*EJS*/
 app.set('view engine', 'ejs');
 
+/* SESSION */
+app.use(session({secret: "Esta es la clave secreta"}))
