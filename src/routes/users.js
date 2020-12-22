@@ -31,4 +31,7 @@ router.post('/register', upload.any(),usersController.save)
 //Profile
 router.get('/profile', usersController.perfil)
 
+//Logout
+router.get('/logout', usersController.logout)
+
 module.exports = router;

@@ -13,7 +13,7 @@
 
         <ul>
            
-            <% if(locals.user == undefined) {%>  
+            <% if(typeof locals.user == 'undefined' ) {%>  
  
                 <li id="Tag_Login"><a href="/users/login">Login</a></li>          
                 <li id="Tag_Register"><a href="/users/register">Registrate</a></li>
@@ -21,6 +21,7 @@
             <%} else {%> 
                 
                 <li id="User_Name"> Que bueno verte, <%= locals.user %> !</li>
+                <li id="Tag_Login"><a href="/users/logout">Log Out</a></li>        
 
             <%}%>
 

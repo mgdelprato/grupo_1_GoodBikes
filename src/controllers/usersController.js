@@ -50,24 +50,22 @@ let usersController ={
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
                             
-                            console.log(encriptada);
-                            console.log(pass_ingresada);
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
                             //Contraseña chequeada.  Carga first_name y redirige a profile
                             //res.locals.username = BuscaUser.first_name
                             req.session.user = BuscaUser.first_name
-                                                 
+                            console.log(req.session.user);                     
 
-                            res.render( path.join(__dirname, '../views/users/profile.ejs'));
+                            return res.redirect('/');
                             }
                             else
+                            
                             {// Error en contraseña
                             
-                            console.log(bcryptjs.compareSync(BuscaUser.password,req.body.password));
-
-                            return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            return res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            
                             }
                     }                
                 }
@@ -107,6 +105,11 @@ let usersController ={
             })
         }
     },
+    logout: function(req, res) {
+        //Quitamos valores al session y redirigimos al home
+        req.session.destroy();
+        res.redirect('/') 
+    }
     }
     
 
