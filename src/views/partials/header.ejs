@@ -13,11 +13,16 @@
 
         <ul>
            
-            <li id="User_Name"> <% if(locals.user) %>  </li>
+            <% if(locals.user == undefined) {%>  
  
-           <li id="Tag_Login"><a href="/users/login">Login</a></li>          
-            <li id="Tag_Register"><a href="/users/register">Registrate</a></li>
+                <li id="Tag_Login"><a href="/users/login">Login</a></li>          
+                <li id="Tag_Register"><a href="/users/register">Registrate</a></li>
+            
+            <%} else {%> 
+                
+                <li id="User_Name"> Que bueno verte, <%= locals.user %> !</li>
 
+            <%}%>
 
             <li><a href="/products/productCart"><i id="Tag_Cart" class="fas fa-shopping-cart"></i></a></li>
         </ul>
