@@ -57,9 +57,9 @@ let usersController ={
                             //res.locals.username = BuscaUser.first_name
                             req.session.user = BuscaUser.first_name
                             console.log(req.session.user);                     
-                            
+                             
                             //res.render( path.join(__dirname, '../views/users/header.ejs'))
-                            res.render( path.join(__dirname, '../views/users/login.ejs'));
+                            return res.redirect('/users/profile');
                             }
                             else
                             
