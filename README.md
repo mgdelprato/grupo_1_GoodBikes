@@ -46,7 +46,7 @@ font-family: 'Roboto', sans-serif;
 + https://com23goodbikes.herokuapp.com/
 
 
-## Modulos Utilizados
+## Modulos Utilizados (npm install)
  nodemon
  express
  ejs --save
@@ -54,4 +54,6 @@ font-family: 'Roboto', sans-serif;
  multer
  express-validator
  bcryptjs
- 
+
+ express-session --save
+ cookie-parser

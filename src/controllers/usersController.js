@@ -2,6 +2,8 @@ const path = require('path')
 const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const {check, validationResult, body } = require('express-validator');
+const session = require('express-session')
+const cookieParser = require('cookie-parser')
 
 let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
 usuarios = JSON.parse(usuarios);
@@ -30,6 +32,7 @@ let usersController ={
     {
         //Si no hay errores type en el ckeck
         
+        
         let errors = validationResult(req);
 
         if(errors.isEmpty())
@@ -41,31 +44,44 @@ let usersController ={
             
                 //Si no encuentra al usuario avisa y detiene
                 if(!BuscaUser)
+                            
                             {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
                             
-                else        {
-                    //Si encuentra al usuario chequea contraseña
+                else        
+                {
+                            //Si encuentra al usuario chequea contraseña
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
                             
-                            console.log(encriptada);
-                            console.log(pass_ingresada);
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
-                            //Contraseña chequeada.  Carga first_name y redirige a profile
-                            res.locals.username = BuscaUser.first_name
-                            res.render( path.join(__dirname, '../views/users/profile.ejs'));
-                            }
-                            else
-                            {// Error en contraseña
-                            
-                            console.log(bcryptjs.compareSync(BuscaUser.password,req.body.password));
+                            //Contraseña chequeada. 
+                                
+                                //Paso email, usuario y avatar al session
+                                req.session.user = BuscaUser.first_name
+                                req.session.userEmail = BuscaUser.email
+                                req.session.avatar = BuscaUser.avatar
+                                
+                                console.log(req.session.user);
+                                
+                                
+                                if(req.body.rememberme == 'si') // ¿Tildó recordame?
+                                {
+                                  res.cookie('rememberme',req.session.userEmail,{maxAge: 86400000})
+                                }
 
-                            return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                                //Ir al home)
+                                return res.redirect('/');
                             }
-                    }                
-                }
+
+                            else
+                            
+                            {// Error en contraseña
+                            res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            }
+                }                
+        }
         
         else
         {//Si hay errores de carga, se renderiza el login compartiendo los errores
@@ -76,7 +92,7 @@ let usersController ={
     } ,
 
     perfil: function(req, res) {
-        res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                res.render( path.join(__dirname, '../views/users/profile.ejs') )
     },
     save: function(req, res,next) {
         let errors = validationResult(req);
@@ -102,6 +118,11 @@ let usersController ={
             })
         }
     },
+    logout: function(req, res) {
+        //Quitamos valores al session y redirigimos al home
+        req.session.destroy();
+        res.redirect('/') 
+    }
     }
     
 

@@ -222,7 +222,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             background-color: #ebebeb;} 
             
 
-            #Presentacion{display: flex;flex-direction: row;justify-content: center;align-items: center;}
+            #Presentacion{display: flex;flex-direction: row;justify-content: center;align-items: center;margin-top: 3vh;}
             #img_tit{width: auto; height: 13vh;padding-top: 3vh;padding-right: 3vh;padding-bottom: 3vh;}
             #Titulo_Profile{font-size: 1.8em;}
 

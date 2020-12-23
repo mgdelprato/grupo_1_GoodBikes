@@ -30,5 +30,13 @@
         "email": "ecologista_chess@yahoo.com.ar",
         "password": "$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy",
         "avatar": "ecologista_chess@yahoo.com.ar-1608535183320.jpg"
+    },
+    {
+        "id": 5,
+        "first_name": "Cosme",
+        "last_name": "Fulanito",
+        "email": "cuentaunlam@gmail.com",
+        "password": "$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O",
+        "avatar": "cuentaunlam@gmail.com-1608698397934.JPG"
     }
 ]

@@ -22,13 +22,32 @@
 
         <div class="contenedor_del_Main"> 
             <main>
-                <form action="" method="">                   
+                <form action="/users/login" method="POST">                   
                     <div class="principal">
                         <h1>Logueate en GoodBikes</h1>
+
+                        <%  if(locals.mensaje){ %>
+                            <small style="color: red;">
+                            El usuario <%= mensaje %> no se encuentra registrado     </small>
+                            <% } %> 
+
                         <input class="campos" type="email" placeholder="Email" name="email">
-                        <input class="campos" type="password" placeholder="Password" name="password">
+                    
+                        <%  if(locals.errors && errors.email){ %>
+                            <small style="color: red;">
+                            <%= errors.email.msg %> </small>
+                            <% } %> 
+
+                        <input class="campos" type="password" placeholder="Password" name="password">                   
+
+                        <%  if(locals.errors && errors.password){ %>
+                            <small style="color: red;">
+                            <%= errors.password.msg %> </small>
+                            <% } %> 
+
                         <button type="submit">Ingresar</button>
                         <a href="#">¿Olvidaste tu password?</a>
+                        <label><input type="checkbox" value="si" name="rememberme"> Recordarme</label><br>
                     </div>
                 </form>
             </main>
