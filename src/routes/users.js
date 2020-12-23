@@ -3,6 +3,8 @@ const router = express.Router();
 const usersController = require ('../controllers/usersController');
 const multer = require('multer');
 const path = require('path');
+const {check, validationResult, body } = require('express-validator');
+
 
 
 //Multer para guardar los avatars
@@ -20,6 +22,7 @@ var upload = multer({ storage: storage })
 
 //Login
 router.get('/login', usersController.login)
+router.post('/login', [check('email').notEmpty().withMessage('Completar Email'),check('password').notEmpty().withMessage('Completar Password')],usersController.chequearLogin)
 
 //Register
 router.get('/register', usersController.registrar)

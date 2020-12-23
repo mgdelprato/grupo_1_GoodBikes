@@ -14,5 +14,21 @@
         "email": "mgdelprato@gmail.com",
         "password": "$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG",
         "avatar": "mgdelprato@gmail.com-1607660700823.JPG"
+    },
+    {
+        "id": 3,
+        "first_name": "Nahuel",
+        "last_name": "Rodriguez",
+        "email": "nahuargentina@gmail.com",
+        "password": "$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG",
+        "avatar": "nahuargentina@gmail.com-1608501759446.JPG"
+    },
+    {
+        "id": 4,
+        "first_name": "Juan Nahuel",
+        "last_name": "Rodriguez Araujo",
+        "email": "ecologista_chess@yahoo.com.ar",
+        "password": "$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy",
+        "avatar": "ecologista_chess@yahoo.com.ar-1608535183320.jpg"
     }
 ]

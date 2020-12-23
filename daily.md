@@ -51,3 +51,12 @@ SPRINT 4
 - Acuerdos de diseño para userProfile
 - Nuevo manejo de imágenes en productos
 - Disparar revisión de imágenes en todo el sitio
+
+
+**************************************************
+
+SPRINT 5
+# "Daily 1"
+- Revisión de enunciado de Sprint
+- Ingresar tareas al tablero
+- División inicial de tareas
