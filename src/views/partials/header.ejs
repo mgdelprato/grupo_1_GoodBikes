@@ -21,7 +21,7 @@
             <%} else {%> 
                 
                 <li id="User_Name"> Hola, <%= locals.user %> !</li>
-                <li id="Tag_Login"><a href="/users/Profile">Mi Perfil</a></li>        
+                <li id="Tag_Profile"><a href="/users/Profile">Mi Perfil</a></li>        
                 <li id="Tag_Login"><a href="/users/logout">Log Out</a></li> 
 
             <%}%>
@@ -30,6 +30,18 @@
         </ul>
         
     </div>
+
+    
+    <% if(typeof locals.user != 'undefined' ) {%>  
+    <div id="container_header_Mobile_logged">   
+        <li id="User_Name_Mobile"> Hola, <%= locals.user %> !</li>
+        <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li>        
+        <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
+    </div>
+    <%}%>
+
+
+
 </header>
     <nav> 
     <i href="javascript:void(0)" id="Bars" onclick="myFunction()" class="fas fa-bars"></i>

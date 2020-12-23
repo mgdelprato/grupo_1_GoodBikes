@@ -40,6 +40,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Bars{display: none;}
 .ocultoMovil{display: none;}
 
+#conteneder_header_Mobile{display:none}
+#User_Name_Mobile{display: none;}
+#Tag_Profile_Mobile{display: none;}      
+#Tag_Login_Mobile{display: none;}
+
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
         /*HEADER*/
@@ -167,6 +172,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #GoobBikes_en_el_menu{display: none;}
 #Tag_Login{display: none;}
 #Tag_Register{display: none;}
+#Tag_Profile{display: none;}
+#User_Name{display:none}
 #Oferta1{display: none;}
 #Oferta2{display: none;}
 #Oferta3{display: none;}
@@ -182,6 +189,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         margin: 0px 0px 0px 0px;
         background-color: #ebebeb;} 
 
+        #container_header_Mobile_logged{position: absolute; top: 15vh;}
 
         
         header{
@@ -252,6 +260,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
                 #Contenedor_Ingresar{display: flex;}/*Todo para el carrito*/
                 header div ul {list-style-type: none;}
+                
                 #Tag_Cart{
                     font-size: 28px;
                     color: #ebebeb;
