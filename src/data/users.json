@@ -38,5 +38,13 @@
         "email": "cuentaunlam@gmail.com",
         "password": "$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O",
         "avatar": "cuentaunlam@gmail.com-1608698397934.JPG"
+    },
+    {
+        "id": 6,
+        "first_name": "Gordo",
+        "last_name": "Motoneta",
+        "email": "gordo@gmail.com",
+        "password": "$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC",
+        "avatar": "gordo@gmail.com-1608756791191.JPG"
     }
 ]

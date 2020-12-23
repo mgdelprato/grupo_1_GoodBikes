@@ -34,6 +34,23 @@ app.use(function(req, res, next) {
 //COOKIES
 app.use(cookieParser())
 
+app.use(function(req, res, next){
+
+  if(req.cookies.rememberme != undefined && req.session.user == undefined){
+    req.session.user = req.cookies.rememberme.user;
+    req.session.userEmail = req.cookies.rememberme.userEmail
+    req.session.avatar = req.session.avatar
+
+    res.locals.user = req.session.user; 
+    res.locals.mail = req.session.userEmail;
+    res.locals.avatar = req.session.avatar
+
+  }
+  next()
+}
+
+)
+
   /* HOME */
   app.get('/', mainRouter)
 

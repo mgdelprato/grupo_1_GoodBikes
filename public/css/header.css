@@ -39,8 +39,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Goodbikes{display: none;}
 #Bars{display: none;}
 .ocultoMovil{display: none;}
-
-#conteneder_header_Mobile{display:none}
+#container_header_Mobile_logged{display: none}
 #User_Name_Mobile{display: none;}
 #Tag_Profile_Mobile{display: none;}      
 #Tag_Login_Mobile{display: none;}

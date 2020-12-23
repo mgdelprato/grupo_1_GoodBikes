@@ -42,21 +42,24 @@ let usersController ={
         //Busca al usuario por su mail
         let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
             
-                //Si no encuentra al usuario avisa y detiene
                 if(!BuscaUser)
-                            
-                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
+        
+                        //Si no encuentra al usuario avisa y detiene
+
+                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario' + req.body.email + 'No se encuentra registrado'} )}
                             
                 else        
                 {
-                            //Si encuentra al usuario chequea contraseña
+                        //Si encuentra al usuario chequea contraseña
+
+                            //Prepara para chequear pass ingresada
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
                             
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
-                            //Contraseña chequeada. 
+                            // Statments de Contraseña Correcta. 
                                 
                                 //Paso email, usuario y avatar al session
                                 req.session.user = BuscaUser.first_name
@@ -68,7 +71,7 @@ let usersController ={
                                 
                                 if(req.body.rememberme == 'si') // ¿Tildó recordame?
                                 {
-                                  res.cookie('rememberme',req.session.userEmail,{maxAge: 86400000})
+                                  res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
                                 }
 
                                 //Ir al home)
@@ -78,7 +81,7 @@ let usersController ={
                             else
                             
                             {// Error en contraseña
-                            
+                            req.session.destroy()
                             res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
                             }
                 }                
@@ -121,7 +124,8 @@ let usersController ={
     },
     logout: function(req, res) {
         //Quitamos valores al session y redirigimos al home
-        req.session.destroy();
+        res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
+        req.session.destroy();               // Eliminar sesión
         res.redirect('/') 
     }
     }
