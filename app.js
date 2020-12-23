@@ -21,7 +21,10 @@ app.use(methodOverride('_method'));
 app.use(session({secret: "Esta es la clave secreta"}))
 
 app.use(function(req, res, next) {
-    {res.locals.user = req.session.user};
+    {res.locals.user = req.session.user; 
+     res.locals.mail = req.session.userEmail;
+     res.locals.avatar = req.session.avatar
+    };
     next();
   });
 
