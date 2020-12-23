@@ -56,10 +56,13 @@ let usersController ={
                             //Contraseña chequeada.  Carga first_name y redirige a profile
                             //res.locals.username = BuscaUser.first_name
                             req.session.user = BuscaUser.first_name
+                            req.session.userEmail = BuscaUser.email
+                            req.session.avatar = BuscaUser.avatar
+                            
                             console.log(req.session.user);                     
                              
                             //res.render( path.join(__dirname, '../views/users/header.ejs'))
-                            return res.redirect('/users/profile');
+                            return res.redirect('/');
                             }
                             else
                             

@@ -25,6 +25,9 @@ app.use(function(req, res, next) {
     next();
   });
 
+
+// app.use(cookieParser())
+
   /* HOME */
   app.get('/', mainRouter)
 
