@@ -3,7 +3,7 @@ const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const {check, validationResult, body } = require('express-validator');
 const session = require('express-session')
-
+const cookieParser = require('cookie-parser')
 
 let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
 usuarios = JSON.parse(usuarios);
@@ -32,6 +32,7 @@ let usersController ={
     {
         //Si no hay errores type en el ckeck
         
+        
         let errors = validationResult(req);
 
         if(errors.isEmpty())
@@ -43,6 +44,7 @@ let usersController ={
             
                 //Si no encuentra al usuario avisa y detiene
                 if(!BuscaUser)
+                            
                             {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
                             
                 else        
@@ -54,15 +56,22 @@ let usersController ={
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
-                                //Contraseña chequeada.  Carga first_name y redirige a profile
-                                //res.locals.username = BuscaUser.first_name
+                            //Contraseña chequeada. 
+                                
+                                //Paso email, usuario y avatar al session
                                 req.session.user = BuscaUser.first_name
                                 req.session.userEmail = BuscaUser.email
                                 req.session.avatar = BuscaUser.avatar
                                 
-                                console.log(req.session.user);                     
+                                console.log(req.session.user);
                                 
-                                //res.render( path.join(__dirname, '../views/users/header.ejs'))
+                                
+                                if(req.body.rememberme == 'si') // ¿Tildó recordame?
+                                {
+                                  res.cookie('rememberme',req.session.userEmail,{maxAge: 86400000})
+                                }
+
+                                //Ir al home)
                                 return res.redirect('/');
                             }
 

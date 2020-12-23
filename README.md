@@ -56,3 +56,4 @@ font-family: 'Roboto', sans-serif;
  bcryptjs
 
  express-session --save
+ cookie-parser

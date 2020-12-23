@@ -10,6 +10,7 @@ let mainController = {
     index: function(req,  res){
          
         res.render( path.join(__dirname, '../views/index.ejs'), {productos:productos} )
+        console.log('Cookies: ', req.cookies)
         }
 }
 
