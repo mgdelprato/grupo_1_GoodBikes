@@ -78,7 +78,8 @@ let usersController ={
                             else
                             
                             {// Error en contraseña
-                            res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            
+                            res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
                             }
                 }                
         }
