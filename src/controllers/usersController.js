@@ -95,7 +95,15 @@ let usersController ={
         next()
     } ,
 
-    perfil: function(req, res) {
+    perfil: 
+                function(req, res) {
+                //Si no esta logueado
+                if (req.session.userEmail == undefined)
+                {
+                    res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Debes loguearte para acceder a tu perfil"})
+                    
+                }
+
                 res.render( path.join(__dirname, '../views/users/profile.ejs') )
     },
     save: function(req, res,next) {
