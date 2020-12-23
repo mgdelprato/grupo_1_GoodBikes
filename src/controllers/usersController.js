@@ -45,34 +45,34 @@ let usersController ={
                 if(!BuscaUser)
                             {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
                             
-                else        {
-                    //Si encuentra al usuario chequea contraseña
+                else        
+                {
+                            //Si encuentra al usuario chequea contraseña
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
                             
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
-                            //Contraseña chequeada.  Carga first_name y redirige a profile
-                            //res.locals.username = BuscaUser.first_name
-                            req.session.user = BuscaUser.first_name
-                            req.session.userEmail = BuscaUser.email
-                            req.session.avatar = BuscaUser.avatar
-                            
-                            console.log(req.session.user);                     
-                             
-                            //res.render( path.join(__dirname, '../views/users/header.ejs'))
-                            return res.redirect('/');
+                                //Contraseña chequeada.  Carga first_name y redirige a profile
+                                //res.locals.username = BuscaUser.first_name
+                                req.session.user = BuscaUser.first_name
+                                req.session.userEmail = BuscaUser.email
+                                req.session.avatar = BuscaUser.avatar
+                                
+                                console.log(req.session.user);                     
+                                
+                                //res.render( path.join(__dirname, '../views/users/header.ejs'))
+                                return res.redirect('/');
                             }
+
                             else
                             
                             {// Error en contraseña
-                            
-                            return res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
-                            
+                            res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
                             }
-                    }                
-                }
+                }                
+        }
         
         else
         {//Si hay errores de carga, se renderiza el login compartiendo los errores
