@@ -11,7 +11,7 @@ const registerValidator = require('../validators/registerValidator')
 //Multer para guardar los avatars
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '../../public/uploads/avatars'));
+      cb(null, path.join(__dirname, '../../public/images/users/avatars'));
     },
     filename: function (req, file, cb) {
         console.log()

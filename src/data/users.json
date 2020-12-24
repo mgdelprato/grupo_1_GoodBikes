@@ -62,5 +62,21 @@
         "email": "topo@mail.com",
         "password": "$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu",
         "avatar": "topo@mail.com-1608782890921.JPG"
+    },
+    {
+        "id": 9,
+        "first_name": "Oli",
+        "last_name": "Delprato",
+        "email": "oli@gmail.com",
+        "password": "$2a$12$UP8hzuf3cbmWDP4Ei.z9/e9znyD2wGE666cE1QnH.heHqntI5tLSa",
+        "avatar": "oli@gmail.com-1608809802868.JPG"
+    },
+    {
+        "id": 10,
+        "first_name": "Flor",
+        "last_name": "gomez",
+        "email": "flor@gmail.com",
+        "password": "$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue",
+        "avatar": "flor@gmail.com-1608810847256.JPG"
     }
 ]
