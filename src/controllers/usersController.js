@@ -46,7 +46,7 @@ let usersController ={
         
                         //Si no encuentra al usuario avisa y detiene
 
-                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario' + req.body.email + 'No se encuentra registrado'} )}
+                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'} )}
                             
                 else        
                 {
@@ -81,7 +81,7 @@ let usersController ={
                             else
                             
                             {// Error en contraseña
-                            req.session.destroy()
+                            req.session.destroy() //Por las dudas
                             res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
                             }
                 }                
@@ -98,6 +98,9 @@ let usersController ={
     perfil: 
                 function(req, res) {
                 //Si no esta logueado
+
+                console.log(req.session.userEmail);
+
                 if (req.session.userEmail == undefined)
                     { // Kick
                         res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Debes loguearte para acceder a tu perfil"})    
@@ -144,11 +147,25 @@ let usersController ={
             })
         }
     },
+
     logout: function(req, res) {
-        //Quitamos valores al session y redirigimos al home
+        //Kill a todo dato y redirigimos al home
+
         res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
         req.session.destroy();               // Eliminar sesión
-        res.redirect('/') 
+        
+        //Vaciamos las vistas
+        res.locals.user = undefined; 
+        res.locals.mail = undefined;
+
+        // Por si le da back
+        res.locals.profileName = undefined
+        res.locals.profileLastName = undefined
+        res.locals.profileEmail = undefined
+        res.locals.profileAvatar = undefined
+
+        {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Cerraste tu sesión. Te esperamos pronto!'} )}
+        //res.redirect('/') 
     }
     }
     

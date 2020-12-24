@@ -25,7 +25,7 @@ app.use(session({secret: "Esta es la clave secreta"}))
 app.use(function(req, res, next) {
     {res.locals.user = req.session.user; 
      res.locals.mail = req.session.userEmail;
-     res.locals.avatar = req.session.avatar
+     
     };
     next();
   });
@@ -39,11 +39,10 @@ app.use(function(req, res, next){
   if(req.cookies.rememberme != undefined && req.session.user == undefined){
     req.session.user = req.cookies.rememberme.user;
     req.session.userEmail = req.cookies.rememberme.userEmail
-    req.session.avatar = req.session.avatar
+
 
     res.locals.user = req.session.user; 
     res.locals.mail = req.session.userEmail;
-    res.locals.avatar = req.session.avatar
 
   }
   next()
