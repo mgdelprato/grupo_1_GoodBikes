@@ -72,8 +72,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        justify-content: center;
         
     }
+    #profileImage{height: 200px; width: auto;align-items: center;margin-top: 4vh;
+        border-radius: 6px; border: solid black 2px}
     
     main form div h2{
         font-size: 20px;
@@ -84,6 +87,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         padding-left: 3vw;
         padding-top: 2vh;
     }
+
+
 
     main form div label{padding-bottom: 2vh;padding-top: 1vh;}
 
@@ -249,7 +254,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 
             }
             
-            .Superior{margin-top: 2vh;}
+            .Superior{margin-top: 2vh; display: flex; flex-direction: column;}
+
+
+ 
+            #profileImage{height: 200px; width: auto;align-items: center;margin-top: -1vh; margin-bottom: 2vh;
+                border-radius: 6px; border: solid black 2px; margin-left: auto; margin-right: auto;}
 
             main form div h2{
                 font-size: 20px;
