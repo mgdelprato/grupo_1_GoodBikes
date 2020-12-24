@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const usersController = require ('../controllers/usersController');
 const multer = require('multer');
 const path = require('path');
+const usersController = require ('../controllers/usersController');
 const {check, validationResult, body } = require('express-validator');
+const registerValidator = require('../validators/registerValidator')
 
 
 
@@ -26,7 +27,7 @@ router.post('/login', [check('email').notEmpty().withMessage('Completar Email'),
 
 //Register
 router.get('/register', usersController.registrar)
-router.post('/register', upload.any(),usersController.save)
+router.post('/register', upload.any(), registerValidator.checkRegister,usersController.save)
 
 //Profile
 router.get('/profile', usersController.perfil)

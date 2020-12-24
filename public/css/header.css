@@ -40,7 +40,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Bars{display: none;}
 .ocultoMovil{display: none;}
 
-#conteneder_header_Mobile{display:none}
+#container_header_Mobile_logged{display: none}
 #User_Name_Mobile{display: none;}
 #Tag_Profile_Mobile{display: none;}      
 #Tag_Login_Mobile{display: none;}
@@ -190,7 +190,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         background-color: #ebebeb;} 
 
         #container_header_Mobile_logged{position: absolute; 
-            width: 100vw; top: 12vh;height: 7vh;left: 0px;padding-left: 10px;
+            width: 100%; top: 12vh;height: 7vh;left: 0px;padding-left: 10px;
             padding-top: 10px;padding-bottom: 10px;text-align: center;
             background-color: #bb0a21;}
             

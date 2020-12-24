@@ -42,21 +42,24 @@ let usersController ={
         //Busca al usuario por su mail
         let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
             
-                //Si no encuentra al usuario avisa y detiene
                 if(!BuscaUser)
-                            
-                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: req.body.email} )}
+        
+                        //Si no encuentra al usuario avisa y detiene
+
+                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'} )}
                             
                 else        
                 {
-                            //Si encuentra al usuario chequea contraseña
+                        //Si encuentra al usuario chequea contraseña
+
+                            //Prepara para chequear pass ingresada
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
                             
                     
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
-                            //Contraseña chequeada. 
+                            // Statments de Contraseña Correcta. 
                                 
                                 //Paso email, usuario y avatar al session
                                 req.session.user = BuscaUser.first_name
@@ -68,7 +71,7 @@ let usersController ={
                                 
                                 if(req.body.rememberme == 'si') // ¿Tildó recordame?
                                 {
-                                  res.cookie('rememberme',req.session.userEmail,{maxAge: 86400000})
+                                  res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
                                 }
 
                                 //Ir al home)
@@ -78,7 +81,8 @@ let usersController ={
                             else
                             
                             {// Error en contraseña
-                            res.redirect( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                            req.session.destroy() //Por las dudas
+                            res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
                             }
                 }                
         }
@@ -91,8 +95,33 @@ let usersController ={
         next()
     } ,
 
-    perfil: function(req, res) {
-                res.render( path.join(__dirname, '../views/users/profile.ejs') )
+    perfil: 
+                function(req, res) {
+                //Si no esta logueado
+
+                console.log(req.session.userEmail);
+
+                if (req.session.userEmail == undefined)
+                    { // Kick
+                        res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Debes loguearte para acceder a tu perfil"})    
+                    }
+                else
+                    { //Log exitoso
+                        
+                        //Trae datos del array
+                        let BuscaUser = usuarios.find( function(usuarios){
+                            return usuarios.email == req.session.userEmail})
+                        
+                        //Prepara variables locals para la vista profile
+                            res.locals.profileName = BuscaUser.first_name
+                            res.locals.profileLastName = BuscaUser.last_name
+                            res.locals.profileEmail = BuscaUser.email
+                            res.locals.profileAvatar = BuscaUser.avatar
+                     
+                        
+                        res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                    }
+
     },
     save: function(req, res,next) {
         let errors = validationResult(req);
@@ -113,15 +142,29 @@ let usersController ={
 
         } else {
             // hay errores. Entonces...
-            return res.render(path.join(__dirname,'../views/users/register'), {
-                errors: errors.mapped()
-            })
+            return res.render( path.join(__dirname, '../views/users/register.ejs'),{errors: errors.mapped(),old:req.body})
         }
+        next()
     },
+
     logout: function(req, res) {
-        //Quitamos valores al session y redirigimos al home
-        req.session.destroy();
-        res.redirect('/') 
+        //Kill a todo dato y redirigimos al home
+
+        res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
+        req.session.destroy();               // Eliminar sesión
+        
+        //Vaciamos las vistas
+        res.locals.user = undefined; 
+        res.locals.mail = undefined;
+
+        // Por si le da back
+        res.locals.profileName = undefined
+        res.locals.profileLastName = undefined
+        res.locals.profileEmail = undefined
+        res.locals.profileAvatar = undefined
+
+        {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Cerraste tu sesión. Te esperamos pronto!'} )}
+        //res.redirect('/') 
     }
     }
     

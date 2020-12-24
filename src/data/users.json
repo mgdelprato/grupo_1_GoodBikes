@@ -38,5 +38,29 @@
         "email": "cuentaunlam@gmail.com",
         "password": "$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O",
         "avatar": "cuentaunlam@gmail.com-1608698397934.JPG"
+    },
+    {
+        "id": 6,
+        "first_name": "Gordo",
+        "last_name": "Motoneta",
+        "email": "gordo@gmail.com",
+        "password": "$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC",
+        "avatar": "gordo@gmail.com-1608756791191.JPG"
+    },
+    {
+        "id": 7,
+        "first_name": "El Barto",
+        "last_name": "  ",
+        "email": "barto@gmail.com",
+        "password": "$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG",
+        "avatar": "barto@gmail.com-1608776726469.JPG"
+    },
+    {
+        "id": 8,
+        "first_name": "Felipe",
+        "last_name": "Pino",
+        "email": "topo@mail.com",
+        "password": "$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu",
+        "avatar": "topo@mail.com-1608782890921.JPG"
     }
 ]

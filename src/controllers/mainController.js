@@ -11,6 +11,7 @@ let mainController = {
          
         res.render( path.join(__dirname, '../views/index.ejs'), {productos:productos} )
         console.log('Cookies: ', req.cookies)
+        console.log('Session: ', req.session)
         }
 }
 

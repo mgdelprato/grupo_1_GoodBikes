@@ -8,7 +8,7 @@ const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-
+const remembermeController = require('./src/controllers/remembermeController')
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
 app.use(express.static( path.join(__dirname, './public') ) )
@@ -21,37 +21,22 @@ app.use(methodOverride('_method'));
 /*---------------------------------------------------------------------------------- */
 /* SESSION */
 app.use(session({secret: "Esta es la clave secreta"}))
-
-app.use(function(req, res, next) {
-    {res.locals.user = req.session.user; 
-     res.locals.mail = req.session.userEmail;
-     res.locals.avatar = req.session.avatar
-    };
-    next();
-  });
-
+app.use(remembermeController.session)
 
 //COOKIES
 app.use(cookieParser())
+app.use(remembermeController.cookie)
+ 
 
-  /* HOME */
-  app.get('/', mainRouter)
+/* HOME */
+app.get('/', mainRouter)
 
 /* USUARIOS */
 
 app.use('/users', usersRouter);
 
-/*AGREGAR VIEW DE MI CUENTA!!!!!! */
-
-/*---------------------------------------------------------------------------------- */
-
 /* PRODUCTS */
-
 app.use('/products',productsRouter);
-
-
-/*---------------------------------------------------------------------------------- */
-
 
 
 /* Esto se agrega para cuando trabajamos con metodos http*/
