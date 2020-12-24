@@ -46,5 +46,13 @@
         "email": "gordo@gmail.com",
         "password": "$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC",
         "avatar": "gordo@gmail.com-1608756791191.JPG"
+    },
+    {
+        "id": 7,
+        "first_name": "El Barto",
+        "last_name": "  ",
+        "email": "barto@gmail.com",
+        "password": "$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG",
+        "avatar": "barto@gmail.com-1608776726469.JPG"
     }
 ]
