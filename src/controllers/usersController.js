@@ -142,10 +142,9 @@ let usersController ={
 
         } else {
             // hay errores. Entonces...
-            return res.render(path.join(__dirname,'../views/users/register'), {
-                errors: errors.mapped()
-            })
+            return res.render( path.join(__dirname, '../views/users/register.ejs'),{errors: errors.mapped(),old:req.body})
         }
+        next()
     },
 
     logout: function(req, res) {

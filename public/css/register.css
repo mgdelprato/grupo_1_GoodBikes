@@ -148,6 +148,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             main form div input#dni[type=number] {
             -moz-appearance: textfield;
             }
+    
+    /* mensaje de errores */
+        .errores{
+            color: red;
+        }
 
     main form div button{
         width: 60%;

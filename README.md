@@ -54,6 +54,5 @@ font-family: 'Roboto', sans-serif;
  multer
  express-validator
  bcryptjs
-
  express-session --save
  cookie-parser
