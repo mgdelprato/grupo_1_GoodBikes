@@ -99,12 +99,26 @@ let usersController ={
                 function(req, res) {
                 //Si no esta logueado
                 if (req.session.userEmail == undefined)
-                {
-                    res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Debes loguearte para acceder a tu perfil"})
-                    
-                }
+                    { // Kick
+                        res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Debes loguearte para acceder a tu perfil"})    
+                    }
+                else
+                    { //Log exitoso
+                        
+                        //Trae datos del array
+                        let BuscaUser = usuarios.find( function(usuarios){
+                            return usuarios.email == req.session.userEmail})
+                        
+                        //Prepara variables locals para la vista profile
+                            res.locals.profileName = BuscaUser.first_name
+                            res.locals.profileLastName = BuscaUser.last_name
+                            res.locals.profileEmail = BuscaUser.email
+                            res.locals.profileAvatar = BuscaUser.avatar
+                     
+                        
+                        res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                    }
 
-                res.render( path.join(__dirname, '../views/users/profile.ejs') )
     },
     save: function(req, res,next) {
         let errors = validationResult(req);
