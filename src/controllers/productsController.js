@@ -8,6 +8,7 @@ productos = JSON.parse(productos);
 
 
 
+
 let ultimoId = 0
 for(let i=0; i<productos.length ; i++){
     if(ultimoId<productos[i].ID){
@@ -147,10 +148,16 @@ let productsController = {
         console.log(productos.find(productos => productos.ID == req.params.id));
        
         return res.render( path.join(__dirname, '../views/products/productDetail.ejs'), { producto : productos.find(productos => productos.ID == req.params.id) } )
-    }
-
-
+    },
+    buscarProducto: function(req,res){
     
+        let categoria = req.params.categoria
+        console.log(productos);
+        console.log(categoria);
+        productosCategorizados = productos.filter(productos=>productos.Categoria==categoria)
+        console.log(productosCategorizados);
+        res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
+    }
 
 }
 

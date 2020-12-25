@@ -1,7 +1,7 @@
 [
     {
         "ID": 1,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Mountain Bike Firebird R29 Doble suspension",
         "Marca": "Firebird",
         "Modelo": "R29 Doble suspension",
@@ -14,7 +14,7 @@
     },
     {
         "ID": 2,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Todoterreno Aurora Bacota",
         "Marca": "Aurora",
         "Modelo": "Bacota",
@@ -27,7 +27,7 @@
     },
     {
         "ID": 3,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Mountain Kike Teknial Tarpan 100er",
         "Marca": "Teknial",
         "Modelo": "Tarpan 100er",
@@ -40,7 +40,7 @@
     },
     {
         "ID": 4,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Electrica plegable Ride Daily 250W 13AH",
         "Marca": "Ride Daily",
         "Modelo": "ID V",
@@ -53,7 +53,7 @@
     },
     {
         "ID": 5,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Playera Randers BKE-001",
         "Marca": "RANDERS",
         "Modelo": "BKE-001",
@@ -79,13 +79,13 @@
     },
     {
         "ID": 7,
-        "Categoria": "Bicicleta",
-        "Titulo": "Bicicleta infantil Princesa",
+        "Categoria": "Rodados",
+        "Titulo": "Rodados infantil Princesa",
         "Marca": "Aurorita",
         "Modelo": "Princesa",
-        "Detalles": "Bicicleta Aurorita Princesa, Rodado 12. Con rueditas, ideal para comenzar.",
+        "Detalles": "Rodados Aurorita Princesa, Rodado 12. Con rueditas, ideal para comenzar.",
         "Imagen": [
-            "Bicicleta infantil Princesa-1607656341856.jpg"
+            "Rodados infantil Princesa-1607656341856.jpg"
         ],
         "Precio": "$ 32000",
         "Cantidad": "15"
@@ -118,7 +118,7 @@
     },
     {
         "ID": 10,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "Ebike Trimove 1000w",
         "Marca": "Trimove",
         "Modelo": "1000w R",
@@ -157,7 +157,7 @@
     },
     {
         "ID": 13,
-        "Categoria": "Bicicleta",
+        "Categoria": "Rodados",
         "Titulo": "BICICLETA MONTY 209",
         "Marca": "MONTY",
         "Modelo": "209 KAIZEN",
@@ -183,13 +183,13 @@
     },
     {
         "ID": 15,
-        "Categoria": "Bicicleta",
-        "Titulo": "Bicicleta Mountain Bike Rod 29 Teknial Tarpan",
+        "Categoria": "Rodados",
+        "Titulo": "Rodados Mountain Bike Rod 29 Teknial Tarpan",
         "Marca": "Teknial",
         "Modelo": "Tarpan 100er",
-        "Detalles": "Bicicleta Mountain Bike Rod 29 Teknial Tarpan 100er Shimano\r\n\r\n-29? ALUMINIO 6061 MTB\r\n-Horquilla TEKNIAL MD-711G\r\n-Cambio Shimano Tourney\r\n-Frenos de disco mecánico",
+        "Detalles": "Rodados Mountain Bike Rod 29 Teknial Tarpan 100er Shimano\r\n\r\n-29? ALUMINIO 6061 MTB\r\n-Horquilla TEKNIAL MD-711G\r\n-Cambio Shimano Tourney\r\n-Frenos de disco mecánico",
         "Imagen": [
-            "Bicicleta Mountain Bike Rod 29 Teknial Tarpan-1607657566041.PNG"
+            "Rodados Mountain Bike Rod 29 Teknial Tarpan-1607657566041.PNG"
         ],
         "Precio": "$ 64900",
         "Cantidad": "3"

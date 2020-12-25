@@ -148,7 +148,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 justify-content: space-around;
                 }
                 
-                nav ul li{
+                nav ul li a{
                     justify-content: space-around;
                     display: flex;
                     flex-direction: row;
@@ -158,6 +158,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     text-transform: uppercase;
                     font-size: 16px;
                     letter-spacing: 0.1em;
+                    text-decoration: none;
                     }
 
                 nav ul li:hover{color: #bb0a21;}

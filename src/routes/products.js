@@ -33,6 +33,8 @@ router.put('/productEdit/:id', productsController.actualizarProducto); //analiza
 router.delete('/delete/:id',productsController.borrarProducto);
 
 router.get('/productList', productsController.listarProducto); // Trae listado de productos
+router.get('/productSearch/:categoria', productsController.buscarProducto); // Trae listado de productos
+
 
 
 
