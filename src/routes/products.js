@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const productsController = require('../controllers/productsController');
 const path = require('path');
-const routeMiddleware = require('../middlewares/routeMiddleware')
+const routeMiddleware = require('../middlewares/routeMiddleware');
 
 //Multer para guardar las imagenes de productos
 var storage = multer.diskStorage({
