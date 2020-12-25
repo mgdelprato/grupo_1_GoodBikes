@@ -1,7 +1,7 @@
 const {check, validationResult, body} = require('express-validator');
 
 module.exports = {
-    checkRegister: [
+    registerCheck: [
             check('name')
                 .isLength({min:2})
                 .withMessage('El nombre debe tener mínimo 2 caracteres'),

@@ -46,7 +46,7 @@ font-family: 'Roboto', sans-serif;
 + https://com23goodbikes.herokuapp.com/
 
 
-## Modulos Utilizados (npm install)
+## Modulos Utilizados (npm install) (npm list --depth 0)
  nodemon
  express
  ejs --save

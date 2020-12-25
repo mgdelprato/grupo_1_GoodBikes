@@ -31,13 +31,9 @@ let usersController ={
     chequearLogin: function(req,res,next)
     {
         //Si no hay errores type en el ckeck
-        
-        
         let errors = validationResult(req);
-
-        if(errors.isEmpty())
-        {
-        //Si no hay errores de carga de formulario  
+        if(errors.isEmpty()){
+        //Si no hay errores se carga el formulario  
 
         //Busca al usuario por su mail
         let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
@@ -55,8 +51,7 @@ let usersController ={
                             //Prepara para chequear pass ingresada
                             let encriptada = BuscaUser.password
                             let pass_ingresada = req.body.password
-                            
-                    
+                           
                             if(bcryptjs.compareSync(pass_ingresada,encriptada))
                             {
                             // Statments de Contraseña Correcta. 

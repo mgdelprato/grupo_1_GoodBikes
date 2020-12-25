@@ -4,7 +4,8 @@ const multer = require('multer');
 const path = require('path');
 const usersController = require ('../controllers/usersController');
 const {check, validationResult, body } = require('express-validator');
-const registerValidator = require('../validators/registerValidator')
+const loginValidator = require('../validators/loginValidator');
+const registerValidator = require('../validators/registerValidator');
 
 
 
@@ -23,11 +24,11 @@ var upload = multer({ storage: storage })
 
 //Login
 router.get('/login', usersController.login)
-router.post('/login', [check('email').notEmpty().withMessage('Completar Email'),check('password').notEmpty().withMessage('Completar Password')],usersController.chequearLogin)
+router.post('/login', loginValidator.loginCheck, usersController.chequearLogin)
 
 //Register
 router.get('/register', usersController.registrar)
-router.post('/register', upload.any(), registerValidator.checkRegister,usersController.save)
+router.post('/register', upload.any(), registerValidator.registerCheck,usersController.save)
 
 //Profile
 router.get('/profile', usersController.perfil)
