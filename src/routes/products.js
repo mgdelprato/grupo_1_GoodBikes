@@ -3,6 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const productsController = require('../controllers/productsController');
 const path = require('path');
+const routeMiddleware = require('../middlewares/routeMiddleware')
 
 //Multer para guardar las imagenes de productos
 var storage = multer.diskStorage({
@@ -17,7 +18,7 @@ var storage = multer.diskStorage({
 
 var upload = multer({ storage: storage })
 
-router.get('/productCart', productsController.carritoCompras);
+router.get('/productCart', routeMiddleware.userLoggedIn, productsController.carritoCompras);
 
 router.get('/productDetail', productsController.detalle_Producto);
 router.get('/productDetail/:id', productsController.detalleProducto);

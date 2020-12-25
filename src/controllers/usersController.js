@@ -13,7 +13,6 @@ for(let i=0; i<usuarios.length;i++){
     if(ultimoId<usuarios[i].id){
         ultimoId=usuarios[i].id;
     }
-    console.log(ultimoId);
 }
 
 
@@ -61,7 +60,7 @@ let usersController ={
                                 req.session.userEmail = BuscaUser.email
                                 req.session.avatar = BuscaUser.avatar
                                 
-                                console.log(req.session.user);
+                                console.log('esto es lo que quiero ver '+req.session);
                                 
                                 
                                 if(req.body.rememberme == 'si') // ¿Tildó recordame?

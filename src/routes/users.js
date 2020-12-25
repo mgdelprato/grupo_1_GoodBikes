@@ -6,6 +6,7 @@ const usersController = require ('../controllers/usersController');
 const {check, validationResult, body } = require('express-validator');
 const loginValidator = require('../validators/loginValidator');
 const registerValidator = require('../validators/registerValidator');
+const routeMiddleware = require('../middlewares/routeMiddleware');
 
 
 
@@ -31,7 +32,7 @@ router.get('/register', usersController.registrar)
 router.post('/register', upload.any(), registerValidator.registerCheck,usersController.save)
 
 //Profile
-router.get('/profile', usersController.perfil)
+router.get('/profile', routeMiddleware.userLoggedIn, usersController.perfil)
 
 //Logout
 router.get('/logout', usersController.logout)
