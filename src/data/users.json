@@ -78,5 +78,13 @@
         "email": "flor@gmail.com",
         "password": "$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue",
         "avatar": "flor@gmail.com-1608810847256.JPG"
+    },
+    {
+        "id": 11,
+        "first_name": "Admin",
+        "last_name": "Superusuario",
+        "email": "admin@gmail.com",
+        "password": "$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2",
+        "avatar": "admin@gmail.com-1608953906619.JPG"
     }
 ]

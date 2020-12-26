@@ -48,7 +48,7 @@
                 
                 <% for(let i=0; i < productosCategorizados.length; i++){ %>
                 <section id=<%= productosCategorizados[i].ID %>>
-                    <figure ><a href="products/productDetail/<%= productosCategorizados[i].ID %>"><img src="/uploads/products/<%= productosCategorizados[i].Imagen%>"alt="Principal1"></a></figure>
+                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].ID %>"><img src="/uploads/products/<%= productosCategorizados[i].Imagen%>"alt="Principal1"></a></figure>
                     <div>
                         <p><%= productosCategorizados[i].Titulo %></p>
                         <span class="price"><%= productosCategorizados[i].Precio %></span>

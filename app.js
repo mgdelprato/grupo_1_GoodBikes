@@ -4,6 +4,7 @@ const app = express();
 const path = require('path'); // Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
+const adminRouter = require('./src/routes/admin')
 const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
 const session = require('express-session')
@@ -37,6 +38,10 @@ app.use('/users', usersRouter);
 
 /* PRODUCTS */
 app.use('/products',productsRouter);
+
+
+/* Admin */
+app.use('/admin',adminRouter);
 
 
 /* Esto se agrega para cuando trabajamos con metodos http*/

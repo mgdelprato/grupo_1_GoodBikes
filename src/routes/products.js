@@ -23,16 +23,6 @@ router.get('/productCart', routeMiddleware.userLoggedIn, productsController.carr
 router.get('/productDetail', productsController.detalle_Producto);
 router.get('/productDetail/:id', productsController.detalleProducto);
 
-// router.get('/productDetail/:id', productsController.detalleProducto); //Revisar esto a ver si está ok o directamente va el parametro
-
-router.get('/productCreate', productsController.crearProducto);
-router.post('/productCreate', upload.any(), productsController.grabarProducto); // Crea productos
-
-router.get('/productEdit/:id', productsController.editarProducto); //analizar si hay que modificar la ruta
-router.put('/productEdit/:id', productsController.actualizarProducto); //analizar si hay que modificar la ruta
-router.delete('/delete/:id',productsController.borrarProducto);
-
-router.get('/productList', productsController.listarProducto); // Trae listado de productos
 router.get('/productSearch/:categoria', productsController.buscarProducto); // Trae listado de productos
 
 

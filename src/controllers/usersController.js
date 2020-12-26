@@ -93,8 +93,6 @@ let usersController ={
                 function(req, res) {
                 //Si no esta logueado
 
-                console.log(req.session.userEmail);
-
                 if (req.session.userEmail == undefined)
                     { // Kick
                         res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Registro exitoso! Debes loguearte para acceder a tu perfil"})    

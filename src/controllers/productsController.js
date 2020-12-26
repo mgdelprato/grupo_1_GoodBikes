@@ -152,10 +152,7 @@ let productsController = {
     buscarProducto: function(req,res){
     
         let categoria = req.params.categoria
-        console.log(productos);
-        console.log(categoria);
         productosCategorizados = productos.filter(productos=>productos.Categoria==categoria)
-        console.log(productosCategorizados);
         res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
     }
 

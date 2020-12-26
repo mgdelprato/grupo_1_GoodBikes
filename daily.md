@@ -60,3 +60,12 @@ SPRINT 5
 - Revisión de enunciado de Sprint
 - Ingresar tareas al tablero
 - División inicial de tareas
+
+# "Daily 2"
+- Creaciòn de session y cookies
+- Actualización de tablero
+
+# "Daily 3"
+- Análisis y creación de vista de todos los productos
+- Crear rutas de admin
+- Actualización de tablero
