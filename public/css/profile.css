@@ -76,7 +76,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         
     }
     #profileImage{height: 200px; width: auto;align-items: center;margin-top: 4vh;
-        border-radius: 6px; border: solid black 2px}
+        border-radius: 50%; border: solid black 2px}
     
     main form div h2{
         font-size: 20px;
@@ -259,7 +259,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
  
             #profileImage{height: 200px; width: auto;align-items: center;margin-top: -1vh; margin-bottom: 2vh;
-                border-radius: 6px; border: solid black 2px; margin-left: auto; margin-right: auto;}
+                border-radius: 50%; border: solid black 2px; margin-left: auto; margin-right: auto;}
 
             main form div h2{
                 font-size: 20px;

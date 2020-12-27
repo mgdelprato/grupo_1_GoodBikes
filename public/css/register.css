@@ -152,6 +152,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /* mensaje de errores */
         .errores{
             color: red;
+            margin-left: 2%;
         }
 
     main form div button{
@@ -286,6 +287,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 border-radius: 6px;
                 border-style: none;
             }  
+
+               /* mensaje de errores */
+            .errores{
+                color: red;
+                margin-left: 2%;
+            }
 
             #avatar::-webkit-file-upload-button:hover{background-color: #882345;}
 
