@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/homestyle.css" type="text/css" media="screen"><!--Estilos-->
+    <link rel="stylesheet" href="/css/productSearch.css" type="text/css" media="screen"><!--Estilos-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
@@ -34,8 +34,8 @@
                 <p id='Ofertas_text' class="Resaltado">Ofertas</p>            
             </div>
             <section id='Ofertas' class='ContenedorOfertas'>
-            <% for(let i=0; i<productosCategorizados.length; i++){ %>
-                <figure id='Oferta0' ><a href="products/productDetail/<%= productosCategorizados[i].ID %>"><img src="/uploads/products/<%= productosCategorizados[i].Imagen%>" class='Oferton' alt="Oferta1"></a></figure>
+            <% for(let i=0; i<2; i++){ %>
+                <figure id='Oferta0' ><a href="products/productDetail/<%= productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>" class='Oferton' alt="Oferta1"></a></figure>
                 <% } %> 
             </section>
 
@@ -48,7 +48,7 @@
                 
                 <% for(let i=0; i < productosCategorizados.length; i++){ %>
                 <section id=<%= productosCategorizados[i].ID %>>
-                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].ID %>"><img src="/uploads/products/<%= productosCategorizados[i].Imagen%>"alt="Principal1"></a></figure>
+                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>"alt="Principal1"></a></figure>
                     <div>
                         <p><%= productosCategorizados[i].Titulo %></p>
                         <span class="price"><%= productosCategorizados[i].Precio %></span>

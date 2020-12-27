@@ -8,7 +8,7 @@ const adminMiddleware = require('../middlewares/adminMiddleware');
 //Multer para guardar las imagenes de productos
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '../../public/uploads/products'));
+      cb(null, path.join(__dirname, '../../public/images/products'));
     },
     filename: function (req, file, cb) {
         console.log()
@@ -23,7 +23,7 @@ router.get('/products/productCreate',adminMiddleware.adminUser, productsControll
 router.post('/products/productCreate', upload.any(), productsController.grabarProducto); // Crea productos
 
 router.get('/products/productEdit/:id',adminMiddleware.adminUser, productsController.editarProducto); //analizar si hay que modificar la ruta
-router.put('/products/productEdit/:id', productsController.actualizarProducto); //analizar si hay que modificar la ruta
+router.put('/products/productEdit/:id',upload.any(), productsController.actualizarProducto); //analizar si hay que modificar la ruta
 router.delete('/products/delete/:id',productsController.borrarProducto);
 
 router.get('/products/productList',adminMiddleware.adminUser,productsController.listarProducto); // Trae listado de productos

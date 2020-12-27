@@ -33,6 +33,7 @@ let productsController = {
     grabarProducto: function(req, res) {
         let error  = validationResult(req);
         let arrayImagen =[];
+     
         const insertarImagen  = ()=>{
             for(let i=0; i<req.files.length; i++){
                 arrayImagen.push(req.files[i].filename)
@@ -57,7 +58,7 @@ let productsController = {
 
             productos.push(nuevoProducto);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-            res.redirect('/products/productList')
+            res.redirect('/admin/products/productList')
         }else{
             // hay errores. Entonces...
             return res.render(path.join(__dirname,'../views/products/productCreate'), {
@@ -88,8 +89,16 @@ let productsController = {
         let productoEditar = req.params.id; 
         let productoModificado ={}
         let error  = validationResult(req);
+        let arrayImagen =[];
+     
+        const insertarImagen  = ()=>{
+            for(let i=0; i<req.files.length; i++){
+                arrayImagen.push(req.files[i].filename)
+         
+            }
+        }
+        insertarImagen();    
   
-        
         if(error.isEmpty()){
         for (let i=0; i<productos.length;i++){
             if(productoEditar==productos[i].ID){
@@ -100,7 +109,7 @@ let productsController = {
                     Marca: req.body.marca,
                     Modelo: req.body.modelo,
                     Detalles: req.body.detalle,
-                    Imagen:req.files[0].filename,
+                    Imagen:arrayImagen,
                     Precio: req.body.precio,
                     Cantidad: req.body.cantidad 
 
@@ -111,7 +120,7 @@ let productsController = {
            
 
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-            res.redirect('/products/productList')
+            res.redirect('/admin/products/productList')
         }else{
             // hay errores. Entonces...
             return res.render(path.join(__dirname,'../views/products/productEdit/:id'), {
@@ -136,7 +145,7 @@ let productsController = {
                
 
                 fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-                res.redirect('/products/productList')
+                res.redirect('/admin/products/productList')
 
         }else{
             return res.render(path.join(__dirname,'../views/products/productList')), {

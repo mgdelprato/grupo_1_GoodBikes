@@ -18,7 +18,7 @@
         <%- include('../partials/header')%>
 
         <main>
-            <form action="/products/productEdit/<%= productoEditar.ID%>?_method=PUT" method="POST">
+            <form action="/admin/products/productEdit/<%= productoEditar.ID%>?_method=PUT" method="POST" enctype="multipart/form-data">
             <div class="titulos">
                 <h1>Administración de Productos</h1>
                 <h2>Modificación de producto</h2>

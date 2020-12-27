@@ -85,7 +85,7 @@
         "Modelo": "Princesa",
         "Detalles": "Rodados Aurorita Princesa, Rodado 12. Con rueditas, ideal para comenzar.",
         "Imagen": [
-            "Rodados infantil Princesa-1607656341856.jpg"
+            "Bicicleta-infantil-Princesa-1607656341856.jpg"
         ],
         "Precio": "$ 32000",
         "Cantidad": "15"
@@ -193,6 +193,208 @@
         ],
         "Precio": "$ 64900",
         "Cantidad": "3"
+    },
+    {
+        "ID": 16,
+        "Categoria": "Rodados",
+        "Titulo": "Bicicleta Harrier",
+        "Marca": "Harrier",
+        "Modelo": "Wind",
+        "Detalles": "ASIENTO\t\tAntiprostático 280X135 mm\r\nCUBIERTA\tArisun Clincher 700X23C Vitesse\r\nDESVIADOR\tShimano Claris M2403\r\nCUADRO\t\tHarrier Aluminio Ruta con Horquilla Talle 52/54/56\r\nENGRANAJE\tShimano Claris R-2000 C/Cartucho\r\nCAJA PEDALERA\tCentral 34.7 DER/IZQ OCTALINK 68X113\r\nCAMBIOS\t\tIndex 16 Velocidades Shimano Claris RD-2000\r\nMANIJA\t\tShimano Claris 2000\r\nFRENO\t\tHerradura Shimano Claris BR-R2000\r\nMAZA TRASERA\tSHIMANO Claris 2400 32AG\r\nPIÑÓN\t\t8C 11-28T Cassette Shimano HG50\r\nVELOCIDADES\t16",
+        "Precio": "$ 132199",
+        "Cantidad": "5",
+        "Imagen": [
+            "Bicicleta-Harrier-1609009037661.jpg",
+            "Bicicleta-Harrier-1609009037668.jpg",
+            "Bicicleta-Harrier-1609009037670.jpg"
+        ]
+    },
+    {
+        "ID": 17,
+        "Categoria": "Rodados",
+        "Titulo": "Flamingo Negro Celeste",
+        "Marca": "Flamingo",
+        "Modelo": "Negro Celeste",
+        "Detalles": "RODADO\t\t29\r\nFRENOS\t\tDisco mecánico TOPMEGA\r\nHORQUILLA\tCon suspensión\r\nPIÑON\t\t7 Coronas Index 14-28T\r\nENGRANAJE\tTriple 24-34-42X170 Index c/cubre\r\nCAMBIOS\t\tShimano Tourney\r\nDESVIADOR\tShimano Tourney TZ510\r\nCUADRO\t\tAluminio\r\nMAZA DELANTERA\t36 Agujero Aluminio a rulemán con cierre\r\nVELOCIDADES\t21\r\nCAMBIOS \tShimano Tourney\r\nMAZA TRASERA\tCassette Aluminio a rulemán con cierre\r\nCAJA PEDALERA\t34.7mm Blindado C/Ruleman\r\nCUBIERTA\tArisun Graham 29X2.20 MTB\r\nLLANTA\t\tDoble Pared\r\nASIENTO\t\tMTB 265X150 mm\r\n",
+        "Precio": "$ 66999",
+        "Cantidad": "10",
+        "Imagen": [
+            "Flamingo Negro Celeste-1609041160150.jpg",
+            "Flamingo Negro Celeste-1609041160155.jpg",
+            "Flamingo Negro Celeste-1609041160158.jpg",
+            "Flamingo Negro Celeste-1609041160167.jpg"
+        ]
+    },
+    {
+        "ID": 18,
+        "Categoria": "Equipamiento",
+        "Titulo": "Casco 26 ventilaciones",
+        "Marca": "Next",
+        "Modelo": "26 ventilaciones",
+        "Detalles": "Casco ligero y con forma aerodinámica para darte seguridad, sin quitarte velocidad",
+        "Precio": "$ 5899",
+        "Cantidad": "3",
+        "Imagen": [
+            "Casco 26 ventilaciones-1609041325358.jpg",
+            "Casco 26 ventilaciones-1609041325362.jpg"
+        ]
+    },
+    {
+        "ID": 19,
+        "Categoria": "Equipamiento",
+        "Titulo": "Casco infantil tigre",
+        "Marca": "Next",
+        "Modelo": "Tigre",
+        "Detalles": "Casco ligero y con forma aerodinámica para darte seguridad, sin quitarte velocidad",
+        "Precio": "$ 6319",
+        "Cantidad": "2",
+        "Imagen": [
+            "Casco infantil tigre-1609041378975.jpg",
+            "Casco infantil tigre-1609041378976.jpg",
+            "Casco infantil tigre-1609041378980.jpg",
+            "Casco infantil tigre-1609041378989.jpg"
+        ]
+    },
+    {
+        "ID": 20,
+        "Categoria": "Equipamiento",
+        "Titulo": "Casco infantil cebra",
+        "Marca": "Next",
+        "Modelo": "Cebra",
+        "Detalles": "Casco ligero y con forma aerodinámica para darte seguridad, sin quitarte velocidad",
+        "Precio": "$ 6319",
+        "Cantidad": "5",
+        "Imagen": [
+            "Casco infantil cebra-1609041500411.jpg",
+            "Casco infantil cebra-1609041500413.jpg",
+            "Casco infantil cebra-1609041500416.jpg"
+        ]
+    },
+    {
+        "ID": 21,
+        "Categoria": "Indumentaria",
+        "Titulo": "Zapatilla MTB abrojo",
+        "Marca": "MTB",
+        "Modelo": "Abrojo",
+        "Detalles": "Zapatilla  MTP Top - Ajuste con abrojo\r\n",
+        "Precio": "$ 10099",
+        "Cantidad": "8",
+        "Imagen": [
+            "Zapatilla MTB abrojo-1609041562093.jpg",
+            "Zapatilla MTB abrojo-1609041562094.jpg"
+        ]
+    },
+    {
+        "ID": 22,
+        "Categoria": "Indumentaria",
+        "Titulo": "Zapatilla MTB criquet",
+        "Marca": "MTB",
+        "Modelo": "Criquet",
+        "Detalles": "Zapatilla  MTP Top - Ajuste con criquet\r\n",
+        "Precio": "$ 12399",
+        "Cantidad": "12",
+        "Imagen": [
+            "Zapatilla MTB criquet-1609041603144.jpg",
+            "Zapatilla MTB criquet-1609041603146.jpg"
+        ]
+    },
+    {
+        "ID": 23,
+        "Categoria": "Accesorios",
+        "Titulo": "Botella térmica",
+        "Marca": "Stanley",
+        "Modelo": "500ml",
+        "Detalles": "\r\nMaterial\tAcero Inoxidable\r\nCapacidad\t500ml",
+        "Precio": "$ 3199",
+        "Cantidad": "15",
+        "Imagen": [
+            "Botella térmica-1609041682094.jpg",
+            "Botella térmica-1609041682097.jpg",
+            "Botella térmica-1609041682098.jpg",
+            "Botella térmica-1609041682104.jpg"
+        ]
+    },
+    {
+        "ID": 24,
+        "Categoria": "Accesorios",
+        "Titulo": "Luz usb",
+        "Marca": "Noganet",
+        "Modelo": "usb delantera",
+        "Detalles": "Funciones\t2\r\nCantidad de Led\t4\r\nLumens\t\t30\r\nAlimentación\tBatería recargable 3,7V 300 MAH",
+        "Precio": "$ 1899",
+        "Cantidad": "3",
+        "Imagen": [
+            "Luz usb-1609041724682.jpg",
+            "Luz usb-1609041724683.jpg",
+            "Luz usb-1609041724686.jpg"
+        ]
+    },
+    {
+        "ID": 25,
+        "Categoria": "Taller",
+        "Titulo": "Grasa PRO",
+        "Marca": "Zefal",
+        "Modelo": "PRO",
+        "Detalles": "Pomo 150ML\r\n\r\n",
+        "Precio": "$ 1899",
+        "Cantidad": "5",
+        "Imagen": [
+            "Grasa PRO-1609041765644.jpg"
+        ]
+    },
+    {
+        "ID": 26,
+        "Categoria": "Accesorios",
+        "Titulo": "Inflador pico",
+        "Marca": "Shimao",
+        "Modelo": "Pico push",
+        "Detalles": "Inflador \tPico CO2 Push 3899\r\nMaterial\tAluminio con cubierta termoplastica\r\nLongitud\t45 mm / 1.8\r\nRacor\t\tZ-Push\r\nPeso\t\t24g. (Sin cartucho)\r\nCartuchos\t12g. - 16g. - 25g. con rosca",
+        "Precio": "$ 1899",
+        "Cantidad": "15",
+        "Imagen": [
+            "Inflador pico-1609041819859.jpg"
+        ]
+    },
+    {
+        "ID": 28,
+        "Categoria": "Accesorios",
+        "Titulo": "Rollo entrenador",
+        "Marca": "Shimao",
+        "Modelo": "Rodi200",
+        "Detalles": "\r\nMedidas\tPlegado 71,5 cm, desplegado 137,5 cm\r\nMateriales\tAluminio de aviación, Plástico de alto impacto\r\nRodados compatibles\t26 al 29\r\nPeso\t6,8 Kg",
+        "Precio": "$ 26999",
+        "Cantidad": "2",
+        "Imagen": [
+            "Rollo entrenador-1609041964201.jpg",
+            "Rollo entrenador-1609041964203.jpg",
+            "Rollo entrenador-1609041964206.jpg"
+        ]
+    },
+    {
+        "ID": "29",
+        "Categoria": "Accesorios",
+        "Titulo": "Sensor de cadencia",
+        "Marca": "Shimao",
+        "Modelo": "cad25",
+        "Detalles": "Batería\tCR2032\r\nVoltaje\t3V\r\nFunción\tSeguimiento de velocidad y cadencia\r\nMétodo de enlace\tBluetooth 4.0 ANT +\r\nCompatible Reloj Deportivo ANT+\tSi - Garmin, TomTom.\r\nCompatible Computadora para bicicleta ANT+\tSi - Garmin WahooBryton\r\nCompatible\tZwift, Tacx, BKOOL",
+        "Imagen": [
+            "Sensor de cadencia-1609042686246.jpg",
+            "Sensor de cadencia-1609042686258.jpg",
+            "Sensor de cadencia-1609042686260.png"
+        ],
+        "Precio": "$ 4199"
+    },
+    {
+        "ID": "291",
+        "Categoria": "Taller",
+        "Titulo": "Servicio de taller",
+        "Marca": "Taller",
+        "Modelo": "Reparación",
+        "Detalles": "En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.",
+        "Precio": "A convenir",
+        "Cantidad": "1",
+        "Imagen": [
+            "Servicio de taller-1609042862367.jpg"
+        ]
     }
-    
 ]

@@ -8,11 +8,11 @@ const routeMiddleware = require('../middlewares/routeMiddleware');
 //Multer para guardar las imagenes de productos
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
-      cb(null, path.join(__dirname, '../../public/uploads/products'));
+      cb(null, path.join(__dirname, '../../public/images/products'));
     },
     filename: function (req, file, cb) {
         console.log()
-        cb(null, req.body.producto + '-' + Date.now() + path.extname(file.originalname))
+        cb(null, req.body.categoria + '-' + Date.now() + path.extname(file.originalname))
     }
 })
 

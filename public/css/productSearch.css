@@ -1,0 +1,288 @@
+/*Configuraciones*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+
+
+/*Listado de colores*/
+#color1{background-color: #882345;}
+#color2{background-color: #bb0a21;}
+#color3{background-color: #66c674;}
+#color4{background-color: #ffffff;}
+#color5{background-color: #ebebeb;}
+#color6{background-color: #3E3D40;}
+#color7{background-color: #666666;}
+#color8{background-color: #000000;}
+ 
+/*Listado de fuentes*/
+#fuente1{font-family: 'Anton', sans-serif;}
+#fuente2{font-family: 'Roboto', sans-serif;}
+
+
+/*Aplicación de estilos Genéricos por defecto*/
+*{  
+    margin: 0px;
+    padding: 0px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+}
+
+body{background-color: #ffffff;}  /*Color de fondo del sitio*/
+
+
+/*Configuraciones para CSS Desktop Version*/
+@media screen and (min-width: 801px)
+{ 
+#Goodbikes{display: none;}
+#Bars{display: none;}
+.ocultoMovil{display: none;}
+#Hero_IMG{display: none;}
+
+
+    .Contenedor{width: 100%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
+
+    
+    #Banner{width: 100%; height: auto;}
+
+    /*OFERTAS*/
+    .ContenedorOfertas{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 1%;}
+        
+        .Oferton{
+            width: 120px; 
+            height:90px;
+            margin: 0% 15px 0% 15px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #666666;  
+            border-radius: 10px; 
+        }
+        .Oferton:hover{transform: scale(1.1);
+            border-style: solid;
+            border-color: #882345;
+            border-width: 2px;}
+        
+        
+        /*MAIN*/
+        main{
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            margin-top: 1%;}
+            
+            main section{
+                width: 210px;
+                height: 250px;
+                border-style: solid;
+                border-width: 0px;
+                border-radius: 10px;
+                background-color: #ebebeb;
+                border-color: #666666;
+                margin-left: 2%;
+                margin-right: 2%;
+                margin-bottom: 1%;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                position: relative}
+                
+                main section img{
+                    height: 140px; 
+                    width: 180px;
+                    border-radius: 10px;
+                    margin-top: 5%;}
+                    
+                    main section img:hover{
+                        border-style: solid;
+                        border-color: #882345;
+                        border-width: 1px;
+                        }
+                        
+                        main section ul{    
+                            list-style:none;
+                            text-align: center;
+                            line-height: 30px;}
+                            
+                            main section ul li{
+                                font-weight: 500;
+                                color: #66c674;}
+                                
+                                main section ul li:hover{
+                                    color: #333333;}
+                                    
+                                    main section div button{
+                                        width: 10vw;
+                                        height: 30px;
+                                        margin: 10px;
+                                        font-family: 'Anton', sans-serif;
+                                        font-weight: 300;
+                                        text-transform: uppercase;
+                                        letter-spacing: 0.2em;
+                                        font-size: 12px;
+                                        border: none;
+                                        color: white;
+                                        border-radius: 6px;
+                                        background-color: #3E3D40;
+                                        position: absolute;
+                                        bottom: 1px;
+
+                                    }
+                                        
+                                        main section div button:hover{background-color: #882345;}
+                                        
+                                        main section div {
+                                            display: flex;
+                                            flex-direction: column;
+                                            flex-wrap: wrap;
+                                            text-align: center;
+                                            padding: 0px 5px;
+                                            align-items: center;}
+                                            
+                                            .price {
+                                                font-size: 1.5rem;
+                                            font-weight: bold;
+                                            margin-top: 3px;}
+                            
+                            #Video_Home{height: auto;width: 100%;background-color: #ebebeb;display: inline-block}
+                            
+                            #Text_Hero{color:#ebebeb;font-family: 'Anton', sans-serif;text-transform: uppercase;
+                                font-size: 25px;margin-top: -10vh;position: relative;z-index: 10;letter-spacing: 0.4em;font-weight: 400;text-align: center;margin-bottom: 5vh;}
+                            
+                            .juntitos{display: flex;flex-wrap: nowrap;margin: 3% 0% 1% 0%;justify-content: center;}
+                            .juntitos2{display: none}
+                            .Resaltado{color: black; font-size: 20px;text-align: center;letter-spacing: 0.01em;font-weight: bold;margin-left: 1%;}
+                            
+}/*Cierre de llave de vista para PC */
+                        
+                        
+                        
+/*CSS Mobile Version*/
+@media screen and (min-width: 200px) and (max-width: 800px) 
+{
+                            
+#GoobBikes_en_el_menu{display: none;}
+#Tag_Login{display: none;}
+#Tag_Register{display: none;}
+#Ofertas{display: none;}
+#Oferta0{display: none;}
+#Oferta1{display: none;}
+#Oferta2{display: none;}
+#Oferta3{display: none;}
+#Oferta4{display: none;}
+#Oferta5{display: none;}
+.juntitos{display: none}
+#juntitos2{display: none}
+video{display: none}
+                            
+    #Contenedor{
+        
+        display: flex; 
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 0px 0px 0px 0px;
+        background-color: #ebebeb;} 
+
+        
+        #Text_Hero{
+            color: #ffffff;
+            font-family: 'Anton', sans-serif;
+            font-size: 30px;
+            text-align: center;
+            margin-top:-15vh;
+            margin-bottom:10vh;}
+        
+        .ContenedorOfertas{
+            display: flex;
+            text-align: center;
+            padding: 10%;
+            background-color: #ebebeb;
+        }
+        
+        #Oferta0{align-self: center;}
+        .Oferton{border-radius: 10px;}
+        
+        
+        main{display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+             
+            }
+            
+            main section{
+                width: 95%;
+                    height: auto;
+                    border-style: solid;
+                    border-width: 0px;
+                    border-radius: 10px;
+                    background-color: #ebebeb;
+                    border-color: #666666;
+                    margin: 1% 2% 2% 1%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;}
+                    
+                    main figure{display: flex;flex-direction: column;align-items: center;justify-content: center;}
+
+                    main img{
+                        border-radius: 10px;
+                        border-style: solid; 
+                        margin-top: 5%;
+                        margin-bottom: 5%; 
+                        border-color: #666666;
+                        border-width: 3px;
+                        width: 90vw;
+                        text-align: center;
+                        }
+                        
+                        
+                        main section ul li{
+                            display: flex; 
+                            justify-content: center;
+                            color: #66c674;}
+                            
+                            
+                            
+                            main section div {
+                            display: flex;
+                            flex-direction: column;
+                            flex-wrap: wrap;
+                            text-align: center;
+                            padding: 0px 5px;
+                            align-items: center;
+                        }
+                        
+                        main section div button{
+                            width: 55%;
+                            height: 30px;
+                            margin: 10px;
+                            font-family: 'Anton', sans-serif;
+                            text-transform: uppercase;
+                            letter-spacing: 0.1em;
+                            font-size: 15px;
+                            border: none;
+                            border-radius: 6px;
+                            background-color: #3E3D40;
+                            color:#ffffff;
+                            }
+                            
+                            main section div button:hover{background-color: #66c674;}
+                            
+                            .price {
+                                font-size: 1.5rem;
+                                font-weight: bold;
+                                margin-top: 3px;
+                            }
+                            
+                            
+                            
+    }/*Fin de llava de vista MOBILE*/
