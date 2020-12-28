@@ -69,3 +69,9 @@ SPRINT 5
 - Análisis y creación de vista de todos los productos
 - Crear rutas de admin
 - Actualización de tablero
+
+# "Daily 4"
+- Prueba de Admin ok
+- Cierre del sprint 5
+- Revisión de datos en JSON apuntando al modelo de BD.
+
