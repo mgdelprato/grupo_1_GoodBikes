@@ -44,7 +44,7 @@ let productsController = {
 
         if(error.isEmpty()){
             let nuevoProducto ={
-                ID: ultimoId +1,
+                ID: ultimoId + 1,
                 Categoria: req.body.categoria,
                 Titulo: req.body.producto,
                 Marca: req.body.marca,
@@ -86,7 +86,7 @@ let productsController = {
     },
 
     actualizarProducto: function(req,res){
-        let productoEditar = req.params.id; 
+        let productoEditar = parseInt(req.params.id); 
         let productoModificado ={}
         let error  = validationResult(req);
         let arrayImagen =[];

@@ -371,7 +371,7 @@
         ]
     },
     {
-        "ID": "29",
+        "ID": 29,
         "Categoria": "Accesorios",
         "Titulo": "Sensor de cadencia",
         "Marca": "Shimao",
@@ -385,16 +385,15 @@
         "Precio": "$ 4199"
     },
     {
-        "ID": "291",
+        "ID": 30,
         "Categoria": "Taller",
         "Titulo": "Servicio de taller",
         "Marca": "Taller",
         "Modelo": "Reparación",
         "Detalles": "En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.",
-        "Precio": "A convenir",
-        "Cantidad": "1",
         "Imagen": [
-            "Servicio de taller-1609042862367.jpg"
-        ]
+            "Servicio de taller-1609296308614.jpg"
+        ],
+        "Precio": "A convenir"
     }
 ]
