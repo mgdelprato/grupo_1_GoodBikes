@@ -49,7 +49,7 @@
    Mejor uso de buenas prácticas
 
 3. Continuar haciendo
-    Reuniones de equipo para coordinar avances y destrabar conflicos
+    Reuniones de equipo para coordinar avances y destrabar conflictos
     Seguimiento de features
 
 4. Hacer menos
@@ -57,3 +57,28 @@
 
 5. Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
+
+
+
+#RETRO Sprint 5
+
+1. Comenzar a hacer
+   Profundizar conceptos de Merge y  pull request. 
+   Cierre del modelo de BD
+
+2. Hacer más
+   Actualizacion de tarjetas trello 
+   Mejor uso de buenas prácticas
+
+3. Continuar haciendo
+    Reuniones de equipo para coordinar avances y destrabar conflictos
+    Seguimiento de features
+    Volcado de teoría en el proyecto integrador de manera práctica
+
+4. Hacer menos
+   Cambios de definición sobre la marcha o cambios en los diseños
+   Atrasos en la teoría
+
+5. Dejar de hacer
+    Trabajar en el mismo archivo que puedan generar conflictos
+    

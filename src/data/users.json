@@ -86,5 +86,13 @@
         "email": "admin@gmail.com",
         "password": "$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2",
         "avatar": "admin@gmail.com-1608953906619.JPG"
+    },
+    {
+        "id": 12,
+        "first_name": "Mauro",
+        "last_name": "Delprato",
+        "email": "mgdelprato@gmail.com",
+        "password": "$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq",
+        "avatar": "mgdelprato@gmail.com-1609266037402.jpg"
     }
 ]

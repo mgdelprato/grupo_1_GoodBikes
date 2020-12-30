@@ -24,11 +24,11 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 
 //Login
-router.get('/login', usersController.login)
+router.get('/login', routeMiddleware.logInRegisterCase, usersController.login)
 router.post('/login', loginValidator.loginCheck, usersController.chequearLogin)
 
 //Register
-router.get('/register', usersController.registrar)
+router.get('/register', routeMiddleware.logInRegisterCase, usersController.registrar)
 router.post('/register', upload.any(), registerValidator.registerCheck,usersController.save)
 
 //Profile
