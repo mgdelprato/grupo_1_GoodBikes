@@ -27,6 +27,18 @@ Id_register_IMG INT AUTO_INCREMENT PRIMARY KEY,
 FOREIGN KEY (Product_Id_FK) REFERENCES Products(Product_Id)
 );
 
+DROP TABLE if exists  Users ;
+CREATE TABLE Users(
+Users_Id INT AUTO_INCREMENT PRIMARY KEY, 
+first_name Varchar (50) NOT NULL,
+last_name Varchar (50) NOT NULL,
+email Varchar (100) NOT NULL,
+password Varchar (100) NOT NULL,
+avatar Varchar (100),
+still_alive varchar(3) NOT NULL default 'YES',
+is_admin varchar(3) NOT NULL default 'NO'
+);
+
 
 INSERT INTO GoodbikesDB.Products(Category,Title,Brand,Model,Detail,Price,quantity) 
 VALUES 
@@ -115,7 +127,25 @@ VALUES
 (29,'Servicio de taller-1609871673599.jpg'),
 (30,'Taller 2-1609878736364.jpg');
 
-SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products
-LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
 
-    
+INSERT INTO Users(first_name,last_name,email,password,avatar,is_admin) 
+VALUES
+('Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','NO'),
+('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','NO'),
+('Nahuel','Rodriguez','nahuargentina@gmail.com','$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG','nahuargentina@gmail.com-1608501759446.JPG','NO'),
+('Juan Nahuel','Rodriguez Araujo','ecologista_chess@yahoo.com.ar','$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy','ecologista_chess@yahoo.com.ar-1608535183320.jpg','NO'),
+('Cosme','Fulanito','cuentaunlam@gmail.com','$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O','cuentaunlam@gmail.com-1608698397934.JPG','NO'),
+('Gordo','Motoneta','gordo@gmail.com','$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC','gordo@gmail.com-1608756791191.JPG','NO'),
+('El','Barto','barto@gmail.com','$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG','barto@gmail.com-1608776726469.JPG','NO'),
+('Felipe','Pino','topo@mail.com','$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu','topo@mail.com-1608782890921.JPG','NO'),
+('Oli','Delprato','oli@gmail.com','$2a$12$UP8hzuf3cbmWDP4Ei.z9/e9znyD2wGE666cE1QnH.heHqntI5tLSa','oli@gmail.com-1608809802868.JPG','NO'),
+('Flor','gomez','flor@gmail.com','$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue','flor@gmail.com-1608810847256.JPG','NO'),
+('Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES'),
+('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','NO');
+
+
+-- SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
+
+SELECT * from users
+
+
