@@ -1,5 +1,6 @@
-const {check, validationResult, body} = require('express-validator');
+const {check, validationResult} = require('express-validator');
 
+/*Validación que se completó el mail/password en el logueo de un usuario */
 module.exports = {
     loginCheck:
     [

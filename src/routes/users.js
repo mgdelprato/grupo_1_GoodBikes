@@ -3,11 +3,9 @@ const router = express.Router();
 const multer = require('multer');
 const path = require('path');
 const usersController = require ('../controllers/usersController');
-const {check, validationResult, body } = require('express-validator');
 const loginValidator = require('../validators/loginValidator');
 const registerValidator = require('../validators/registerValidator');
 const routeMiddleware = require('../middlewares/routeMiddleware');
-
 
 
 //Multer para guardar los avatars
@@ -22,6 +20,11 @@ var storage = multer.diskStorage({
 })
    
 var upload = multer({ storage: storage })
+
+
+/*********
+RUTAS ASOCIADAS A USUARIOS
+***********/
 
 //Login
 router.get('/login', routeMiddleware.logInRegisterCase, usersController.login)

@@ -1,13 +1,13 @@
 const path = require('path')
 const fs = require('fs');
 const bcryptjs = require('bcryptjs');
-const {check, validationResult, body } = require('express-validator');
-const session = require('express-session')
-const cookieParser = require('cookie-parser')
+const {validationResult} = require('express-validator');
 
+//Leo el JSON de usuarios y lo parseo
 let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
 usuarios = JSON.parse(usuarios);
 
+//Función para obtener ID de producto autoincremental
 let ultimoId = 0
 for(let i=0; i<usuarios.length;i++){
     if(ultimoId<usuarios[i].id){
@@ -15,18 +15,19 @@ for(let i=0; i<usuarios.length;i++){
     }
 }
 
-
+/*CONTROLLER QUE MANEJA LA LÓGICA DE USUARIOS */
 let usersController ={
+    //Método (asociado al GET) para renderizar la vista de registración de un usuario
     registrar: function(req, res) {
         res.render( path.join(__dirname, '../views/users/register.ejs') )
     },
     
-    //Al ingresar al Login    
+    //Método (asociado al GET) para renderizar la vista de login de un usuario 
     login:function(req, res) {
         res.render( path.join(__dirname, '../views/users/login.ejs') )
     },
     
-    
+    //Método (asociado al POST) para realizar el logueo de un usuario
     chequearLogin: function(req,res,next)
     {
         //Si no hay errores type en el ckeck
@@ -59,16 +60,14 @@ let usersController ={
                                 req.session.user = BuscaUser.first_name
                                 req.session.userEmail = BuscaUser.email
                                 req.session.avatar = BuscaUser.avatar
-                                
-                                console.log('esto es lo que quiero ver '+req.session);
-                                
+                                                                
                                 
                                 if(req.body.rememberme == 'si') // ¿Tildó recordame?
                                 {
                                   res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
                                 }
 
-                                //Ir al home)
+                                //Ir al home
                                 return res.redirect('/');
                             }
 
@@ -88,7 +87,7 @@ let usersController ={
         }
         next()
     } ,
-
+//Método (asociado al GET) para obtener los datos y renderizar la vista de profile de un usuario
     perfil: 
                 function(req, res) {
                 //Si no esta logueado
@@ -115,9 +114,10 @@ let usersController ={
                     }
 
     },
+    //Método (asociado al POST) que se encarga de guardar los datos cuando se registra un nuevo usuario
     save: function(req, res,next) {
         let errors = validationResult(req);
-
+        //Si no hay errores, recupero los datos ingresados del usuario y los guardo, luego renderizo su profile
         if(errors.isEmpty()){
             let nuevoUsuario = {
                 id: ultimoId +1,
@@ -133,12 +133,12 @@ let usersController ={
             res.redirect('/users/profile');
 
         } else {
-            // hay errores. Entonces...
+            // Si hay errores, los mapeo y renderizo la vista con los errores
             return res.render( path.join(__dirname, '../views/users/register.ejs'),{errors: errors.mapped(),old:req.body})
         }
         next()
     },
-
+    //Método (asociado al get) para cerrar la sesión de un usuario
     logout: function(req, res) {
         //Kill a todo dato y redirigimos al home
 

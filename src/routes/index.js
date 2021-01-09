@@ -1,9 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const multer = require('multer');
 const mainController = require('../controllers/mainController.js');
-const path = require('path');
 
+//HOMEPAGE
 router.get('/', mainController.index);
 
 module.exports= router;

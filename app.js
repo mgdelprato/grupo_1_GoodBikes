@@ -33,14 +33,12 @@ app.use(remembermeController.cookie)
 app.get('/', mainRouter)
 
 /* USUARIOS */
-
 app.use('/users', usersRouter);
 
 /* PRODUCTS */
 app.use('/products',productsRouter);
 
-
-/* Admin */
+/* ADMIN */
 app.use('/admin',adminRouter);
 
 

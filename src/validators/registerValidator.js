@@ -1,5 +1,6 @@
-const {check, validationResult, body} = require('express-validator');
+const {check, validationResult} = require('express-validator');
 
+//Validación que se completaron y cumplieron con los requisitos al momento de registrar un nuevo usuario
 module.exports = {
     registerCheck: [
             check('name')

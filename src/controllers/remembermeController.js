@@ -1,6 +1,9 @@
-const cookieParser = require('cookie-parser')
 
-let remembermeController = {cookie: function(req, res, next){
+
+/*CONTROLLER QUE TIENE LA LOGICA ASOCIADA A RECORDAR AL LOGIN Y RECORDAR UN USUARIO */
+let remembermeController = {
+  //Método para recordar un usuario en la web
+  cookie: function(req, res, next){
 
     if(req.cookies.rememberme != undefined && req.session.user == undefined){
       req.session.user = req.cookies.rememberme.user;
