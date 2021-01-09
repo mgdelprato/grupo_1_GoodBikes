@@ -120,7 +120,8 @@ let productsController = {
            
 
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-            res.redirect('/admin/products/productList')
+            // res.redirect('/admin/products/productList')
+            res.render(path.join(__dirname,'../views/products/productList'), {productos:productos} )
         }else{
             // hay errores. Entonces...
             return res.render(path.join(__dirname,'../views/products/productEdit/:id'), {

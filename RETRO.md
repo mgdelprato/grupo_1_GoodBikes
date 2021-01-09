@@ -1,84 +1,84 @@
-#RETRO Sprint 2
+##RETRO Sprint 2
 
-1. Comenzar a hacer
+- Comenzar a hacer
     Reflejar avances en tareas en progreso en el tablero trello
 
-2. Hacer más
+- Hacer más
     Mayor comunicación
     Mejorar los criterios de escritura en el código (ejemplo en los css)
 
-3. Continuar haciendo
-    Reuniones de equipo para coordinar avances y destrabar conflicos.
+- Continuar haciendo
+    Reuniones de equipo para coordinar avances y destrabar conflicos
 
-4. Hacer menos
-    Por el momento, no encontramos malas prácticas que ameriten dejar de realizarlas o realizarlas con menor frecuencia.
+- Hacer menos
+    Por el momento, no encontramos malas prácticas que ameriten dejar de realizarlas o realizarlas con menor frecuencia
 
-5. Dejar de hacer
+- Dejar de hacer
     Retrabajo o realizar la misma tarea
 
 
 
-#RETRO Sprint 3
+##RETRO Sprint 3
 
-1. Comenzar a hacer
+- Comenzar a hacer
     Reflejar avances en tareas en progreso en el tablero trello
     Preparar la web para el ruteo
 
-2. Hacer más
+- Hacer más
     Mayor comunicación
     Mejorar los criterios de escritura en el código (ejemplo en los css)
 
-3. Continuar haciendo
-    Reuniones de equipo para coordinar avances y destrabar conflicos.
+- Continuar haciendo
+    Reuniones de equipo para coordinar avances y destrabar conflicos
 
-4. Hacer menos
+- Hacer menos
    Cambios de definición sobre la marcha o cambios en los diseños
 
-5. Dejar de hacer
+- Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
 
 
 
-#RETRO Sprint 4
+##RETRO Sprint 4
 
-1. Comenzar a hacer
+- Comenzar a hacer
    Profundizar conceptos (ejemplo: Login)
 
-2. Hacer más
+- Hacer más
    Actualizacion  de tarjetas trello
    Mejor uso de buenas prácticas
 
-3. Continuar haciendo
+- Continuar haciendo
     Reuniones de equipo para coordinar avances y destrabar conflictos
     Seguimiento de features
 
-4. Hacer menos
+- Hacer menos
    Cambios de definición sobre la marcha o cambios en los diseños
 
-5. Dejar de hacer
+- Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
 
 
 
-#RETRO Sprint 5
+##RETRO Sprint 5
 
-1. Comenzar a hacer
-   Profundizar conceptos de Merge y  pull request. 
+- Comenzar a hacer
+   Profundizar conceptos de Merge y  pull request 
    Cierre del modelo de BD
 
-2. Hacer más
+- Hacer más
    Actualizacion de tarjetas trello 
    Mejor uso de buenas prácticas
 
-3. Continuar haciendo
+- Continuar haciendo
     Reuniones de equipo para coordinar avances y destrabar conflictos
     Seguimiento de features
     Volcado de teoría en el proyecto integrador de manera práctica
 
-4. Hacer menos
+- Hacer menos
    Cambios de definición sobre la marcha o cambios en los diseños
    Atrasos en la teoría
 
-5. Dejar de hacer
+- Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
     

@@ -389,11 +389,23 @@
         "Categoria": "Taller",
         "Titulo": "Servicio de taller",
         "Marca": "Taller",
-        "Modelo": "Reparación",
+        "Modelo": "Reparación Express",
         "Detalles": "En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.",
         "Imagen": [
-            "Servicio de taller-1609296308614.jpg"
+            "Servicio de taller-1609871673599.jpg"
         ],
         "Precio": "A convenir"
+    },
+    {
+        "ID": 31,
+        "Categoria": "Taller",
+        "Titulo": "Taller 2",
+        "Marca": "Marca",
+        "Modelo": "Modelo",
+        "Detalles": "asdfasfasdf",
+        "Imagen": [
+            "Taller 2-1609878736364.jpg"
+        ],
+        "Precio": "$234123"
     }
 ]
