@@ -5,7 +5,7 @@ USE GoodbikesDB;
 
 DROP TABLE if exists  Products ;
 CREATE TABLE Products
-	(Id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	(Product_Id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
 	Category varchar(12) NOT NULL,
     Title varchar(255) NOT NULL,
     Brand varchar(30) NOT NULL,
@@ -18,9 +18,17 @@ CREATE TABLE Products
     discount decimal(3,2) 			default(0),
     still_alive varchar(3) not null		default 'YES'
     );
-    
-INSERT INTO GoodbikesDB.Products(Category,Title,Brand,Model,Detail,Price,quantity) 
 
+DROP TABLE if exists  Products_Images ;
+CREATE TABLE Products_Images(
+Product_Id_FK INT NOT NULL,
+Image_Name VARCHAR(255) NOT NULL,
+Id_register_IMG INT AUTO_INCREMENT PRIMARY KEY, 
+FOREIGN KEY (Product_Id_FK) REFERENCES Products(Product_Id)
+);
+
+
+INSERT INTO GoodbikesDB.Products(Category,Title,Brand,Model,Detail,Price,quantity) 
 VALUES 
 ('Rodados','Mountain Bike Firebird R29 Doble suspension','Firebird','R29 Doble suspension','Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k',71999,50),
 ('Rodados','Todoterreno Aurora Bacota','Aurora','Bacota','Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 7, Tipo de freno: Disco mecanico Shimano, Suspension: Doble, Rodado: Especial 26x4, Modelo: Bacota, Tipo: Mountain Bike, Manubrio: Chopero Acer',98000,30),
@@ -51,6 +59,63 @@ VALUES
 ('Accesorios','Sensor de cadencia','Shimao','cad25','Batería CR2032 Voltaje	3V Función	Seguimiento de velocidad y cadencia Método de enlace	Bluetooth 4.0 ANT + Compatible Reloj Deportivo ANT+	Si - Garmin, TomTom. Compatible Computadora para bicicleta ANT+	Si - Garmin WahooBryton Compatible	Zwift, Tacx, BKOOL',4199,0),
 ('Taller','Servicio de taller','Taller','Reparación Express','En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.',0,0),
 ('Taller','Taller 2','Marca','Modelo','asdfasfasdf',234123,0);    
-    
-SELECT * from products;
+
+INSERT INTO GoodbikesDB.Products_Images(Product_Id_FK,Image_Name) 
+VALUES 
+(1,'Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg'),
+(2,'Todoterreno Aurora Bacota-1607637655880.jpg'),
+(3,'Mountain Kike Teknial Tarpan 100er-1607637771211.png'),
+(4,'Electrica plegable Ride Daily 250W 13AH-1607655724523.jpeg'),
+(5,'Playera Randers BKE-001-1607655932537.jpg'),
+(6,'Remera Térmica-1607656205405.jpg'),
+(7,'Bicicleta-infantil-Princesa-1607656341856.jpg'),
+(8,'Zapatillas Ciclismo Mtb-1607656530693.jpg'),
+(9,'Rodillo entrenamiento -1607656613014.jpg'),
+(10,'Ebike Trimove 1000w-1607656730235.jpeg'),
+(11,'Casco Bicileta Bontrager-1607656816490.jpg'),
+(12,'Calza Mujer-1607656942322-2.jpg'),
+(13,'BICICLETA MONTY 209-1607657296951.PNG'),
+(14,'Campera Ciclista DryFit-1607657479976.png'),
+(15,'Rodados Mountain Bike Rod 29 Teknial Tarpan-1607657566041.PNG'),
+(16,'Bicicleta-Harrier-1609009037661.jpg'),
+(16,'Bicicleta-Harrier-1609009037668.jpg'),
+(16,'Bicicleta-Harrier-1609009037670.jpg'),
+(17,'Flamingo Negro Celeste-1609041160150.jpg'),
+(17,'Flamingo Negro Celeste-1609041160155.jpg'),
+(17,'Flamingo Negro Celeste-1609041160158.jpg'),
+(17,'Flamingo Negro Celeste-1609041160167.jpg'),
+(18,'Casco 26 ventilaciones-1609041325358.jpg'),
+(18,'Casco 26 ventilaciones-1609041325362.jpg'),
+(19,'Casco infantil tigre-1609041378975.jpg'),
+(19,'Casco infantil tigre-1609041378976.jpg'),
+(19,'Casco infantil tigre-1609041378980.jpg'),
+(19,'Casco infantil tigre-1609041378989.jpg'),
+(20,'Casco infantil cebra-1609041500416.jpg'),
+(20,'Casco infantil cebra-1609041500413.jpg'),
+(20,'Casco infantil cebra-1609041500411.jpg'),
+(21,'Zapatilla MTB abrojo-1609041562093.jpg'),
+(21,'Zapatilla MTB abrojo-1609041562094.jpg'),
+(22,'Zapatilla MTB criquet-1609041603144.jpg'),
+(22,'Zapatilla MTB criquet-1609041603146.jpg'),
+(23,'Botella térmica-1609041682094.jpg'),
+(23,'Botella térmica-1609041682097.jpg'),
+(23,'Botella térmica-1609041682098.jpg'),
+(23,'Botella térmica-1609041682104.jpg'),
+(24,'Luz usb-1609041724686.jpg'),
+(24,'Luz usb-1609041724683.jpg'),
+(24,'Luz usb-1609041724682.jpg'),
+(25,'Grasa PRO-1609041765644.jpg'),
+(26,'Inflador pico-1609041819859.jpg'),
+(27,'Rollo entrenador-1609041964201.jpg'),
+(27,'Rollo entrenador-1609041964203.jpg'),
+(27,'Rollo entrenador-1609041964206.jpg'),
+(28,'Sensor de cadencia-1609042686246.jpg'),
+(28,'Sensor de cadencia-1609042686258.jpg'),
+(28,'Sensor de cadencia-1609042686260.png'),
+(29,'Servicio de taller-1609871673599.jpg'),
+(30,'Taller 2-1609878736364.jpg');
+
+SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products
+LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
+
     
