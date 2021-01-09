@@ -84,6 +84,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         color: #ebebeb;}
 
                     header div:hover{color: #666666;}
+                    header div a{
+                        text-decoration: none;
+                    }
 
             .logo{
                 display: flex;
