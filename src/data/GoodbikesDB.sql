@@ -124,7 +124,7 @@ VALUES
 ('Taller','Servicio de taller','Taller','Reparación Express','En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.',0,0),
 ('Taller','Taller 2','Marca','Modelo','asdfasfasdf',234123,0);    
 
-INSERT INTO GoodbikesDB.Products_Images(Product_Id_FK,Image_Name) 
+INSERT INTO GoodbikesDB.PRODUCTS_IMAGES(product_id_fk,image_name) 
 VALUES 
 (1,'Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg'),
 (2,'Todoterreno Aurora Bacota-1607637655880.jpg'),
@@ -180,7 +180,7 @@ VALUES
 (30,'Taller 2-1609878736364.jpg');
 
 
-INSERT INTO Users(first_name,last_name,email,password,avatar,is_admin) 
+INSERT INTO GoodbikesDB.USERS(first_name,last_name,email,password,avatar,is_admin) 
 VALUES
 ('Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','NO'),
 ('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','NO'),
