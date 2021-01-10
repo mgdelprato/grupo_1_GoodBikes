@@ -21,6 +21,14 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const ProductImage = sequelize.define(alias, cols, config)
+    
+    ProductImage.associate = function(models){
+        ProductImage.belongsTo(models.Product,{
+                as:"product",
+                foreinKey:"product_id_fk"
+        });
+
+}
     return ProductImage
 
 }​​​​

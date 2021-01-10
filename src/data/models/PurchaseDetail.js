@@ -34,6 +34,24 @@ module.exports = function(sequelize, dataTypes) {​​​​
             underscored: true
         } ​
         ​​​const PurchaseDetail = sequelize.define(alias, cols, config)
+       
+        PurchaseDetail.associate = function(models){
+            PurchaseDetail.belognsTo(models.Product,{
+                    as:"products",
+                    foreinKey:"product_id_fk"
+            });
+            PurchaseDetail.belognsTo(models.PurchaseTransaction,{
+                as:"purchaseTransaction",
+                foreinKey:"purchase_transaction_id_fk"
+             });
+            PurchaseDetail.belognsTo(models.User,{
+            as:"user",
+            foreinKey:"user_id_fk"
+         });
+    
+    }
+       
+       
         return PurchaseDetail
     
     }​​​​

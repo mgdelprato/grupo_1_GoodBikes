@@ -34,6 +34,20 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const PaymentMethod = sequelize.define(alias, cols, config)
+    
+    PaymentMethod.associate = function(models){
+        PaymentMethod.belongsTo(models.User,{
+                as:"usuario",
+                foreinKey:"user_id_fk"
+        });
+        PaymentMethod.hasMany(models.PurchaseTransaction,{
+            as:"pruchasesTransactions",
+            foreinKey:"payment_method_id_fk"
+    });
+        
+
+}
+    
     return PaymentMethod
 
 }​​​​

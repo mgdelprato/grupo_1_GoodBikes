@@ -36,6 +36,14 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const Address = sequelize.define(alias, cols, config)
+
+    Address.associate = function(models){
+            Address.belongsTo(models.User,{
+                    as:"usuario",
+                    foreinKey:"user_id_fk"
+            });
+    }
+
     return Address
 }​​​​
 

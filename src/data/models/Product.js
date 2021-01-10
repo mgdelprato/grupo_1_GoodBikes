@@ -60,6 +60,17 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const Product = sequelize.define(alias, cols, config)
-    return Product
-}​​​​
 
+    Product.associate = function(models){
+        Product.hasMany(models.ProductImage,{
+                as:"productsImages",
+                foreinKey:"product_id_fk"
+        });
+        PaymentMethod.hasMany(models.PurchaseDetail,{
+            as:"purchasesDetails",
+            foreinKey:"product_id_fk"
+    });
+
+}​​​​
+    return Product
+}
