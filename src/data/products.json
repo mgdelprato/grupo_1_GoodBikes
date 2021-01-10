@@ -395,17 +395,5 @@
             "Servicio de taller-1609871673599.jpg"
         ],
         "Precio": "A convenir"
-    },
-    {
-        "ID": 31,
-        "Categoria": "Taller",
-        "Titulo": "Taller 2",
-        "Marca": "Marca",
-        "Modelo": "Modelo",
-        "Detalles": "asdfasfasdf",
-        "Imagen": [
-            "Taller 2-1609878736364.jpg"
-        ],
-        "Precio": "$234123"
     }
 ]
