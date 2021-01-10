@@ -84,6 +84,7 @@ CREATE TABLE PURCHASES_DETAILS (
     product_id_fk INT NOT NULL,
     id INT AUTO_INCREMENT PRIMARY KEY,
     still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
+    quantity int(4) NOT NULL,
     FOREIGN KEY (user_id_fk) REFERENCES USERS (id),
     FOREIGN KEY (purchase_transaction_id_fk) REFERENCES PURCHASES_TRANSACTIONS(id),
     FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS (id)
@@ -226,32 +227,39 @@ VALUES
 (2,2,50000),
 (3,3,10000);
 
-INSERT INTO GoodbikesDB.PURCHASES_TRANSACTIONS
-(user_id_fk,payment_method_id_fk,transaction_amount)
-VALUES 
-(1,1,70000),
-(2,2,50000),
-(3,3,10000);
 
-INSERT INTO PURCHASES_DETAILS (user_id_fk,purchase_transaction_id_fk,product_id_fk)
+INSERT INTO PURCHASES_DETAILS (user_id_fk,purchase_transaction_id_fk,product_id_fk,quantity)
 VALUES
-(1,1,25),
-(1,1,2),
-(1,1,3),
-(2,2,7),
-(2,2,10),
-(3,3,15),
-(3,3,22);
+(1,1,25,5),
+(1,1,2,3),
+(1,1,3,2),
+(2,2,7,4),
+(2,2,10,5),
+(3,3,15,3),
+(3,3,22,1);
 
+-- SELECT * from PRODUCTS;
+-- SELECT * from PRODCUTS_IMAGES;
+-- SELECT * FROM USERS;
+-- SELECT * FROM ADDRESSES;
+-- SELECT * FROM PAYMENTS_METHODS;
+-- SELECT * FROM PURCHASES_TRANSACTIONS;
+-- SELECT * FROM PURCHASES_DETAILS;
 
--- SELECT * from products_images;
--- SELECT Product_Id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
--- SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
--- SELECT * from users;
--- SELECT email, is_admin from users WHERE is_admin = 'YES';
--- SELECT * FROM addresses;
--- SELECT users.first_name, addresses.Street, addresses.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.Users_Id = addresses.Users_Id_FK;
--- SELECT * FROM payments_methods;
--- SELECT Users.first_name, payments_methods.id, payments_methods.brand_card, payments_methods.bank FROM Users LEFT JOIN payments_methods ON users.id = payments_methods.user_id_fk;
--- SELECT * FROM GoodbikesDB.PURCHASES_TRANSACTIONS;
--- SELECT * FROM GoodbikesDB.PURCHASES_DETAILS;
+-- ### EJEMPLOS DE JOIN DE CONSULTAS ###
+
+-- SELECT id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
+-- SELECT PRODUCTS.id ,PRODUCTS.title, PRODUCTS_IMAGES.image_name from PRODUCTS LEFT JOIN PRODUCTS_IMAGES ON PRODUCTS.id = PRODUCTS_IMAGES.product_id_fk;
+-- SELECT email, is_admin from USERES WHERE is_admin = 'YES';
+-- SELECT USERS.first_name, ADDRESSES.Street, ADDRESSES.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.id = addresses.user_id_fk;
+-- SELECT USERS.first_name, PAYMENTS_METHODS.id, PAYMENTS_METHODS.brand_card, PAYMENTS_METHODS.bank FROM USERS LEFT JOIN PAYMENTS_METHODS ON USERS.id = PAYMENTS_METHODS.user_id_fk;
+
+SELECT USERS.first_name, PAYMENTS_METHODS.brand_card, PRODUCTS.title, purchases_details.  FROM 
+USERS, PAYMENTS_METHODS, purchases_details, PURCHASES_TRANSACTIONS, PRODUCTS
+WHERE 
+USERS.id = PAYMENTS_METHODS.user_id_fk AND
+PAYMENTS_METHODS.id = purchases_transactions.payment_method_id_fk AND
+purchases_transactions.id = purchases_details.purchase_transaction_id_fk AND
+products.id = purchases_details.product_id_fk
+;
+
