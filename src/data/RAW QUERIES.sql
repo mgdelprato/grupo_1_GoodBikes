@@ -4,8 +4,8 @@ USE goodbikesdb;
 	-- SELECT id, first_name, email, password, avatar from USERS;
 
 -- <Productos para el home>
-	Select PRODUCTS.id, PRODUCTS.category, PRODUCTS.title, PRODUCTS.brand, PRODUCTS.model, PRODUCTS.detail, price from products LEFT JOIN PRODUCTS_IMAGES
-    ON products.id = products_images.product_id_fk;
+	Select PRODUCTS.id, PRODUCTS.category, PRODUCTS.title, PRODUCTS.brand, PRODUCTS.model, PRODUCTS.detail, PRODUCTS.price, PRODUCTS_IMAGES.image_name 
+    from PRODUCTS LEFT JOIN PRODUCTS_IMAGES ON PRODUCTS.id = PRODUCTS_IMAGES.product_id_fk ORDER BY PRODUCTS.id;
     
 -- <PRODUCT SEARCH categorias en el home>    
 		-- Select id, category, title, brand, model, detail, price from products WHERE category = 'Rodados';
