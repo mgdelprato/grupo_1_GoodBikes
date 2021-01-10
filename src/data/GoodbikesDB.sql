@@ -12,10 +12,10 @@ CREATE TABLE PRODUCTS
     model varchar(30) NOT NULL,
     detail varchar(3500)				default null,			
     price decimal(10,2)	NOT NULL	default 0,
-    quantity int NOT NULL			default(0),
+    quantity int NOT NULL			default 0,
     offert varchar(3) 				default 'NO',
     has_price varchar(3)			default 'YES',
-    discount decimal(3,2) 			default(0),
+    discount decimal(3,2) 			default 0,
     still_alive varchar(3) not null		default 'YES'
     );
 
@@ -23,6 +23,7 @@ DROP TABLE if exists  PRODUCTS_IMAGES ;
 CREATE TABLE PRODUCTS_IMAGES(
 product_id_fk INT NOT NULL,
 image_name VARCHAR(255) NOT NULL,
+principal_image VARCHAR(3) NOT NULL DEFAULT 'NO',
 id INT AUTO_INCREMENT PRIMARY KEY, 
 FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS(id)
 );
