@@ -29,7 +29,7 @@ router.post('/products/productCreate', upload.any(), productsController.grabarPr
 router.get('/products/productEdit/:id',adminMiddleware.adminUser, productsController.editarProducto); //analizar si hay que modificar la ruta
 router.put('/products/productEdit/:id',upload.any(), productsController.actualizarProducto); //analizar si hay que modificar la ruta
 //Eliminación de un producto
-router.delete('/products/delete/:id',productsController.borrarProducto);
+router.delete('/products/delete/:id',adminMiddleware.adminUser,productsController.borrarProducto);
 //Listado de productos
 router.get('/products/productList',adminMiddleware.adminUser,productsController.listarProducto); // Trae listado de productos
 
