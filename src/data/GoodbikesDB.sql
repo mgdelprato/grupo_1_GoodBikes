@@ -53,8 +53,8 @@ CREATE TABLE ADDRESSES(
     FOREIGN KEY (user_id_FK) REFERENCES Users(id)
 );
 
-DROP TABLE if exists payments_methods;
-CREATE TABLE payments_methods(
+DROP TABLE if exists PAYMENTS_METHODS;
+CREATE TABLE PAYMENTS_METHODS(
 	user_id_fk INT NOT NULL,
     alias VARCHAR(30) NOT NULL DEFAULT 'My Payment',
 	brand_card VARCHAR(30) NOT NULL,
