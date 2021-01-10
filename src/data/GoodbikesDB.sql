@@ -3,15 +3,15 @@ CREATE database if not exists GoodbikesDB;
 
 USE GoodbikesDB;
 
-DROP TABLE if exists  Products ;
-CREATE TABLE Products
-	(Product_Id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
-	Category varchar(12) NOT NULL,
-    Title varchar(255) NOT NULL,
-    Brand varchar(30) NOT NULL,
-    Model varchar(30) NOT NULL,
-    Detail varchar(3500)				default null,			
-    Price decimal(10,2)	NOT NULL	default 0,
+DROP TABLE if exists  PRODUCTS ;
+CREATE TABLE PRODUCTS
+	(id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+	category varchar(12) NOT NULL,
+    title varchar(255) NOT NULL,
+    brand varchar(30) NOT NULL,
+    model varchar(30) NOT NULL,
+    detail varchar(3500)				default null,			
+    price decimal(10,2)	NOT NULL	default 0,
     quantity int NOT NULL			default(0),
     offert varchar(3) 				default 'NO',
     has_price varchar(3)			default 'YES',
@@ -19,17 +19,17 @@ CREATE TABLE Products
     still_alive varchar(3) not null		default 'YES'
     );
 
-DROP TABLE if exists  Products_Images ;
-CREATE TABLE Products_Images(
-Product_Id_FK INT NOT NULL,
-Image_Name VARCHAR(255) NOT NULL,
-Id_register_IMG INT AUTO_INCREMENT PRIMARY KEY, 
-FOREIGN KEY (Product_Id_FK) REFERENCES Products(Product_Id)
+DROP TABLE if exists  PRODUCTS_IMAGES ;
+CREATE TABLE PRODUCTS_IMAGES(
+product_id_fk INT NOT NULL,
+image_name VARCHAR(255) NOT NULL,
+id INT AUTO_INCREMENT PRIMARY KEY, 
+FOREIGN KEY (product_Id_FK) REFERENCES PRODUCTS(id)
 );
 
-DROP TABLE if exists  Users ;
-CREATE TABLE Users (
-    Users_Id INT AUTO_INCREMENT PRIMARY KEY,
+DROP TABLE if exists  USERS ;
+CREATE TABLE USERS (
+    id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL,
@@ -39,17 +39,28 @@ CREATE TABLE Users (
     is_admin VARCHAR(3) NOT NULL DEFAULT 'NO'
 );
 
-DROP TABLE if exists Addresses;
-CREATE TABLE Addresses(
-	Users_Id_FK INT NOT NULL,
-    Street VARCHAR(50),
-    Street_Number varchar(6),
-    Street_State VARCHAR(30),
-    Street_Locality VARCHAR(30),
-    Street_Apartment VARCHAR(30),
-    Street_Postal_Code VARCHAR(7),  
-    ID_register_Addresses INT AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY (Users_Id_FK) REFERENCES Users(Users_ID)
+DROP TABLE if exists ADDRESSES;
+CREATE TABLE ADDRESSES(
+	users_id_fk INT NOT NULL,
+    street VARCHAR(50),
+    street_number varchar(6),
+    street_state VARCHAR(30),
+    street_locality VARCHAR(30),
+    street_apartment VARCHAR(30),
+    street_postal_code VARCHAR(7),  
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (users_id_FK) REFERENCES Users(id)
+);
+
+DROP TABLE if exists payments_methods;
+CREATE TABLE payments_methods(
+	users_id_fk INT NOT NULL,
+    alias VARCHAR(30) NOT NULL DEFAULT 'My Payment',
+	brand_card VARCHAR(30) NOT NULL,
+    number_card VARCHAR(16) NOT NULL,
+    bank VARCHAR(30) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (Users_Id_FK) REFERENCES Users(id)
 );
 
 
@@ -168,9 +179,23 @@ VALUES
 (7,'Bme Mitre','434','CABA','San Nicolás','PB','4178'),
 (8,'Juan B Justo','1320','CABA','Palermo',null,'1414');
 
+INSERT INTO GoodbikesDB.payments_methods
+(Users_Id_FK,alias,brand_card,number_card,bank)
+VALUES 
+(1,'La del Galicia','VISA','5555111122223333','Banco Galicia'),
+(2,'Guita del exterior','AMEX','3333111122223334','BanK of America'),
+(3,'Tarjeta','Mastercard','4444111122223335','Shangai Bank'),
+(4,'Adicional de la nona','Mastercard','5555111122223336','Banco Columbia'),
+(5,'Santander','VISA','5555111122223337','Banco Santander Río'),
+(6,'Tarjeta Oriental','VISA','5555111122223338','Banco Nacional del Uruguay'),
+(7,'Adicional del nono','Mastercard','5555111122223339','Banca Nazionale del Lavoro'),
+(8,'Guita en Emiratos','AMEX','5555111122223310','Emirates NBD');
+
+-- SELECT * from products_images;
 -- SELECT Product_Id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
 -- SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
 -- SELECT * from users;
 -- SELECT email, is_admin from users WHERE is_admin = 'YES';
-
-SELECT * FROM ADDRESSES;
+-- SELECT * FROM addresses;
+-- SELECT users.first_name, addresses.Street, addresses.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.Users_Id = addresses.Users_Id_FK;
+SELECT * FROM payments_methods;
