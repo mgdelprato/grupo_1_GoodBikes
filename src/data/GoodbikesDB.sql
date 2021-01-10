@@ -52,8 +52,8 @@ CREATE TABLE ADDRESSES(
     FOREIGN KEY (users_id_FK) REFERENCES Users(id)
 );
 
-DROP TABLE if exists payments_methods;
-CREATE TABLE payments_methods(
+DROP TABLE if exists PAYMENTS_METHODS;
+CREATE TABLE PAYMENTS_METHODS(
 	users_id_fk INT NOT NULL,
     alias VARCHAR(30) NOT NULL DEFAULT 'My Payment',
 	brand_card VARCHAR(30) NOT NULL,
@@ -64,7 +64,7 @@ CREATE TABLE payments_methods(
 );
 
 
-INSERT INTO GoodbikesDB.Products(Category,Title,Brand,Model,Detail,Price,quantity) 
+INSERT INTO GoodbikesDB.PRODUCTS(category,title,brand,model,detail,price,quantity) 
 VALUES 
 ('Rodados','Mountain Bike Firebird R29 Doble suspension','Firebird','R29 Doble suspension','Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k',71999,50),
 ('Rodados','Todoterreno Aurora Bacota','Aurora','Bacota','Genero: Unisex, Material del cuadro: Aluminio, Numero de cambios: 7, Tipo de freno: Disco mecanico Shimano, Suspension: Doble, Rodado: Especial 26x4, Modelo: Bacota, Tipo: Mountain Bike, Manubrio: Chopero Acer',98000,30),
@@ -96,7 +96,7 @@ VALUES
 ('Taller','Servicio de taller','Taller','Reparación Express','En GoodBikes contamos con taller propio de reparación, armado, pintura,  mantenimiento y servicio mecánico de bicicletas. Nuestro equipo cuenta con una amplia trayectoria en el armado de bicicletas, reparación y mantenimiento de las mismas. Contamos además con instrumental adecuado para abordar distintos tipos de trabajos de mantenimiento.',0,0),
 ('Taller','Taller 2','Marca','Modelo','asdfasfasdf',234123,0);    
 
-INSERT INTO GoodbikesDB.Products_Images(Product_Id_FK,Image_Name) 
+INSERT INTO GoodbikesDB.PRODUCTS_IMAGES(product_id_fk,image_name) 
 VALUES 
 (1,'Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg'),
 (2,'Todoterreno Aurora Bacota-1607637655880.jpg'),
@@ -152,7 +152,7 @@ VALUES
 (30,'Taller 2-1609878736364.jpg');
 
 
-INSERT INTO Users(first_name,last_name,email,password,avatar,is_admin) 
+INSERT INTO GoodbikesDB.USERS(first_name,last_name,email,password,avatar,is_admin) 
 VALUES
 ('Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','NO'),
 ('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','NO'),
@@ -167,7 +167,7 @@ VALUES
 ('Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES'),
 ('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','NO');
 
-INSERT INTO GoodbikesDB.addresses
+INSERT INTO GoodbikesDB.ADDRESSES
 (Users_Id_FK,Street,Street_Number,Street_State,Street_Locality,Street_Apartment,Street_Postal_Code)
 VALUES 
 (1,'Calle Falsa','123','Unknwown','Springfield',null,null),
@@ -179,7 +179,7 @@ VALUES
 (7,'Bme Mitre','434','CABA','San Nicolás','PB','4178'),
 (8,'Juan B Justo','1320','CABA','Palermo',null,'1414');
 
-INSERT INTO GoodbikesDB.payments_methods
+INSERT INTO GoodbikesDB.PAYMENTS_METHODS
 (Users_Id_FK,alias,brand_card,number_card,bank)
 VALUES 
 (1,'La del Galicia','VISA','5555111122223333','Banco Galicia'),
@@ -198,4 +198,4 @@ VALUES
 -- SELECT email, is_admin from users WHERE is_admin = 'YES';
 -- SELECT * FROM addresses;
 -- SELECT users.first_name, addresses.Street, addresses.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.Users_Id = addresses.Users_Id_FK;
-SELECT * FROM payments_methods;
+SELECT * FROM PAYMENTS_METHODS;
