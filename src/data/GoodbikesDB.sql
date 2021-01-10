@@ -41,27 +41,55 @@ CREATE TABLE USERS (
 
 DROP TABLE if exists ADDRESSES;
 CREATE TABLE ADDRESSES(
-	users_id_fk INT NOT NULL,
+	user_id_fk INT NOT NULL,
     street VARCHAR(50),
     street_number varchar(6),
     street_state VARCHAR(30),
     street_locality VARCHAR(30),
     street_apartment VARCHAR(30),
-    street_postal_code VARCHAR(7),  
+    street_postal_code VARCHAR(7),
+    still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
     id INT AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY (users_id_FK) REFERENCES Users(id)
+    FOREIGN KEY (user_id_FK) REFERENCES Users(id)
 );
 
 DROP TABLE if exists payments_methods;
 CREATE TABLE payments_methods(
-	users_id_fk INT NOT NULL,
+	user_id_fk INT NOT NULL,
     alias VARCHAR(30) NOT NULL DEFAULT 'My Payment',
 	brand_card VARCHAR(30) NOT NULL,
     number_card VARCHAR(16) NOT NULL,
     bank VARCHAR(30) NOT NULL,
     id INT AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY (Users_Id_FK) REFERENCES Users(id)
+    still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
+    FOREIGN KEY (user_id_fk) REFERENCES Users(id)
 );
+
+DROP TABLE if exists PURCHASES_TRANSACTIONS;
+CREATE TABLE PURCHASES_TRANSACTIONS (
+    user_id_fk INT NOT NULL,
+    payment_method_id_fk INT NOT NULL,
+    trasaction_date TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    transaction_amount decimal (10,2) NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
+    FOREIGN KEY (user_id_FK) REFERENCES USERS (id),
+    FOREIGN KEY (payment_method_id_fk) REFERENCES PAYMENTS_METHODS (id)
+);
+
+DROP TABLE if exists PURCHASES_DETAILS;
+CREATE TABLE PURCHASES_DETAILS (
+    user_id_fk INT NOT NULL,
+    purchase_transaction_id_fk INT NOT NULL,
+    product_id_fk INT NOT NULL,
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
+    FOREIGN KEY (user_id_fk) REFERENCES USERS (id),
+    FOREIGN KEY (purchase_transaction_id_fk) REFERENCES PURCHASES_TRANSACTIONS(id),
+    FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS (id)
+);
+
+
 
 
 INSERT INTO GoodbikesDB.Products(Category,Title,Brand,Model,Detail,Price,quantity) 
@@ -168,7 +196,7 @@ VALUES
 ('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','NO');
 
 INSERT INTO GoodbikesDB.addresses
-(Users_Id_FK,Street,Street_Number,Street_State,Street_Locality,Street_Apartment,Street_Postal_Code)
+(User_Id_FK,Street,Street_Number,Street_State,Street_Locality,Street_Apartment,Street_Postal_Code)
 VALUES 
 (1,'Calle Falsa','123','Unknwown','Springfield',null,null),
 (2,'Waverley St','2510','California','Palo Alto','2 E','94301'),
@@ -180,7 +208,7 @@ VALUES
 (8,'Juan B Justo','1320','CABA','Palermo',null,'1414');
 
 INSERT INTO GoodbikesDB.payments_methods
-(Users_Id_FK,alias,brand_card,number_card,bank)
+(User_Id_FK,alias,brand_card,number_card,bank)
 VALUES 
 (1,'La del Galicia','VISA','5555111122223333','Banco Galicia'),
 (2,'Guita del exterior','AMEX','3333111122223334','BanK of America'),
@@ -191,6 +219,31 @@ VALUES
 (7,'Adicional del nono','Mastercard','5555111122223339','Banca Nazionale del Lavoro'),
 (8,'Guita en Emiratos','AMEX','5555111122223310','Emirates NBD');
 
+INSERT INTO GoodbikesDB.PURCHASES_TRANSACTIONS
+(user_id_fk,payment_method_id_fk,transaction_amount)
+VALUES 
+(1,1,70000),
+(2,2,50000),
+(3,3,10000);
+
+INSERT INTO GoodbikesDB.PURCHASES_TRANSACTIONS
+(user_id_fk,payment_method_id_fk,transaction_amount)
+VALUES 
+(1,1,70000),
+(2,2,50000),
+(3,3,10000);
+
+INSERT INTO PURCHASES_DETAILS (user_id_fk,purchase_transaction_id_fk,product_id_fk)
+VALUES
+(1,1,25),
+(1,1,2),
+(1,1,3),
+(2,2,7),
+(2,2,10),
+(3,3,15),
+(3,3,22);
+
+
 -- SELECT * from products_images;
 -- SELECT Product_Id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
 -- SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
@@ -198,4 +251,7 @@ VALUES
 -- SELECT email, is_admin from users WHERE is_admin = 'YES';
 -- SELECT * FROM addresses;
 -- SELECT users.first_name, addresses.Street, addresses.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.Users_Id = addresses.Users_Id_FK;
-SELECT * FROM payments_methods;
+-- SELECT * FROM payments_methods;
+-- SELECT Users.first_name, payments_methods.id, payments_methods.brand_card, payments_methods.bank FROM Users LEFT JOIN payments_methods ON users.id = payments_methods.user_id_fk;
+-- SELECT * FROM GoodbikesDB.PURCHASES_TRANSACTIONS;
+-- SELECT * FROM GoodbikesDB.PURCHASES_DETAILS;
