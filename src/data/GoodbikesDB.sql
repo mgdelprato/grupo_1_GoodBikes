@@ -28,15 +28,28 @@ FOREIGN KEY (Product_Id_FK) REFERENCES Products(Product_Id)
 );
 
 DROP TABLE if exists  Users ;
-CREATE TABLE Users(
-Users_Id INT AUTO_INCREMENT PRIMARY KEY, 
-first_name Varchar (50) NOT NULL,
-last_name Varchar (50) NOT NULL,
-email Varchar (100) NOT NULL,
-password Varchar (100) NOT NULL,
-avatar Varchar (100),
-still_alive varchar(3) NOT NULL default 'YES',
-is_admin varchar(3) NOT NULL default 'NO'
+CREATE TABLE Users (
+    Users_Id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    avatar VARCHAR(100),
+    still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
+    is_admin VARCHAR(3) NOT NULL DEFAULT 'NO'
+);
+
+DROP TABLE if exists Addresses;
+CREATE TABLE Addresses(
+	Users_Id_FK INT NOT NULL,
+    Street VARCHAR(50),
+    Street_Number varchar(6),
+    Street_State VARCHAR(30),
+    Street_Locality VARCHAR(30),
+    Street_Apartment VARCHAR(30),
+    Street_Postal_Code VARCHAR(7),  
+    ID_register_Addresses INT AUTO_INCREMENT PRIMARY KEY,
+    FOREIGN KEY (Users_Id_FK) REFERENCES Users(Users_ID)
 );
 
 
@@ -143,9 +156,21 @@ VALUES
 ('Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES'),
 ('Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','NO');
 
+INSERT INTO GoodbikesDB.addresses
+(Users_Id_FK,Street,Street_Number,Street_State,Street_Locality,Street_Apartment,Street_Postal_Code)
+VALUES 
+(1,'Calle Falsa','123','Unknwown','Springfield',null,null),
+(2,'Waverley St','2510','California','Palo Alto','2 E','94301'),
+(3,'Rivadavia','11000','CABA','Liniers','8 A','1408'),
+(4,'Arieta','2947','Pcia Bs As','San Justo',null,'1754'),
+(5,'Balcarce','60','CABA','San Nicolás','PB','4178'),
+(6,'Carabobo','3250','CABA','Flores','4 A','1406'),
+(7,'Bme Mitre','434','CABA','San Nicolás','PB','4178'),
+(8,'Juan B Justo','1320','CABA','Palermo',null,'1414');
 
+-- SELECT Product_Id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
 -- SELECT Products.Product_Id ,Products.Title, products_images.Image_Name from products LEFT JOIN products_Images ON Products.Product_Id = products_images.Product_Id_FK;
+-- SELECT * from users;
+-- SELECT email, is_admin from users WHERE is_admin = 'YES';
 
-SELECT * from users
-
-
+SELECT * FROM ADDRESSES;
