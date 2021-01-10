@@ -248,18 +248,7 @@ VALUES
 
 -- ### EJEMPLOS DE JOIN DE CONSULTAS ###
 
--- SELECT id FROM Products WHERE Title = 'Mountain Bike Firebird R29 Doble suspension';
 -- SELECT PRODUCTS.id ,PRODUCTS.title, PRODUCTS_IMAGES.image_name from PRODUCTS LEFT JOIN PRODUCTS_IMAGES ON PRODUCTS.id = PRODUCTS_IMAGES.product_id_fk;
--- SELECT email, is_admin from USERES WHERE is_admin = 'YES';
 -- SELECT USERS.first_name, ADDRESSES.Street, ADDRESSES.Street_Number FROM USERS LEFT JOIN ADDRESSES ON users.id = addresses.user_id_fk;
 -- SELECT USERS.first_name, PAYMENTS_METHODS.id, PAYMENTS_METHODS.brand_card, PAYMENTS_METHODS.bank FROM USERS LEFT JOIN PAYMENTS_METHODS ON USERS.id = PAYMENTS_METHODS.user_id_fk;
-
-SELECT USERS.first_name, PAYMENTS_METHODS.brand_card, PRODUCTS.title, purchases_details.  FROM 
-USERS, PAYMENTS_METHODS, purchases_details, PURCHASES_TRANSACTIONS, PRODUCTS
-WHERE 
-USERS.id = PAYMENTS_METHODS.user_id_fk AND
-PAYMENTS_METHODS.id = purchases_transactions.payment_method_id_fk AND
-purchases_transactions.id = purchases_details.purchase_transaction_id_fk AND
-products.id = purchases_details.product_id_fk
-;
-
+-- SELECT USERS.first_name as "Cliente", PRODUCTS.title as "Producto Comprado", PURCHASES_DETAILS.quantity AS "Cantidad Comprada", PAYMENTS_METHODS.brand_card as "Medio de Pago"  FROM USERS INNER JOIN PAYMENTS_METHODS ON PAYMENTS_METHODS.user_id_fk = USERS.id INNER JOIN PURCHASES_TRANSACTIONS ON PURCHASES_TRANSACTIONS.user_id_fk = USERS.id INNER JOIN PURCHASES_DETAILS ON users.id = purchases_details.user_id_fk INNER JOIN PRODUCTS ON products.id = purchases_details.product_id_fk;
