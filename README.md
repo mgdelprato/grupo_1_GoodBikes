@@ -56,3 +56,6 @@ font-family: 'Roboto', sans-serif;
  bcryptjs
  express-session --save
  cookie-parser
+ sequelize-cli -g
+ sequelize
+ mysql2Goo
