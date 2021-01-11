@@ -58,4 +58,4 @@ font-family: 'Roboto', sans-serif;
  cookie-parser
  sequelize-cli -g
  sequelize
- mysql2Goo
+ mysql2

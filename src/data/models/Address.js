@@ -1,4 +1,4 @@
-module.exports = function(sequelize, dataTypes) {​​​​
+module.exports= function(sequelize, dataTypes) {​​​​
     let alias = "Address";
     let cols = {​​​​
         id: {​​​​
@@ -7,7 +7,7 @@ module.exports = function(sequelize, dataTypes) {​​​​
             autoIncrement: true
         }​​​​,
         users_id_fk: {​​​​
-            type: dataTypes.INTEGER,
+            type: dataTypes.INTEGER, 
             notNull: true
         }​​​​,
         street: {​​​​
@@ -28,22 +28,22 @@ module.exports = function(sequelize, dataTypes) {​​​​
         street_postal_code: {​​​​
             type: dataTypes.STRING,
         }​​​​
-}
+        }
 
     let config = {​​​​
         tableName: 'ADDRESSES',
         timestamps: true,
         underscored: true
-    } ​
-    ​​​const Address = sequelize.define(alias, cols, config)
+    } 
+​    let Address = sequelize.define(alias, cols, config)
 
-    Address.associate = function(models){
-            Address.belongsTo(models.User,{
-                    as:"usuario",
-                    foreinKey:"user_id_fk"
-            });
-    }
+        // Address.associate = function(models){
+        //         Address.belongsTo(models.User,{
+        //         as:"User",
+        //         foreinKey:"user_id_fk"
+        // });
+        // }
 
-    return Address
+        return Address
 }​​​​
 

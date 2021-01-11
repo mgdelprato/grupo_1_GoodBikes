@@ -1,7 +1,8 @@
-
 const path = require('path')
 const fs = require('fs');
 const { validationResult } = require('express-validator');
+let db = require('../data/models')
+
 
 //Leo JSON de productos y lo parseo
 let productos = fs.readFileSync(path.join(__dirname,'../data/products.json'),'utf-8');
@@ -41,13 +42,27 @@ let productsController = {
         const insertarImagen  = ()=>{
             for(let i=0; i<req.files.length; i++){
                 arrayImagen.push(req.files[i].filename)
-         
             }
         }
         insertarImagen();
-
+        
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
         if(error.isEmpty()){
+          
+            // db.Product.create({
+            //     category: req.body.categoria,
+            //     title: req.body.producto,
+            //     brand: req.body.marca,
+            //     model: req.body.modelo,
+            //     detail: req.body.detalle,
+            //     price: req.body.precio,
+            //     quantity: req.body.cantidad,
+            //     //Imagen: arrayImagen
+            //     offert:null,
+            //     has_price:null,
+            //     discount:null,
+            //     still_alive:null
+            // })
             let nuevoProducto ={
                 ID: ultimoId + 1,
                 Categoria: req.body.categoria,
@@ -60,10 +75,11 @@ let productsController = {
                 Imagen: arrayImagen
             }
 
-
             productos.push(nuevoProducto);
             fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-            res.redirect('/admin/products/productList')
+            // .then(function(){
+            //   res.redirect('/admin/products/productList')  
+            // })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores
             return res.render(path.join(__dirname,'../views/products/productCreate'), {
