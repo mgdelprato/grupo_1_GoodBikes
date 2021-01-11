@@ -1,4 +1,4 @@
-module.exports= function(sequelize, dataTypes) {​​​​
+module.exports=function(sequelize,dataTypes){​​​​
     let alias = "Address";
     let cols = {​​​​
         id: {​​​​
