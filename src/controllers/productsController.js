@@ -2,6 +2,7 @@
 const path = require('path')
 const fs = require('fs');
 const { validationResult } = require('express-validator');
+let db = require('../data/models');
 
 //Leo JSON de productos y lo parseo
 let productos = fs.readFileSync(path.join(__dirname,'../data/products.json'),'utf-8');
