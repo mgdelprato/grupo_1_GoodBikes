@@ -22,7 +22,7 @@ module.exports=function(sequelize,dataTypes){
     };
     let config={
         tableName:'PRODUCTS_IMAGES',
-        timestamps:true,
+        timestamps:false,
         underscored:true
     }
 

@@ -38,6 +38,8 @@ let productsController = {
         let error  = validationResult(req);
         // let arrayImagen =[];
         console.log(req.body);
+        console.log(req.files);
+
         //Función para poder insertar más de una imágen en la creación de un producto
             // const insertarImagen  = ()=>{
             //     for(let i=0; i<req.files.length; i++){
@@ -64,22 +66,32 @@ let productsController = {
                 still_alive:'YES'
             })
 
+            
             // let nuevoProducto ={
-            //     ID: ultimoId + 1,
-            //     Categoria: req.body.categoria,
-            //     Titulo: req.body.producto,
-            //     Marca: req.body.marca,
-            //     Modelo: req.body.modelo,
-            //     Detalles: req.body.detalle,
-            //     Precio: req.body.precio,
-            //     Cantidad: req.body.cantidad,
-            //     Imagen: arrayImagen
-            // }
-
-            // productos.push(nuevoProducto);
-            // fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
-            .then(function(){
-              res.redirect('/admin/products/productList')  
+                //     ID: ultimoId + 1,
+                //     Categoria: req.body.categoria,
+                //     Titulo: req.body.producto,
+                //     Marca: req.body.marca,
+                //     Modelo: req.body.modelo,
+                //     Detalles: req.body.detalle,
+                //     Precio: req.body.precio,
+                //     Cantidad: req.body.cantidad,
+                //     Imagen: arrayImagen
+                // }
+                
+                // productos.push(nuevoProducto);
+                // fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
+                .then(function(producto){
+                    db.ProductImage.create({
+                        product_id_fk:producto.id,
+                        image_name:req.files[0].filename,
+                        principal_image:req.files[0].filename
+                    })
+                    //REVISAR SI NO HAY QUE PONER UN ,THEN
+                    .then(function(){
+                        
+                        res.redirect('/admin/products/productList')  
+                    })
             })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores
