@@ -13,6 +13,11 @@ module.exports = function(sequelize, dataTypes) {​​​​
         image_name: {​​​​
             type: dataTypes.STRING,
             notNull: true
+        },​​​​
+        principal_image: {​​​​
+            type: dataTypes.STRING,
+            notNull: true,
+            defaultValue:'NO'
         }​​​​
     }​​​​;
     let config = {​​​​
@@ -21,6 +26,14 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const ProductImage = sequelize.define(alias, cols, config)
+    
+    ProductImage.associate = function(models){
+        ProductImage.belongsTo(models.Product,{
+                as:"product",
+                foreinKey:"product_id_fk"
+        });
+
+}
     return ProductImage
 
 }​​​​

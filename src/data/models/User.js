@@ -42,7 +42,27 @@ module.exports = function(sequelize, dataTypes) {​​​​
         underscored: true
     } ​
     ​​​const User = sequelize.define(alias, cols, config)
+    
+    User.associate = function(models){
+        User.hasMany(models.PurchaseDetail,{
+                as:"purchasesDetails",
+                foreinKey:"user_id_fk"
+        });
+        User.hasMany(models.PurchaseTransaction,{
+            as:"purchasesTransactions",
+            foreinKey:"user_id_fk"
+         });
+         User.hasMany(models.PaymentMethod,{
+        as:"paymentsMethods",
+        foreinKey:"user_id_fk"
+        });
+         User.hasMany(models.Address,{
+        as:"Addresses",
+        foreinKey:"user_id_fk"
+        });
+    
+        
+    }​​​​
+    
     return User
-
-}​​​​
-
+}

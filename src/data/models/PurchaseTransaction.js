@@ -34,6 +34,23 @@ module.exports = function(sequelize, dataTypes) {​​​​
             underscored: true
         } ​
         ​​​const PurchaseTransaction = sequelize.define(alias, cols, config)
+        
+        PurchaseTransaction.associate = function(models){
+            PurchaseTransaction.hasMany(models.PurchaseDetail,{
+                    as:"purchasesDetails",
+                    foreinKey:"purchases_transaction_id_fk"
+            });
+            PurchaseTransaction.belognsTo(models.User,{
+                as:"User",
+                foreinKey:"user_id_fk"
+             });
+             PurchaseTransaction.belognsTo(models.PaymentMethod,{
+            as:"paymentMethod",
+            foreinKey:"paymentMethod_id_fk"
+         });
+    
+    }
+        
         return PurchaseTransaction
     
     }​​​​

@@ -24,10 +24,10 @@ var upload = multer({ storage: storage })
 
 //Creación de un producto
 router.get('/products/productCreate',adminMiddleware.adminUser, productsController.crearProducto);
-router.post('/products/productCreate', upload.any(), productsController.grabarProducto); // Crea productos
+router.post('/products/productCreate', upload.any(), productsController.grabarProducto);
 //Edición de un producto
-router.get('/products/productEdit/:id',adminMiddleware.adminUser, productsController.editarProducto); //analizar si hay que modificar la ruta
-router.put('/products/productEdit/:id',upload.any(), productsController.actualizarProducto); //analizar si hay que modificar la ruta
+router.get('/products/productEdit/:id',adminMiddleware.adminUser, productsController.editarProducto);
+router.put('/products/productEdit/:id',upload.any(), productsController.actualizarProducto); 
 //Eliminación de un producto
 router.delete('/products/delete/:id',adminMiddleware.adminUser,productsController.borrarProducto);
 //Listado de productos

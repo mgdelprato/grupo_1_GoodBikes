@@ -94,5 +94,13 @@
         "email": "mgdelprato@gmail.com",
         "password": "$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq",
         "avatar": "mgdelprato@gmail.com-1609266037402.jpg"
+    },
+    {
+        "id": 13,
+        "first_name": "Bruno",
+        "last_name": " Dias",
+        "email": "batman@gotica.com",
+        "password": "$2a$12$1KfWvfIf8X4EugwY2pFyC.LEodu/c3y.I5wyiESTbzhV7k3dqwgHG",
+        "avatar": "batman@gotica.com-1610312169591.PNG"
     }
 ]

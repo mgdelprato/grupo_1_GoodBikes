@@ -6,11 +6,8 @@
         "Marca": "Firebird",
         "Modelo": "R29 Doble suspension",
         "Detalles": "Genero: Unisex, Material del cuadro: Acero, Numero de cambios: 21, Tipo de freno: Disco mecanico, Suspension: Doble, Rodado: 29, Modelo: DobSusRodado29, Tipo: Mountain Bike, Manubrio: Acero, Pedal: Plastico, Peso: 15 k",
-        "Imagen": [
-            "Mountain Bike Firebird R29 Doble suspension-1607637586447.jpeg"
-        ],
-        "Precio": "$ 71999",
-        "Cantidad": 50
+        "Imagen": [],
+        "Precio": "$ 71999"
     },
     {
         "ID": 2,
