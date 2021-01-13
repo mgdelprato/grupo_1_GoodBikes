@@ -1,68 +1,66 @@
-module.exports = function(sequelize, dataTypes) {​​​​
-    let alias = "User";
-    let cols = {​​​​
-        id: {​​​​
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true
-        }​​​​,
-        first_name: {​​​​
-            type: dataTypes.STRING,
-            notNull: true
-        }​​​​,
-        last_name: {​​​​
-            type: dataTypes.STRING,
-            notNull: true
-        }​​​​,
-        email: {​​​​
-            type: dataTypes.STRING,
-            notNull: true
-        }​​​​,
-        password: {​​​​
-            type: dataTypes.STRING,
-            notNull: true
-        }​​​​,
-        avatar: {​​​​
-            type: dataTypes.STRING,
-        },
-        still_alive: {​​​​
-            type: dataTypes.STRING,
-            notNull: true,            
-            defaultValue: 'YES'
+module.exports=function(sequelize,dataTypes){
+    let alias="User";
+    let cols={
+        id:{
+            type:dataTypes.INTEGER,
+            primaryKey:true,
+            autoIncrement:true,
         },
-        is_admin: {​​​​
-            type: dataTypes.STRING,
-            notNull: true,            
-            defaultValue: 'NO'
+        first_name:{
+            type:dataTypes.STRING,
+            notNull:true
+        },
+        last_name:{
+            type:dataTypes.STRING
+        },
+        email:{
+            type:dataTypes.INTEGER,
+            notNull:true
+        },
+        password:{
+            type:dataTypes.STRING,
+            notNull:true
+        },
+        avatar:{
+            type:dataTypes.STRING
+        },
+        still_alive:{
+            type:dataTypes.STRING,
+            notNull:true,
+            defaultValue:'YES'
+        },
+        still_alive:{
+            type:dataTypes.STRING,
+            notNull:true,
+            defaultValue:'NO'
         }
-    }​​​​;
-    let config = {​​​​
-        tableName: 'USERS',
-        timestamps: true,
-        underscored: true
-    } ​
-    ​​​const User = sequelize.define(alias, cols, config)
-    
-    User.associate = function(models){
-        User.hasMany(models.PurchaseDetail,{
-                as:"purchasesDetails",
-                foreinKey:"user_id_fk"
-        });
-        User.hasMany(models.PurchaseTransaction,{
-            as:"purchasesTransactions",
-            foreinKey:"user_id_fk"
-         });
-         User.hasMany(models.PaymentMethod,{
-        as:"paymentsMethods",
-        foreinKey:"user_id_fk"
-        });
-         User.hasMany(models.Address,{
-        as:"Addresses",
-        foreinKey:"user_id_fk"
-        });
-    
-        
-    }​​​​
-    
+    }
+    let config={
+        tableName:'USERS',
+        timestamps:true,
+        underscored:true
+    }
+
+    let User = sequelize.define(alias,cols,config)
+
+        User.associate = function(models){
+            User.hasMany(models.PurchaseDetail,{
+                as:"PurchaseDetails",
+                foreingKey:"user_id_fk"
+            });
+            User.hasMany(models.PurchaseTransaction,{
+                as:"PurchasesTransactions",
+                foreingKey:"user_id_fk"
+            });
+            User.hasMany(models.PaymentMethod,{
+                as:"PaymentsMethods",
+                foreingKey:"user_id_fk"
+            });
+            User.hasMany(models.Address,{
+                as:"Addresses",
+                foreingKey:"user_id_fk"
+            });
+
+        }
     return User
 }
