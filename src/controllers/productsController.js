@@ -36,17 +36,6 @@ let productsController = {
     //Metodo (asociado al POST en el admin) para crear un nuevo producto
     grabarProducto: function(req, res) {
         let error  = validationResult(req);
-        // let arrayImagen =[];
-        console.log(req.body);
-        console.log(req.files);
-
-        //Función para poder insertar más de una imágen en la creación de un producto
-            // const insertarImagen  = ()=>{
-            //     for(let i=0; i<req.files.length; i++){
-            //         arrayImagen.push(req.files[i].filename)
-            //     }
-            // }
-            // insertarImagen();
         
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
         if(error.isEmpty()){
@@ -59,39 +48,25 @@ let productsController = {
                 detail: req.body.detalle,
                 price: req.body.precio,
                 quantity: req.body.cantidad,
-                //Imagen: arrayImagen
-                offert:null,
-                has_price:null,
-                discount:null,
-                still_alive:'YES'
+
             })
 
-            
-            // let nuevoProducto ={
-                //     ID: ultimoId + 1,
-                //     Categoria: req.body.categoria,
-                //     Titulo: req.body.producto,
-                //     Marca: req.body.marca,
-                //     Modelo: req.body.modelo,
-                //     Detalles: req.body.detalle,
-                //     Precio: req.body.precio,
-                //     Cantidad: req.body.cantidad,
-                //     Imagen: arrayImagen
-                // }
-                
-                // productos.push(nuevoProducto);
-                // fs.writeFileSync(path.join(__dirname,'../data/products.json'),JSON.stringify(productos,null,4))
                 .then(function(producto){
-                    db.ProductImage.create({
-                        product_id_fk:producto.id,
-                        image_name:req.files[0].filename,
-                        principal_image:req.files[0].filename
-                    })
-                    //REVISAR SI NO HAY QUE PONER UN ,THEN
-                    .then(function(){
+                    for(let i=0; i<req.files.length;i++){
+
                         
-                        res.redirect('/admin/products/productList')  
-                    })
+                        db.ProductImage.create({
+                            product_id_fk:producto.id,
+                            image_name:req.files[i].filename
+                            
+                        })
+                        //REVISAR SI NO HAY QUE PONER UN .THEN
+                        .then(function(imagen){
+                            console.log("inserto " + imagen)
+                        })
+                        res.render(path.join(__dirname,'../views/products/productList'),{productos:productos}) 
+                    
+                }
             })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores

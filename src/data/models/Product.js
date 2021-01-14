@@ -37,7 +37,7 @@ module.exports=function(sequelize,dataTypes){
         },
         offert:{
             type:dataTypes.STRING,
-            defaultValue:'NO'
+            //defaultValue:'NO'
         },
         has_price:{
             type:dataTypes.STRING,
