@@ -35,12 +35,12 @@
 
                             
                             <tr>
-                                <td><%= productos[i].ID %></td>
-                                <td><%= productos[i].Categoria %></td>
-                                <td><%= productos[i].Titulo %></td>
-                                <td><%= productos[i].Precio %></td>
-                                <td><a href="productEdit/<%=productos[i].ID %>"><i class="fas fa-edit"></i></a>
-                                    <form action="delete/<%=productos[i].ID %>?_method=DELETE" method="POST">
+                                <td><%= productos[i].id %></td>
+                                <td><%= productos[i].category %></td>
+                                <td><%= productos[i].title %></td>
+                                <td><%= productos[i].price %></td>
+                                <td><a href="productEdit/<%=productos[i].id %>"><i class="fas fa-edit"></i></a>
+                                    <form action="delete/<%=productos[i].id %>?_method=DELETE" method="POST">
                                        <button type="submit" id="btnTacho">
                                         <i class="fas fa-trash" id="tacho"></i></td>
                                         </button>
