@@ -16,16 +16,23 @@ CREATE TABLE PRODUCTS
     offert varchar(3) 				default 'NO',
     has_price varchar(3)			default 'YES',
     discount decimal(3,2) 			default 0,
-    still_alive varchar(3) not null		default 'YES'
+    still_alive varchar(3) not null		default 'YES',
+    created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
     );
 
 DROP TABLE if exists  PRODUCTS_IMAGES ;
 CREATE TABLE PRODUCTS_IMAGES(
 product_id_fk INT NOT NULL,
 image_name VARCHAR(255) NOT NULL,
+imagen_ppal VARCHAR(255) NULL,
 principal_image VARCHAR(3) NOT NULL DEFAULT 'NO',
 id INT AUTO_INCREMENT PRIMARY KEY, 
-FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS(id)
+FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS(id),
+    created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 DROP TABLE if exists  USERS ;
@@ -37,7 +44,10 @@ CREATE TABLE USERS (
     password VARCHAR(100) NOT NULL,
     avatar VARCHAR(100),
     still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
-    is_admin VARCHAR(3) NOT NULL DEFAULT 'NO'
+    is_admin VARCHAR(3) NOT NULL DEFAULT 'NO',
+	created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 DROP TABLE if exists ADDRESSES;
@@ -51,7 +61,10 @@ CREATE TABLE ADDRESSES(
     street_postal_code VARCHAR(7),
     still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
     id INT AUTO_INCREMENT PRIMARY KEY,
-    FOREIGN KEY (user_id_fk) REFERENCES Users(id)
+    FOREIGN KEY (user_id_fk) REFERENCES Users(id),
+	created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 DROP TABLE if exists PAYMENTS_METHODS;
@@ -63,7 +76,10 @@ CREATE TABLE PAYMENTS_METHODS(
     bank VARCHAR(30) NOT NULL,
     id INT AUTO_INCREMENT PRIMARY KEY,
     still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
-    FOREIGN KEY (user_id_fk) REFERENCES Users(id)
+    FOREIGN KEY (user_id_fk) REFERENCES Users(id),
+	created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 DROP TABLE if exists PURCHASES_TRANSACTIONS;
@@ -75,7 +91,10 @@ CREATE TABLE PURCHASES_TRANSACTIONS (
     id INT AUTO_INCREMENT PRIMARY KEY,
     still_alive VARCHAR(3) NOT NULL DEFAULT 'YES',
     FOREIGN KEY (user_id_FK) REFERENCES USERS (id),
-    FOREIGN KEY (payment_method_id_fk) REFERENCES PAYMENTS_METHODS (id)
+    FOREIGN KEY (payment_method_id_fk) REFERENCES PAYMENTS_METHODS (id),
+	created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 DROP TABLE if exists PURCHASES_DETAILS;
@@ -88,7 +107,10 @@ CREATE TABLE PURCHASES_DETAILS (
     quantity int(4) NOT NULL,
     FOREIGN KEY (user_id_fk) REFERENCES USERS (id),
     FOREIGN KEY (purchase_transaction_id_fk) REFERENCES PURCHASES_TRANSACTIONS(id),
-    FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS (id)
+    FOREIGN KEY (product_id_fk) REFERENCES PRODUCTS (id),
+	created_at timestamp	not null default CURRENT_TIMESTAMP,
+    updated_at timestamp null,
+    deleted_at timestamp null
 );
 
 
