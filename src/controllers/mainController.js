@@ -10,10 +10,7 @@ productos = JSON.parse(productos);
 let mainController = {
 //Renderizo homePage
     index: function(req,  res){
-        //  db.productos.findAll()
-        //  .then(productos){
-        //     //aca va el render
-        // }
+         
         res.render( path.join(__dirname, '../views/index.ejs'), {productos:productos} )
         }
 }
