@@ -1,6 +1,6 @@
 const path = require('path')
 const { validationResult } = require('express-validator');
-let db = require('../data/models')
+const db = require('../data/models')
 
 
 
@@ -22,10 +22,10 @@ let productsController = {
     //Metodo (asociado al POST en el admin) para crear un nuevo producto
     grabarProducto: function(req, res) {
         let error  = validationResult(req);
-        
+
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
         if(error.isEmpty()){
-          
+
             db.Product.create({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -34,35 +34,22 @@ let productsController = {
                 detail: req.body.detalle,
                 price: req.body.precio,
                 quantity: req.body.cantidad,
+                img_ppal: req.files[0].filename
+
 
             })
 
-                .then(function(producto){
-                    for(let i=0; i<req.files.length;i++){
-                        if(i==0){
-                            
-                            db.ProductImage.create({
-                                product_id_fk:producto.id,
-                                image_name:req.files[i].filename,
-                                principal_image:'YES'
+            .then(function(producto){
+                for(let i=0; i<req.files.length;i++){
+                    db.ProductImage.create({
+                        product_id_fk:producto.id,
+                        image_name:req.files[i].filename,
+                    }).then(function(){
+                            console.log("inserto imagen "+ i)
+                    })
 
-                                
-                                  
-                            }).then(function(){
-                                console.log("inserto imagen 0 con YES")
-                            })
-                        }else{
-                            db.ProductImage.create({
-                                product_id_fk:producto.id,
-                                image_name:req.files[i].filename,
-                                  
-                            }).then(function(){
-                                console.log("inserto imagen xxx con NO");
-                            }) 
-                        }
-                                                
-                    }
-                    res.redirect('/admin/products/productList')                    
+                }
+                res.redirect('/admin/products/productList')
             })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores
@@ -83,16 +70,16 @@ let productsController = {
             //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
         })
-  
+
         //*******************PENDIENTE MANEJO DE IMAGENES*****************
     },
     // Método (asociado al PUT del admin) para guardar la edición realizada sobre un producto
     actualizarProducto: function(req,res){
         let error  = validationResult(req);
-      
+
         //Si no hay errores guardo los valores del producto editado, y renderizo la vista de listado de productos
         if(error.isEmpty()){
-       
+
             db.Product.update({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -101,41 +88,29 @@ let productsController = {
                 detail: req.body.detalle,
                 price: req.body.precio,
                 quantity: req.body.cantidad,
+                img_ppal: req.files[0].filename
+
             },{
                 where:{
                     id:req.params.id
                 }
             })
             .then(function(producto){
-                for(let i=0; i<req.files.length;i++){
+            for(let i=0; i<req.files.length;i++){
+                db.ProductImage.update({
+                        product_id_fk:producto.id,
+                        image_name:req.files[i].filename,
+                        },{
+                            where:{
+                                id:req.params.id
+                            }
+                        }).then(function(){
+                        console.log("inserto imagen")
+                    })
 
-                    if(i==0){
-                        
-                        db.ProductImage.update({
-                            product_id_fk:producto.id,
-                            image_name:req.files[i].filename,
-                            principal_image:'YES'},{
-                                where:{
-                                    id:req.params.id
-                                }
-                            }).then(function(){
-                            console.log("inserto imagen 0 con YES en UPDATE")
-                        })
-                    }else{
-                        db.ProductImage.update({
-                            product_id_fk:producto.id,
-                            image_name:req.files[i].filename,},{
-                                where:{
-                                    id:req.params.id
-                                }
-                            }).then(function(){
-                            console.log("inserto imagen xxx con NO en UPDATE");
-                        }) 
-                    }
-                                            
                 }
-                res.redirect('/admin/products/productList')                    
-        })
+            res.redirect('/admin/products/productList')
+            })
     }else{
         // Si hay errores, los mapeo y muestro la la vista de creación con los errores
         return res.render(path.join(__dirname,'../views/products/productCreate'), {
@@ -145,7 +120,7 @@ let productsController = {
 },
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos
     listarProducto: function(req, res) {
-        
+
         db.Product.findAll({
             where:{
                 still_alive:'YES'
@@ -155,9 +130,9 @@ let productsController = {
 
             res.render( path.join(__dirname, '../views/products/productList.ejs'),{productos:productos})
         })
-        
+
     },
-   //Método (asociado al DELETE) para borrar un producto en particular 
+   //Método (asociado al DELETE) para borrar un producto en particular
     borrarProducto: function(req, res) {
 
         let error  = validationResult(req);
@@ -185,8 +160,21 @@ let productsController = {
     },
     //Método (asociado al GET de products) para renderizar la vista de un producto en particular
     detalleProducto: function(req,res){
-       
-        return res.render( path.join(__dirname, '../views/products/productDetail.ejs'), { producto : productos.find(productos => productos.ID == req.params.id) } )
+        let imagenes;
+
+        db.ProductImage.findAll()
+        .then(function(imagenes){       
+        imagenes = imagenes
+        })
+
+        console.log(imagenes);
+
+        db.Product.findByPk(req.params.id)
+        .then(function (producto){
+        res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto , imagenes:imagenes})
+    })
+    
+
     },
     //Método (asociado al GET de products) para renderizar la vista de los productos de una categoria en particular
     buscarProducto: function(req,res){
@@ -208,7 +196,7 @@ let productsController = {
             // })
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
- 
+
     }
 
 }

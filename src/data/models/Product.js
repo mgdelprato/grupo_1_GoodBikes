@@ -52,10 +52,14 @@ module.exports=function(sequelize,dataTypes){
             notNull:true,
             defaultValue:'YES'
         },
+        img_ppal:{
+            type:dataTypes.STRING,
+            notNull: true            
+        }
     };
     let config={
         tableName:'PRODUCTS',
-        timestamps:false,
+        timestamps:true,
         underscored:true
     }
 

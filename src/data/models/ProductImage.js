@@ -13,16 +13,12 @@ module.exports=function(sequelize,dataTypes){
         image_name:{
             type:dataTypes.STRING,
             notNull:true
-        },
-        principal_image:{
-            type:dataTypes.STRING,
-            notNull:true,
-            defaultValue:'NO'
         }
+        
     };
     let config={
         tableName:'PRODUCTS_IMAGES',
-        timestamps:false,
+        timestamps:true,
         underscored:true
     }
 

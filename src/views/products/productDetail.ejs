@@ -29,19 +29,20 @@
         
             <div id="cuadrosSuperiores">     
                 <section id='CuadroIzquierdo'>
-                    <% for(let i=0; i < producto.Imagen.length; i++){ %>
-                        <figure><img class='imagenIzquierda'src="/images/products/<%= producto.Imagen[i] %>" alt="Principal1"></figure>
+                    <%= imagenes %>
+                    <% for(let i=0; i < 5; i++){ %>
+                        <figure><img class='imagenIzquierda'src="/images/products/<%= imagenes %>" alt="Principal1"></figure>
                     <% } %>     
                 </section>
                 <section id='CuadroCentro'>
-                    <figure id='Principal1' ><img src="/images/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
+                    <figure id='Principal1' ><img src="/images/products/<%= producto.img_ppal %>" alt="Principal1"></figure>
                 
                     
                 </section>
                 
                 <section id='CuadroDerecho'>
-                    <h1><%= producto.Titulo %></h1><br>
-                    <span><%= producto.Precio %></span>
+                    <h1><%= producto.title %></h1><br>
+                    <span><%= producto.price %></span>
                     <ul>
                         <br>
                         <li><button type="submit">Agregar</button></li>
@@ -51,12 +52,12 @@
             </div>  
 
             <section id='CuadroHorizontal'>
-                <h3><%= producto.Marca %></h3>
-                <h3><%= producto.Modelo %></h3>
+                <h3><%= producto.brand %></h3>
+                <h3><%= producto.model %></h3>
                 <h3>Especificaciones:</h3>
                 <br>
                 
-                <p><%= producto.Detalles %></p>
+                <p><%= producto.detail %></p>
                 <ul>
                     <li>+Info</li>
                 </ul>  
