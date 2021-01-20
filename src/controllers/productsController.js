@@ -1,5 +1,4 @@
 const path = require('path')
-const fs = require('fs');
 const { validationResult } = require('express-validator');
 let db = require('../data/models')
 
@@ -40,19 +39,30 @@ let productsController = {
 
                 .then(function(producto){
                     for(let i=0; i<req.files.length;i++){
-
-                        
-                        db.ProductImage.create({
-                            product_id_fk:producto.id,
-                            image_name:req.files[i].filename
+                        if(i==0){
                             
-                        })
-                        //REVISAR SI NO HAY QUE PONER UN .THEN
-                        .then(function(imagen){
-                            console.log("inserto " + imagen)
-                        })
-                        res.redirect('/admin/products/productList')                    
-                }
+                            db.ProductImage.create({
+                                product_id_fk:producto.id,
+                                image_name:req.files[i].filename,
+                                principal_image:'YES'
+
+                                
+                                  
+                            }).then(function(){
+                                console.log("inserto imagen 0 con YES")
+                            })
+                        }else{
+                            db.ProductImage.create({
+                                product_id_fk:producto.id,
+                                image_name:req.files[i].filename,
+                                  
+                            }).then(function(){
+                                console.log("inserto imagen xxx con NO");
+                            }) 
+                        }
+                                                
+                    }
+                    res.redirect('/admin/products/productList')                    
             })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores
@@ -67,7 +77,9 @@ let productsController = {
         //Busco el producto a editar
         db.Product.findByPk(req.params.id)
         .then(function(productoEditar){
-            
+            console.log("PRODUCTOSSSSSSSSS");
+
+            console.log(productoEditar);
             //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
         })
@@ -94,18 +106,43 @@ let productsController = {
                     id:req.params.id
                 }
             })
-            .then(function(){
-                
-                res.redirect('/admin/products/productList')
-            })
-       //*******************************PENDIENTE ANALISIS UPDATE IMAGENES******************************
-        }else{
-            // Si hay errores, los mapeo y renderizo la vista de edición d eproducto  mostrando los errores
-            return res.render(path.join(__dirname,'../views/products/productEdit/:id'), {
-                errors: errors.mapped()
-            })
-        }
-    },
+            .then(function(producto){
+                for(let i=0; i<req.files.length;i++){
+
+                    if(i==0){
+                        
+                        db.ProductImage.update({
+                            product_id_fk:producto.id,
+                            image_name:req.files[i].filename,
+                            principal_image:'YES'},{
+                                where:{
+                                    id:req.params.id
+                                }
+                            }).then(function(){
+                            console.log("inserto imagen 0 con YES en UPDATE")
+                        })
+                    }else{
+                        db.ProductImage.update({
+                            product_id_fk:producto.id,
+                            image_name:req.files[i].filename,},{
+                                where:{
+                                    id:req.params.id
+                                }
+                            }).then(function(){
+                            console.log("inserto imagen xxx con NO en UPDATE");
+                        }) 
+                    }
+                                            
+                }
+                res.redirect('/admin/products/productList')                    
+        })
+    }else{
+        // Si hay errores, los mapeo y muestro la la vista de creación con los errores
+        return res.render(path.join(__dirname,'../views/products/productCreate'), {
+            errors: errors.mapped()
+        })
+    }
+},
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos
     listarProducto: function(req, res) {
         
@@ -116,7 +153,7 @@ let productsController = {
         })
         .then(function(productos){
 
-            res.render( path.join(__dirname, '../views/products/productList.ejs'),{productos:productos} )
+            res.render( path.join(__dirname, '../views/products/productList.ejs'),{productos:productos})
         })
         
     },
@@ -160,7 +197,15 @@ let productsController = {
             }
         })
         .then(function(productosCategorizados){
-            
+
+            // db.ProductImage.findAll({
+            //     where:{
+            //         principal_image:'YES'
+            //     }
+            // })
+            // .then(function(imagenes){
+
+            // })
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
  

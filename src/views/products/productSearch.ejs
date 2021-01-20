@@ -35,7 +35,7 @@
             </div>
             <section id='Ofertas' class='ContenedorOfertas'>
             <% for(let i=0; i<2; i++){ %>
-                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>" class='Oferton' alt="Oferta1"></a></figure>
+                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].id %>"><img src="/images/products/<%= imagenes[i].principal_image%>" class='Oferton' alt="Oferta1"></a></figure>
                 <% } %> 
             </section>
 
@@ -47,11 +47,11 @@
             <main>
                 
                 <% for(let i=0; i < productosCategorizados.length; i++){ %>
-                <section id=<%= productosCategorizados[i].ID %>>
-                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>"alt="Principal1"></a></figure>
+                <section id=<%= productosCategorizados[i].id %>>
+                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].id %>"><img src="/images/products/<%= imagenes[i].principal_image%>"alt="Principal1"></a></figure>
                     <div>
-                        <p><%= productosCategorizados[i].Titulo %></p>
-                        <span class="price"><%= productosCategorizados[i].Precio %></span>
+                        <p><%= productosCategorizados[i].title %></p>
+                        <span class="price"><%= productosCategorizados[i].price %></span>
                         <button type="submit">Comprar</button>
                     </div>       
                 </section>
