@@ -181,19 +181,12 @@ let productsController = {
 
         db.Product.findAll({
             where:{
-                category:req.params.categoria
+                category:req.params.categoria,
+                still_alive:'YES'
             }
         })
         .then(function(productosCategorizados){
 
-            // db.ProductImage.findAll({
-            //     where:{
-            //         principal_image:'YES'
-            //     }
-            // })
-            // .then(function(imagenes){
-
-            // })
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
 

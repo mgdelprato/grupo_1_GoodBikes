@@ -35,7 +35,7 @@
             </div>
             <section id='Ofertas' class='ContenedorOfertas'>
             <% for(let i=0; i<2; i++){ %>
-                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].id %>"><img src="/images/products/<%= imagenes[i].principal_image%>" class='Oferton' alt="Oferta1"></a></figure>
+                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].id %>"><img src="/images/products/<%= productosCategorizados[i].img_ppal%>" class='Oferton' alt="Oferta1"></a></figure>
                 <% } %> 
             </section>
 
@@ -48,7 +48,7 @@
                 
                 <% for(let i=0; i < productosCategorizados.length; i++){ %>
                 <section id=<%= productosCategorizados[i].id %>>
-                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].id %>"><img src="/images/products/<%= imagenes[i].principal_image%>"alt="Principal1"></a></figure>
+                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].id %>"><img src="/images/products/<%= productosCategorizados[i].img_ppal%>"alt="Principal1"></a></figure>
                     <div>
                         <p><%= productosCategorizados[i].title %></p>
                         <span class="price"><%= productosCategorizados[i].price %></span>
