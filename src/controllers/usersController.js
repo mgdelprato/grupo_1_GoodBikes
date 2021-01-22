@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
+const db = require('../data/models');
 
 //Leo el JSON de usuarios y lo parseo
 let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
@@ -28,7 +29,7 @@ let usersController ={
     },
     
     //Método (asociado al POST) para realizar el logueo de un usuario
-    chequearLogin: function(req,res,next)
+    chequearLogin: function(req,res)
     {
         //Si no hay errores type en el ckeck
         let errors = validationResult(req);
@@ -36,56 +37,55 @@ let usersController ={
         //Si no hay errores se carga el formulario  
 
         //Busca al usuario por su mail
-        let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
-            
-                if(!BuscaUser)
+       
+            db.User.findOne({
+                where:{
+                    email:req.body.email
+                }
+            })
+            .then(function(BuscaUser){
+
+                if(!BuscaUser){
+                    return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'})
+                }else{
+
+                    //Si encuentra al usuario chequea contraseña
         
-                        //Si no encuentra al usuario avisa y detiene
+                        //Prepara para chequear pass ingresada
+                        let encriptada = BuscaUser.password
+                        let pass_ingresada = req.body.password
 
-                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'} )}
-                            
-                else        
-                {
-                        //Si encuentra al usuario chequea contraseña
+                        if(bcryptjs.compareSync(pass_ingresada,encriptada)){
 
-                            //Prepara para chequear pass ingresada
-                            let encriptada = BuscaUser.password
-                            let pass_ingresada = req.body.password
-                           
-                            if(bcryptjs.compareSync(pass_ingresada,encriptada))
-                            {
                             // Statments de Contraseña Correcta. 
                                 
                                 //Paso email, usuario y avatar al session
                                 req.session.user = BuscaUser.first_name
                                 req.session.userEmail = BuscaUser.email
                                 req.session.avatar = BuscaUser.avatar
-                                                                
-                                
-                                if(req.body.rememberme == 'si') // ¿Tildó recordame?
-                                {
-                                  res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
-                                }
+                                    if(bcryptjs.compareSync(pass_ingresada,encriptada))
+                                    {
+                                                                        
+                                        if(req.body.rememberme == 'si') // ¿Tildó recordame?
+                                        {
+                                          res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
+                                        }
+                
+                                        //Ir al home
+                                        return res.redirect('/');
+                                    }else{// Error en contraseña
+                                    req.session.destroy() //Por las dudas
+                                    res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
+                                    }
+                        }
 
-                                //Ir al home
-                                return res.redirect('/');
-                            }
-
-                            else
-                            
-                            {// Error en contraseña
-                            req.session.destroy() //Por las dudas
-                            res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
-                            }
-                }                
-        }
-        
-        else
-        {//Si hay errores de carga, se renderiza el login compartiendo los errores
+                }
+            })            
+                             
+        }else{//Si hay errores de carga, se renderiza el login compartiendo los errores
            return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
      
         }
-        next()
     } ,
 //Método (asociado al GET) para obtener los datos y renderizar la vista de profile de un usuario
     perfil: 
@@ -98,19 +98,24 @@ let usersController ={
                     }
                 else
                     { //Log exitoso
+                        db.User.findOne({
+                            where:{
+                                email:req.session.userEmail
+                            }
+                        })
+                        .then(function(BuscaUser){
+                            
+                            //Prepara variables locals para la vista profile
+                                res.locals.profileName = BuscaUser.first_name
+                                res.locals.profileLastName = BuscaUser.last_name
+                                res.locals.profileEmail = BuscaUser.email
+                                res.locals.profileAvatar = BuscaUser.avatar
+                                
+                                res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                        })
                         
-                        //Trae datos del array
-                        let BuscaUser = usuarios.find( function(usuarios){
-                            return usuarios.email == req.session.userEmail})
-                        
-                        //Prepara variables locals para la vista profile
-                            res.locals.profileName = BuscaUser.first_name
-                            res.locals.profileLastName = BuscaUser.last_name
-                            res.locals.profileEmail = BuscaUser.email
-                            res.locals.profileAvatar = BuscaUser.avatar
                      
                         
-                        res.render( path.join(__dirname, '../views/users/profile.ejs') )
                     }
 
     },
@@ -119,24 +124,25 @@ let usersController ={
         let errors = validationResult(req);
         //Si no hay errores, recupero los datos ingresados del usuario y los guardo, luego renderizo su profile
         if(errors.isEmpty()){
-            let nuevoUsuario = {
-                id: ultimoId +1,
-                first_name: req.body.name,
-                last_name: req.body.apellido,
-                email: req.body.email,
+
+            db.User.create({
+                first_name:req.body.name,
+                last_name:req.body.apellido,
+                email:req.body.email,
                 password: bcryptjs.hashSync(req.body.password, 12),
                 avatar: req.files[0].filename
-            }
 
-            usuarios.push(nuevoUsuario)
-            fs.writeFileSync(path.join(__dirname,'../data/users.json'),JSON.stringify(usuarios,null,4))
-            res.redirect('/users/profile');
+            })
+            .then(function(usuario){
+
+               res.render(path.join(__dirname, '../views/users/login.ejs'));
+            })
+
 
         } else {
             // Si hay errores, los mapeo y renderizo la vista con los errores
             return res.render( path.join(__dirname, '../views/users/register.ejs'),{errors: errors.mapped(),old:req.body})
         }
-        next()
     },
     //Método (asociado al get) para cerrar la sesión de un usuario
     logout: function(req, res) {

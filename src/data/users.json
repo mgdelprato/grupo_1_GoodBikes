@@ -102,5 +102,13 @@
         "email": "batman@gotica.com",
         "password": "$2a$12$1KfWvfIf8X4EugwY2pFyC.LEodu/c3y.I5wyiESTbzhV7k3dqwgHG",
         "avatar": "batman@gotica.com-1610312169591.PNG"
+    },
+    {
+        "id": 14,
+        "first_name": "sergio",
+        "last_name": "gonzalez",
+        "email": "sergio@mail.com",
+        "password": "$2a$12$x4q.Tt4sMZxrKBCM.E3yBekcVnnBfObTi3MpjZ4fbdt5qguNnYW5i",
+        "avatar": "sergio@mail.com-1611202759504.jpg"
     }
 ]

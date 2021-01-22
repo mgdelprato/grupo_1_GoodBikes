@@ -6,7 +6,7 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        users_id_fk:{
+        user_id_fk:{
             type:dataTypes.INTEGER,
             notNull:true
         },

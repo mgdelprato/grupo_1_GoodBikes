@@ -66,12 +66,10 @@ let productsController = {
         .then(function(productoEditar){
             console.log("PRODUCTOSSSSSSSSS");
 
-            console.log(productoEditar);
             //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
         })
 
-        //*******************PENDIENTE MANEJO DE IMAGENES*****************
     },
     // Método (asociado al PUT del admin) para guardar la edición realizada sobre un producto
     actualizarProducto: function(req,res){
@@ -100,6 +98,7 @@ let productsController = {
                 db.ProductImage.update({
                         product_id_fk:producto.id,
                         image_name:req.files[i].filename,
+
                         },{
                             where:{
                                 id:req.params.id
@@ -162,6 +161,17 @@ let productsController = {
     detalleProducto: function(req,res){
         let imagenes;
 
+        db.Product.findByPk(req.params.id)
+        .then(function(producto){
+            db.ProductImage.findAll({
+                where:{
+                    product_id_fk:producto.id
+                }
+            })
+            .then(function(imagenes){
+                console.log(imagenes);
+            })
+        })
         db.ProductImage.findAll()
         .then(function(imagenes){       
         imagenes = imagenes
