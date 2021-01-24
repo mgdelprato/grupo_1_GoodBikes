@@ -11,6 +11,14 @@ let productsController = {
     carritoCompras: function(req, res) {
                  res.render( path.join(__dirname, '../views/products/productCart.ejs') )
                 },
+    carritoComprasAdd: function(req, res) {
+                    res.send("Holis")
+                   },
+
+
+
+
+
     //Metodo (asociado al GET de products) para renderizar la vista del detalle de un producto
     detalle_Producto: function(req, res) {
         res.render( path.join(__dirname, '../views/products/productDetail.ejs') )
