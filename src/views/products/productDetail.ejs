@@ -29,9 +29,9 @@
         
             <div id="cuadrosSuperiores">     
                 <section id='CuadroIzquierdo'>
-                    <%= imagenes %>
-                    <% for(let i=0; i < 5; i++){ %>
-                        <figure><img class='imagenIzquierda'src="/images/products/<%= imagenes %>" alt="Principal1"></figure>
+                    
+                    <% for(let i=0; i < producto.ProductsImages.length; i++){ %>
+                        <figure><img class='imagenIzquierda'src="/images/products/<%= producto.ProductsImages[i].image_name %>" alt="Principal1"></figure>
                     <% } %>     
                 </section>
                 <section id='CuadroCentro'>

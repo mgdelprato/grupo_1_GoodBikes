@@ -63,17 +63,14 @@ module.exports=function(sequelize,dataTypes){
         underscored:true
     }
 
-    let Products = sequelize.define(alias,cols,config)
+    let Product = sequelize.define(alias,cols,config)
 
-    Products.associate = function(models){
-        Products.hasMany(models.ProductImage,{
+    Product.associate = function(models){
+        Product.hasMany(models.ProductImage,{
                 as:"ProductsImages",
-                foreingKey:"product_id_fk"
+                foreingKey:"product_id"
             });
-        Products.hasMany(models.ProductImage,{
-                as:"PurchasesDetails",
-                foreingKey:"product_id_fk"
-            });
+       
         }
-    return Products
+    return Product
 }

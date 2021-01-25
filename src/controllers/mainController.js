@@ -17,9 +17,7 @@ let mainController = {
             }
         })
         .then(function(productos){
-            
             res.render( path.join(__dirname, '../views/index.ejs'), {productos:productos} )
-            
         })
     }
 }

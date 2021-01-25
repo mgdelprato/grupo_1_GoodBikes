@@ -6,7 +6,7 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        users_id_fk:{
+        users_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
@@ -14,7 +14,7 @@ module.exports=function(sequelize,dataTypes){
             type:dataTypes.INTEGER,
             notNull:true
         },
-        product_id_fk:{
+        product_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
@@ -38,8 +38,8 @@ module.exports=function(sequelize,dataTypes){
 
     PurchaseDetail.associate = function(models){
         PurchaseDetail.belongsTo(models.Product,{
-                as:"Products",
-                foreingKey:"product_id_fk"
+                as:"Product",
+                foreingKey:"product_id"
             });
             PurchaseDetail.belongsTo(models.PurchaseTransaction,{
                 as:"PurchaseTransaction",
@@ -47,7 +47,7 @@ module.exports=function(sequelize,dataTypes){
             });
             PurchaseDetail.belongsTo(models.User,{
                 as:"User",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
         }
     return PurchaseDetail

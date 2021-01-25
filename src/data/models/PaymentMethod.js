@@ -6,7 +6,7 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        users_id_fk:{
+        users_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
@@ -39,11 +39,11 @@ module.exports=function(sequelize,dataTypes){
     PaymentMethod.associate = function(models){
         PaymentMethod.belongsTo(models.User,{
                 as:"User",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
             PaymentMethod.hasMany(models.PurchaseTransaction,{
                 as:"PurchaseTransaction",
-                foreingKey:"payment_method_id_fk"
+                foreingKey:"payment_method_id"
             });
         }
     return PaymentMethod

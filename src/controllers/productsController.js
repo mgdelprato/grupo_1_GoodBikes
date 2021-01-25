@@ -1,6 +1,7 @@
 const path = require('path')
 const { validationResult } = require('express-validator');
-const db = require('../data/models')
+const db = require('../data/models');
+
 
 
 
@@ -42,7 +43,7 @@ let productsController = {
             .then(function(producto){
                 for(let i=0; i<req.files.length;i++){
                     db.ProductImage.create({
-                        product_id_fk:producto.id,
+                        product_id:producto.id,
                         image_name:req.files[i].filename,
                     }).then(function(){
                             console.log("inserto imagen "+ i)
@@ -159,32 +160,11 @@ let productsController = {
     },
     //Método (asociado al GET de products) para renderizar la vista de un producto en particular
     detalleProducto: function(req,res){
-        let imagenes;
-
-        db.Product.findByPk(req.params.id)
+       db.Product.findByPk(req.params.id, 
+            {include: [{association: "ProductsImages"}]})
         .then(function(producto){
-            db.ProductImage.findAll({
-                where:{
-                    product_id_fk:producto.id
-                }
-            })
-            .then(function(imagenes){
-                console.log(imagenes);
-            })
+            res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
         })
-        db.ProductImage.findAll()
-        .then(function(imagenes){       
-        imagenes = imagenes
-        })
-
-        console.log(imagenes);
-
-        db.Product.findByPk(req.params.id)
-        .then(function (producto){
-        res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto , imagenes:imagenes})
-    })
-    
-
     },
     //Método (asociado al GET de products) para renderizar la vista de los productos de una categoria en particular
     buscarProducto: function(req,res){

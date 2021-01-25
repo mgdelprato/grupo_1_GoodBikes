@@ -6,7 +6,7 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        user_id_fk:{
+        user_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
@@ -37,7 +37,7 @@ module.exports=function(sequelize,dataTypes){
         Address.associate = function(models){
             Address.belongsTo(models.User,{
                 as:"User",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
         }
     return Address

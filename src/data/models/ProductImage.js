@@ -6,7 +6,7 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        product_id_fk:{
+        product_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
@@ -26,8 +26,8 @@ module.exports=function(sequelize,dataTypes){
 
     ProductImage.associate = function(models){
         ProductImage.belongsTo(models.Product,{
-                as:"Products",
-                foreingKey:"product_id_fk"
+                as:"Product",
+                foreingKey:"product_id"
             });
         }
     return ProductImage
