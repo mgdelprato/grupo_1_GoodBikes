@@ -9,7 +9,8 @@ const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
 const session = require('express-session')
 const cookieParser = require('cookie-parser')
-const remembermeController = require('./src/controllers/remembermeController')
+const remembermeController = require('./src/controllers/remembermeController');
+const productsController = require('./src/controllers/productsController');
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
 app.use(express.static( path.join(__dirname, './public') ) )
@@ -38,6 +39,11 @@ app.use('/users', usersRouter);
 /* PRODUCTS */
 app.use('/products',productsRouter);
 
+/* CARRITO */
+app.get('/products/productCart',productsController.carritoCompras);
+app.get('/products/productCartAdd',productsController.carritoComprasAdd);
+app.post('/products/productCartAdd',productsController.carritoComprasAdd);
+
 /* ADMIN */
 app.use('/admin',adminRouter);
 
@@ -59,3 +65,5 @@ app.listen(process.env.PORT || 5000, function() {
 /*EJS*/
 app.set('view engine', 'ejs');
 /*---------------------------------------------------------------------------------- */
+
+

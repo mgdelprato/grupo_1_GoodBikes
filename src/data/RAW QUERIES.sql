@@ -1,6 +1,5 @@
 USE goodbikesdb;
 
-SELECT * from PRODUCTS_IMAGES;
 
 -- <Trae datos para validar LOGIN y recuperar datos para session y cookies>
 	 SELECT id, first_name, email, password, avatar, is_admin 

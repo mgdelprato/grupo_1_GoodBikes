@@ -45,7 +45,9 @@
                     <span><%= producto.price %></span>
                     <ul>
                         <br>
-                        <li><button type="submit">Agregar</button></li>
+                        <form action="/products/productCartAdd" method="POST" id="form1">
+                        </form>
+                        <li><button type="submit" form="form1" >Agregar</button></li>
                     </ul>  
                 </section>
 
