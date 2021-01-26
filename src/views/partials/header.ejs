@@ -22,9 +22,10 @@
 
                     if( locals.mail == 'admin@gmail.com'){%> 
 
-                                        
-                    <li id="Tag_Profile"><a href="/admin/products/productCreate">Crear Productos</a></li>
+                                       
+
                     <li id="Tag_Profile"><a href="/admin/products/productList">Administrar Productos</a></li>        
+                    <li id="Tag_Profile"><a href="/users/Profile">Mi Perfil</a></li>   
                     <li id="Tag_Login"><a href="/users/logout">Log Out</a></li> 
                     
                     <%} else {%>
@@ -42,13 +43,30 @@
     </div>
 
     
-    <% if(typeof locals.user != 'undefined' ) {%>  
-    <div id="container_header_Mobile_logged">   
-        <li id="User_Name_Mobile"> Hola, <%= locals.user %> !</li>
-        <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li>        
-        <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
-    </div>
-    <%}%>
+    <% if(typeof locals.user != 'undefined' ) 
+    {        
+
+            if( locals.mail == 'admin@gmail.com'){%> 
+
+            <div id="container_header_Mobile_logged">                   
+                <li id="Tag_Profile_Mobile"><a href="/admin/products/productList">Administrar Productos</a></li>        
+                <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li> 
+                <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
+            </div>
+            
+            <%} else {%>
+
+            <div id="container_header_Mobile_logged">   
+                <li id="User_Name_Mobile"> Hola, <%= locals.user %> !</li>
+                <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li>        
+                <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
+            </div>
+    <%}}%>
+
+
+
+
+
 
 
 
