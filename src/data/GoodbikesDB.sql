@@ -25,7 +25,7 @@ DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `addresses` (
-  `user_id_fk` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `street` varchar(50) DEFAULT NULL,
   `street_number` varchar(6) DEFAULT NULL,
   `street_state` varchar(30) DEFAULT NULL,
@@ -38,8 +38,8 @@ CREATE TABLE `addresses` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id_fk` (`user_id_fk`),
-  CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id_fk`) REFERENCES `users` (`id`)
+  KEY `addresses_ibfk_1` (`user_id`),
+  CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -133,15 +133,15 @@ DROP TABLE IF EXISTS `products_images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `products_images` (
-  `product_id_fk` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `image_name` varchar(255) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `product_id_fk` (`product_id_fk`),
-  CONSTRAINT `products_images_ibfk_1` FOREIGN KEY (`product_id_fk`) REFERENCES `products` (`id`)
+  KEY `products_images_ibfk_1` (`product_id`),
+  CONSTRAINT `products_images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -163,9 +163,9 @@ DROP TABLE IF EXISTS `purchases_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchases_details` (
-  `user_id_fk` int(11) NOT NULL,
-  `purchase_transaction_id_fk` int(11) NOT NULL,
-  `product_id_fk` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `purchase_transaction_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `still_alive` varchar(3) NOT NULL DEFAULT 'YES',
   `quantity` int(4) NOT NULL,
@@ -173,12 +173,12 @@ CREATE TABLE `purchases_details` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id_fk` (`user_id_fk`),
-  KEY `purchase_transaction_id_fk` (`purchase_transaction_id_fk`),
-  KEY `product_id_fk` (`product_id_fk`),
-  CONSTRAINT `purchases_details_ibfk_1` FOREIGN KEY (`user_id_fk`) REFERENCES `users` (`id`),
-  CONSTRAINT `purchases_details_ibfk_2` FOREIGN KEY (`purchase_transaction_id_fk`) REFERENCES `purchases_transactions` (`id`),
-  CONSTRAINT `purchases_details_ibfk_3` FOREIGN KEY (`product_id_fk`) REFERENCES `products` (`id`)
+  KEY `purchases_details_ibfk_3` (`product_id`),
+  KEY `purchases_details_ibfk_1` (`user_id`),
+  KEY `purchases_details_ibfk_2` (`purchase_transaction_id`),
+  CONSTRAINT `purchases_details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `purchases_details_ibfk_2` FOREIGN KEY (`purchase_transaction_id`) REFERENCES `purchases_transactions` (`id`),
+  CONSTRAINT `purchases_details_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -200,8 +200,8 @@ DROP TABLE IF EXISTS `purchases_transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `purchases_transactions` (
-  `user_id_fk` int(11) NOT NULL,
-  `payment_method_id_fk` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `payment_method_id` int(11) NOT NULL,
   `trasaction_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `transaction_amount` decimal(10,2) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -210,10 +210,10 @@ CREATE TABLE `purchases_transactions` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id_fk` (`user_id_fk`),
-  KEY `payment_method_id_fk` (`payment_method_id_fk`),
-  CONSTRAINT `purchases_transactions_ibfk_1` FOREIGN KEY (`user_id_fk`) REFERENCES `users` (`id`),
-  CONSTRAINT `purchases_transactions_ibfk_2` FOREIGN KEY (`payment_method_id_fk`) REFERENCES `payments_methods` (`id`)
+  KEY `purchases_transactions_ibfk_1` (`user_id`),
+  KEY `purchases_transactions_ibfk_2` (`payment_method_id`),
+  CONSTRAINT `purchases_transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `purchases_transactions_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payments_methods` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -247,7 +247,7 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -256,7 +256,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(2,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(3,'Nahuel','Rodriguez','nahuargentina@gmail.com','$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG','nahuargentina@gmail.com-1608501759446.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(4,'Juan Nahuel','Rodriguez Araujo','ecologista_chess@yahoo.com.ar','$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy','ecologista_chess@yahoo.com.ar-1608535183320.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL),(5,'Cosme','Fulanito','cuentaunlam@gmail.com','$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O','cuentaunlam@gmail.com-1608698397934.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(6,'Gordo','Motoneta','gordo@gmail.com','$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC','gordo@gmail.com-1608756791191.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(7,'El','Barto','barto@gmail.com','$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG','barto@gmail.com-1608776726469.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(8,'Felipe','Pino','topo@mail.com','$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu','topo@mail.com-1608782890921.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(9,'Oli','Delprato','oli@gmail.com','$2a$12$UP8hzuf3cbmWDP4Ei.z9/e9znyD2wGE666cE1QnH.heHqntI5tLSa','oli@gmail.com-1608809802868.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(10,'Flor','gomez','flor@gmail.com','$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue','flor@gmail.com-1608810847256.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(11,'Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES','YES','2021-01-20 02:50:59',NULL,NULL),(12,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL);
+INSERT INTO `users` VALUES (1,'Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(2,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(3,'Nahuel','Rodriguez','nahuargentina@gmail.com','$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG','nahuargentina@gmail.com-1608501759446.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(4,'Juan Nahuel','Rodriguez Araujo','ecologista_chess@yahoo.com.ar','$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy','ecologista_chess@yahoo.com.ar-1608535183320.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL),(5,'Cosme','Fulanito','cuentaunlam@gmail.com','$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O','cuentaunlam@gmail.com-1608698397934.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(6,'Gordo','Motoneta','gordo@gmail.com','$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC','gordo@gmail.com-1608756791191.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(7,'El','Barto','barto@gmail.com','$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG','barto@gmail.com-1608776726469.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(8,'Felipe','Pino','topo@mail.com','$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu','topo@mail.com-1608782890921.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(9,'Oli','Delprato','oli@gmail.com','$2a$12$UP8hzuf3cbmWDP4Ei.z9/e9znyD2wGE666cE1QnH.heHqntI5tLSa','oli@gmail.com-1608809802868.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(10,'Flor','gomez','flor@gmail.com','$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue','flor@gmail.com-1608810847256.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(11,'Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES','YES','2021-01-20 02:50:59',NULL,NULL),(12,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL),(13,'Pepe','Cosa','pepe@mail.io','$2a$12$Ey3USL64dz8AbX7AA/t9xeOy1R5P.qz5WPsW6tzmQzA.vYvvk3rbe','pepe@mail.io-1611605025206.jpg','NO','NO','2021-01-25 20:03:46','2021-01-25 20:03:46',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -277,4 +277,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-20 12:39:25
+-- Dump completed on 2021-01-25 23:46:33
