@@ -12,12 +12,19 @@ const Op = Sequelize.Op
 let productsController = {
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
-                 res.render( path.join(__dirname, '../views/products/productCart.ejs') )
+                
+                console.log(req.session.cart); //Muestra estado del carrito
+                res.render( path.join(__dirname, '../views/products/productCart.ejs') )
                 },
+
     carritoComprasAdd: function(req, res) {
                 
-                if (req.session.cart){req.session.cart.push(req.body.id_producto)}
-                else {req.session.cart = []}
+                //Suma producto al array de session
+                if (req.session.cart == undefined){
+                    req.session.cart = []
+                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
+                else 
+                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
                 
                 
                 console.log(req.session.cart);
