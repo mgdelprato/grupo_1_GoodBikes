@@ -10,7 +10,7 @@ const db = require('../data/models');
 let productsController = {
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
-                 res.render( path.join(__dirname, '../products/productCart.ejs') )
+                 res.render( path.join(__dirname, '../views/products/productCart.ejs') )
                 },
     carritoComprasAdd: function(req, res) {
                 
@@ -116,12 +116,14 @@ let productsController = {
                 where:{
                     id:req.params.id
                 }
+                ,include: [{association: "ProductsImages"}]
             })
             .then(function(producto){
             for(let i=0; i<req.files.length;i++){
                 db.ProductImage.update({
                         product_id_fk:producto.id,
                         image_name:req.files[i].filename,
+                        
 
                         },{
                             where:{
