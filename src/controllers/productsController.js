@@ -14,6 +14,11 @@ let productsController = {
                 },
     carritoComprasAdd: function(req, res) {
                 
+                if (req.session.cart){req.session.cart.push(req.body.id_producto)}
+                else {req.session.cart = []}
+                
+                
+                console.log(req.session.cart);
 
                 //Renderizar la vista donde estaba parado
                     let num = req.body.id_producto.toString()
