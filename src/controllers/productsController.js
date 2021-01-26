@@ -1,6 +1,8 @@
 const path = require('path')
 const { validationResult } = require('express-validator');
 const db = require('../data/models');
+const { Sequelize } = require('../data/models');
+const Op = Sequelize.Op
 
 
 
@@ -206,8 +208,20 @@ let productsController = {
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
 
+    },
+    buscador: function(req,res){
+       productoBuscado=req.query.search
+        db.Product.findAll({
+            where:{
+                title:{[Op.like]: `%${productoBuscado}%`}
+            }
+        })
+        .then(function(resultados){
+            res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados})
+        })
     }
-
 }
+
+
 
 module.exports = productsController

@@ -15,6 +15,8 @@ router.get('/productDetail/:id', productsController.detalleProducto);
 
 //Productos de una determinada categoria (Rodado, accesorios, indumentaria, etc)
 router.get('/productSearch/:categoria', productsController.buscarProducto); // Trae listado de productos
+router.get('/search', productsController.buscador); // Trae listado de productos
+
 
 module.exports = router;
 
