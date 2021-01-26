@@ -26,7 +26,7 @@
 
     <main>
         <div id="DetalleCompleto">
-        
+            <% console.log(locals.producto.id) %>
             <div id="cuadrosSuperiores">     
                 <section id='CuadroIzquierdo'>
                     
@@ -47,7 +47,7 @@
                         <br>
                         <form action="/products/productCartAdd" method="POST" id="form1">
                         </form>
-                        <li><button type="submit" form="form1" >Agregar</button></li>
+                        <li><button type="submit" name="id_producto" form="form1" value="<%= producto.id %>" >Agregar</button></li>
                     </ul>  
                 </section>
 

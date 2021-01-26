@@ -10,11 +10,21 @@ const db = require('../data/models');
 let productsController = {
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
-                 res.render( path.join(__dirname, '../views/products/productCart.ejs') )
+                 res.render( path.join(__dirname, '../products/productCart.ejs') )
                 },
     carritoComprasAdd: function(req, res) {
-                    res.send("Holis")
-                   },
+                
+
+                //Renderizar la vista donde estaba parado
+                    let num = req.body.id_producto.toString()
+                    db.Product.findByPk(num, 
+                        {include: [{association: "ProductsImages"}]})
+                    .then(function(producto){
+                        req.session.producto = producto
+                        res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
+                    })
+                
+                },
 
 
 
@@ -171,6 +181,7 @@ let productsController = {
        db.Product.findByPk(req.params.id, 
             {include: [{association: "ProductsImages"}]})
         .then(function(producto){
+            req.session.producto = producto
             res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
         })
     },
