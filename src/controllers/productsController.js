@@ -220,8 +220,10 @@ let productsController = {
        productoBuscado=req.query.search
         db.Product.findAll({
             where:{
-                title:{[Op.like]: `%${productoBuscado}%`}
-            }
+                title:{[Op.like]: `%${productoBuscado}%`},
+                [Op.and]:{still_alive:'YES'}
+            }   
+            
         })
         .then(function(resultados){
             res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados})
