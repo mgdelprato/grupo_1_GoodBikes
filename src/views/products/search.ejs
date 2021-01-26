@@ -15,7 +15,7 @@
 <body>
     <div id='Contenedor'>  
         
-        <%- include('../partials/header')%>
+        <%- include('../partials/header',{busqueda:productoBuscado})%>
         
         
         <div id='Hero_IMG' class='juntitos2'>                
@@ -34,7 +34,7 @@
 
             <div id='juntitos2' class='juntitos'>
                 <img src="/images/Destacados.png" height="28px" alt="Oferta1">
-                <p id='Ofertas_text' class="Resaltado">Productos</p>            
+                <p id='Ofertas_text' class="Resaltado">Productos para tu busqueda: <%=productoBuscado%></p>            
             </div>
 
             <main>

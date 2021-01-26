@@ -58,7 +58,7 @@ let productsController = {
 
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
         if(error.isEmpty()){
-
+            //Inserto un nuevo producto en la base con la info enviada en el req
             db.Product.create({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -71,7 +71,7 @@ let productsController = {
 
 
             })
-
+            //Inserto imagenes dentro de la tabla de imágenes
             .then(function(producto){
                 for(let i=0; i<req.files.length;i++){
                     db.ProductImage.create({
@@ -97,7 +97,7 @@ let productsController = {
         //Busco el producto a editar
         db.Product.findByPk(req.params.id)
         .then(function(productoEditar){
-            console.log("PRODUCTOSSSSSSSSS");
+    
 
             //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
@@ -110,7 +110,7 @@ let productsController = {
 
         //Si no hay errores guardo los valores del producto editado, y renderizo la vista de listado de productos
         if(error.isEmpty()){
-
+            //Actualizo en la base todos los campos segun lo enviado en el request
             db.Product.update({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -125,8 +125,10 @@ let productsController = {
                 where:{
                     id:req.params.id
                 }
+                //Hago el linkeo con la tabla de imagenes
                 ,include: [{association: "ProductsImages"}]
             })
+                //Recorro las imagenes y las actualizo
             .then(function(producto){
             for(let i=0; i<req.files.length;i++){
                 db.ProductImage.update({
@@ -154,7 +156,7 @@ let productsController = {
 },
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos
     listarProducto: function(req, res) {
-
+        //Busco en la base todos los productos "activos" (still_alive='YES)
         db.Product.findAll({
             where:{
                 still_alive:'YES'
@@ -172,7 +174,8 @@ let productsController = {
         let error  = validationResult(req);
        //Chequeo que no hay errores, si está OK, recupero el producto que hay que eliminiar y lo filtro del array
         if(error.isEmpty()){
-            let productoEliminar = req.params.id;
+        
+            //Actualizo el still_alive para realizar un soft-delete
                 db.Product.update({
                     still_alive:'NO'
                 },{
@@ -181,7 +184,7 @@ let productsController = {
                     }
                 })
                 .then(function(){
-
+                    //Renderizo la vista sin el producto "eliminado"
                     res.redirect('/admin/products/productList')
                 })
 
@@ -203,21 +206,25 @@ let productsController = {
     },
     //Método (asociado al GET de products) para renderizar la vista de los productos de una categoria en particular
     buscarProducto: function(req,res){
-
+        //Busco en la base todos los productos activos que pertenecen a la categoria seleccionada
         db.Product.findAll({
             where:{
                 category:req.params.categoria,
                 still_alive:'YES'
             }
         })
+        //Renderizo la vista enviando los productos que pertenecen a la categroia
         .then(function(productosCategorizados){
 
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
 
     },
+    //Método (asociado al GET de products) para buscar en la base los productos ingresados en el buscador
     buscador: function(req,res){
+        //Recupero lo ingresado en el search
        productoBuscado=req.query.search
+       //Busco en la base filtrando lo que ingresa el usuario y teniendo en cuenta los productos activos
         db.Product.findAll({
             where:{
                 title:{[Op.like]: `%${productoBuscado}%`},
@@ -225,8 +232,9 @@ let productsController = {
             }   
             
         })
+        //Renderizo la vista enviando los resultados
         .then(function(resultados){
-            res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados})
+            res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados,productoBuscado:productoBuscado})
         })
     }
 }
