@@ -20,9 +20,9 @@ let productsController = {
                 //Suma producto al array de session
                 if (req.session.cart == undefined){
                     req.session.cart = []
-                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': 1})}
+                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
                 else 
-                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': 1})}
+                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
                 
                 
                 console.log(req.session.cart);
