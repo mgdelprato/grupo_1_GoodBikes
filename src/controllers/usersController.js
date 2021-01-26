@@ -151,18 +151,12 @@ let usersController ={
         res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
         req.session.destroy();               // Eliminar sesión
         
-        //Vaciamos las vistas
-        res.locals.user = undefined; 
-        res.locals.mail = undefined;
-
-        // Por si le da back
-        res.locals.profileName = undefined
-        res.locals.profileLastName = undefined
-        res.locals.profileEmail = undefined
-        res.locals.profileAvatar = undefined
+   
+        
 
         {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Cerraste tu sesión. Te esperamos pronto!'} )}
-        //res.redirect('/') 
+        
+        
     }
     }
     
