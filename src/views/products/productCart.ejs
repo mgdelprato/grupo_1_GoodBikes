@@ -26,62 +26,95 @@
     </div>
     
     <main>
-      <% console.log(producto.length)%>
-      <% for (let i = 0; i< producto.length;i++)
-      {%>
-          
-            <section id="ItemProductCart">
-                <figure>
-                    <img src="/images/products/<%= producto[i].img_ppal%>" alt="Producto carrito">
-                </figure>
-                
-                <div id="resumenProducto">
-                  <p class="tituloProducto"> Producto</p> 
-                  <p class="valorProducto"> <%= producto[i].title %> </p>
-                </div>
-                
-                <div id="cantidad">
-                  <form action="">
-                    <p class="tituloProducto">Cantidad</p>
-                    <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
-                      <option value=1>1</option>
-                      <option value=2>2</option>
-                      <option value=3>3</option>
-                      <option value=4>4</option>
-                      <option value=4>5</option>
-                      <option value=4>6</option>
-                      <option value=4>7</option>
-                      <option value=4>8</option>
-                      <option value=4>9</option>
-                      <option value=4>10</option>
-                    </select>
-                  </form>
-                </div>
+      
+      <%if(locals.mensajito){%>
 
-                <div id="precio">
-                    <p class="tituloProducto">Precio</p>
-                    <p class="valorProducto"><%= producto[i].price %></p><a href="#"></a>
-                </div>
-                
-                <figure id="tacho">
-                  <i class="fas fa-trash-alt"></i>
-                </figure>
+        <p style="text-align: center;font-size: 20px;margin-left: 3vw;font-weight: bold;">Nada por aquí</p>
+        
+        <%}        
+      else
+      {
+          for (let i = 0; i< producto.length;i++)
+          {%>
+              
+              <section id="ItemProductCart">
+                  <figure>
+                      <img src="/images/products/<%= producto[i].img_ppal%>" alt="Producto carrito">
+                  </figure>
+                  
+                  <div id="resumenProducto">
+                    <p class="tituloProducto"> Producto</p> 
+                    <p class="valorProducto"> <%= producto[i].title %> 
+                      <% console.log("el id de la BD " + producto[i].id) %>
+                      <% console.log(itemsCart) %>
+                       %></p>
+                  </div>
 
-            </section>
   
-    <%}%>
 
-    <section id="total">
-      <div id="precioTotal">
 
-        <p class="precio">Total</p>
-        <p class="precio">$12345</p>
 
-      </div>
-      <form action="" id="botonComprarForm"> 
-        <button type="submit" id="comprar">Comprar</button>
-      </form>
-    </section>
+
+
+
+
+                  <div id="cantidad">
+                    <form action="">
+                      <p class="tituloProducto">Cantidad</p>
+                      <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
+                        <option value=1>1</option>
+                        <option value=2>2</option>
+                        <option value=3>3</option>
+                        <option value=4>4</option>
+                        <option value=4>5</option>
+                        <option value=4>6</option>
+                        <option value=4>7</option>
+                        <option value=4>8</option>
+                        <option value=4>9</option>
+                        <option value=4>10</option>
+                      </select>
+                    </form>
+                  </div>
+
+                  <div id="precio">
+                      <p class="tituloProducto">Precio</p>
+                      <p class="valorProducto"><%= producto[i].price %></p><a href="#"></a>
+                  </div>
+                  
+                  <figure id="tacho">
+                    <i class="fas fa-trash-alt"></i>
+                  </figure>
+
+              </section>
+    
+      <%}
+    }%>
+    
+
+
+
+
+  <%if(locals.mensajito){}        
+  else
+  {%>
+    <div id="total">
+        <div id="precioTotal">
+          <p class="precio">Total</p>
+          <p class="precio">
+          </p>
+        </div>
+
+        <form action="" id="botonComprarForm"> 
+          <button type="submit" id="comprar">Comprar</button>
+        </form>
+
+    </div>
+
+  <%}%>
+
+
+
+
 
 
 

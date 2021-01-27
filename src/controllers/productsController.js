@@ -10,10 +10,22 @@ const Op = Sequelize.Op
 /* CONTROLLER QUE CONTIENE LA LÓGICA DE NEGOCIO RELACIONADA A PRODUCTOS */
 
 let productsController = {
+
+
+
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
+
+            if(req.session.producto == undefined) //Sin productos en el carrito
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
+                     
+
+            else
+                {
+
+
+                console.log(req.session.cartSQLOrganized);       
                 
-                console.log(req.session.cartSQLOrganized);
 
                 db.Product.findAll({
                     where:{
@@ -23,10 +35,10 @@ let productsController = {
                 })
                 //Renderizo la vista enviando los productos que pertenecen a la categroia
                 .then(function(producto){
-                                        
-                    res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto})
+                    let itemsCart = req.session.cart;                 
+                    res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto,itemsCart: itemsCart})
                 })
-                
+            }//cierra if
     
      },
 
@@ -53,8 +65,9 @@ let productsController = {
                 console.log(req.session.cartSQLOrganized)
 
                 //Renderizar la vista donde estaba parado
-                   
-                res.redirect('/products/productCart')
+                
+                
+                res.redirect('./productCart')
                     
                 
     },
