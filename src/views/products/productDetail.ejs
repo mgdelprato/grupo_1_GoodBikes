@@ -19,14 +19,14 @@
     <div id='Contenedor'>  
         <%- include('../partials/header')%>
        
-        <img src='/images/Banner11.png' width='100%' id='Banner_Product_Detail_web'>
+        
         <img src='/images/Fondos/Fondo1.png' width='100%' id='Banner_Product_Detail_mobile'> 
         <p id='Text_Hero_Mobile'>Lo mejor es Goodbike</p>
         <h3 id='Detalle_Producto'>Detalles del producto</h3>
 
     <main>
         <div id="DetalleCompleto">
-        
+            
             <div id="cuadrosSuperiores">     
                 <section id='CuadroIzquierdo'>
                     
@@ -46,8 +46,18 @@
                     <ul>
                         <br>
                         <form action="/products/productCartAdd" method="POST" id="form1">
+                            <select id="Q" name="Q">
+                                <option value="1">1</option> 
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                                <option value="4">4</option> 
+                                <option value="5">5</option> 
+                                <option value="6">6</option> 
+                                <option value="7">7</option> 
+                                <option value="8">8</option> 
+                             </select>
                         </form>
-                        <li><button type="submit" form="form1" >Agregar</button></li>
+                        <li><button type="submit" name="id_producto" form="form1" value="<%= producto.id %>" >Agregar</button></li>
                     </ul>  
                 </section>
 

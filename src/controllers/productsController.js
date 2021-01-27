@@ -1,6 +1,8 @@
 const path = require('path')
 const { validationResult } = require('express-validator');
 const db = require('../data/models');
+const { Sequelize } = require('../data/models');
+const Op = Sequelize.Op
 
 
 
@@ -8,13 +10,67 @@ const db = require('../data/models');
 /* CONTROLLER QUE CONTIENE LA LÓGICA DE NEGOCIO RELACIONADA A PRODUCTOS */
 
 let productsController = {
+
+
+
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
-                 res.render( path.join(__dirname, '../views/products/productCart.ejs') )
-                },
+
+            if(req.session.producto == undefined) //Sin productos en el carrito
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
+                     
+
+            else
+                {
+
+
+                console.log(req.session.cartSQLOrganized);       
+                
+
+                db.Product.findAll({
+                    where:{
+                        id: req.session.cartSQLOrganized 
+                    }
+
+                })
+                //Renderizo la vista enviando los productos que pertenecen a la categroia
+                .then(function(producto){
+                    let itemsCart = req.session.cart;                 
+                    res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto,itemsCart: itemsCart})
+                })
+            }//cierra if
+    
+     },
+
+
+
     carritoComprasAdd: function(req, res) {
-                    res.send("Holis")
-                   },
+                
+                //Suma producto al array de session
+                if (req.session.cart == undefined){
+                    req.session.cart = []
+                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                
+                    req.session.cartSQLOrganized = []
+                    req.session.cartSQLOrganized.push(req.body.id_producto)
+                    }
+                    
+                else 
+                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                req.session.cartSQLOrganized.push(req.body.id_producto)
+                }
+                
+                
+                console.log(req.session.cart);
+                console.log(req.session.cartSQLOrganized)
+
+                //Renderizar la vista donde estaba parado
+                
+                
+                res.redirect('./productCart')
+                    
+                
+    },
 
 
 
@@ -34,7 +90,7 @@ let productsController = {
 
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
         if(error.isEmpty()){
-
+            //Inserto un nuevo producto en la base con la info enviada en el req
             db.Product.create({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -47,7 +103,7 @@ let productsController = {
 
 
             })
-
+            //Inserto imagenes dentro de la tabla de imágenes
             .then(function(producto){
                 for(let i=0; i<req.files.length;i++){
                     db.ProductImage.create({
@@ -74,7 +130,7 @@ let productsController = {
         db.Product.findByPk(req.params.id,
             {include: [{association: "ProductsImages"}]})
         .then(function(productoEditar){
-            console.log("PRODUCTOSSSSSSSSS");
+    
 
             //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
             res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
@@ -87,7 +143,7 @@ let productsController = {
 
         //Si no hay errores guardo los valores del producto editado, y renderizo la vista de listado de productos
         if(error.isEmpty()){
-
+            //Actualizo en la base todos los campos segun lo enviado en el request
             db.Product.update({
                 category: req.body.categoria,
                 title: req.body.producto,
@@ -102,12 +158,16 @@ let productsController = {
                 where:{
                     id:req.params.id
                 }
+                //Hago el linkeo con la tabla de imagenes
+                ,include: [{association: "ProductsImages"}]
             })
+                //Recorro las imagenes y las actualizo
             .then(function(producto){
             for(let i=0; i<req.files.length;i++){
                 db.ProductImage.update({
                         product_id_fk:producto.id,
                         image_name:req.files[i].filename,
+                        
 
                         },{
                             where:{
@@ -129,7 +189,7 @@ let productsController = {
 },
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos
     listarProducto: function(req, res) {
-
+        //Busco en la base todos los productos "activos" (still_alive='YES)
         db.Product.findAll({
             where:{
                 still_alive:'YES'
@@ -147,7 +207,8 @@ let productsController = {
         let error  = validationResult(req);
        //Chequeo que no hay errores, si está OK, recupero el producto que hay que eliminiar y lo filtro del array
         if(error.isEmpty()){
-            let productoEliminar = req.params.id;
+        
+            //Actualizo el still_alive para realizar un soft-delete
                 db.Product.update({
                     still_alive:'NO'
                 },{
@@ -156,7 +217,7 @@ let productsController = {
                     }
                 })
                 .then(function(){
-
+                    //Renderizo la vista sin el producto "eliminado"
                     res.redirect('/admin/products/productList')
                 })
 
@@ -172,25 +233,46 @@ let productsController = {
        db.Product.findByPk(req.params.id, 
             {include: [{association: "ProductsImages"}]})
         .then(function(producto){
+            console.log(producto);
+            req.session.producto = producto
             res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
         })
     },
     //Método (asociado al GET de products) para renderizar la vista de los productos de una categoria en particular
     buscarProducto: function(req,res){
-
+        //Busco en la base todos los productos activos que pertenecen a la categoria seleccionada
         db.Product.findAll({
             where:{
                 category:req.params.categoria,
                 still_alive:'YES'
             }
         })
+        //Renderizo la vista enviando los productos que pertenecen a la categroia
         .then(function(productosCategorizados){
 
             res.render( path.join(__dirname, '../views/products/productSearch.ejs'),{productosCategorizados:productosCategorizados})
         })
 
+    },
+    //Método (asociado al GET de products) para buscar en la base los productos ingresados en el buscador
+    buscador: function(req,res){
+        //Recupero lo ingresado en el search
+       productoBuscado=req.query.search
+       //Busco en la base filtrando lo que ingresa el usuario y teniendo en cuenta los productos activos
+        db.Product.findAll({
+            where:{
+                title:{[Op.like]: `%${productoBuscado}%`},
+                [Op.and]:{still_alive:'YES'}
+            }   
+            
+        })
+        //Renderizo la vista enviando los resultados
+        .then(function(resultados){
+            res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados,productoBuscado:productoBuscado})
+        })
     }
-
 }
+
+
 
 module.exports = productsController

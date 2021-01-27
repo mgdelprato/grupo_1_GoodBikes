@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/productSearch.css" type="text/css" media="screen"><!--Estilos-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+    <link rel="manifest" href="/icon/site.webmanifest">
+
+    <title>Goodbikes</title>
+</head>
+<body>
+    <div id='Contenedor'>  
+        
+        <%- include('../partials/header',{busqueda:productoBuscado})%>
+        
+        
+        <div id='Hero_IMG' class='juntitos2'>                
+            <img src="/images/Fondos/Fondo4.PNG" height="40%" width="100%">
+
+        </div>
+        
+            <video id='Video_Home' autoplay="true" loop="true" id="header-video" class="header-video" muted>
+                <source src="/images/Video_Banner.webm" type="video/mp4">
+            </video>
+
+            <p id='Text_Hero'>¡Encuentra tu Goodbike!</p>
+            
+           
+          
+
+            <div id='juntitos2' class='juntitos'>
+                <img src="/images/Destacados.png" height="28px" alt="Oferta1">
+                <p id='Ofertas_text' class="Resaltado">Productos para tu busqueda: <%=productoBuscado%></p>            
+            </div>
+
+            <main>
+                
+                <% for(let i=0; i < resultados.length; i++){ %>
+                <section id=<%= resultados[i].id %>>
+                    <figure ><a href="/products/productDetail/<%=resultados[i].id %>"><img src="/images/products/<%= resultados[i].img_ppal%>"alt="Principal1"></a></figure>
+                    <div>
+                        <p><%= resultados[i].title %></p>
+                        <span class="price"><%= resultados[i].price %></span>
+                        <button type="submit">Comprar</button>
+                    </div>       
+                </section>
+                <% } %> 
+            </main>
+
+ 
+            <div id='juntitos2' class='juntitos2'>                
+                <img src="/images/Fondos/Fondo1.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo2.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo3.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo4.PNG" height="200px" width="200px">
+                <img src="/images/Fondos/Fondo5.PNG" height="200px" width="200px">
+            </div>
+
+            <div>
+               <%- include('../partials/footer')%>
+            </div>
+            
+                
+        </div>
+    </body>
+    </html>
+    
+    
+    
+    
