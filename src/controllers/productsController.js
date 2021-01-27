@@ -23,8 +23,7 @@ let productsController = {
                 })
                 //Renderizo la vista enviando los productos que pertenecen a la categroia
                 .then(function(producto){
-                    console.log(producto);
-                    
+                                        
                     res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto})
                 })
                 
@@ -54,15 +53,11 @@ let productsController = {
                 console.log(req.session.cartSQLOrganized)
 
                 //Renderizar la vista donde estaba parado
-                    let num = req.body.id_producto.toString()
-                    db.Product.findByPk(num, 
-                        {include: [{association: "ProductsImages"}]})
-                    .then(function(producto){
-                        req.session.producto = producto
-                        res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
-                    })
+                   
+                res.redirect('/products/productCart')
+                    
                 
-                },
+    },
 
 
 
