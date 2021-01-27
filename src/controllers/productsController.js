@@ -200,6 +200,7 @@ let productsController = {
        db.Product.findByPk(req.params.id, 
             {include: [{association: "ProductsImages"}]})
         .then(function(producto){
+            console.log(producto);
             req.session.producto = producto
             res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
         })

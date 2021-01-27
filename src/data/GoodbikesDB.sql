@@ -61,7 +61,7 @@ DROP TABLE IF EXISTS `payments_methods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `payments_methods` (
-  `user_id_fk` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `alias` varchar(30) NOT NULL DEFAULT 'My Payment',
   `brand_card` varchar(30) NOT NULL,
   `number_card` varchar(16) NOT NULL,
@@ -72,8 +72,8 @@ CREATE TABLE `payments_methods` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `user_id_fk` (`user_id_fk`),
-  CONSTRAINT `payments_methods_ibfk_1` FOREIGN KEY (`user_id_fk`) REFERENCES `users` (`id`)
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `payments_methods_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

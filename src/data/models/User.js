@@ -46,19 +46,19 @@ module.exports=function(sequelize,dataTypes){
         User.associate = function(models){
             User.hasMany(models.PurchaseDetail,{
                 as:"PurchaseDetails",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
             User.hasMany(models.PurchaseTransaction,{
                 as:"PurchasesTransactions",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
             User.hasMany(models.PaymentMethod,{
-                as:"PaymentsMethods",
-                foreingKey:"user_id_fk"
+                as:"PaymentMethod",
+                foreingKey:"user_id"
             });
             User.hasMany(models.Address,{
                 as:"Addresses",
-                foreingKey:"user_id_fk"
+                foreingKey:"user_id"
             });
 
         }
