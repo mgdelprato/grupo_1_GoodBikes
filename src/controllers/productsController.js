@@ -10,35 +10,67 @@ const Op = Sequelize.Op
 /* CONTROLLER QUE CONTIENE LA LÓGICA DE NEGOCIO RELACIONADA A PRODUCTOS */
 
 let productsController = {
+
+
+
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
+
+            if(req.session.producto == undefined) //Sin productos en el carrito
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
+                     
+
+            else
+                {
+
+
+                console.log(req.session.cartSQLOrganized);       
                 
-                console.log(req.session.cart); //Muestra estado del carrito
-                res.render( path.join(__dirname, '../views/products/productCart.ejs') )
-                },
+
+                db.Product.findAll({
+                    where:{
+                        id: req.session.cartSQLOrganized 
+                    }
+
+                })
+                //Renderizo la vista enviando los productos que pertenecen a la categroia
+                .then(function(producto){
+                    let itemsCart = req.session.cart;                 
+                    res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto,itemsCart: itemsCart})
+                })
+            }//cierra if
+    
+     },
+
+
 
     carritoComprasAdd: function(req, res) {
                 
                 //Suma producto al array de session
                 if (req.session.cart == undefined){
                     req.session.cart = []
-                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
+                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                
+                    req.session.cartSQLOrganized = []
+                    req.session.cartSQLOrganized.push(req.body.id_producto)
+                    }
+                    
                 else 
-                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
+                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                req.session.cartSQLOrganized.push(req.body.id_producto)
+                }
                 
                 
                 console.log(req.session.cart);
+                console.log(req.session.cartSQLOrganized)
 
                 //Renderizar la vista donde estaba parado
-                    let num = req.body.id_producto.toString()
-                    db.Product.findByPk(num, 
-                        {include: [{association: "ProductsImages"}]})
-                    .then(function(producto){
-                        req.session.producto = producto
-                        res.render( path.join(__dirname, '../views/products/productDetail.ejs'),{producto:producto})
-                    })
                 
-                },
+                
+                res.redirect('./productCart')
+                    
+                
+    },
 
 
 
