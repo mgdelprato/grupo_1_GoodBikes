@@ -71,7 +71,8 @@ let productsController = {
     editarProducto: function(req, res) {
 
         //Busco el producto a editar
-        db.Product.findByPk(req.params.id)
+        db.Product.findByPk(req.params.id,
+            {include: [{association: "ProductsImages"}]})
         .then(function(productoEditar){
             console.log("PRODUCTOSSSSSSSSS");
 
