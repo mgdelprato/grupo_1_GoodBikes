@@ -26,65 +26,70 @@
     </div>
     
     <main>
-      <section id="productoUno">
-        <figure>
-            <img src="/images/products/bike1.PNG" alt="Producto carrito">
-        </figure>
-        <div id="resumenProducto">
-          <p class="tituloProducto">
-            Producto
-          </p> 
-          <p class="valorProducto">
-            Bici con 2 ruedas y una playera copada
-          </p>
-        </div>
-        <div id="cantidad">
-          <form action="">
-            <p class="tituloProducto">
-              Cantidad
-            </p>
-            <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-              <option value=4>4</option>
-              <option value=4>5</option>
-              <option value=4>6</option>
-              <option value=4>7</option>
-              <option value=4>8</option>
-              <option value=4>9</option>
-              <option value=4>10</option>
-            </select>
-          </form>
-        </div>
-        <div id="precio">
-          <p class="tituloProducto">
-             Precio
-          </p>
-          <p class="valorProducto">
-            $12345
-          </p>
-          <a href="#"></a>
-        </div>
-        <div id="tacho">
-          <i class="fas fa-trash-alt"></i>
-        </div>
-      </section>
-      
+      <% console.log(producto.length)%>
+      <% for (let i = 0; i< producto.length;i++)
+      {%>
+          
+            <section id="productoUno">
+              <figure>
+                  <img src="/images/products/bike1.PNG" alt="Producto carrito">
+              </figure>
+              <div id="resumenProducto">
+                <p class="tituloProducto">
+                  Producto
+                </p> 
+                <p class="valorProducto">
+                  <%= producto[i].title %> 
+                </p>
+              </div>
+              <div id="cantidad">
+                <form action="">
+                  <p class="tituloProducto">
+                    Cantidad
+                  </p>
+                  <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
+                    <option value=1>1</option>
+                    <option value=2>2</option>
+                    <option value=3>3</option>
+                    <option value=4>4</option>
+                    <option value=4>5</option>
+                    <option value=4>6</option>
+                    <option value=4>7</option>
+                    <option value=4>8</option>
+                    <option value=4>9</option>
+                    <option value=4>10</option>
+                  </select>
+                </form>
+              </div>
+              <div id="precio">
+                <p class="tituloProducto">
+                  Precio
+                </p>
+                <p class="valorProducto">
+                  <%= producto[i].price %> 
+                </p>
+                <a href="#"></a>
+              </div>
+              <div id="tacho">
+                <i class="fas fa-trash-alt"></i>
+              </div>
+            </section>
+  
+    <%}%>
 
-      <section id="total">
-        <div id="precioTotal">
+    <section id="total">
+      <div id="precioTotal">
 
-          <p class="precio">Total</p>
-          <p class="precio">$12345</p>
+        <p class="precio">Total</p>
+        <p class="precio">$12345</p>
 
-        </div>
-        <form action="" id="botonComprarForm"> 
-          <button type="submit" id="comprar">Comprar</button>
-        </form>
-      </section>
+      </div>
+      <form action="" id="botonComprarForm"> 
+        <button type="submit" id="comprar">Comprar</button>
+      </form>
+    </section>
 
-      
+
 
     </main>
 

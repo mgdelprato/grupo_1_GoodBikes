@@ -13,21 +13,45 @@ let productsController = {
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
                 
-                console.log(req.session.cart); //Muestra estado del carrito
-                res.render( path.join(__dirname, '../views/products/productCart.ejs') )
-                },
+                console.log(req.session.cartSQLOrganized);
+
+                db.Product.findAll({
+                    where:{
+                        id: req.session.cartSQLOrganized 
+                    }
+
+                })
+                //Renderizo la vista enviando los productos que pertenecen a la categroia
+                .then(function(producto){
+                    console.log(producto);
+                    
+                    res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto})
+                })
+                
+    
+     },
+
+
 
     carritoComprasAdd: function(req, res) {
                 
                 //Suma producto al array de session
                 if (req.session.cart == undefined){
                     req.session.cart = []
-                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
+                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                
+                    req.session.cartSQLOrganized = []
+                    req.session.cartSQLOrganized.push(req.body.id_producto)
+                    }
+                    
                 else 
-                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})}
+                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                req.session.cartSQLOrganized.push(req.body.id_producto)
+                }
                 
                 
                 console.log(req.session.cart);
+                console.log(req.session.cartSQLOrganized)
 
                 //Renderizar la vista donde estaba parado
                     let num = req.body.id_producto.toString()
