@@ -39,7 +39,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     /*MAIN*/
 
 
-    #Presentacion{padding-left: 6vw;display:flex; flex-direction: row;justify-content: flex-start;align-items: center;margin: 3%;}
+    #Presentacion{display:flex; flex-direction: row;justify-content: center;align-items: center;margin: 3%;}
     #Titulo_Tienda{font-family: 'Anton', sans-serif; font-size: 2.2em;letter-spacing: 0.1em;}
     #img_tit{width:8%; height:auto}
 
@@ -54,43 +54,46 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     }
 
         main section{
-            width: 80%;
-            height: 150px;
+            width: 70vw;
+            height: 20vh;
             border-style: solid;
             border-width: 1px;
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: #ebebeb;
             border: solid 2px #3E3D40;
-            /* margin-left: 2%;
-            margin-right: 2%; */
+            margin: 1vh;
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
+            justify-content: space-around;
             align-items: center;
-
-
         }
 
-            main section div {
-                margin: 3vh;
+                main section img{
+                    height: 15vh;
+                    width: 15vh;
+                    border-width: 0px;
+                    border-radius: 10px;
+                }
 
-            }
+                main section div {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    height: 18vh;
+                    width: 18vh;
+                } 
 
+                    main section div form {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                    } 
 
-            main section img{
-                height: auto;
-                width: 15vw;
-                margin: 5%;
-                border-width: 0px;
-                border-radius: 10px;
-
-            }
-
-            /* main section img:hover{
-                border-style: solid;
-                border-color: #5697fa;
-                border-width: 2px;
-            } */
+                    main section div p {
+                        text-align: center;
+                    } 
 
 
             main section ul{
