@@ -73,10 +73,22 @@ SPRINT 5
 ## "Daily 4"
 - Prueba de Admin ok
 - Cierre del sprint 5
-- Revisión de datos en JSON apuntando al modelo de BD.
+- Revisión de datos en JSON apuntando al modelo de BD
 
 SPRINT 6
 ## "Daily 1"
 - Revisión de enunciado de Sprint
 - Ingresar tareas al tablero
-- Asignar nuevas tareas y Correcciones del sprint 5 y 6.
+- Asignar nuevas tareas y Correcciones del sprint 5 y 6
+
+## "Daily 2"
+- Revisión de avances en tareas asignadas
+- Análisis del ProductCart
+- Modificación de asignaciones de tareas
+
+## "Daily 3"
+- Revisión de avances
+- Analisis y modificaciones en el tratado de imagenes en DB
+- Resolución de issues
+- Cierre de sprint
+

@@ -110,8 +110,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                     
                     main div:nth-last-child(2) input{
                         height: 20px; 
-                        border-style: solid;
-                        border-color: rgb(212, 92, 13);
+                        border-style: none;
+                        /* border-color: rgb(212, 92, 13); */
                     }
     
                     
@@ -136,7 +136,18 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                             align-items: center;
                             position: relative;
                         }                               /*Contenedor de los botones de abajo*/
-                    
+                    #ContenedorElementosDeAbajo1{
+                        display: flex;
+                        flex-flow: wrap;
+                        flex-direction: row;
+                        width: 80%;
+                        height: 50vh;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    }
+
+
                     #tituloImagenes{
                         position: absolute;
                         top: 1px;
@@ -198,15 +209,29 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
     
                             main div:nth-child(3) #tacho{
                             border: none;
-                            align-self: center;
-                            padding: 1px 0% 0% 1%;                       
+                           
                             } /*Contenedor del tacho*/
     
                              main div:nth-child(3) button i{
                                 font-size: 25px;
                                 color: red;/*Tacho*/                           
 
-                            } 
+                            }
+                            main form div div img#imagenMini{
+                                background-color: rgb(19, 79, 107);
+                                width: 12%;
+                            }
+                            
+                            main form div div#containerMini {
+                                /* background-color: rgb(156, 188, 202); */
+                                width: 100%;
+                                height: inherit;
+                                display: flex;
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                align-items: center;
+                            }
+                            
     
                             #divDescripcion{
                                 width: 50%;
@@ -447,8 +472,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
 
                 #tacho{
                 border: none;
-                align-self: center;
-                padding: 1% 0% 1% 0%;
+                align-self: flex-start;
+                
                 
                 }
 

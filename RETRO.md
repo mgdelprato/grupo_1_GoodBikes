@@ -81,4 +81,31 @@
 
 - Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
+
+
+##RETRO Sprint 6
+
+- Comenzar a hacer
+   Profundizar conceptos de Merge y pull request 
+   ordenar el código
+   smoke test del sitio
+
+- Hacer más
+   Actualizacion de tarjetas trello 
+   Mejor uso de buenas prácticas y nomenclatura de VARIABLES, TABLAS, ID'S, CAMPOS, manejo de   Pluralidad y Camel Case
+   Pedir ayuda ante las trabas
+
+
+- Continuar haciendo
+   Reuniones de equipo para coordinar avances y destrabar issues
+   Seguimiento de features
+   Volcado de teoría en el proyecto integrador de manera práctica
+
+- Hacer menos
+   Cambios de definición sobre la marcha o cambios en los diseños
+   Atrasos en la teoría
+   Manejo de tiempos y estimaciones mas precisas
+
+- Dejar de hacer
+   Obstinación indivudual en resolución de issues
     

@@ -52,9 +52,16 @@
                     <h4 id="tituloImagenes">Imagenes</h4>
                     <input type="file" multiple name="files[]" name="archivo" value="<%= productoEditar.Imagen%>">
                     <button type="submit">Adjuntar</button>
-                    <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
                     <button type="submit" id="guardar">Guardar</button>
                 </div>
+                <form action="">
+                    <div id="containerMini">
+                        <% for(let i=0; i < productoEditar.ProductsImages.length; i++){ %>
+                            <img id="imagenMini"src="/images/products/<%= productoEditar.ProductsImages[i].image_name %>" alt="Principal1">
+                            <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
+                        <% } %>                            
+                    </div>
+                </form>
             </div>
             </form>
         </main>
