@@ -80,7 +80,7 @@ let usersController ={
                         }
 
                 }
-            })          
+            })         
                              
         }else{//Si hay errores de carga, se renderiza el login compartiendo los errores
            return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
