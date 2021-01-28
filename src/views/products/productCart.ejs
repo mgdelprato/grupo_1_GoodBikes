@@ -44,24 +44,18 @@
                   
                   <div id="resumenProducto">
                     <p class="tituloProducto"> Producto</p> 
-                    <p class="valorProducto"> <%= producto[i].title %> 
-                      <% console.log("el id de la BD " + producto[i].id) %>
-                      <% console.log(itemsCart) %>
-                       %></p>
-                  </div>
+                        
+                    <p class="valorProducto"> <%= producto[i].title %> </p> 
+                      
 
-  
-
-
-
-
-
-
+                  
+           </div>
 
                   <div id="cantidad">
                     <form action="">
                       <p class="tituloProducto">Cantidad</p>
                       <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
+                        
                         <option value=1>1</option>
                         <option value=2>2</option>
                         <option value=3>3</option>
@@ -82,7 +76,7 @@
                   </div>
                   
                   <figure id="tacho">
-                    <i class="fas fa-trash-alt"></i>
+                    <a href="../products/productCartRemove/<%= producto[i].id %>"><i class="fas fa-trash-alt"></i></a>
                   </figure>
 
               </section>
