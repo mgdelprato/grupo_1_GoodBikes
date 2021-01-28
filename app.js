@@ -39,14 +39,6 @@ app.use('/users', usersRouter);
 /* PRODUCTS */
 app.use('/products',productsRouter);
 
-/* CARRITO */
-app.get('/products/productCart',productsController.carritoCompras);
-app.get('/products/productCartAdd',productsController.carritoComprasAdd);
-app.post('/products/productCartAdd',productsController.carritoComprasAdd);
-app.get('/products/productCartRemove',productsController.carritoComprasRemove);
-app.get('/products/productCartRemove/:id',productsController.carritoComprasRemove);
-
-
 /* ADMIN */
 app.use('/admin',adminRouter);
 
