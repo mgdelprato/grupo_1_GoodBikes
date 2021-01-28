@@ -6,11 +6,11 @@ module.exports=function(sequelize,dataTypes){
             primaryKey:true,
             autoIncrement:true,
         },
-        users_id:{
+        user_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },
-        purchase_transaction_id_fk:{
+        purchase_transaction_id:{
             type:dataTypes.INTEGER,
             notNull:true
         },

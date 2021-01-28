@@ -80,7 +80,7 @@ let usersController ={
                         }
 
                 }
-            })            
+            })          
                              
         }else{//Si hay errores de carga, se renderiza el login compartiendo los errores
            return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
@@ -89,6 +89,7 @@ let usersController ={
     } ,
 //Método (asociado al GET) para obtener los datos y renderizar la vista de profile de un usuario
     perfil: 
+                
                 function(req, res) {
                 //Si no esta logueado
                     console.log(req.session);
@@ -98,37 +99,18 @@ let usersController ={
                     }
                 else
                     { //Log exitoso
-
-                        db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"}]})
+               
+                        db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}]})
                         .then(function(BuscaUser){
-                            console.log(BuscaUser.Addresses[0].street);
-                            
+                    
+                            for(let i=0; i<BuscaUser.PurchaseDetails.length;i++){
 
-             
-                            // db.Address.findOne({
-                            //     where:{
-                            //         user_id:BuscaUser.id
-                            //     }
-                            // })
-                            // .then(function(direccion){
-                            //     console.log(direccion);
-                            //     db.PaymentMethod.findOne({
-                            //         where:{
-                            //             user_id:BuscaUser.id
-                            //         }
-                            //     })
-                            //     .then(function(metodoPago){
-                            //         console.log(metodoPago);
-                            //     })
-                            // })
-                            
-                                
-                            //Prepara variables locals para la vista profile
-                                // res.locals.profileName = BuscaUser.first_name
-                                // res.locals.profileLastName = BuscaUser.last_name
-                                // res.locals.profileEmail = BuscaUser.email
-                                // res.locals.profileAvatar = BuscaUser.avatar
-                                
+                                db.Product.findAll({where:{id:BuscaUser.PurchaseDetails[i].product_id}})
+                                .then(function(productos){
+                                    console.log(productos);
+                            })
+      
+                            }
                                 res.render( path.join(__dirname, '../views/users/profile.ejs'),{BuscaUser:BuscaUser})
                         })
                         

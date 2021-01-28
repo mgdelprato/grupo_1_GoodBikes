@@ -202,7 +202,7 @@ DROP TABLE IF EXISTS `purchases_transactions`;
 CREATE TABLE `purchases_transactions` (
   `user_id` int(11) NOT NULL,
   `payment_method_id` int(11) NOT NULL,
-  `trasaction_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `transaction_date` timestamp NOT NULL DEFAULT current_timestamp(),
   `transaction_amount` decimal(10,2) NOT NULL,
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `still_alive` varchar(3) NOT NULL DEFAULT 'YES',
