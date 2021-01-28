@@ -45,7 +45,13 @@
                     <div>
                         <p><%= resultados[i].title %></p>
                         <span class="price"><%= resultados[i].price %></span>
-                        <button type="submit">Comprar</button>
+
+                        <form action="/products/productCartAdd" method="POST" id="form1"></form>
+                        <button type="submit" name="id_producto" form="form1" value='<%= resultados[i].id %>'>Agregar</button>
+                        
+
+
+
                     </div>       
                 </section>
                 <% } %> 

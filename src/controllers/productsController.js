@@ -16,7 +16,7 @@ let productsController = {
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {
 
-            if(req.session.producto == undefined) //Sin productos en el carrito
+            if(req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized.length === 0) //Sin productos en el carrito
                      {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
                      
 
@@ -24,7 +24,7 @@ let productsController = {
                 {
 
 
-                console.log(req.session.cartSQLOrganized);       
+                console.log('Paso por el carrito no estoy undefined ni [] numero ' + req.session.cartSQLOrganized);       
                 
 
                 db.Product.findAll({
@@ -35,43 +35,59 @@ let productsController = {
                 })
                 //Renderizo la vista enviando los productos que pertenecen a la categroia
                 .then(function(producto){
-                    let itemsCart = req.session.cart;                 
+                    let itemsCart = req.session.cartSQLOrganized ;                 
                     res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto,itemsCart: itemsCart})
                 })
             }//cierra if
     
      },
 
-
-
-    carritoComprasAdd: function(req, res) {
-                
-                //Suma producto al array de session
-                if (req.session.cart == undefined){
-                    req.session.cart = []
-                    req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+    carritoComprasAdd: function(req,res) {//Suma producto al array de session
+                if (req.session.cartSQLOrganized == undefined){
+                    
                 
                     req.session.cartSQLOrganized = []
                     req.session.cartSQLOrganized.push(req.body.id_producto)
                     }
                     
                 else 
-                {req.session.cart.push({'id': req.body.id_producto, 'cantidad': req.body.Q})
+                {
                 req.session.cartSQLOrganized.push(req.body.id_producto)
                 }
-                
-                
-                console.log(req.session.cart);
+                  
                 console.log(req.session.cartSQLOrganized)
 
                 //Renderizar la vista donde estaba parado
-                
-                
                 res.redirect('./productCart')
-                    
-                
     },
 
+    carritoComprasRemove: function(req, res) {
+        //Suma producto al array de session
+        if (req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized == []){
+  
+            }
+            
+        else {
+           
+        
+        let indice = req.session.cartSQLOrganized.indexOf(req.params.id)
+        req.session.cartSQLOrganized.splice(indice, 1);
+
+        
+
+        }          
+      
+        
+        
+        console.log('Pase por el remove y soy lo que quedo del cartSQL nro' + req.session.cartSQLOrganized)
+         
+
+        
+        
+        //Renderizar la vista donde estaba parado
+                 
+        res.redirect('/products/productCart')
+},
 
 
 
