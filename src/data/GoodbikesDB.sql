@@ -1,6 +1,4 @@
-CREATE DATABASE  IF NOT EXISTS `goodbikesdb` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `goodbikesdb`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
+-- MySQL dump 10.13  Distrib 8.0.22, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: goodbikesdb
 -- ------------------------------------------------------
@@ -9,7 +7,7 @@ USE `goodbikesdb`;
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!50503 SET NAMES utf8 */;
 /*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
 /*!40103 SET TIME_ZONE='+00:00' */;
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
@@ -23,7 +21,7 @@ USE `goodbikesdb`;
 
 DROP TABLE IF EXISTS `addresses`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `addresses` (
   `user_id` int(11) NOT NULL,
   `street` varchar(50) DEFAULT NULL,
@@ -40,7 +38,7 @@ CREATE TABLE `addresses` (
   PRIMARY KEY (`id`),
   KEY `addresses_ibfk_1` (`user_id`),
   CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +47,7 @@ CREATE TABLE `addresses` (
 
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
-INSERT INTO `addresses` VALUES (1,'Calle Falsa','123','Unknwown','Springfield',NULL,NULL,'YES',1,'2021-01-20 02:50:59',NULL,NULL),(2,'Waverley St','2510','California','Palo Alto','2 E','94301','YES',2,'2021-01-20 02:50:59',NULL,NULL),(3,'Rivadavia','11000','CABA','Liniers','8 A','1408','YES',3,'2021-01-20 02:50:59',NULL,NULL),(4,'Arieta','2947','Pcia Bs As','San Justo',NULL,'1754','YES',4,'2021-01-20 02:50:59',NULL,NULL),(5,'Balcarce','60','CABA','San Nicol├ís','PB','4178','YES',5,'2021-01-20 02:50:59',NULL,NULL),(6,'Carabobo','3250','CABA','Flores','4 A','1406','YES',6,'2021-01-20 02:50:59',NULL,NULL),(7,'Bme Mitre','434','CABA','San Nicol├ís','PB','4178','YES',7,'2021-01-20 02:50:59',NULL,NULL),(8,'Juan B Justo','1320','CABA','Palermo',NULL,'1414','YES',8,'2021-01-20 02:50:59',NULL,NULL);
+INSERT INTO `addresses` VALUES (1,'Calle Falsa','123','Unknwown','Springfield',NULL,NULL,'YES',1,'2021-01-20 02:50:59',NULL,NULL),(2,'Waverley St','2510','California','Palo Alto','2 E','94301','YES',2,'2021-01-20 02:50:59',NULL,NULL),(3,'Rivadavia','11000','CABA','Liniers','8 A','1408','YES',3,'2021-01-20 02:50:59',NULL,NULL),(4,'Arieta','2947','Pcia Bs As','San Justo',NULL,'1754','YES',4,'2021-01-20 02:50:59',NULL,NULL),(5,'Balcarce','60','CABA','San Nicol├ís','PB','4178','YES',5,'2021-01-20 02:50:59',NULL,NULL),(6,'Carabobo','3250','CABA','Flores','4 A','1406','YES',6,'2021-01-20 02:50:59',NULL,NULL),(7,'Bme Mitre','434','CABA','San Nicol├ís','PB','4178','YES',7,'2021-01-20 02:50:59',NULL,NULL),(8,'Juan B Justo','1320','CABA','Palermo',NULL,'1414','YES',8,'2021-01-20 02:50:59',NULL,NULL),(11,'Cesar diaz','3622','CABA','Villa del parque','6','1407','YES',11,'2021-01-28 12:10:00',NULL,NULL);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -59,7 +57,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `payments_methods`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payments_methods` (
   `user_id` int(11) NOT NULL,
   `alias` varchar(30) NOT NULL DEFAULT 'My Payment',
@@ -74,7 +72,7 @@ CREATE TABLE `payments_methods` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   CONSTRAINT `payments_methods_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -83,7 +81,7 @@ CREATE TABLE `payments_methods` (
 
 LOCK TABLES `payments_methods` WRITE;
 /*!40000 ALTER TABLE `payments_methods` DISABLE KEYS */;
-INSERT INTO `payments_methods` VALUES (1,'La del Galicia','VISA','5555111122223333','Banco Galicia',1,'YES','2021-01-20 02:50:59',NULL,NULL),(2,'Guita del exterior','AMEX','3333111122223334','BanK of America',2,'YES','2021-01-20 02:50:59',NULL,NULL),(3,'Tarjeta','Mastercard','4444111122223335','Shangai Bank',3,'YES','2021-01-20 02:50:59',NULL,NULL),(4,'Adicional de la nona','Mastercard','5555111122223336','Banco Columbia',4,'YES','2021-01-20 02:50:59',NULL,NULL),(5,'Santander','VISA','5555111122223337','Banco Santander R├¡o',5,'YES','2021-01-20 02:50:59',NULL,NULL),(6,'Tarjeta Oriental','VISA','5555111122223338','Banco Nacional del Uruguay',6,'YES','2021-01-20 02:50:59',NULL,NULL),(7,'Adicional del nono','Mastercard','5555111122223339','Banca Nazionale del Lavoro',7,'YES','2021-01-20 02:50:59',NULL,NULL),(8,'Guita en Emiratos','AMEX','5555111122223310','Emirates NBD',8,'YES','2021-01-20 02:50:59',NULL,NULL);
+INSERT INTO `payments_methods` VALUES (1,'La del Galicia','VISA','5555111122223333','Banco Galicia',1,'YES','2021-01-20 02:50:59',NULL,NULL),(2,'Guita del exterior','AMEX','3333111122223334','BanK of America',2,'YES','2021-01-20 02:50:59',NULL,NULL),(3,'Tarjeta','Mastercard','4444111122223335','Shangai Bank',3,'YES','2021-01-20 02:50:59',NULL,NULL),(4,'Adicional de la nona','Mastercard','5555111122223336','Banco Columbia',4,'YES','2021-01-20 02:50:59',NULL,NULL),(5,'Santander','VISA','5555111122223337','Banco Santander R├¡o',5,'YES','2021-01-20 02:50:59',NULL,NULL),(6,'Tarjeta Oriental','VISA','5555111122223338','Banco Nacional del Uruguay',6,'YES','2021-01-20 02:50:59',NULL,NULL),(7,'Adicional del nono','Mastercard','5555111122223339','Banca Nazionale del Lavoro',7,'YES','2021-01-20 02:50:59',NULL,NULL),(8,'Guita en Emiratos','AMEX','5555111122223310','Emirates NBD',8,'YES','2021-01-20 02:50:59',NULL,NULL),(11,'Tarjeta de santander','VISA','1234567891234567','Santander',9,'YES','2021-01-28 12:10:10',NULL,NULL);
 /*!40000 ALTER TABLE `payments_methods` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -93,7 +91,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(12) NOT NULL,
@@ -131,7 +129,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `products_images`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products_images` (
   `product_id` int(11) NOT NULL,
   `image_name` varchar(255) NOT NULL,
@@ -161,7 +159,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `purchases_details`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `purchases_details` (
   `user_id` int(11) NOT NULL,
   `purchase_transaction_id` int(11) NOT NULL,
@@ -179,7 +177,7 @@ CREATE TABLE `purchases_details` (
   CONSTRAINT `purchases_details_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `purchases_details_ibfk_2` FOREIGN KEY (`purchase_transaction_id`) REFERENCES `purchases_transactions` (`id`),
   CONSTRAINT `purchases_details_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -188,7 +186,7 @@ CREATE TABLE `purchases_details` (
 
 LOCK TABLES `purchases_details` WRITE;
 /*!40000 ALTER TABLE `purchases_details` DISABLE KEYS */;
-INSERT INTO `purchases_details` VALUES (1,1,25,1,'YES',5,'2021-01-20 02:50:59',NULL,NULL),(1,1,2,2,'YES',3,'2021-01-20 02:50:59',NULL,NULL),(1,1,3,3,'YES',2,'2021-01-20 02:50:59',NULL,NULL),(2,2,7,4,'YES',4,'2021-01-20 02:50:59',NULL,NULL),(2,2,10,5,'YES',5,'2021-01-20 02:50:59',NULL,NULL),(3,3,15,6,'YES',3,'2021-01-20 02:50:59',NULL,NULL),(3,3,22,7,'YES',1,'2021-01-20 02:50:59',NULL,NULL);
+INSERT INTO `purchases_details` VALUES (1,1,25,1,'YES',5,'2021-01-20 02:50:59',NULL,NULL),(1,1,2,2,'YES',3,'2021-01-20 02:50:59',NULL,NULL),(1,1,3,3,'YES',2,'2021-01-20 02:50:59',NULL,NULL),(2,2,7,4,'YES',4,'2021-01-20 02:50:59',NULL,NULL),(2,2,10,5,'YES',5,'2021-01-20 02:50:59',NULL,NULL),(3,3,15,6,'YES',3,'2021-01-20 02:50:59',NULL,NULL),(3,3,22,7,'YES',1,'2021-01-20 02:50:59',NULL,NULL),(11,4,22,8,'YES',2,'2021-01-28 12:10:00',NULL,NULL);
 /*!40000 ALTER TABLE `purchases_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -198,7 +196,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `purchases_transactions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `purchases_transactions` (
   `user_id` int(11) NOT NULL,
   `payment_method_id` int(11) NOT NULL,
@@ -214,7 +212,7 @@ CREATE TABLE `purchases_transactions` (
   KEY `purchases_transactions_ibfk_2` (`payment_method_id`),
   CONSTRAINT `purchases_transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `purchases_transactions_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payments_methods` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -223,7 +221,7 @@ CREATE TABLE `purchases_transactions` (
 
 LOCK TABLES `purchases_transactions` WRITE;
 /*!40000 ALTER TABLE `purchases_transactions` DISABLE KEYS */;
-INSERT INTO `purchases_transactions` VALUES (1,1,'2021-01-20 02:50:59',70000.00,1,'YES','2021-01-20 02:50:59',NULL,NULL),(2,2,'2021-01-20 02:50:59',50000.00,2,'YES','2021-01-20 02:50:59',NULL,NULL),(3,3,'2021-01-20 02:50:59',10000.00,3,'YES','2021-01-20 02:50:59',NULL,NULL);
+INSERT INTO `purchases_transactions` VALUES (1,1,'2021-01-20 02:50:59',70000.00,1,'YES','2021-01-20 02:50:59',NULL,NULL),(2,2,'2021-01-20 02:50:59',50000.00,2,'YES','2021-01-20 02:50:59',NULL,NULL),(3,3,'2021-01-20 02:50:59',10000.00,3,'YES','2021-01-20 02:50:59',NULL,NULL),(11,9,'2021-01-28 12:10:00',10000.00,4,'YES','2021-01-28 12:10:00',NULL,NULL);
 /*!40000 ALTER TABLE `purchases_transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -233,7 +231,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
@@ -259,14 +257,6 @@ LOCK TABLES `users` WRITE;
 INSERT INTO `users` VALUES (1,'Damian','Scorciapino','damian_scorciapino@hotmail.com','$2a$12$5N9JbjbPqvXgCNBBGMHX7u0t9xfTSb6dGlq06cROTRLzZl1nAK382','damian_scorciapino@hotmail.com-1607660650203.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(2,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$gDot0wBdigX/ut4BXfwmd.GkELgsHp.aMrN8ARdEvaSLmYHFkMDUG','mgdelprato@gmail.com-1607660700823.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(3,'Nahuel','Rodriguez','nahuargentina@gmail.com','$2a$12$sE8RnyYXl/NMGue1xIal0.CkIiPjrw/FCg/JZK7FuvZWjkhHw9QtG','nahuargentina@gmail.com-1608501759446.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(4,'Juan Nahuel','Rodriguez Araujo','ecologista_chess@yahoo.com.ar','$2a$12$RHEqXVGD3EDedqB2MCZyvuvNcey.HvunQrUpcU7nH4g72kCJdg4Cy','ecologista_chess@yahoo.com.ar-1608535183320.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL),(5,'Cosme','Fulanito','cuentaunlam@gmail.com','$2a$12$5Stu2N2HWAIdyqWYS8dPwev6Qwn6/MNSdaqNPrkXWotxJj1Rqgq2O','cuentaunlam@gmail.com-1608698397934.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(6,'Gordo','Motoneta','gordo@gmail.com','$2a$12$OAOZuAHoed3qL44HFJgDXOpwm0leBlO6rCHPJZ/ibFlfn0hROL8hC','gordo@gmail.com-1608756791191.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(7,'El','Barto','barto@gmail.com','$2a$12$Xgw07u97qmaTHMGk5AJydempExrrYw6a632J0i9Gwtz1TdUjtXJeG','barto@gmail.com-1608776726469.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(8,'Felipe','Pino','topo@mail.com','$2a$12$CwauqL003OY/vbMj33pr0..QDo75pffFa7WPUQGPTdC9uX7Q1IFmu','topo@mail.com-1608782890921.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(9,'Oli','Delprato','oli@gmail.com','$2a$12$UP8hzuf3cbmWDP4Ei.z9/e9znyD2wGE666cE1QnH.heHqntI5tLSa','oli@gmail.com-1608809802868.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(10,'Flor','gomez','flor@gmail.com','$2a$12$wKUxnP/g/RV/0CqnStfAKu0i.0SRkFWxJ6.Vr7XgUHw3CFwW/amue','flor@gmail.com-1608810847256.JPG','YES','NO','2021-01-20 02:50:59',NULL,NULL),(11,'Admin','Superusuario','admin@gmail.com','$2a$12$UKMTgyNBwMBgKxw22XcFD.PhlGt12PUssqULTkPG0AjtDYIRV4HR2','admin@gmail.com-1608953906619.JPG','YES','YES','2021-01-20 02:50:59',NULL,NULL),(12,'Mauro','Delprato','mgdelprato@gmail.com','$2a$12$jOwCYeAdNxFr0HIHN0K91eDs8/rlS7xxRiXmqAAa78i4XMguf2lgq','mgdelprato@gmail.com-1609266037402.jpg','YES','NO','2021-01-20 02:50:59',NULL,NULL),(13,'Pepe','Cosa','pepe@mail.io','$2a$12$Ey3USL64dz8AbX7AA/t9xeOy1R5P.qz5WPsW6tzmQzA.vYvvk3rbe','pepe@mail.io-1611605025206.jpg','NO','NO','2021-01-25 20:03:46','2021-01-25 20:03:46',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Dumping events for database 'goodbikesdb'
---
-
---
--- Dumping routines for database 'goodbikesdb'
---
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -277,4 +267,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-01-25 23:46:33
+-- Dump completed on 2021-01-28 19:41:23
