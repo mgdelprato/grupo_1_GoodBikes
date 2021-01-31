@@ -37,6 +37,7 @@
             <small class="errores">
               <%=(locals.errors && errors.email) ? errors.email.msg : "" %> 
             </small>
+              <small class="errores"><%=(locals.mensaje) ? mensaje : ""%></small>
             <!-- <input type="text" name="dni" id="dni" placeholder="DNI"> -->
             <input type="password" name="password" id="password" placeholder="Password" value="<%=(typeof old != 'undefined' && !errors.password) ? old.password : '' %>">
             <small class="errores">
@@ -45,6 +46,7 @@
             <input type="password" name="repassword" id="repassword" placeholder="Repetir Password">
             <label id="labelAvatar" for="">Imagen de perfil</label>
             <input id="avatar" type="file" name="avatar">
+            <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
             <button type="submit">Crear cuenta</button>
           </div>
        </form>
