@@ -14,9 +14,11 @@ var storage = multer.diskStorage({
       cb(null, path.join(__dirname, '../../public/images/users/avatars'));
     },
     filename: function (req, file, cb) {
-        console.log()
+      
         cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname))
+      req.body.fileExtension = path.extname(file.originalname).toLowerCase()
     }
+    
 })
    
 var upload = multer({ storage: storage })
