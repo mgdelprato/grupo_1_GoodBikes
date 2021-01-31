@@ -106,7 +106,7 @@ let usersController ={
 
     },
     //Método (asociado al POST) que se encarga de guardar los datos cuando se registra un nuevo usuario
-    save: function(req, res,next) {
+    save: function(req, res, next) {
         let errors = validationResult(req);
         //Si no hay errores, recupero los datos ingresados del usuario y los guardo, luego renderizo su profile
         if(errors.isEmpty()){
