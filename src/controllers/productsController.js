@@ -102,10 +102,10 @@ let productsController = {
     },
     //Metodo (asociado al POST en el admin) para crear un nuevo producto
     grabarProducto: function(req, res) {
-        let error  = validationResult(req);
+        let errors = validationResult(req);
 
         //Chequeo si no hay errores, si está OK creo un nuevo producto y lo pusheo al array de productos
-        if(error.isEmpty()){
+        if(errors.isEmpty()){
             //Inserto un nuevo producto en la base con la info enviada en el req
             db.Product.create({
                 category: req.body.categoria,
@@ -134,8 +134,7 @@ let productsController = {
             })
         }else{
             // Si hay errores, los mapeo y muestro la la vista de creación con los errores
-            return res.render(path.join(__dirname,'../views/products/productCreate'), {
-                errors: errors.mapped()
+            return res.render(path.join(__dirname,'../views/products/productCreate'),{errors: errors.mapped()
             })
         }
     },
@@ -155,10 +154,10 @@ let productsController = {
     },
     // Método (asociado al PUT del admin) para guardar la edición realizada sobre un producto
     actualizarProducto: function(req,res){
-        let error  = validationResult(req);
+        let errors  = validationResult(req);
 
         //Si no hay errores guardo los valores del producto editado, y renderizo la vista de listado de productos
-        if(error.isEmpty()){
+        if(errors.isEmpty()){
             //Actualizo en la base todos los campos segun lo enviado en el request
             db.Product.update({
                 category: req.body.categoria,
@@ -220,9 +219,9 @@ let productsController = {
    //Método (asociado al DELETE) para borrar un producto en particular
     borrarProducto: function(req, res) {
 
-        let error  = validationResult(req);
+        let errors  = validationResult(req);
        //Chequeo que no hay errores, si está OK, recupero el producto que hay que eliminiar y lo filtro del array
-        if(error.isEmpty()){
+        if(errors.isEmpty()){
         
             //Actualizo el still_alive para realizar un soft-delete
                 db.Product.update({

@@ -220,6 +220,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                         margin-left: 20px;
                         
                         }
+                        .errores{
+                            color: red;
+                        }
 
        
 
@@ -464,6 +467,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 margin-left: 20px;
                 
                 }
+
+                .errores{
+                    color: red;
+                }
+
 
 
 

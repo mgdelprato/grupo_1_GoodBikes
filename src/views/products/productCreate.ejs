@@ -34,6 +34,7 @@
                     </select>
                     <h4 >Producto</h4>
                     <input type="text" class="valores" name="producto">
+                    <small class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                     <h4>Precio</h4>
                     <input type="text" class="valores" id="precio" name="precio" maxlength="10" required autocomplete="off"/>
                     <h4>Cantidad</h4>
@@ -46,9 +47,10 @@
                         
                         <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
                         <textarea placeholder="Detalle" name="detalle" id="" cols="30" rows="9" class="descripcion"></textarea>
-
                     </div>
+                    <small class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
                     <h4 class="valores  ">Imagenes</h4>
+                    <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                 </div>
                 <div class="divCarga">
                     <div class ="zonaInferior" enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
