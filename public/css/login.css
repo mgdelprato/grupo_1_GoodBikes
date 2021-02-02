@@ -132,6 +132,9 @@
                     border: none;
                 }
 
+                div.errores ul{
+                    color: red;
+                }
                 
 
 
@@ -162,7 +165,7 @@
        position: absolute;
             top: 0px; 
             left: 0px;}
-    }
+    
 
     nav ul li{text-align: left;margin-left: 0px;}
 
@@ -224,9 +227,11 @@
         }
         
         .principal a{margin-top: 2vh;align-self: center;}
-        
-       
-
+                       
+        #Ultimo{margin-bottom: 2vh;}
                 
-                #Ultimo{margin-bottom: 2vh;}
+        div.errores ul{
+         color: red;
+        }
+                
 }

@@ -22,7 +22,7 @@
 
         <div class="contenedor_del_Main"> 
             <main>
-                <form action="/users/login" method="POST">                   
+                <form action="/users/login" method="POST" class="login">                   
                     <div class="principal">
                         <h1>Logueate en GoodBikes</h1>
 
@@ -31,19 +31,22 @@
                             <%= mensaje %> </small>
                             <% } %> 
 
-                        <input class="campos" type="email" placeholder="Email" name="email">
+                        <input class="campos" type="email" placeholder="Email" name="email" id="email">
                     
                         <%  if(locals.errors && errors.email){ %>
                             <small style="color: red;">
                             <%= errors.email.msg %> </small>
                             <% } %> 
 
-                        <input class="campos" type="password" placeholder="Password" name="password">                   
+                        <input class="campos" type="password" placeholder="Password" name="password" id="password">                   
 
                         <%  if(locals.errors && errors.password){ %>
                             <small style="color: red;">
                             <%= errors.password.msg %> </small>
                             <% } %> 
+                            <div class="errores">
+                                <ul></ul>
+                            </div>
 
                         <button type="submit">Ingresar</button>
                         <a href="#">¿Olvidaste tu password?</a>
@@ -54,6 +57,6 @@
         </div>
         <%- include('../partials/footer')%>
     </div>    
-
+    <script src="/js/loginValidator.js"></script>
 </body>
 </html>
