@@ -132,8 +132,10 @@
                     border: none;
                 }
 
-                div.errores ul{
+                .errores ul li{
                     color: red;
+                    list-style: none;
+
                 }
                 
 
