@@ -4,14 +4,9 @@ const db = require('../data/models');
 const { Sequelize } = require('../data/models');
 const Op = Sequelize.Op
 
-
-
-
 /* CONTROLLER QUE CONTIENE LA LÓGICA DE NEGOCIO RELACIONADA A PRODUCTOS */
 
 let productsController = {
-
-
 
     //Metodo (asociado al GET de products)  para renderizar el carrito de compras
     carritoCompras: function(req, res) {

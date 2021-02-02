@@ -36,7 +36,7 @@
                 <input type="text" class="valores" name="producto" value="<%= productoEditar.title%>">
                 <small class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                 <h4>Precio</h4>
-                <input type="text" class="valores" name="precio" value="<%= productoEditar.price%>">
+                <input type="text" class="valores" name="precio" value="$ <%= productoEditar.price%>">
                 <h4>Descripción</h4>
                 <!-- <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea> -->
                 <div name="descripcionD" id="divDescripcion">

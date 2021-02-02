@@ -16,7 +16,7 @@ module.exports={
                 if(bandera != undefined){
                     return true
                 }
-            }).withMessage('Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF')
+            }).withMessage('Por favor ingresar imagenes con extension JPG, JPEG, PNG O GIF')
     ]
 
 }
