@@ -173,6 +173,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     .datos input{
         border: none;
     }
+    .errores ul li{
+        color: red;
+        list-style: none;
+
+    }
 
 
 }
@@ -292,6 +297,11 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             .errores{
                 color: red;
                 margin-left: 2%;
+            }
+            .errores ul li{
+                color: red;
+                list-style: none;
+
             }
 
             #avatar::-webkit-file-upload-button:hover{background-color: #882345;}

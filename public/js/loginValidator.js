@@ -1,7 +1,6 @@
 window.addEventListener("load",function(){
     let formulario = document.querySelector("form.login"); //selecciono el formulario
-    
-    console.log("estoy en validar front en el form");
+
     formulario.addEventListener("submit",function(event){ //evento submit ejecuto validaciones
         
         let errores = [];

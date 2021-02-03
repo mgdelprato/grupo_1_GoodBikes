@@ -22,9 +22,12 @@
 
 
       <main>
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="" method="POST" enctype="multipart/form-data" class="register">
           <div class="datos">
             <h1>Registrate en GoodBikes</h1>
+            <div class="errores">
+              <ul></ul>
+          </div>
             <input type="text" name="name" id="name" placeholder="Nombre" value="<%=(typeof old != 'undefined' && !errors.name) ? old.name : '' %>">
             <small class="errores">
               <%=(locals.errors && errors.name) ? errors.name.msg : "" %> 
@@ -45,7 +48,7 @@
             </small>
             <input type="password" name="repassword" id="repassword" placeholder="Repetir Password">
             <label id="labelAvatar" for="">Imagen de perfil</label>
-            <input id="avatar" type="file" name="avatar">
+            <input id="avatar" type="file" name="avatar" id="avatar">
             <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
             <button type="submit">Crear cuenta</button>
           </div>
@@ -56,5 +59,6 @@
     <%- include('../partials/footer')%>
 
   </div>
+  <script src="/js/registerValidator.js"></script>
 </body>
 </html>
