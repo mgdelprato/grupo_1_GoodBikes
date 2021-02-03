@@ -1,8 +1,8 @@
 
 window.addEventListener("load",function(){
 let formulario = document.querySelector("form.register"); //selecciono formulario
+let errores = [];
 formulario.addEventListener("submit",function(event){
-    let errores =[];
     let nombre = document.querySelector("#name")
 
     if(nombre.value == ""){
@@ -39,14 +39,11 @@ formulario.addEventListener("submit",function(event){
     }
 
         let avatar = document.querySelector("#avatar")
-        // let regexFile = new RegExp('(.jpg|.jpeg|.png|.gif)')
         let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
         let extension = (avatar.value.substring(avatar.value.lastIndexOf("."))).toLowerCase();       
-        console.log(extension);
-        //REVISAR el find
- 
+    
         let bandera = extensionesValidas.find(elemento=> extension==elemento)
-        console.log(bandera);
+
         if(bandera == undefined){
             errores.push("Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF")
         }
@@ -57,7 +54,9 @@ formulario.addEventListener("submit",function(event){
             for(let i =0; i < errores.length; i++){
                 listaErrores.innerHTML += "<li>" + errores[i] +"</li>"
             }
+           
         } 
+        
 
 
     })
