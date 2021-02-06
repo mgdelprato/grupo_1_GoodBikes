@@ -6,6 +6,7 @@ formulario.addEventListener("submit",function(event){
     event.preventDefault();
     let errors = {};
     
+    /* VALIDACION DE NOMBRE */
     let name = document.querySelector("#name")
     let errorName = document.querySelector("#errorName")
 
@@ -17,6 +18,7 @@ formulario.addEventListener("submit",function(event){
         errorName.innerText = errors.name
     }
 
+     /* VALIDACION DE APELLIDO */
     let apellido = document.querySelector("#apellido");
     let errorApellido = document.querySelector("#errorApellido")    
     
@@ -28,8 +30,7 @@ formulario.addEventListener("submit",function(event){
         errorApellido.innerText = errors.apellido
     }
 
-
-
+    /* VALIDACION DE EMAIL */
     let email = document.querySelector("#email");
     let errorEmail = document.querySelector("#errorEmail") 
     let regexMail= new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
@@ -45,6 +46,7 @@ formulario.addEventListener("submit",function(event){
         errorEmail.innerText = errors.email
     }
 
+     /* VALIDACION DE PASSWORD */
     let password = document.querySelector("#password")
     let errorPassword = document.querySelector("#errorPassword")
     let regexPass = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*')
@@ -63,11 +65,11 @@ formulario.addEventListener("submit",function(event){
                 errors.password = "El longitud del password debe tener al menos 8 caracteres"
                 errorPassword.innerText = errors.password     
             }
-
-        let avatar = document.querySelector("#avatar")
-        let errorAvatar = document.querySelector("#errorAvatar")
-        let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
-        let extension = (avatar.value.substring(avatar.value.lastIndexOf("."))).toLowerCase();       
+     /* VALIDACION DE AVATAR */
+    let avatar = document.querySelector("#avatar")
+    let errorAvatar = document.querySelector("#errorAvatar")
+    let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
+    let extension = (avatar.value.substring(avatar.value.lastIndexOf("."))).toLowerCase();       
     
         let bandera = extensionesValidas.find(elemento=> extension==elemento)
 
@@ -76,10 +78,11 @@ formulario.addEventListener("submit",function(event){
             errorAvatar.innerText = errors.avatar
         }
 
-        if(Object.keys(errors).length > 0 ){
-           
-        }else{
-            formulario.submit();
-        }
+    /* VALIDACION DE ERRORES */     
+   if(Object.keys(errors).length > 0 ){
+      
+   }else{
+       formulario.submit();
+   }
     })
 })
