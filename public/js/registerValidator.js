@@ -1,8 +1,12 @@
 
 window.addEventListener("load",function(){
 let formulario = document.querySelector("form.register"); //selecciono formulario
-let errores = [];
+
 formulario.addEventListener("submit",function(event){
+    event.preventDefault();
+        let listaErrores = document.querySelector("div.errores ul")
+        listaErrores.innerHTML = "<li>" + "" +"</li>"
+        let errores = [];
     let nombre = document.querySelector("#name")
 
     if(nombre.value == ""){
@@ -49,15 +53,14 @@ formulario.addEventListener("submit",function(event){
         }
 
         if(errores.length > 0 ){
-            event.preventDefault();
             let listaErrores = document.querySelector("div.errores ul")
             for(let i =0; i < errores.length; i++){
                 listaErrores.innerHTML += "<li>" + errores[i] +"</li>"
+                errores[i]=""
             }
            
-        } 
-        
-
-
+        }else{
+            formulario.submit();
+        }
     })
 })
