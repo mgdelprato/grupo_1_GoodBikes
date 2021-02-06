@@ -32,24 +32,12 @@
                             <% } %> 
 
                         <input class="campos" type="text" placeholder="Email" name="email" id="email">
-                    
-                        <%  if(locals.errors && errors.email){ %>
-                            <small style="color: red;">
-                            <%= errors.email.msg %> </small>
-                            <% } %> 
+
+                        <small id="errorEmail" class="errores"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
 
                         <input class="campos" type="password" placeholder="Password" name="password" id="password">                   
 
-                        <%  if(locals.errors && errors.password){ %>
-                            <small style="color: red;">
-                            <%= errors.password.msg %> </small>
-                            <% } %> 
-                            <div class="errores">
-                                <ul>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
+                        <small id="errorPassword" class="errores"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
 
                         <button type="submit">Ingresar</button>
                         <a href="#">¿Olvidaste tu password?</a>

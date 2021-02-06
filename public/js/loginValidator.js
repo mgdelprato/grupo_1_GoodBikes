@@ -4,39 +4,37 @@ window.addEventListener("load",function(){
 
     formulario.addEventListener("submit",function(event){ //evento submit ejecuto validaciones
         event.preventDefault();
-        let listaErrores = document.querySelector("div.errores ul")
-        listaErrores.innerHTML = "<li>" + "" +"</li>"
-        let errores = [];
+
+        let errors = {};
 
         /*VALIDACION DE EMAIL*/
-        let email=document.querySelector("#email");
+        let email = document.querySelector("#email");
+        let errorMail = document.querySelector('#errorEmail')
         let regex= new RegExp("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
 
         
         if(email.value  == ""){
-            errores.push("El campo email debe estar completo")
+            errors.email = "El campo email debe estar completo"
+            errorMail.innerText = errors.email
         
         }else if(!regex.test(email.value)){
-            errores.push("Por favor ingrese un mail valido")
+            errors.email = "Por favor ingrese un mail valido"
+            errorMail.innerText =  errors.email
         }
         
         /*VALIDACION DE PASSWORD*/
         let password = document.querySelector("#password");
+        let errorPassword = document.querySelector('#errorPassword')
 
         if(password.value == ""){
             
-            errores.push("El campo de contraseña debe estar completo")
+            errors.password = "El campo de contraseña debe estar completo"
+            errorPassword.innerText = errors.password 
         }
         
         /*CHEQUO DE ERRORES*/
-        if(errores.length > 0 ){
-           
-            
-            for(let i =0; i < errores.length; i++){
-                listaErrores.innerHTML += "<li>" + errores[i] +"</li>"
-                      
-                errores[i]=""
-            }
+        if(Object.keys(errors).length > 0 ){
+        
         }else{
             formulario.submit();
         }

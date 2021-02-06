@@ -132,9 +132,8 @@
                     border: none;
                 }
 
-                .errores ul li{
+                .errores{
                     color: red;
-                    list-style: none;
 
                 }
                 
@@ -232,8 +231,9 @@
                        
         #Ultimo{margin-bottom: 2vh;}
                 
-        div.errores ul{
-         color: red;
+        .errores{
+            color: red;
         }
+        
                 
 }
