@@ -109,3 +109,27 @@
 - Dejar de hacer
    Obstinación indivudual en resolución de issues
     
+##RETRO Sprint 7
+
+- Comenzar a hacer
+    Definir un único patrón de UX/UI
+   
+- Hacer más
+    Actualizacion de tarjetas trello 
+    Mejor uso de buenas prácticas y nomenclatura de VARIABLES, TABLAS, ID'S, CAMPOS, manejo de   Pluralidad y   Camel Case
+    Enfocar en la funcionalidad del sitio
+    Pedir ayuda ante las trabas
+
+
+- Continuar haciendo
+    Ordenar el código
+    Smoke test del sitio
+    Profundizar conceptos de Merge y pull request 
+    Reuniones de equipo para coordinar avances y destrabar issues
+    
+- Hacer menos
+    Cambios de definición sobre la marcha o cambios en los diseños
+    Manejo de tiempos y estimaciones mas precisas
+
+- Dejar de hacer
+    merge final de entrega sin colchón.     

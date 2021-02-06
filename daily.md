@@ -75,7 +75,11 @@ SPRINT 5
 - Cierre del sprint 5
 - Revisión de datos en JSON apuntando al modelo de BD
 
+
+**************************************************
+
 SPRINT 6
+
 ## "Daily 1"
 - Revisión de enunciado de Sprint
 - Ingresar tareas al tablero
@@ -92,3 +96,19 @@ SPRINT 6
 - Resolución de issues
 - Cierre de sprint
 
+**************************************************
+
+SPRINT 7
+
+## "Daily 1"
+- Revisión de enunciado de Sprint
+- Ingresar tareas al tablero
+- Asignar nuevas tareas y Correcciones del sprint 6 y 7
+
+## "Daily 2"
+- Chequeo de tareas y trabas
+- Status y pasos a seguir
+
+## "Daily 3"
+- Definición de UX/UI para errores
+- Revisión final tareas de sprint

@@ -18,7 +18,7 @@
         <%- include('../partials/header')%>
 
         <main>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data" id="formularioProductCreate">
                 <div class="titulos">
                     <h1>Administración de Productos</h1>
                     <h2>Alta de producto</h2>
@@ -33,23 +33,25 @@
                         <option value=Taller>Taller</option>
                     </select>
                     <h4 >Producto</h4>
-                    <input type="text" class="valores" name="producto">
-                    <small class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
+                    <input type="text" class="valores" name="producto" id="producto">
+                    <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                     <h4>Precio</h4>
-                    <input type="text" class="valores" id="precio" name="precio" maxlength="10" required autocomplete="off"/>
+                    <input type="number" class="valores" id="precio" name="precio" maxlength="10" required autocomplete="off"/>
+                    <small id="errorPrecio" class="errores"></small>
                     <h4>Cantidad</h4>
-                    <input  type="number" class="valores" name="cantidad">
+                    <input  type="number" inputmode= "numeric" class="valores" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">
+                    <small id="errorCantidad" class="errores"></small>
                     <h4>Descripción</h4>
                     <div name="descripcionD">
                         
-                        <input placeholder="Marca" type="text" class="descripcion" name="marca">
-                        <input placeholder="Modelo" type="text" class="descripcion" name="modelo">
+                        <input placeholder="Marca" type="text" class="descripcion" name="marca" id="marca">
+                        <input placeholder="Modelo" type="text" class="descripcion" name="modelo" id="modelo">
                         
                         <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
-                        <textarea placeholder="Detalle" name="detalle" id="" cols="30" rows="9" class="descripcion"></textarea>
+                        <textarea placeholder="Detalle" name="detalle" id="detalle" cols="30" rows="9" class="descripcion"></textarea>
                     </div>
-                    <small class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
-                    <h4 class="valores  ">Imagenes</h4>
+                    <small id= "errorDetalle" class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
+                    <h4 class="valores">Imagenes</h4>
                     <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                 </div>
                 <div class="divCarga">
@@ -65,6 +67,6 @@
         <%- include('../partials/footer')%>
         
     </div>
-    
+<script src="/js/productCreateValidator.js"></script>    
 </body>
 </html>

@@ -6,7 +6,7 @@ window.addEventListener("load",function(){
         let producto = document.querySelector("#producto")
 
         if(producto.value == ""){
-            errores.push("El nombre del productono puede ser vacio")
+            errores.push("El nombre del producto no puede ser vacio")
         }else if(producto.value.length <= 5){
             errores.push("El nombre del producto debe tener al menos 6 caracteres")
         }
