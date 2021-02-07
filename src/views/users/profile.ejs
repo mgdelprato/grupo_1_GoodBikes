@@ -27,12 +27,7 @@
             <form action="" method="">
 
                 <div class="Superior">
-
-                   
                     <img src="/images/users/avatars/<%= BuscaUser.avatar %> " alt="Imagen de Perfil" Id="profileImage">
-
-                    
-
 
                     <h2>Mis Datos</h2>
                     <div class="primerSuperior">
@@ -52,7 +47,7 @@
                         
                     </div>
                     <div class="terceroSuperior">
-                        <button type="submit">Editar</button>
+                        <button id="btnEditar" onclick="deshabilitar()">Editar</button>
                         <button type="submit">Guardar</button>
                     </div>
                 </div>
@@ -60,7 +55,6 @@
                 <div id= "Inferior">
                     <h2>Mis Compras</h2>
 
-                    
                     <div class="compras">
                         <img src="/images/products/12737_800.jpg" alt="casco">
                             <div class="detalles">
@@ -102,11 +96,11 @@
                         <input type="text" name="localidad" id="localidad" value="<%= BuscaUser.Addresses[0].street_locality%>">
                         
                         <label for="cp">Código Postal</label>
-                        <input type="text" name="cp" id="cp" maxlength="10" required autocomplete="off" value="<%= BuscaUser.Addresses[0].street_postal_code%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
+                        <input type="text" name="cp" id="cp" maxlength="10"  value="<%= BuscaUser.Addresses[0].street_postal_code%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
                         
                     </div>
                     <div class="terceroSuperior">
-                        <button type="submit">Editar</button>
+                        <button >Editar</button>
                         <button type="submit">Guardar</button>
                     </div>
                     
@@ -133,7 +127,7 @@
                         
                     </div>
                     <div class="terceroSuperior">
-                        <button type="submit">Editar</button>
+                        <button>Editar</button>
                         <button type="submit">Guardar</button>
                     </div>
                     
@@ -145,6 +139,6 @@
         
         <%- include('../partials/footer')%>
     </div>
-    
+    <script src="/js/profileEdit.js"></script>
 </body>
 </html>
