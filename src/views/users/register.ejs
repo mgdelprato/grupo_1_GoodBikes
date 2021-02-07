@@ -29,27 +29,27 @@
               <ul></ul>
           </div>
             <input type="text" name="name" id="name" placeholder="Nombre" value="<%=(typeof old != 'undefined' && !errors.name) ? old.name : '' %>">
-            <small class="errores">
+            <small id="errorName" class="errores">
               <%=(locals.errors && errors.name) ? errors.name.msg : "" %> 
             </small>
             <input type="text" name="apellido" id="apellido" placeholder="Apellido" value="<%=(typeof old != 'undefined' && !errors.apellido) ? old.apellido : '' %>">
-            <small class="errores">
+            <small id="errorApellido" class="errores">
               <%=(locals.errors && errors.apellido) ? errors.apellido.msg : "" %> 
             </small>
             <input type="email" name="email" id="email" placeholder="Email" value="<%=(typeof old != 'undefined' && !errors.email) ? old.email : '' %>">
-            <small class="errores">
+            <small id="errorEmail" class="errores">
               <%=(locals.errors && errors.email) ? errors.email.msg : "" %> 
             </small>
               <small class="errores"><%=(locals.mensaje) ? mensaje : ""%></small>
             <!-- <input type="text" name="dni" id="dni" placeholder="DNI"> -->
             <input type="password" name="password" id="password" placeholder="Password" value="<%=(typeof old != 'undefined' && !errors.password) ? old.password : '' %>">
-            <small class="errores">
+            <small id="errorPassword" class="errores">
               <%=(locals.errors && errors.password) ? errors.password.msg : "" %> 
             </small>
             <input type="password" name="repassword" id="repassword" placeholder="Repetir Password">
             <label id="labelAvatar" for="">Imagen de perfil</label>
             <input id="avatar" type="file" name="avatar" id="avatar">
-            <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
+            <small id="errorAvatar" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
             <button type="submit">Crear cuenta</button>
           </div>
        </form>

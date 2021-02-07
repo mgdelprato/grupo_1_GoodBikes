@@ -153,6 +153,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         .errores{
             color: red;
             margin-left: 2%;
+            text-align: center;
         }
 
     main form div button{

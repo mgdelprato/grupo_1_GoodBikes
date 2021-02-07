@@ -1,8 +1,12 @@
 window.addEventListener("load",function(){
     let formulario = document.querySelector("form.productEdit");
-    let errores = [];
+
 
     formulario.addEventListener("submit", function(event){
+        event.preventDefault();
+        let listaErrores = document.querySelector("div.errores ul")
+        listaErrores.innerHTML = "<li>" + "" +"</li>"
+        let errores = [];
         let producto = document.querySelector("#producto")
 
         if(producto.value == ""){
@@ -30,18 +34,15 @@ window.addEventListener("load",function(){
         }
 
         if(errores.length > 0 ){
-            event.preventDefault();
-            let listaErrores = document.querySelector("div.errores ul")
             for(let i =0; i < errores.length; i++){
                 listaErrores.innerHTML += "<li>" + errores[i] +"</li>"
+                errores[i]=""
             }
            
-        } 
+        }else{
+            formulario.submit();
+        }
 
     })
-
-
-
-
 
 })
