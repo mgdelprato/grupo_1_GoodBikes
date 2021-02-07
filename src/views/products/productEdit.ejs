@@ -38,7 +38,7 @@
                 </select>
                 <h4 >Producto</h4>
                 <input type="text" class="valores" name="producto" value="<%= productoEditar.title%>" id="producto">
-                <small class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
+                <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                 <h4>Precio</h4>
                 <input type="text" class="valores" name="precio" value="$ <%= productoEditar.price%>">
                 <h4>Descripción</h4>
@@ -50,14 +50,14 @@
                     <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
                     <textarea placeholder="Detalle" name="detalle" id="detalle" cols="30" rows="9" class="descripcion" value="<%= productoEditar.detail%>"><%= productoEditar.detail%></textarea>
                 </div>
-                <small class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
+                <small id="errorDetalle" class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
             </div>
             <div class="divCarga">
                 <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
                     <h4 id="tituloImagenes">Imagenes</h4>
-                    <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                     <input type="file" multiple name="files[]" id="imagen" name="archivo" value="<%= productoEditar.Imagen%>">
                     <button type="submit">Adjuntar</button>
+                    <small id="errorImagen" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                     <button type="submit" id="guardar">Guardar</button>
                 </div>
                 <form action="">
@@ -75,6 +75,6 @@
         <%- include('../partials/footer')%>
         
     </div>
-    <script src="/js/productEditValidator.js"></script>
+    <script src="/js/productEditValidator2.js"></script>
 </body>
 </html>

@@ -36,7 +36,7 @@
                     <input type="text" class="valores" name="producto" id="producto">
                     <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                     <h4>Precio</h4>
-                    <input type="number" class="valores" id="precio" name="precio" maxlength="10" required autocomplete="off"/>
+                    <input type="number" inputmode= "numeric" class="valores" id="precio" name="precio" maxlength="10"/>
                     <small id="errorPrecio" class="errores"></small>
                     <h4>Cantidad</h4>
                     <input  type="number" inputmode= "numeric" class="valores" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">

@@ -9,10 +9,13 @@ module.exports={
             .isLength({min:20})
             .withMessage('El detalle del producto debe tener como mínimo 20 caracteres'),
         body('fileExtension').custom(function(value){
+                //console.log(body(fileExtension));
+                console.log(body)
+                console.log(`esto tiene fileExtension ${value}`);
                 let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
-               let bandera =  extensionesValidas.find(elemento=> value==elemento)
-               console.log(bandera);
-               console.log(typeof(bandera));
+                let bandera =  extensionesValidas.find(elemento=> value==elemento)
+                console.log(bandera);
+                console.log(typeof(bandera));
                 if(bandera != undefined){
                     return true
                 }

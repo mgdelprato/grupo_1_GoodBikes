@@ -15,7 +15,7 @@ var storage = multer.diskStorage({
     },
     filename: function (req, file, cb) {
       
-        cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname))
+      cb(null, req.body.email + '-' + Date.now() + path.extname(file.originalname))
       req.body.fileExtension = path.extname(file.originalname).toLowerCase()
     }
     
