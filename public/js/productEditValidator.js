@@ -65,7 +65,6 @@ window.addEventListener("load",function(){
         } else {
             errorDetalle.innerText = "";
             delete errores.detalle;
-            console.log('pase ok detalle');
         }
         
     }
@@ -84,7 +83,7 @@ window.addEventListener("load",function(){
             errorImagen.innerText = errores.imagenes
         } else {
             console.log('pase ok imagenes');
-            errores.imagenes = ""
+            delete errores.imagenes
             errorImagen.innerText = errores.imagenes
         }
     }
