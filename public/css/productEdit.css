@@ -237,9 +237,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                                 width: 50%;
                             }
 
-                            .errores ul li{
+                            .errores{
                                 color: red;
-                                list-style: none;
                         
                             }
     
@@ -495,7 +494,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 
                 }
 
-                .errores ul li{
+                .errores{
                     color: red;
                     list-style: none;
             

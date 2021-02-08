@@ -1,12 +1,13 @@
-function qs(element) {
-    return document.querySelector(element)
-}
-
-function campoVacio(element) {
-    return (element.value.length == 0)
-}
 
 window.addEventListener("load",function(){
+    function qs(element) {
+        return document.querySelector(element)
+    }
+    
+    function campoVacio(element) {
+        return (element.value.length == 0)
+    }
+    
     let formulario = qs("form.productEdit");
     
     let errores = {};
@@ -29,6 +30,7 @@ window.addEventListener("load",function(){
     }   
     
     const validarPrecio = (precio)=>{
+        console.log(precio);
         if(campoVacio(precio)){
             errores.precio = 'El campo Precio no puede estar vacío';
             errorPrecio.innerText = 'El campo Precio no puede estar vacío';
@@ -61,7 +63,7 @@ window.addEventListener("load",function(){
             errorDetalle.innerText = errore.detalle;
         }else if(detalle.value.length <= 20){
             errores.detalle = "El detalle del producto debe tener al menos de 20 caracteres";
-            erroresDetalle.innerText = errores.detalle;   
+            errorDetalle.innerText = errores.detalle;   
         } else {
             errorDetalle.innerText = "";
             delete errores.detalle;

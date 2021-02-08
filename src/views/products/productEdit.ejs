@@ -40,10 +40,10 @@
                 <input type="text" class="valores" name="producto" value="<%= productoEditar.title%>" id="producto">
                 <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
                 <h4>Precio</h4>
-                <input type="text" class="valores" name="precio" value="$ <%= productoEditar.price%>">
+                <input type="text" id="precio" class="valores" name="precio" value="<%= productoEditar.price%>">
                 <small id="errorPrecio" class="errores"><%=(locals.errors && errors.precio) ? errors.producto.msg : ""%></small>
                 <h4>Cantidad</h4>
-                <input type="number" inputmode="numeric" class="valores" value="<%= productoEditar.quantity%>" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">
+                <input type="number" id="cantidad" inputmode="numeric" class="valores" value="<%= productoEditar.quantity%>" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">
                 <small id="errorCantidad" class="errores"></small>
                 <h4>Descripción</h4>
                 <!-- <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea> -->

@@ -70,10 +70,10 @@ const validarCantidad = (cantidad)=>{
 const validarDetalle = (detalle) => {
     if(campoVacio(detalle)){
         errores.detalle = "El detalle del producto no puede ser vacio";
-        errorDetalle.innerText = errore.detalle;
+        errorDetalle.innerText = errores.detalle;
     }else if(detalle.value.length <= 20){
         errores.detalle = "El detalle del producto debe tener al menos de 20 caracteres";
-        erroresDetalle.innerText = errores.detalle;   
+        errorDetalle.innerText = errores.detalle;   
     } else {
         errorDetalle.innerText = "";
         delete errores.detalle;
