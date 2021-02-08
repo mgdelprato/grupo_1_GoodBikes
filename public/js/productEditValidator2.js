@@ -114,11 +114,9 @@ window.addEventListener("load",function(){
         
 
         if(Object.keys(errores).length > 0 ){
-            let listaErrores = document.querySelector("div.errores ul")
-            console.log('tengo errores sin solucionar');
-            console.log(errores);
-            for(let i =0; i < errores.length; i++){
-                listaErrores.innerHTML += "<li>" + errores[i] +"</li>"
+            console.log('Errores por solucionar en los siguientes campos:')
+            for(const i in errores){
+                console.log(`${i}`)
             }
            
         } else {

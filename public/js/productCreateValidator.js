@@ -126,6 +126,7 @@ form.addEventListener('submit', (event)=>{
     validarProducto(inputProducto);
     validarPrecio(inputPrecio);
     validarCantidad(inputCantidad);
+    validarDetalle(inputDetalle);
     validarImagenes(inputImagen);
 
     if(Object.keys(errores).length > 0){
