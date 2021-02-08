@@ -125,8 +125,4 @@ window.addEventListener("load",function(){
 
     })
 
-
-
-
-
 })
