@@ -52,12 +52,12 @@
                     </div>
                     <small id= "errorDetalle" class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
                     <h4 class="valores">Imagenes</h4>
-                    <small class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                 </div>
                 <div class="divCarga">
                     <div class ="zonaInferior" enctype='multipart/form-data'> <!--Esto es para poder leer archivos del lado del servidor -->
-                        <input type="file" multiple name="files[]" name="archivo">
+                        <input id= "imagen" type="file" multiple name="files[]" name="archivo">
                         <button id="adjuntar" type="submit">Adjuntar</button>
+                        <small id= "errorImagen" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                         <button id="tacho"><i class="fas fa-trash"></i></button>
                         <button type="submit" id="guardar">Publicar</button>
                     </div>

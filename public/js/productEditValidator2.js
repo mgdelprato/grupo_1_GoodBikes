@@ -28,6 +28,33 @@ window.addEventListener("load",function(){
         }
     }   
     
+    const validarPrecio = (precio)=>{
+        if(campoVacio(precio)){
+            errores.precio = 'El campo Precio no puede estar vacío';
+            errorPrecio.innerText = 'El campo Precio no puede estar vacío';
+        } else if (!regExPositivo.test(precio.value)){
+            errores.precio = 'El Precio no puede ser 0 o negativo';
+            errorPrecio.innerText = 'El Precio no puede ser 0';
+        }else {
+            errorPrecio.innerText = "";
+            delete errores.precio;
+        }
+    }
+    
+    const validarCantidad = (cantidad)=>{
+    
+        if(campoVacio(cantidad)){
+            errores.cantidad = 'El campo Cantidad no puede estar vacío';
+            errorCantidad.innerText = 'El campo Cantidad no puede estar vacío';
+        } else if(!regExEnteroPositivo.test(cantidad.value)){
+            errores.cantidad = 'Solo se admiten valores enteros';
+            errorCantidad.innerText = 'Solo se admiten valores enteros y positivos';
+        } else {
+            errorCantidad.innerText = "";
+            delete errores.cantidad;
+        }
+    }
+
     const validarDetalle = (detalle) => {
         if(campoVacio(detalle)){
             errores.detalle = "El detalle del producto no puede ser vacio";
@@ -44,7 +71,7 @@ window.addEventListener("load",function(){
     }
     
     const validarImagenes = (imagen)=>{
-        console.log(imagen.value[0]);
+        console.log(imagen);
         let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
         let extension = (imagen.value.substring(imagen.value.lastIndexOf("."))).toLowerCase();       
         let bandera = extensionesValidas.find(elemento=> extension==elemento)
@@ -69,15 +96,21 @@ window.addEventListener("load",function(){
         const errorProducto = qs('#errorProducto'); 
         validarProducto(producto)
         
+        const precio = qs('#precio');
+        const errorPrecio = qs('#errorPrecio');
+        validarPrecio(precio)
+
+        const cantidad = qs('#cantidad');
+        const errorCantidad = qs('#errorCantidad');
+        validarCantidad(cantidad);
 
         const detalle = qs("#detalle");
         const errorDetalle = qs('#errorDetalle');
         validarDetalle(detalle); 
 
-        
         const imagen = qs("#imagen");
         const errorImagen = qs('#errorImagen')
-        //validarImagenes(imagen);
+        validarImagenes(imagen);
         
 
         if(Object.keys(errores).length > 0 ){

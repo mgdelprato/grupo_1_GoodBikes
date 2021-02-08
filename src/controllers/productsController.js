@@ -13,28 +13,20 @@ let productsController = {
 
             if(req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized.length === 0) //Sin productos en el carrito
                      {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
-                     
-
             else
                 {
-
-
                 console.log('Paso por el carrito no estoy undefined ni [] numero ' + req.session.cartSQLOrganized);       
-                
-
                 db.Product.findAll({
                     where:{
                         id: req.session.cartSQLOrganized 
                     }
-
-                })
+               })
                 //Renderizo la vista enviando los productos que pertenecen a la categroia
                 .then(function(producto){
                     let itemsCart = req.session.cartSQLOrganized ;                 
                     res.render( path.join(__dirname, '../views/products/productCart.ejs'),{producto:producto,itemsCart: itemsCart})
                 })
             }//cierra if
-    
      },
 
     carritoComprasAdd: function(req,res) {//Suma producto al array de session
@@ -177,8 +169,6 @@ let productsController = {
                 db.ProductImage.update({
                         product_id_fk:producto.id,
                         image_name:req.files[i].filename,
-                        
-
                         },{
                             where:{
                                 id:req.params.id
@@ -186,11 +176,12 @@ let productsController = {
                         }).then(function(){
                         console.log("inserto imagen")
                     })
-
                 }
             res.redirect('/admin/products/productList')
             })
     }else{
+
+        
         // Si hay errores, los mapeo y muestro la la vista de creación con los errores
         return res.render(path.join(__dirname,'../views/products/productCreate'), {
             errors: errors.mapped()

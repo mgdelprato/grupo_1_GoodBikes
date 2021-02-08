@@ -8,18 +8,18 @@ module.exports={
         check('detalle')
             .isLength({min:20})
             .withMessage('El detalle del producto debe tener como mínimo 20 caracteres'),
-        body('fileExtension').custom(function(value){
-                //console.log(body(fileExtension));
-                console.log(body)
-                console.log(`esto tiene fileExtension ${value}`);
-                let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
-                let bandera =  extensionesValidas.find(elemento=> value==elemento)
-                console.log(bandera);
-                console.log(typeof(bandera));
-                if(bandera != undefined){
-                    return true
-                }
-            }).withMessage('Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF')
+        body('fileExtension').custom(function(value, { req }){
+        console.log(`esto tiene fileExtension ${value}`);
+        let extensionesValidas = ['.jpg','.jpeg','.png','.gif'];
+        for(let i = 0; req.files.length < i; i++){
+            let extension = (req.files[i].originalname.substring(req.files[i].originalname.lastIndexOf("."))).toLowerCase();
+            let bandera =  extensionesValidas.find(elemento=> extension==elemento)
+            console.log(bandera);
+            console.log(typeof(bandera));
+            if(bandera != undefined){
+                return true
+            }
+        }
+        }).withMessage('Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF')
     ]
-
 }

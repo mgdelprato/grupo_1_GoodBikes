@@ -14,15 +14,18 @@ const regExPositivo = /^\d*\.?\d*$/
 
 
 let inputProducto = qs('#producto');
-let inputPrecio = qs('#precio');
-let inputCantidad = qs('#cantidad');
+    inputPrecio = qs('#precio'),
+    inputCantidad = qs('#cantidad'),
+    inputDetalle = qs('#detalle'),
+    inputImagen = qs('#imagen');
 
 let errores = {};
 
 const errorProducto = qs('#errorProducto'),
       errorPrecio = qs('#errorPrecio'),
       errorCantidad = qs('#errorCantidad'),
-      errorDetalle = qs('#errorDetalle');
+      errorDetalle = qs('#errorDetalle'),
+      errorImagen = qs('#errorImagen');
 
 const validarProducto = (producto) => {
     if(campoVacio(producto)){
@@ -64,6 +67,41 @@ const validarCantidad = (cantidad)=>{
     }
 }
 
+const validarDetalle = (detalle) => {
+    if(campoVacio(detalle)){
+        errores.detalle = "El detalle del producto no puede ser vacio";
+        errorDetalle.innerText = errore.detalle;
+    }else if(detalle.value.length <= 20){
+        errores.detalle = "El detalle del producto debe tener al menos de 20 caracteres";
+        erroresDetalle.innerText = errores.detalle;   
+    } else {
+        errorDetalle.innerText = "";
+        delete errores.detalle;
+        console.log('pase ok detalle');
+    }
+    
+}
+
+const validarImagenes = (imagen)=>{
+    console.log(imagen);
+    let extensionesValidas = ['.jpg','.jpeg','.png','.gif']
+    let extension = (imagen.value.substring(imagen.value.lastIndexOf("."))).toLowerCase();       
+    let bandera = extensionesValidas.find(elemento=> extension==elemento)
+
+    if (imagen == ""){
+        console.log('sin imagen');
+    } else if(bandera == undefined){
+        console.log('problemas con extensión de imagenes');
+        errores.imagenes = "Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF";
+        errorImagen.innerText = errores.imagenes
+    } else {
+        console.log('pase ok imagenes');
+        errorImagen.innerText = ""
+        delete errores.imagenes 
+    }
+}
+
+
 
 inputProducto.addEventListener('blur', ()=>{
     validarProducto(inputProducto);    
@@ -74,7 +112,12 @@ inputPrecio.addEventListener('blur', ()=>{
 inputCantidad.addEventListener('blur', ()=>{
     validarCantidad(inputCantidad);
 })
-
+inputDetalle.addEventListener('blur', ()=>{
+    validarDetalle(inputDetalle)
+})
+inputImagen.addEventListener('blur', ()=>{
+    validarImagenes(inputImagen)
+})
 
 
 form.addEventListener('submit', (event)=>{
@@ -83,16 +126,16 @@ form.addEventListener('submit', (event)=>{
     validarProducto(inputProducto);
     validarPrecio(inputPrecio);
     validarCantidad(inputCantidad);
+    validarImagenes(inputImagen);
 
-if(Object.keys(errores).length > 0){
-    console.log('Errores por solucionar en los siguientes campos:')
-    for(const i in errores){
-        console.log(`${i}`)
+    if(Object.keys(errores).length > 0){
+        console.log('Errores por solucionar en los siguientes campos:')
+        for(const i in errores){
+            console.log(`${i}`)
+        }
+    }else{
+        form.submit()
     }
-
-}else{
-    form.submit()
-}
 
 })
 
