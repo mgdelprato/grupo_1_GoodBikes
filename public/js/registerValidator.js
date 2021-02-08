@@ -16,6 +16,9 @@ formulario.addEventListener("submit",function(event){
     }else if(name.value.length <= 2){
         errors.name = "El nombre debe tener mas de 2 caracteres"
         errorName.innerText = errors.name
+    } else {
+        errorName.innerText = "";
+        delete errors.name;
     }
 
      /* VALIDACION DE APELLIDO */
@@ -28,7 +31,11 @@ formulario.addEventListener("submit",function(event){
     }else if(apellido.value.length <= 3){
         errors.apellido = "El apellido debe tener mas de 3 caracteres"
         errorApellido.innerText = errors.apellido
+    } else {
+        errorApellido.innerText = "";
+        delete errors.apellido;
     }
+
 
     /* VALIDACION DE EMAIL */
     let email = document.querySelector("#email");
@@ -44,27 +51,38 @@ formulario.addEventListener("submit",function(event){
   
         errors.email = "Por favor ingrese un mail valido"
         errorEmail.innerText = errors.email
+    } else {
+        errorEmail.innerText = "";
+        delete errors.email;
     }
+
 
      /* VALIDACION DE PASSWORD */
     let password = document.querySelector("#password")
     let errorPassword = document.querySelector("#errorPassword")
     let regexPass = new RegExp('(?=^.{8,}$)(?=.*[0-9])(?=.*[A-Z])(?=.*[a-z])(?=.*[^A-Za-z0-9]).*')
 
-    if(password.value.length == 0){
-        errors.password = "El campo de contraseña debe estar completo"
-          errorPassword.innerText = errors.password 
-        }else if(password.value.length > 8){
-                 if(regexPass.test(password.value)){
-                    console.log("contraseña correcta");
-                 }else{
-                    errors.password = "La contraseña debe contener Mayúsculas, un número y un carácter especial"
-                    errorPassword.innerText = errors.password 
-                }
+    
+        if(password.value.length == 0){
+            errors.password = "El campo de contraseña debe estar completo"
+            errorPassword.innerText = errors.password 
+        }else if(password.value.length >= 8){
+            if(regexPass.test(password.value)){
+                errorPassword.innerText = "";   
+                delete errors.password;
             }else{
-                errors.password = "El longitud del password debe tener al menos 8 caracteres"
-                errorPassword.innerText = errors.password     
+                errors.password = "La contraseña debe contener Mayúsculas, un número y un carácter especial"
+                errorPassword.innerText = errors.password 
             }
+        }else if(password.value.length < 8){
+            errors.password = "El longitud del password debe tener al menos 8 caracteres"
+            errorPassword.innerText = errors.password     
+        } else {
+        errorPassword.innerText = "";   
+        delete errors.password;
+    }
+
+
      /* VALIDACION DE AVATAR */
     let avatar = document.querySelector("#avatar")
     let errorAvatar = document.querySelector("#errorAvatar")
