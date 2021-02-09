@@ -18,61 +18,74 @@
         <%- include('../partials/header')%>
 
         <main>
-            <form action="/admin/products/productEdit/<%= productoEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="productEdit">
-            <div class="titulos">
-                <h1>Administración de Productos</h1>
-                <h2>Modificación de producto</h2>
-            </div>
-            
-            <div class="divCarga">
-                <div class="errores">
-                    <ul></ul>
+            <form id='Formulario_Contenedor' action="/admin/products/productEdit/<%= productoEditar.id%>?_method=PUT" method="POST" enctype="multipart/form-data" class="productEdit">            
+                <div class="titulos">
+                    <h1>Administración de Productos</h1>
+                    <h2>Modificación de producto</h2>
                 </div>
-                <h4>Categoria</h4>
-                <select class="valores" name="categoria">
-                    <option value="<%=productoEditar.category%>"><%= productoEditar.category%></option>
-                    <option value=Equipamiento>Equipamiento</option>
-                    <option value=Indumentaria>Indumentaria</option>
-                    <option value=Accesorios>Accesorios</option>
-                    <option value=Taller>Taller</option>
-                </select>
-                <h4>Producto</h4>
-                <input type="text" class="valores" name="producto" value="<%= productoEditar.title%>" id="producto">
-                <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
-                <h4>Precio</h4>
-                <input type="text" id="precio" class="valores" name="precio" value="<%= productoEditar.price%>">
-                <small id="errorPrecio" class="errores"><%=(locals.errors && errors.precio) ? errors.producto.msg : ""%></small>
-                <h4>Cantidad</h4>
-                <input type="number" id="cantidad" inputmode="numeric" class="valores" value="<%= productoEditar.quantity%>" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">
-                <small id="errorCantidad" class="errores"></small>
-                <h4>Descripción</h4>
-                <!-- <textarea name="" id="" cols="30" rows="10" class="valores" name="descripcion"></textarea> -->
-                <div name="descripcionD" id="divDescripcion">
-                    <input placeholder="Marca" type="text" class="descripcion" name="marca" value="<%= productoEditar.brand%>">
-                    <input placeholder="Modelo" type="text" class="descripcion" name="modelo" value="<%= productoEditar.model%>">
-                    <!-- <input placeholder="Color" type="text" class="valores" name="color"> -->
-                    <textarea placeholder="Detalle" name="detalle" id="detalle" cols="30" rows="9" class="descripcion" value="<%= productoEditar.detail%>"><%= productoEditar.detail%></textarea>
-                </div>
-                <small id="errorDetalle" class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
-            </div>
-            <div class="divCarga">
-                <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
-                    <h4 id="tituloImagenes">Imagenes</h4>
-                    <small id="errorImagen" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
-                    <input type="file" multiple name="files[]" id="imagen" name="archivo" value="<%= productoEditar.Imagen%>">
-                    <button type="submit">Adjuntar</button>
-                    <button type="submit" id="guardar">Guardar</button>
-                </div>
-                <form action="">
-                    <div id="containerMini">
-                        <% for(let i=0; i < productoEditar.ProductsImages.length; i++){ %>
-                            <img id="imagenMini"src="/images/products/<%= productoEditar.ProductsImages[i].image_name %>" alt="Principal1">
-                            <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
-                        <% } %>                            
+                
+                
+                <div class="divCarga">
+                   
+                    <div class="errores">
+                        <ul></ul>
                     </div>
-                </form>
+
+                    <h4>Categoria</h4>
+                    <select class="valores" name="categoria">
+                        <option value="<%=productoEditar.category%>"><%= productoEditar.category%></option>
+                        <option value=Equipamiento>Equipamiento</option>
+                        <option value=Indumentaria>Indumentaria</option>
+                        <option value=Accesorios>Accesorios</option>
+                        <option value=Taller>Taller</option>
+                    </select>
+
+                    <h4>Producto</h4>
+                    <input type="text" class="valores" name="producto" value="<%= productoEditar.title%>" id="producto">
+                    <small id="errorProducto" class="errores"><%=(locals.errors && errors.producto) ? errors.producto.msg : ""%></small>
+                    
+                    <h4>Precio</h4>
+                    <input type="text" id="precio" class="valores" name="precio" value="<%= productoEditar.price%>">
+                    <small id="errorPrecio" class="errores"><%=(locals.errors && errors.precio) ? errors.producto.msg : ""%></small>
+                    
+                    <h4>Cantidad</h4>
+                    <input type="number" id="cantidad" inputmode="numeric" class="valores" value="<%= productoEditar.quantity%>" name="cantidad" id="cantidad" pattern="/^[+]?[0-9]\d*$/">
+                    <small id="errorCantidad" class="errores"></small>
+                    
+                    <h4>Descripción</h4>
+                   
+                    
+                    <div name="descripcionD" id="divDescripcion">
+                        <input placeholder="Marca" type="text" class="descripcion" name="marca" value="<%= productoEditar.brand%>">
+                        <input placeholder="Modelo" type="text" class="descripcion" name="modelo" value="<%= productoEditar.model%>">
+                        
+                        <textarea placeholder="Detalle" name="detalle" id="detalle" cols="30" rows="9" class="descripcion" value="<%= productoEditar.detail%>"><%= productoEditar.detail%></textarea>
+                    </div>
+                    <small id="errorDetalle" class="errores"><%=(locals.errors && errors.detalle) ? errors.detalle.msg : ""%></small>
                
-            </div>
+                </div>
+
+                <div class="divCarga">
+
+                    <div id="ContenedorElementosDeAbajo"> <!--Esto es para poder leer archivos del lado del servidor -->
+                        <h4 id="tituloImagenes">Imagenes</h4>
+                        <small id="errorImagen" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
+                        <input type="file" multiple name="files[]" id="imagen" name="archivo" value="<%= productoEditar.Imagen%>">
+                        <button type="submit">Adjuntar</button>
+                        <button type="submit" id="guardar">Guardar</button>
+                    </div>
+
+                    <form action="">
+                        <div id="containerMini">
+                            <% for(let i=0; i < productoEditar.ProductsImages.length; i++){ %>
+                                <img id="imagenMini" src="/images/products/<%= productoEditar.ProductsImages[i].image_name %>" alt="Principal1">
+                                <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
+                            <% } %>                            
+                        </div>
+                    </form>
+                
+                </div>
+
             </form>
         </main>
         <%- include('../partials/footer')%>

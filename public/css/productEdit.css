@@ -192,10 +192,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                                 border-radius: 6px;
                                 border-style: none;
                             }                                           /*Dos botones azules*/
-    
-                            
 
-                            
                             main div:nth-child(3) #guardar{
                                 align-self: center;
                                 justify-content: center;
@@ -207,20 +204,16 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
     
                     
     
-                            main div:nth-child(3) #tacho{
-                            border: none;
-                           
-                            } /*Contenedor del tacho*/
+                            main div:nth-child(3) #tacho{border: none;} /*Contenedor del tacho*/
     
-                             main div:nth-child(3) button i{
-                                font-size: 25px;
-                                color: red;/*Tacho*/                           
+                                main div:nth-child(3) button i{
+                                    font-size: 25px;
+                                    color: red; /*Tacho*/                           
+                                }
 
-                            }
                             main form div div img#imagenMini{
                                 background-color: rgb(19, 79, 107);
-                                width: 12%;
-                            }
+                                width: 12%;}
                             
                             main form div div#containerMini {
                                 /* background-color: rgb(156, 188, 202); */
@@ -233,18 +226,20 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                             }
                             
     
-                            #divDescripcion{
-                                width: 50%;
-                            }
+                            #divDescripcion{width: 50%;}
 
-                            .errores{
-                                color: red;
-                        
-                            }
+                            .errores{color: red}
     
-       
 
  }
+
+
+
+
+
+
+
+
 
 
 
@@ -292,7 +287,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             letter-spacing: 0.1em;
             font-weight: bold;
             text-align: center;
-            margin: 2%;
+            margin: 1%;
+            margin-top: 5vh;
         }
        
         main div h2{
@@ -339,17 +335,17 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             main div:nth-last-child(2) h4{
                 font-size: 18px;
                 text-align: left;
-                width: 70%;
+                width: 60vw;
                
             }
             main div:nth-last-child(2) select{
                 font-size: 15px;
-                width: 60%;
+                width: 60vw;
             }
     
            
             main div:nth-last-child(2) .valores{
-                width: 70%;
+                width: 60vw;
                 margin-bottom: 10px;
                 border:none;
                
@@ -366,7 +362,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             
             font-size: 18px;
             text-align: left;
-            width: 70%;
+            width: 60vw;
             
             }
     
@@ -407,7 +403,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             #ContenedorElementosDeAbajo{
                 display: flex;
                 flex-direction: column;
-                width: 100%;/*Tocas esto y se rompe todo*/
+                width: 60vw;/*Tocas esto y se rompe todo*/
                 height: 25vh;
                 justify-content: space-between;
                 align-items: center;
@@ -415,6 +411,15 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 /*Toca esto y se descajeta el boton guardar*/
             }
 
+            #imagen{
+                    margin-right: 10px;
+                    background-color: #ffffff;
+                    padding: 0% 2% 0% 0%;
+                    font-weight: bold;
+                    height: 30px;
+                    width: 60vw;
+                    
+                }                           /*Todo el Input*/
 
 
             main div input[type=file]::-webkit-file-upload-button{
@@ -430,75 +435,55 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 border-style: none;
             }                                   /*Botón Elegir archivo*/
             
-                main div:nth-child(3) input{
-                        margin-right: 10px;
-                        background-color: #ffffff;
-                        padding: 0% 2% 0% 0%;
-                        font-weight: bold;
-                        height: 30px;
-                        width: 70vw;
-                        
-                    }                           /*Todo el Input*/
             
-                main #adjuntar{
-                    align-items: center; 
-                    width: 25vw;
-                    margin: 1vh;
-                                                /*Boton Adjuntar*/
-                }
-                
-                main button[type="submit"]{
-                    height: 30px;
-                    font-family: 'Anton', sans-serif;
-                    text-transform: uppercase;
-                    letter-spacing: 0.1em;
-                    font-size: 15px;
-                    background-color: #3E3D40;
-                    color: #ffffff;
-                    border-radius: 6px;
-                    border-style: none;
                     
-                }                                           /*Dos botones azules*/
+                    main button[type="submit"]{
+                        height: 30px;
+                        font-family: 'Anton', sans-serif;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-size: 15px;
+                        background-color: #3E3D40;
+                        color: #ffffff;
+                        border-radius: 6px;
+                        border-style: none;
+                        margin: 0.5vh
+                    }                                           /*Dos botones*/
+                    
+                    main #adjuntar{
+                        align-items: center; 
+                        width: 25vw;
+                        margin: 1vh;
+                                                    /*Boton Adjuntar*/
+                    }
+                    
+                    
+                    #guardar{
+                    width: 25vw;
+                    margin:1vh;                      /*Boton Guardar*/       
+                }
 
                 main button[type="submit"]:hover{background-color: #882345;}
 
-                main div:nth-child(3) #guardar{
-                    width: 25vw;
-                    margin-bottom: 3%;                      /*Boton Guardar*/
- 
-                }
-
                 #divDescripcion{
-                    width: 70%;
+                    width: 60vw;
                 }
 
         
 
-                #tacho{
-                border: none;
-                align-self: flex-start;
-                
-                
-                }
+                #tacho{border: none;align-self: flex-start;}
 
-                main div:nth-child(3) button i{
-                    font-size: 25px;
-                    color: red;
-                
-                    
-                    
-                }
+                main div:nth-child(3) button i{font-size: 25px;color: red;}
 
-                main div:nth-child(3) button[type="file"]{
-                margin-left: 20px;
-                
-                }
+                main div:nth-child(3) button[type="file"]{margin: 1vh;}
 
                 .errores{
                     color: red;
                     list-style: none;
             
                 }
+
+                #imagenMini{width: 20vw;height: 20vh;}
 
 
 
