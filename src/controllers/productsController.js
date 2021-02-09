@@ -12,10 +12,9 @@ let productsController = {
     carritoCompras: function(req, res) {
 
             if(req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized.length === 0) //Sin productos en el carrito
-                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Ad lorem ipsum'})}
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Nothing here'})}
             else
-                {
-                console.log('Paso por el carrito no estoy undefined ni [] numero ' + req.session.cartSQLOrganized);       
+                {    
                 db.Product.findAll({
                     where:{
                         id: req.session.cartSQLOrganized 
@@ -31,48 +30,33 @@ let productsController = {
 
     carritoComprasAdd: function(req,res) {//Suma producto al array de session
                 if (req.session.cartSQLOrganized == undefined){
-                    
-                
+                    //Primer clic en agregar de la session
                     req.session.cartSQLOrganized = []
                     req.session.cartSQLOrganized.push(req.body.id_producto)
                     }
                     
                 else 
                 {
+                //Siguientes clics en Agregar
                 req.session.cartSQLOrganized.push(req.body.id_producto)
                 }
-                  
-                console.log(req.session.cartSQLOrganized)
-
-                //Renderizar la vista donde estaba parado
+                //Luego del if renderizar la vista donde estaba parado
                 res.redirect('./productCart')
     },
 
     carritoComprasRemove: function(req, res) {
         //Suma producto al array de session
         if (req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized == []){
-  
-            }
+        //Inacción ante array vacío
+        }
             
         else {
-           
-        
+        //Quita elemento del array de session del carrito
         let indice = req.session.cartSQLOrganized.indexOf(req.params.id)
         req.session.cartSQLOrganized.splice(indice, 1);
-
-        
-
         }          
-      
-        
-        
-        console.log('Pase por el remove y soy lo que quedo del cartSQL nro' + req.session.cartSQLOrganized)
-         
-
-        
-        
+       
         //Renderizar la vista donde estaba parado
-                 
         res.redirect('/products/productCart')
 },
 
