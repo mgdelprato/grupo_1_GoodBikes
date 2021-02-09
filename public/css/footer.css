@@ -81,7 +81,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
  /*CSS Mobile Version*/
  @media screen and (min-width: 200px) and (max-width: 800px) {
     
-    footer{background-color: #3E3D40; text-align: center;padding: 2% 0% 2% 0%;margin-top: 5vh;}
+    footer{background-color: #3E3D40; text-align: center;padding: 4% 0% 4% 0%;}
            
         footer ul li a{color: #ffffff;text-decoration: none;font-size: 12px;margin-bottom: 2vh;margin-top: 2vh;}
         footer ul li p{color: #ffffff;text-decoration: none;font-size: 12px;margin-bottom: 2vh;margin-top: 2vh}

@@ -251,6 +251,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             flex-direction: column;
             justify-content: space-between;
             width: 100vw;
+            height: auto;
             background-color: #ebebeb;} 
            
 

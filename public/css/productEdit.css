@@ -255,52 +255,30 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
     body
         {display: flex; 
         justify-content: center;
-        flex-direction: column;}
+        flex-direction: column;
+        background-color: #ebebeb }
 
         #Contenedor_Body
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
+            
             width: 100vw;
             background-color: #ebebeb;} 
            
 
-
-
-        
         .contenedor_del_Main{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
             width: 100vw;
-
+            background-color: #ebebeb 
             }
 
 
-         
-        main div h1 {
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 15px;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            text-align: center;
-            margin: 1%;
-            margin-top: 5vh;
-        }
-       
-        main div h2{
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 13px;
-            text-align: center;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            margin: 0% 0% 3% 2%;
-        }
-
+            
+            
         main{
             display:flex;
             flex-wrap: wrap;
@@ -317,35 +295,56 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             justify-content: center;     
             
         } 
-
+        
         main div:nth-last-child(2){
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 10px;
+            
+        }
         
-            }
-
-            main div div .descripcion{
-                border: none;                    
-                width: 100%;
-                
-            }
-    
-            main div:nth-last-child(2) h4{
-                font-size: 18px;
-                text-align: left;
-                width: 60vw;
-               
-            }
+        main div div .descripcion{
+            border: none;                    
+            width: 100%;
+            
+        }
+        
+       main div h1 {
+           font-family: 'Roboto', sans-serif;
+           text-transform: capitalize;
+           font-size: 15px;
+           letter-spacing: 0.1em;
+           font-weight: bold;
+           text-align: center;
+           margin: 1%;
+           margin-top: 5vh;
+       }
+        
+        main div h2{
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 13px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            margin: 0% 0% 3% 2%;
+        }
+        
+        main div:nth-last-child(2) h4{
+            font-size: 18px;
+            text-align: left;
+            width: 70vw;
+            
+        }
             main div:nth-last-child(2) select{
                 font-size: 15px;
-                width: 60vw;
+                width: 70vw;
             }
     
            
             main div:nth-last-child(2) .valores{
-                width: 60vw;
+                width: 70vw;
                 margin-bottom: 10px;
                 border:none;
                
@@ -362,7 +361,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             
             font-size: 18px;
             text-align: left;
-            width: 60vw;
+            width: 70vw;
             
             }
     
@@ -398,17 +397,16 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 width: 100%;
                 align-items: center;
                 flex-wrap: wrap;
-            }                               /*Contenedor de los botones de abajo*/
+            }                               
             
             #ContenedorElementosDeAbajo{
                 display: flex;
                 flex-direction: column;
-                width: 60vw;/*Tocas esto y se rompe todo*/
+                width: 70vw;
                 height: 25vh;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: wrap;
-                /*Toca esto y se descajeta el boton guardar*/
+                
             }
 
             #imagen{
@@ -417,7 +415,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                     padding: 0% 2% 0% 0%;
                     font-weight: bold;
                     height: 30px;
-                    width: 60vw;
+                    width: 70vw;
                     
                 }                           /*Todo el Input*/
 
@@ -450,32 +448,25 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                         margin: 0.5vh
                     }                                           /*Dos botones*/
                     
-                    main #adjuntar{
-                        align-items: center; 
-                        width: 25vw;
-                        margin: 1vh;
-                                                    /*Boton Adjuntar*/
+                    main #adjuntar{align-items: center; 
+                        width: 25vw;margin: 1vh; /*Boton Adjuntar*/
                     }
                     
                     
-                    #guardar{
-                    width: 25vw;
-                    margin:1vh;                      /*Boton Guardar*/       
-                }
+                    #guardar{width: 25vw;margin:1vh;}    /*Boton Guardar*/       
+                
 
                 main button[type="submit"]:hover{background-color: #882345;}
 
-                #divDescripcion{
-                    width: 60vw;
-                }
+                #divDescripcion{width: 70vw;}
 
-        
 
-                #tacho{border: none;align-self: flex-start;}
-
+                #tacho{border: none;align-self: center;}
                 main div:nth-child(3) button i{font-size: 25px;color: red;}
 
-                main div:nth-child(3) button[type="file"]{margin: 1vh;}
+
+                #tachitoImportado{margin-top: 2vh;}
+                #Abajo{margin-bottom: 3vh;}
 
                 .errores{
                     color: red;
@@ -483,7 +474,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             
                 }
 
-                #imagenMini{width: 20vw;height: 20vh;}
+                #imagenMini{width: auto;height: 15vh;}
 
 
 
