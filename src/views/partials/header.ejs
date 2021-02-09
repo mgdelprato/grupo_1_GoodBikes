@@ -43,6 +43,7 @@
         
     </div>
 
+
     
     <% if(typeof locals.user != 'undefined' ) 
     {        
@@ -66,29 +67,53 @@
 
 
 
-
-
-
-
-
 </header>
 
-<nav> 
-    <i href="javascript:void(0)" id="Bars" onclick="menuMobile()" class="fas fa-bars"></i>
-    <ul id="Lista_Nav">
-        <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
-        <li class="ocultoMovil"><a href="/users/login">Login</a></li>
-        <li class="ocultoMovil"><a href="/users/register">Registrate</a></li>
+
+
+
+<% if(typeof locals.user != 'undefined' ) 
+{%>        
         
-        <hr class="ocultoMovil">
+    <nav> 
+        <i href="javascript:void(0)" id="Bars" onclick="menuMobile()" class="fas fa-bars"></i>
+        <ul id="Lista_Nav">
+            <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+            <li><a href="/products/productSearch/<%="Rodados"%>">Rodados</a></li>
+            <li><a href="/products/productSearch/<%="Equipamiento"%>">Equipamiento</a></li>
+            <li><a href="/products/productSearch/<%="Indumentaria"%>">Indumentaria</a></li>
+            <li><a href="/products/productSearch/<%="Accesorios"%>">Accesorios</a></li>
+            <li><a href="/products/productSearch/<%="Taller"%>">Taller</a></li>
+        </ul>           
+    </nav>
         
-        <li><a href="/products/productSearch/<%="Rodados"%>">Rodados</a></li>
-        <li><a href="/products/productSearch/<%="Equipamiento"%>">Equipamiento</a></li>
-        <li><a href="/products/productSearch/<%="Indumentaria"%>">Indumentaria</a></li>
-        <li><a href="/products/productSearch/<%="Accesorios"%>">Accesorios</a></li>
-        <li><a href="/products/productSearch/<%="Taller"%>">Taller</a></li>
-    </ul>           
-</nav>
+        <%} else {%>
+
+            <nav> 
+                <i href="javascript:void(0)" id="Bars" onclick="menuMobile()" class="fas fa-bars"></i>
+                <ul id="Lista_Nav">
+                    <li ><a id="Goodbikes"href="/">Goodbikes</a></li>
+                    <li id="Header_logIn" class="ocultoMovil"><a href="/users/login">Login</a></li>
+                    <li id="Header_register" class="ocultoMovil"><a href="/users/register">Registrate</a></li>
+                    <hr class="ocultoMovil">
+                    <li><a href="/products/productSearch/<%="Rodados"%>">Rodados</a></li>
+                    <li><a href="/products/productSearch/<%="Equipamiento"%>">Equipamiento</a></li>
+                    <li><a href="/products/productSearch/<%="Indumentaria"%>">Indumentaria</a></li>
+                    <li><a href="/products/productSearch/<%="Accesorios"%>">Accesorios</a></li>
+                    <li><a href="/products/productSearch/<%="Taller"%>">Taller</a></li>
+                </ul>           
+            </nav>
+<%}%>
+
+
+
+
+
+
+
+
+
+
+
     
-<script type="text/javascript" src="/js/header.js">
-</script>
+<script type="text/javascript" src="/js/header.js"></script>
