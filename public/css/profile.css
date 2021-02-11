@@ -125,7 +125,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     main form .Superior input{
         width: 80%;
         height: 25px;
-        border: none;
+        border: 1px solid black;
         border-radius: 6px;
         margin-bottom: 2%;
     }
@@ -256,6 +256,10 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             
             .Superior{margin-top: 2vh; display: flex; flex-direction: column;}
 
+            .campos{
+                border: 2px solid black;
+            }
+
 
  
             #profileImage{height: 200px; width: auto;align-items: center;margin-top: -1vh; margin-bottom: 2vh;
@@ -268,7 +272,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
             main form .Superior input{
                 height: 25px;
-                border: none;
+                border: 1px solid black;
                 border-radius: 6px;
             }
             

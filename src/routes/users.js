@@ -38,6 +38,7 @@ router.post('/register', upload.any(), registerValidator.registerCheck,usersCont
 
 //Profile
 router.get('/profile', routeMiddleware.userLoggedIn, usersController.perfil)
+router.put('/profile', routeMiddleware.userLoggedIn, usersController.editProfile)
 
 //Logout
 router.get('/logout', usersController.logout)

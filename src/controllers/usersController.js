@@ -1,20 +1,8 @@
 const path = require('path')
-const fs = require('fs');
 const bcryptjs = require('bcryptjs');
 const {validationResult} = require('express-validator');
 const db = require('../data/models');
 
-//Leo el JSON de usuarios y lo parseo
-let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
-usuarios = JSON.parse(usuarios);
-
-//Función para obtener ID de producto autoincremental
-let ultimoId = 0
-for(let i=0; i<usuarios.length;i++){
-    if(ultimoId<usuarios[i].id){
-        ultimoId=usuarios[i].id;
-    }
-}
 
 /*CONTROLLER QUE MANEJA LA LÓGICA DE USUARIOS */
 let usersController ={
@@ -77,26 +65,40 @@ let usersController ={
                 
                 function(req, res) {
                 //Si no esta logueado
-                    console.log(req.session);
                 if (req.session.userEmail == undefined)
                     { // Kick
                         res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Registro exitoso! Debes loguearte para acceder a tu perfil"})    
                     }
                 else
                     { //Log exitoso
-               
                         db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}]})
                         .then(function(BuscaUser){
+                            let compras={};
+                            let arrayCompras=[];
                     
                             for(let i=0; i<BuscaUser.PurchaseDetails.length;i++){
+                               
 
                                 db.Product.findAll({where:{id:BuscaUser.PurchaseDetails[i].product_id}})
                                 .then(function(productos){
-                                    console.log(productos);
-                            })
+                                    
+                                    for(let i=0; i<productos.length;i++){
+
+                                        compras={
+                                            id:productos[0].id,
+                                            title: productos[0].title,
+                                            price: productos[0].price,
+                                            img_ppal: productos[0].img_ppal
+                                        }
+                                        arrayCompras.push(compras);
+                                    }
+                                  
+                                   console.log(contenedor);
+ 
+                            })  
       
                             }
-                                res.render( path.join(__dirname, '../views/users/profile.ejs'),{BuscaUser:BuscaUser})
+                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,contenedor:contenedor})
                         })
                         
                      
@@ -126,7 +128,7 @@ let usersController ={
         
                     })
                     .then(function(usuario){
-                        console.log(usuario.avatar);
+         
                        res.render(path.join(__dirname, '../views/users/login.ejs'));
                     })
                 }else{
@@ -154,8 +156,60 @@ let usersController ={
         {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Cerraste tu sesión. Te esperamos pronto!'} )}
         
         
+    },
+    editProfile: function(req,res){
+       
+        db.User.update({
+            first_name:req.body.nombre,
+            last_name:req.body.apellido,
+            street:req.body.calle 
+
+        },
+     
+            {
+            where:{
+                email:req.session.userEmail}
+                ,include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}
+            ]
+        })
+        .then(function(usuario){
+
+            db.Address.update({
+                street: req.body.calle,
+                street_number: req.body.numero,
+                street_apartment:req.body.depto,
+                street_state: req.body.provincia,
+                street_locality: req.body.localidad,
+                street_postal_code: req.body.cp,
+               
+                
+            },{
+                where:
+                {
+                    user_id:usuario[0]
+                }
+            })
+            .then(function(direccion){
+                db.PaymentMethod.update({
+                    alias: req.body.alias,
+                    brand_card: req.body.operadora,
+                    number_card: req.body.medioPago,
+                    bank: req.body.banco
+                },{
+                    where:{
+                        user_id:usuario[0]
+                        
+                    }
+                })
+                .then(function(medioPago){
+                    console.log("medio pago exitoso");
+                })
+            })
+
+        res.render( path.join(__dirname, '../views/users/login.ejs'))})
+
     }
-    }
+}
     
 
 module.exports = usersController

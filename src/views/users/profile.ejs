@@ -24,7 +24,7 @@
 
 
         <main>
-            <form action="" method="">
+            <form action="/users/profile?_method=PUT" method="POST">
 
                 <div class="Superior">
                     <img src="/images/users/avatars/<%= BuscaUser.avatar %> " alt="Imagen de Perfil" Id="profileImage">
@@ -32,43 +32,45 @@
                     <h2>Mis Datos</h2>
                     <div class="primerSuperior">
                         <label for="Email" >Email</label>
-                        <input type="email" name="email" id="email" value = " <%= BuscaUser.email %> ">
+                        <input class="info" type="email" name="email" id="email" value = " <%= BuscaUser.email %> " disabled>
                         
                         <label for="password" >Contraseña</label>
-                        <input type="password" name="password" id="password" value ="<%= BuscaUser.password %>">
+                        <input class="info" disabled type="password" name="password" id="password" value ="<%= BuscaUser.password %>">
                         <a href="#">Cambiar Contraseña</a>
                     </div>
                     <div class="segundoSuperior">
                         <label for="nombre" >Nombre</label>
-                        <input type="text" name="nombre" id="nombre" value = " <%= BuscaUser.first_name %> ">
+                        <input class="info" disabled type="text" name="nombre" id="nombre" value = " <%= BuscaUser.first_name %> ">
                         
                         <label for="apellido" >Apellido</label>
-                        <input type="text" name="apellido" id="apellido" value = " <%= BuscaUser.last_name %> ">
+                        <input class="info" disabled type="text" name="apellido" id="apellido" value = " <%= BuscaUser.last_name %> ">
                         
                     </div>
-                    <div class="terceroSuperior">
-                        <button id="btnEditar" onclick="deshabilitar()">Editar</button>
-                        <button type="submit">Guardar</button>
-                    </div>
+        
                 </div>
                 
                 <div id= "Inferior">
                     <h2>Mis Compras</h2>
 
                     <div class="compras">
-                        <img src="/images/products/12737_800.jpg" alt="casco">
-                            <div class="detalles">
-                            <p>Juego de Frenos Shimano</p>
-                            <p id="precio">$2.457,03</p>
-                            <a href="#">Ver Detalles</a>
-                         </div>
+                 
+                            <%for(let i=0; i<arrayCompras.length;i++){%>
+
+                                <img src="/images/products/<%= arrayCompras[i].img_ppal %>" alt="casco">
+                                    <div class="detalles">
+                                    <p><%= arrayCompras[i].title %></p>
+                                    <p id="precio"><%= arrayCompras[i].price %></p>
+                                    <a href="#"><%= console.log(arrayCompras.length) %></a>
+                                    </div>
+                            <%}%>
+                      
                          <br>
-                         <img src="/images/products/15424_800.jpg" alt="casco">
+                         <!-- <img src="/images/products/15424_800.jpg" alt="casco">
                             <div class="detalles">
                             <p>Piñon 18 Vel</p>
                             <p id="precio">$1.234,03</p>
-                            <a href="#">Ver Detalles</a>
-                         </div>
+                            <a href="#">Ver detalles></a>
+                         </div> -->
                          <br>
                     </div>
                     
@@ -80,28 +82,24 @@
                     <h2>Mi Dirección</h2>
                     <div class="primerSuperior">
                         <label for="calle">Calle</label>
-                        <input type="text" name="calle" id="calle" value="<%= BuscaUser.Addresses[0].street %>" >
+                        <input class="info" disabled type="text" name="calle" id="calle" value="<%= BuscaUser.Addresses[0].street %>" >
                                                 
                         <label for="numero" id="labelNumero">Número</label>
-                        <input type="text" name="numero" id="numero" value="<%= BuscaUser.Addresses[0].street_number%>" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="numero" id="numero" value="<%= BuscaUser.Addresses[0].street_number%>" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
                         
                         <label for="depto">Depto/Casa/Lote</label>
-                        <input type="text" name="depto" id="depto" value="<%= BuscaUser.Addresses[0].street_apartment%>">
+                        <input class="info" disabled type="text" name="depto" id="depto" value="<%= BuscaUser.Addresses[0].street_apartment%>">
                     </div>
                     <div class="segundoSuperior">
                         <label for="provincia">Provincia</label>
-                        <input type="text" name="provincia" id="provincia" value="<%= BuscaUser.Addresses[0].street_locality%>">
+                        <input class="info" disabled type="text" name="provincia" id="provincia" value="<%= BuscaUser.Addresses[0].street_locality%>">
                         
                         <label for="localidad">Localidad</label>
-                        <input type="text" name="localidad" id="localidad" value="<%= BuscaUser.Addresses[0].street_locality%>">
+                        <input class="info" disabled type="text" name="localidad" id="localidad" value="<%= BuscaUser.Addresses[0].street_locality%>">
                         
                         <label for="cp">Código Postal</label>
-                        <input type="text" name="cp" id="cp" maxlength="10"  value="<%= BuscaUser.Addresses[0].street_postal_code%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="cp" id="cp" maxlength="10"  value="<%= BuscaUser.Addresses[0].street_postal_code%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
                         
-                    </div>
-                    <div class="terceroSuperior">
-                        <button >Editar</button>
-                        <button type="submit">Guardar</button>
                     </div>
                     
                 </div>
@@ -112,22 +110,22 @@
                     <h2>Mi Medio de Pago</h2>
                     <div class="primerSuperior">
                         <label for="alias">Alias</label>
-                        <input type="text" name="alias" id="alias"  value="<%= BuscaUser.PaymentMethod[0].alias%>">
+                        <input class="info" disabled type="text" name="alias" id="alias"  value="<%= BuscaUser.PaymentMethod[0].alias%>">
                         
                         <label for="medioPago">Nro de Tarjeta</label>
-                        <input type="text" name="madioPago" id="madioPago" maxlength="10" required autocomplete="off" value="<%= BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="medioPago" id="medioPago" maxlength="10" required autocomplete="off" value="<%= BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
                         
                     </div>
                     <div class="segundoSuperior">
                         <label for="operadora">Operadora</label>
-                        <input type="text" name="operadora" id="operadora" value="<%= BuscaUser.PaymentMethod[0].brand_card%>">
+                        <input class="info" disabled type="text" name="operadora" id="operadora" value="<%= BuscaUser.PaymentMethod[0].brand_card%>">
                         
                         <label for="banco">Banco</label>
-                        <input type="text" name="banco" id="banco" value="<%= BuscaUser.PaymentMethod[0].bank%>">
+                        <input class="info" disabled type="text" name="banco" id="banco" value="<%= BuscaUser.PaymentMethod[0].bank%>">
                         
                     </div>
                     <div class="terceroSuperior">
-                        <button>Editar</button>
+                        <button id="btnEditar" type="button">Editar</button>
                         <button type="submit">Guardar</button>
                     </div>
                     
