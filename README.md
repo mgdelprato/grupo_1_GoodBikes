@@ -59,3 +59,4 @@ font-family: 'Roboto', sans-serif;
  sequelize-cli -g
  sequelize
  mysql2
+ npm init react-app dashboard
