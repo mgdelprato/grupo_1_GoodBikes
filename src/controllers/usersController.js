@@ -92,13 +92,14 @@ let usersController ={
                                         }
                                         arrayCompras.push(compras);
                                     }
-                                  
-                                   console.log(contenedor);
+                                   
+                                   console.log(arrayCompras[0].img_ppal);
+                         
  
                             })  
       
                             }
-                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,contenedor:contenedor})
+                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,arrayCompras:arrayCompras})
                         })
                         
                      
@@ -208,6 +209,59 @@ let usersController ={
 
         res.render( path.join(__dirname, '../views/users/login.ejs'))})
 
+    },
+    listaUsuarios(req,res){
+
+            db.User.findAll({
+                where:{
+                    still_alive:'YES'
+                }
+            })
+            .then(function(users){ 
+                if(users.length != 0){
+
+                    res.status(200).json({
+                        count:users.length,
+                        users:users
+                    })
+                }else{
+                    return res.status(204)
+                }
+                
+            })
+            .catch(function(error){
+                return res.json(error)
+            })
+      
+    },
+    detalleUsuario(req,res){
+        let detalle = {}
+        console.log(req.params.id)
+
+        db.User.findOne({where:{id:req.params.id}})
+        .then(function(usuario){
+            console.log(usuario);
+
+               res.status(200).json({
+   
+                   detalle:{
+                       id: usuario.id,
+                       first_name: usuario.first_name,
+                       last_name: usuario.last_name,
+                       email: usuario.email,
+                       avatar: usuario.avatar
+                   }
+               })
+           
+        })
+        .catch(function(error){
+            res.status(400).json({
+                error:error,
+                msg:"Usuario no encontrado",
+                ok: false
+                })
+        })
+        
     }
 }
     

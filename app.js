@@ -5,6 +5,7 @@ const path = require('path'); // Este modulo me va a permitir escribir rutas de 
 const productsRouter = require('./src/routes/products');
 const usersRouter = require('./src/routes/users')
 const adminRouter = require('./src/routes/admin')
+const apiRouter = require('./src/routes/api')
 const methodOverride = require('method-override');
 const mainRouter = require('./src/routes/index')
 const session = require('express-session')
@@ -41,6 +42,9 @@ app.use('/products',productsRouter);
 
 /* ADMIN */
 app.use('/admin',adminRouter);
+
+/* APIs */
+app.use('/api', apiRouter);
 
 
 /* Esto se agrega para cuando trabajamos con metodos http*/

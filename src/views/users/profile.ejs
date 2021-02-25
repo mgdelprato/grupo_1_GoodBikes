@@ -54,8 +54,8 @@
 
                     <div class="compras">
                  
-                            <%for(let i=0; i<arrayCompras.length;i++){%>
-
+                        <%for(let i=0; i<arrayCompras.length ;i++){%>
+                            <label for="">alalalala</label>
                                 <img src="/images/products/<%= arrayCompras[i].img_ppal %>" alt="casco">
                                     <div class="detalles">
                                     <p><%= arrayCompras[i].title %></p>
@@ -113,7 +113,7 @@
                         <input class="info" disabled type="text" name="alias" id="alias"  value="<%= BuscaUser.PaymentMethod[0].alias%>">
                         
                         <label for="medioPago">Nro de Tarjeta</label>
-                        <input class="info" disabled type="text" name="medioPago" id="medioPago" maxlength="10" required autocomplete="off" value="<%= BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="medioPago" id="medioPago"  required autocomplete="off" value="<%= BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
                         
                     </div>
                     <div class="segundoSuperior">
