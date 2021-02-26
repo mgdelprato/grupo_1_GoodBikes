@@ -211,14 +211,18 @@ let usersController ={
 
     },
     listaUsuarios(req,res){
-
-            db.User.findAll({
+        
+            db.User.findAll({attributes:['id','first_name','last_name','email'],
                 where:{
                     still_alive:'YES'
                 }
             })
             .then(function(users){ 
                 if(users.length != 0){
+                    for(let i = 0; i<users.length;i++){
+                        users[i].dataValues.detail="localhost:5000/api/users/" + users[i].id
+                        console.log(users[i])
+                    }
 
                     res.status(200).json({
                         count:users.length,
@@ -249,7 +253,7 @@ let usersController ={
                        first_name: usuario.first_name,
                        last_name: usuario.last_name,
                        email: usuario.email,
-                       avatar: usuario.avatar
+                       avatar: "localhost:5000/images/users/avatars/" + usuario.avatar
                    }
                })
            
