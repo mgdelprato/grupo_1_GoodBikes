@@ -210,7 +210,7 @@ let usersController ={
         res.render( path.join(__dirname, '../views/users/login.ejs'))})
 
     },
-    listaUsuarios(req,res){
+    listaUsuarios: function (req,res){
         
             db.User.findAll({attributes:['id','first_name','last_name','email'],
                 where:{
@@ -238,7 +238,7 @@ let usersController ={
             })
       
     },
-    detalleUsuario(req,res){
+    detalleUsuario: function (req,res){
         let detalle = {}
         console.log(req.params.id)
 
