@@ -92,13 +92,14 @@ let usersController ={
                                         }
                                         arrayCompras.push(compras);
                                     }
-                                  
-                                   console.log(contenedor);
+                                   
+                                   console.log(arrayCompras[0].img_ppal);
+                         
  
                             })  
       
                             }
-                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,contenedor:contenedor})
+                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,arrayCompras:arrayCompras})
                         })
                         
                      
@@ -208,6 +209,63 @@ let usersController ={
 
         res.render( path.join(__dirname, '../views/users/login.ejs'))})
 
+    },
+    listaUsuarios: function (req,res){
+        
+            db.User.findAll({attributes:['id','first_name','last_name','email'],
+                where:{
+                    still_alive:'YES'
+                }
+            })
+            .then(function(users){ 
+                if(users.length != 0){
+                    for(let i = 0; i<users.length;i++){
+                        users[i].dataValues.detail="localhost:5000/api/users/" + users[i].id
+                        console.log(users[i])
+                    }
+
+                    res.status(200).json({
+                        count:users.length,
+                        users:users
+                    })
+                }else{
+                    return res.status(204)
+                }
+                
+            })
+            .catch(function(error){
+                return res.json(error)
+            })
+      
+    },
+    detalleUsuario: function (req,res){
+        let detalle = {}
+        console.log(req.params.id)
+
+        db.User.findOne({where:{id:req.params.id}})
+        .then(function(usuario){
+            console.log(usuario);
+
+               res.status(200).json({
+   
+                   detalle:{
+                       id: usuario.id,
+                       first_name: usuario.first_name,
+                       last_name: usuario.last_name,
+                       email: usuario.email,
+                       avatar: "localhost:5000/images/users/avatars/" + usuario.avatar
+                   }
+               })
+           
+        })
+        .catch(function(error){
+            res.status(400).json({
+                error:error,
+                msg:"Usuario no encontrado",
+                ok: false
+                })
+        })
+        
     }
 }
     
