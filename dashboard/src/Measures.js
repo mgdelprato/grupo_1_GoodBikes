@@ -1,4 +1,3 @@
-import { render } from 'ejs';
 import React from 'react';
 
 function Measures(){
