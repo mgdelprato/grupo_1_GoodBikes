@@ -119,8 +119,32 @@ function App() {
 
                     
                     
+                  
+                    <div className ="row">
+                      <Measures 
+                        cardBorder = 'card border-left-primary shadow h-100 py-2'
+                        number='135' 
+                        symbol='fas fa-clipboard-list fa-2x text-gray-300' 
+                        titleDescription='PRODUCTS IN DATA BASE'
+                        titleStyle='text-xs font-weight-bold text-primary text-uppercase mb-1'
+                      />
+
+                      <Measures 
+                        cardBorder = 'card border-left-success shadow h-100 py-2'
+                        number='546456'
+                        symbol='fas fa-dollar-sign fa-2x text-gray-300' 
+                        titleDescription='AMOUNT IN PRODUCTS'
+                        titleStyle='text-xs font-weight-bold text-success text-uppercase mb-1'
+                      />
                       
-                  <Measures/>
+                      <Measures 
+                        cardBorder = 'card border-left-warning shadow h-100 py-2'
+                        number='38' 
+                        symbol='fas fa-user-check fa-2x text-gray-300' 
+                        titleDescription='USERS QUANTITY'
+                        titleStyle='text-xs font-weight-bold text-warning text-uppercase mb-1'
+                      />
+                    </div>
 
                      
                      
@@ -155,9 +179,17 @@ function App() {
                           </div>
                           
                           
+                          <div className ="row">
 
+                              <Categories text='Category 01'/>
+                              <Categories text='Category 02'/>
+                              <Categories text='Category 03'/>
+                              <Categories text='Category 04'/>
+                              <Categories text='Category 05'/>
+                              <Categories text='Category 06'/>
+
+                          </div>
                           
-                        <Categories/>
                         
                         </div>
                       </div>
