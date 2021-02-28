@@ -255,8 +255,86 @@ let productsController = {
         .then(function(resultados){
             res.render( path.join(__dirname, '../views/products/search.ejs'),{resultados:resultados,productoBuscado:productoBuscado})
         })
+    },
+
+    listaProductos: function(req,res){
+        db.Product.findAll({attributes:['id', 'category', 'title','brand', 'model', 'detail', 'price', 'quantity', 'img_ppal'],
+            where: {
+                still_alive: 'YES'
+            }
+        }).then(function(products){
+
+            if(products.length != 0){
+                let countByCategory = {
+                    Rodados: 0,
+                    Indumentaria: 0,
+                    Accesorios: 0,
+                    Equipamiento: 0,
+                    Taller:0
+                }
+                for (let i = 0; i < products.length; i++) {
+                    products[i].dataValues.detailURL = 'localhost:5000/api/products/'+products[i].id
+                    switch (products[i].dataValues.category) {
+                        case 'Rodados':
+                            countByCategory.Rodados++ 
+                            break;
+                    
+                        case 'Indumentaria':
+                            countByCategory.Indumentaria++ 
+                            break;
+                    
+                        case 'Accesorios':
+                            countByCategory.Accesorios++ 
+                            break;
+                    
+                        case 'Equipamiento':
+                            countByCategory.Equipamiento++ 
+                            break;
+                    
+                        case 'Taller':
+                            countByCategory.Taller++ 
+                            break;
+                    
+                        default:
+                            break;
+                    }
+                }
+
+                res.status(200).json({
+
+                    count: products.length,
+                    countByCategory: countByCategory,
+                    products: products
+                })
+            }else{
+                return res.status(204)
+            }
+        }).catch(function(error){
+            return res.json(error)
+        })
+    },
+    detalleProductoApi: function(req,res){
+        
+        db.Product.findByPk(req.params.id, 
+            {include: [{association: "ProductsImages"}]})
+        .then(function(producto){
+            let detalle = producto
+            detalle.img_ppal = 'localhost:5000/images/products/'+ detalle.img_ppal;
+
+            res.status(200).json({
+                producto:producto
+            })
+        })
+        .catch(function(error){
+            res.status(400).json({
+                error:error,
+                msg:"Producto no encontrado",
+                ok: false
+            })
+        })
     }
 }
+
 
 
 
