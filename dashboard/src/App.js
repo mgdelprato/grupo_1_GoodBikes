@@ -161,12 +161,8 @@ function App() {
                           
                           <div className ="row">
 
-                              <Categories text='Category 01'/>
-                              <Categories text='Category 02'/>
-                              <Categories text='Category 03'/>
-                              <Categories text='Category 04'/>
-                              <Categories text='Category 05'/>
-                              <Categories text='Category 06'/>
+                              <Categories/>
+                     
 
                           </div>
                           
