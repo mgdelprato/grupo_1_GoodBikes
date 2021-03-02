@@ -1,29 +1,24 @@
 import React from   'react';
 
 let categoriesDetails = [
-  {text: 'Category 01'},
-  {text: 'Category 02'},
-  {text: 'Category 03'},
-  {text: 'Category 04'},
-  {text: 'Category 05'},
-  {text: 'Category 06'}
+  {text: 'Rodados'},
+  {text: 'Equipamiento'},
+  {text: 'Indumentaria'},
+  {text: 'Accesorios'},
+  {text: 'Taller'}
 ]
 
 function Categories(props){
-
     return(
-        
       categoriesDetails.map((item,n) =>
 
-        <div className ="col-lg-6 mb-4">
+        <div className ="col-lg-6 mb-4" key ={n}>
           <div className ="card bg-info text-white shadow">
-            <div className ="card-body" key ={n}>
+            <div className ="card-body" >
               {item.text } 
             </div>
           </div>
         </div>
-      
-    
     ))
 }
 
