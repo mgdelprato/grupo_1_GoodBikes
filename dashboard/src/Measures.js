@@ -28,33 +28,47 @@ let measuresDetails = [
 function Measures(props){
 
    
-        
-                /* 
+        return(
+                
                 //Intento de mapeo
-                return measuresDetails.map(function (item, index) {
+                
+                measuresDetails.map((item,n) => 
+
 
                 <div className ="col-md-4 mb-4">
-                    <div className ={props.cardBorder}>
+                    <div className = {item.cardBorder} key ={n}>
                         <div className ="card-body">
                             <div className ="row no-gutters align-items-center">
                                             <div class Name ="col mr-2">
-                                                        <div className ={props.titleStyle}> {props.titleDescription}</div>
-                                                        <div className ="h5 mb-0 font-weight-bold text-gray-800">{props.number}</div>
+                                                        <div className ={item.titleStyle}> {item.titleDescription}</div>
+                                                        <div className ="h5 mb-0 font-weight-bold text-gray-800">{item.number}</div>
                                             </div>
                                             <div className ="col-auto">
-                                                    <i className = {measuresDetails.symbol} ></i>
+                                                    <i className ={item.symbol}></i>
                                             </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>)
+
                 
-                }); //Cierra map
-
-                */
+                
 
 
 
+
+
+
+
+
+
+                                    
+                 //Cierra map
+
+        )
+
+
+/*
                 // -------- Lo dejo andando para retomarlo despues
              return (
                 <div className ="col-md-4 mb-4">
@@ -74,14 +88,13 @@ function Measures(props){
                 </div>
              )
 
-
+*/
 
 
           
 
 
     }; // Cierra measures
-
 
 
 export default Measures
