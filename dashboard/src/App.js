@@ -1,11 +1,11 @@
 import './App.css';
-import Categories from './Categories';
-import Measures from './Measures';
-import Container from './Container';
-import NavItems from './NavItems';
-import HeaderItems from './HeaderItems';
-import ImgProfile from './ImgProfile';
-import TheFoot from './TheFoot';
+import Categories from './assets/components/Categories';
+import Measures from './assets/components/Measures';
+import Container from './assets/components/Container';
+import NavItems from './assets/components/NavItems';
+import HeaderItems from './assets/components/HeaderItems';
+import ImgProfile from './assets/components/ImgProfile';
+import TheFoot from './assets/components/TheFoot';
 
 
 
@@ -14,7 +14,7 @@ function App() {
 
         <div id="wrapper">
 
-                  <ul className ="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+              <ul className ="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
                   
                   <a className ="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                     <div className ="sidebar-brand-icon"><i className ="fas fa-chart-line"></i></div>
