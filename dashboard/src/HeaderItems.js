@@ -27,4 +27,6 @@ function HeaderItems(props){
     ))
 }
 
+console.log('Holis');
+
 export default HeaderItems

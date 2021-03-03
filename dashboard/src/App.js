@@ -3,8 +3,9 @@ import Categories from './Categories';
 import Measures from './Measures';
 import Container from './Container';
 import NavItems from './NavItems';
-import HeaderItems from './NavItems';
-
+import HeaderItems from './HeaderItems';
+import ImgProfile from './ImgProfile';
+import TheFoot from './TheFoot';
 
 
 
@@ -40,28 +41,16 @@ function App() {
               <div id="content">
                  
                   <nav className ="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
-
                         <button id="sidebarToggleTop" className ="btn btn-link d-md-none rounded-circle mr-3">
                           <i className ="fa fa-bars"></i>
                         </button>
-
                         
                         <ul className ="navbar-nav ml-auto">
-
                           <HeaderItems/>
-
                           <div className ="topbar-divider d-none d-sm-block"></div>
-
-                            <li className ="nav-item dropdown no-arrow">
-                              <a className ="nav-link dropdown-toggle" href="/" id="userDropdown">
-                                <span className ="mr-2 d-none d-lg-inline text-gray-600 small">Walter White</span>
-                                <img className ="img-profile rounded-circle" src={'assets/images/dummy-avatar.jpg'} width="60"/>
-                              </a>
-                            </li>
-
+                           <ImgProfile/>
                         </ul>
-
-                </nav>
+                  </nav>
                   
 
                   
@@ -94,13 +83,7 @@ function App() {
               
 
                 
-                <footer className ="sticky-footer bg-white">
-                  <div className ="container my-auto">
-                    <div className ="copyright text-center my-auto">
-                      <span>Copyright &copy; Dashboard 2020</span>
-                    </div>
-                  </div>
-                </footer>
+              <TheFoot/>
                 
 
               </div>
