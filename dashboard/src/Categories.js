@@ -15,7 +15,7 @@ function Categories(props){
         <div className ="col-lg-6 mb-4" key ={n}>
           <div className ="card bg-info text-white shadow">
             <div className ="card-body" >
-               <a href={item.link}>{item.text}</a> 
+               <a href={item.link} target="_blank">{item.text}</a> 
             </div>
           </div>
         </div>

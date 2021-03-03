@@ -39,7 +39,7 @@ function Measures(props){
                     <div className = {item.cardBorder} >
                         <div className ="card-body">
                             <div className ="row no-gutters align-items-center">
-                                            <div className ="col mr-2">
+                                            <div class Name ="col mr-2">
                                                         <div className ={item.titleStyle}> {item.titleDescription}</div>
                                                         <div className ="h5 mb-0 font-weight-bold text-gray-800">{item.number}</div>
                                             </div>
