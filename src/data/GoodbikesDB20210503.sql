@@ -19,9 +19,7 @@
 -- Table structure for table `addresses`
 --
 
-DROP TABLE IF EXISTS `addresses`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `addresses` (
   `user_id` int(11) NOT NULL,
   `street` varchar(50) DEFAULT NULL,
@@ -39,7 +37,7 @@ CREATE TABLE `addresses` (
   KEY `addresses_ibfk_1` (`user_id`),
   CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `addresses`
@@ -55,9 +53,7 @@ UNLOCK TABLES;
 -- Table structure for table `payments_methods`
 --
 
-DROP TABLE IF EXISTS `payments_methods`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `payments_methods` (
   `user_id` int(11) NOT NULL,
   `alias` varchar(30) NOT NULL DEFAULT 'My Payment',
@@ -73,7 +69,7 @@ CREATE TABLE `payments_methods` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `payments_methods_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `payments_methods`
@@ -89,9 +85,7 @@ UNLOCK TABLES;
 -- Table structure for table `products`
 --
 
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(12) NOT NULL,
@@ -111,7 +105,7 @@ CREATE TABLE `products` (
   `img_ppal` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `products`
@@ -127,9 +121,7 @@ UNLOCK TABLES;
 -- Table structure for table `products_images`
 --
 
-DROP TABLE IF EXISTS `products_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `products_images` (
   `product_id` int(11) NOT NULL,
   `image_name` varchar(255) NOT NULL,
@@ -141,7 +133,7 @@ CREATE TABLE `products_images` (
   KEY `products_images_ibfk_1` (`product_id`),
   CONSTRAINT `products_images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `products_images`
@@ -157,9 +149,7 @@ UNLOCK TABLES;
 -- Table structure for table `purchases_details`
 --
 
-DROP TABLE IF EXISTS `purchases_details`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `purchases_details` (
   `user_id` int(11) NOT NULL,
   `purchase_transaction_id` int(11) NOT NULL,
@@ -178,7 +168,7 @@ CREATE TABLE `purchases_details` (
   CONSTRAINT `purchases_details_ibfk_2` FOREIGN KEY (`purchase_transaction_id`) REFERENCES `purchases_transactions` (`id`),
   CONSTRAINT `purchases_details_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `purchases_details`
@@ -194,9 +184,7 @@ UNLOCK TABLES;
 -- Table structure for table `purchases_transactions`
 --
 
-DROP TABLE IF EXISTS `purchases_transactions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `purchases_transactions` (
   `user_id` int(11) NOT NULL,
   `payment_method_id` int(11) NOT NULL,
@@ -213,7 +201,7 @@ CREATE TABLE `purchases_transactions` (
   CONSTRAINT `purchases_transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `purchases_transactions_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payments_methods` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `purchases_transactions`
@@ -229,9 +217,7 @@ UNLOCK TABLES;
 -- Table structure for table `users`
 --
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
@@ -246,7 +232,7 @@ CREATE TABLE `users` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
+
 
 --
 -- Dumping data for table `users`
