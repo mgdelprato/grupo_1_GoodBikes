@@ -15,11 +15,6 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Table structure for table `addresses`
---
-
-
 CREATE TABLE `addresses` (
   `user_id` int(11) NOT NULL,
   `street` varchar(50) DEFAULT NULL,
@@ -39,23 +34,13 @@ CREATE TABLE `addresses` (
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 
---
--- Dumping data for table `addresses`
---
-
 LOCK TABLES `addresses` WRITE;
 /*!40000 ALTER TABLE `addresses` DISABLE KEYS */;
 INSERT INTO `addresses` VALUES (1,'Calle Falsa','123','Unknwown','Springfield',NULL,NULL,'YES',1,'2021-01-20 02:50:59',NULL,NULL),(2,'Waverley St','2510','California','Palo Alto','2 E','94301','YES',2,'2021-01-20 02:50:59',NULL,NULL),(3,'Rivadavia','11000','CABA','Liniers','8 A','1408','YES',3,'2021-01-20 02:50:59',NULL,NULL),(4,'Arieta','2947','Pcia Bs As','San Justo',NULL,'1754','YES',4,'2021-01-20 02:50:59',NULL,NULL),(5,'Balcarce','60','CABA','San Nicol├ís','PB','4178','YES',5,'2021-01-20 02:50:59',NULL,NULL),(6,'Carabobo','3250','CABA','Flores','4 A','1406','YES',6,'2021-01-20 02:50:59',NULL,NULL),(7,'Bme Mitre','434','CABA','San Nicol├ís','PB','4178','YES',7,'2021-01-20 02:50:59',NULL,NULL),(8,'Juan B Justo','1320','CABA','Palermo',NULL,'1414','YES',8,'2021-01-20 02:50:59',NULL,NULL),(11,'Cesar diaz','3622','CABA','Villa del parque','6','1407','YES',11,'2021-01-28 12:10:00',NULL,NULL);
 /*!40000 ALTER TABLE `addresses` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `payments_methods`
---
 
-DROP TABLE IF EXISTS `payments_methods`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `payments_methods` (
   `user_id` int(11) NOT NULL,
   `alias` varchar(30) NOT NULL DEFAULT 'My Payment',
@@ -71,11 +56,6 @@ CREATE TABLE `payments_methods` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `payments_methods_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `payments_methods`
---
 
 LOCK TABLES `payments_methods` WRITE;
 /*!40000 ALTER TABLE `payments_methods` DISABLE KEYS */;
@@ -83,13 +63,7 @@ INSERT INTO `payments_methods` VALUES (1,'La del Galicia','VISA','55551111222233
 /*!40000 ALTER TABLE `payments_methods` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `products`
---
 
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(12) NOT NULL,
@@ -109,11 +83,7 @@ CREATE TABLE `products` (
   `img_ppal` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `products`
---
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
@@ -121,13 +91,6 @@ INSERT INTO `products` VALUES (1,'Rodados','Mountain Bike Firebird R29 Doble sus
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `products_images`
---
-
-DROP TABLE IF EXISTS `products_images`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `products_images` (
   `product_id` int(11) NOT NULL,
   `image_name` varchar(255) NOT NULL,
@@ -139,11 +102,7 @@ CREATE TABLE `products_images` (
   KEY `products_images_ibfk_1` (`product_id`),
   CONSTRAINT `products_images_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `products_images`
---
 
 LOCK TABLES `products_images` WRITE;
 /*!40000 ALTER TABLE `products_images` DISABLE KEYS */;
@@ -151,13 +110,7 @@ INSERT INTO `products_images` VALUES (1,'Mountain Bike Firebird R29 Doble suspen
 /*!40000 ALTER TABLE `products_images` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `purchases_details`
---
 
-DROP TABLE IF EXISTS `purchases_details`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `purchases_details` (
   `user_id` int(11) NOT NULL,
   `purchase_transaction_id` int(11) NOT NULL,
@@ -176,11 +129,6 @@ CREATE TABLE `purchases_details` (
   CONSTRAINT `purchases_details_ibfk_2` FOREIGN KEY (`purchase_transaction_id`) REFERENCES `purchases_transactions` (`id`),
   CONSTRAINT `purchases_details_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `purchases_details`
---
 
 LOCK TABLES `purchases_details` WRITE;
 /*!40000 ALTER TABLE `purchases_details` DISABLE KEYS */;
@@ -188,13 +136,7 @@ INSERT INTO `purchases_details` VALUES (1,1,25,1,'YES',5,'2021-01-20 02:50:59',N
 /*!40000 ALTER TABLE `purchases_details` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `purchases_transactions`
---
 
-DROP TABLE IF EXISTS `purchases_transactions`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `purchases_transactions` (
   `user_id` int(11) NOT NULL,
   `payment_method_id` int(11) NOT NULL,
@@ -211,11 +153,7 @@ CREATE TABLE `purchases_transactions` (
   CONSTRAINT `purchases_transactions_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
   CONSTRAINT `purchases_transactions_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payments_methods` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `purchases_transactions`
---
 
 LOCK TABLES `purchases_transactions` WRITE;
 /*!40000 ALTER TABLE `purchases_transactions` DISABLE KEYS */;
@@ -223,13 +161,8 @@ INSERT INTO `purchases_transactions` VALUES (1,1,'2021-01-20 02:50:59',70000.00,
 /*!40000 ALTER TABLE `purchases_transactions` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `users`
---
 
-DROP TABLE IF EXISTS `users`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
+
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `first_name` varchar(50) NOT NULL,
@@ -244,11 +177,7 @@ CREATE TABLE `users` (
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=utf8mb4;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `users`
---
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
@@ -256,13 +185,8 @@ INSERT INTO `users` VALUES (1,'Damian','Scorciapino','damian_scorciapino@hotmail
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Dumping events for database 'goodbikesdb'
---
 
---
--- Dumping routines for database 'goodbikesdb'
---
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
