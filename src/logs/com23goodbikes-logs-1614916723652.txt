@@ -1,0 +1,10 @@
+2021-03-05T03:46:36.676493+00:00 app[web.1]:     at PacketParser.onPacket (/app/node_modules/mysql2/lib/connection.js:75:12)
+2021-03-05T03:46:36.676494+00:00 app[web.1]:     at PacketParser.executeStart (/app/node_modules/mysql2/lib/packet_parser.js:75:16)
+2021-03-05T03:46:36.676494+00:00 app[web.1]:     at Socket.<anonymous> (/app/node_modules/mysql2/lib/connection.js:82:25)
+2021-03-05T03:46:36.676495+00:00 app[web.1]:     at Socket.emit (events.js:315:20)
+2021-03-05T03:46:36.676496+00:00 app[web.1]:     at addChunk (internal/streams/readable.js:309:12)
+2021-03-05T03:46:36.676497+00:00 app[web.1]:     at readableAddChunk (internal/streams/readable.js:284:9)
+2021-03-05T03:46:36.676497+00:00 app[web.1]:     at Socket.Readable.push (internal/streams/readable.js:223:10)
+2021-03-05T03:46:36.676498+00:00 app[web.1]:     at TCP.onStreamRead (internal/stream_base_commons.js:188:23)
+2021-03-05T03:47:06.267447+00:00 heroku[router]: at=error code=H12 desc="Request timeout" method=GET path="/" host=com23goodbikes.herokuapp.com request_id=15964d25-83ce-4526-9934-b1b00f8cd5f9 fwd="181.169.151.118" dyno=web.1 connect=1ms service=30002ms status=503 bytes=0 protocol=https
+2021-03-05T03:47:07.183666+00:00 heroku[router]: at=info method=GET path="/favicon.ico" host=com23goodbikes.herokuapp.com request_id=7135aacd-6924-41c7-9502-bc97310383aa fwd="181.169.151.118" dyno=web.1 connect=1ms service=4ms status=404 bytes=524 protocol=https
