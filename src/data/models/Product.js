@@ -58,7 +58,7 @@ module.exports=function(sequelize,dataTypes){
         }
     };
     let config={
-        tableName:'PRODUCTS',
+        tableName:'products',
         timestamps:true,
         underscored:true
     }
