@@ -16,7 +16,7 @@ module.exports={
   "production": {
     "username": "goodbikes",
     "password": "XXsystem!1",
-    "database": "goodbikesdb",
+    "database": "goodbikes_goodbikesdbv2",
     "host": "mysql-goodbikes.alwaysdata.net",
     "dialect": "mysql"
   }
