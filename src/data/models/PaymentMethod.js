@@ -29,7 +29,7 @@ module.exports=function(sequelize,dataTypes){
         }
     };
     let config={
-        tableName:'PAYMENTS_METHODS',
+        tableName:'payments_methods',
         timestamps:true,
         underscored:true
     }

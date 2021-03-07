@@ -79,7 +79,7 @@ let usersController ={
                             for(let i=0; i<BuscaUser.PurchaseDetails.length;i++){
                                
 
-                                db.Product.findAll({where:{id:BuscaUser.PurchaseDetails[i].product_id}})
+                               db.Product.findAll({where:{id:BuscaUser.PurchaseDetails[i].product_id}})
                                 .then(function(productos){
                                     
                                     for(let i=0; i<productos.length;i++){
@@ -92,16 +92,18 @@ let usersController ={
                                         }
                                         arrayCompras.push(compras);
                                     }
-                                   
-                                   console.log(arrayCompras[0].img_ppal);
-                         
- 
+                                    console.log("FGASGAFAFSAFAFASFS");
+                                    console.log(arrayCompras);
+                                    return arrayCompras
+
                             })  
       
-                            }
-                                res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,arrayCompras:arrayCompras})
-                        })
+                        }
+                    
+                        return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,arrayCompras:arrayCompras})
                         
+                    })
+                    
                      
                         
                     }

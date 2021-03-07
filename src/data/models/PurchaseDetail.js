@@ -29,7 +29,7 @@ module.exports=function(sequelize,dataTypes){
         }
     };
     let config={
-        tableName:'PURCHASES_DETAILS',
+        tableName:'purchases_details',
         timestamps:true,
         underscored:true
     }
