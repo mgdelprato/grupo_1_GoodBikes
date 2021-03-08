@@ -61,9 +61,7 @@ let usersController ={
         }
     } ,
 //Método (asociado al GET) para obtener los datos y renderizar la vista de profile de un usuario
-    perfil: 
-                
-                function(req, res) {
+perfil: async function(req, res){
                 //Si no esta logueado
                 if (req.session.userEmail == undefined)
                     { // Kick
@@ -71,46 +69,21 @@ let usersController ={
                     }
                 else
                     { //Log exitoso
-                        db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}]})
-                        .then(function(BuscaUser){
-                            let compras={};
-                            let arrayCompras=[];
-                    
-                            for(let i=0; i<BuscaUser.PurchaseDetails.length;i++){
-                               
+                        
+                        let BuscaUser = await  db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}]})
+                        let compras = BuscaUser.PurchaseDetails.map((e)=> e.get({plain:true}))
+                        let productos =[]
 
-                               db.Product.findAll({where:{id:BuscaUser.PurchaseDetails[i].product_id}})
-                                .then(function(productos){
-                                    
-                                    for(let i=0; i<productos.length;i++){
-
-                                        compras={
-                                            id:productos[0].id,
-                                            title: productos[0].title,
-                                            price: productos[0].price,
-                                            img_ppal: productos[0].img_ppal
-                                        }
-                                        arrayCompras.push(compras);
-                                    }
-                                    console.log("FGASGAFAFSAFAFASFS");
-                                    console.log(arrayCompras);
-                                    return arrayCompras
-
-                            })  
-      
+                        for(let i = 0; i<compras.length; i++){
+                            productos.push(await db.Product.findOne({where:{id:BuscaUser.PurchaseDetails[i].product_id}}))
                         }
-                    
-                        return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,arrayCompras:arrayCompras})
-                        
-                    })
-                    
-                     
-                        
-                    }
+                        productos=productos.map((e)=>e.get({plain:true}))
 
+                        return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,productos:productos})
+                    }
+    
     },
-    //Método (asociado al POST) que se encarga de guardar los datos cuando se registra un nuevo usuario
-    save: function(req, res, next) {
+    save: function(req, res) {
         let errors = validationResult(req);
         //Si no hay errores, recupero los datos ingresados del usuario y los guardo, luego renderizo su profile
         if(errors.isEmpty()){
