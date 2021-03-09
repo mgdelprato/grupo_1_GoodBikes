@@ -62,6 +62,47 @@ let productsController = {
 
 
 
+    SaveCart: function(req,res) {//Suma producto al array de session
+    if (req.session.cartSQLOrganized == undefined){
+        //Primer clic en agregar de la session
+        req.session.cartSQLOrganized = []
+        req.session.cartSQLOrganized.push(req.body.id_producto)
+        }
+        
+    else 
+    {
+    //Siguientes clics en Agregar
+    req.session.cartSQLOrganized.push(req.body.id_producto)
+    }
+    //Luego del if renderizar la vista donde estaba parado
+    res.redirect('./productCart')
+},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     //Metodo (asociado al GET de products) para renderizar la vista del detalle de un producto
     detalle_Producto: function(req, res) {

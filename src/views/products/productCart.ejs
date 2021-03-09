@@ -74,6 +74,13 @@
                       <p class="tituloProducto">Precio</p>
                       <p class="valorProducto"><%= producto[i].price %></p><a href="#"></a>
                   </div>
+
+                  <div id="subtotal">
+                    <p class="tituloProducto">subtotal</p>
+                    <p id=<%= producto[i].id %> class="valorProducto"><%= producto[i].price %></p><a href="#"></a>
+                </div>
+
+                  
                   
                   <figure id="tacho">
                     <a href="../products/productCartRemove/<%= producto[i].id %>"><i class="fas fa-trash-alt"></i></a>
@@ -94,11 +101,23 @@
     <div id="total">
         <div id="precioTotal">
           <p class="precio">Total</p>
-          <p id = "suma" class="precio">
+          
+          <% 
+          let acumula = 0
+          acumula = parseInt(acumula,10)
+          for (let i = 0; i< producto.length;i++)
+          {
+            acumula = acumula + parseInt(producto[i].price,10)
+            
+           } %>
+          
+          
+          <p id = "suma" class="precio"> <%= acumula %>
+
           </p>
         </div>
 
-        <form action="" id="botonComprarForm"> 
+        <form action="" id="botonComprarForm" name="botonComprar" method="POST"> 
           <button type="submit" id="comprar">Comprar</button>
         </form>
 
