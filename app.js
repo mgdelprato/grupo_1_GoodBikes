@@ -1,5 +1,6 @@
 //Todos los requires
 const express = require('express');
+const cors = require('cors')
 const app = express();
 const path = require('path'); // Este modulo me va a permitir escribir rutas de manera correcta sin la necesidad de concatenar...
 const productsRouter = require('./src/routes/products');
@@ -14,6 +15,7 @@ const remembermeController = require('./src/controllers/remembermeController');
 const productsController = require('./src/controllers/productsController');
 
 // Esta linea aclara que vamos a disponibilizar una carpeta para que sea pública para que el navegador pueda acceder...
+app.use(cors())
 app.use(express.static( path.join(__dirname, './public') ) )
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
