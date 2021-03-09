@@ -9,5 +9,12 @@ module.exports = {
             method: 'GET',
             url: url + 'users'
         })
+    },
+    products: ()=>{
+        return axios({
+            ...defaults,
+            method: 'GET',
+            url: url + 'products'
+        })
     }
 }
