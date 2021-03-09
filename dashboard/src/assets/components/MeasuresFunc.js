@@ -32,7 +32,7 @@ let measuresDetails = [
 function Measures(props){
     
     gbResourses.users().then(function(results){
-        measuresDetails[0].number = results.data.count
+        measuresDetails[3].number = results.data.count
         console.log(measuresDetails[0].number = results.data.count);
     })
         return(
