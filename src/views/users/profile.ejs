@@ -54,13 +54,12 @@
 
                     <div class="compras">
                  
-                        <%for(let i=0; i<arrayCompras.length ;i++){%>
-                            <label for="">alalalala</label>
-                                <img src="/images/products/<%= arrayCompras[i].img_ppal %>" alt="casco">
+                        <%for(let i=0; i<productos.length ;i++){%>
+                                <img src="/images/products/<%= productos[i].img_ppal %>" alt="casco">
                                     <div class="detalles">
-                                    <p><%= arrayCompras[i].title %></p>
-                                    <p id="precio"><%= arrayCompras[i].price %></p>
-                                    <a href="#"><%= console.log(arrayCompras.length) %></a>
+                                    <p><%= productos[i].title %></p>
+                                    <p id="precio"><%= productos[i].price %></p>
+                                    <a href="#"><%= console.log(productos.length) %></a>
                                     </div>
                             <%}%>
                       
