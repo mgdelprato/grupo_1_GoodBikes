@@ -3,13 +3,6 @@ import gbResourses from '../../requests/gbResourses';
 
 function MeasuresFunc(props){
     
-<<<<<<< HEAD
-    gbResourses.users().then(function(results){
-        measuresDetails[3].number = results.data.count
-        console.log(measuresDetails[0].number = results.data.count);
-    })
-        return(
-=======
     // const [countUser, setCountUser] = useState(0)
     const [data, setData] = useState({
         countUsers: 0,
@@ -22,7 +15,6 @@ function MeasuresFunc(props){
             // setCountUser(results.data.count)
             setData({countUsers : results.data.count}) 
         })
->>>>>>> 8212700f8d9087da560b3a989434df13b3b4cb0e
             
         gbResourses.products().then(function(results){
             // setCountUser(results.data.count)
