@@ -1,56 +1,69 @@
-import React from 'react';
+import React, { Component } from 'react';
 import gbResourses from '../../requests/gbResourses';
 
-let countUsers
+class Measures extends Component {
 
-
-
-let measuresDetails = [
-    {
-        cardBorder: 'card border-left-primary shadow h-100 py-2',
-        number:'135',
-        symbol:'fas fa-clipboard-list fa-2x text-gray-300',
-        titleDescription:'PRODUCTS IN DATA BASE',
-        titleStyle:'text-xs font-weight-bold text-primary text-uppercase mb-1'
-    },
-    {
-        cardBorder: 'card border-left-success shadow h-100 py-2',
-        number:'546456',
-        symbol:'fas fa-dollar-sign fa-2x text-gray-300',
-        titleDescription:'AMOUNT IN PRODUCTS',
-        titleStyle:'text-xs font-weight-bold text-success text-uppercase mb-1'
-    },
-    {
-        cardBorder: 'card border-left-warning shadow h-100 py-2',
-        number:countUsers,
-        symbol:'fas fa-user-check fa-2x text-gray-300',
-        titleDescription:'Cantidad de usuarios',
-        titleStyle:'text-xs font-weight-bold text-warning text-uppercase mb-1'
+    constructor(props){
+        super(props)
+        this.state = {
+            items: [
+                {
+                    cardBorder: 'card border-left-primary shadow h-100 py-2',
+                    number:'135',
+                    symbol:'fas fa-clipboard-list fa-2x text-gray-300',
+                    titleDescription:'PRODUCTS IN DATA BASE',
+                    titleStyle:'text-xs font-weight-bold text-primary text-uppercase mb-1'
+                },
+                {
+                    cardBorder: 'card border-left-success shadow h-100 py-2',
+                    number:'546456',
+                    symbol:'fas fa-dollar-sign fa-2x text-gray-300',
+                    titleDescription:'AMOUNT IN PRODUCTS',
+                    titleStyle:'text-xs font-weight-bold text-success text-uppercase mb-1'
+                },
+                {
+                    cardBorder: 'card border-left-warning shadow h-100 py-2',
+                    number:'countUsers',
+                    symbol:'fas fa-user-check fa-2x text-gray-300',
+                    titleDescription:'Cantidad de usuarios',
+                    titleStyle:'text-xs font-weight-bold text-warning text-uppercase mb-1'
+                }
+            ],
+            error: null,
+            isLoaded: false
+        }
     }
-]
 
-gbResourses.users().then(function(results){
-    measuresDetails[0].number = results.data.count
-    console.log(results.data.count);
-  
-})
+componentDidMount () {
+    gbResourses.users().then((result) => {
+        this.setState({
+            isLoaded: true,
+            items: result.data
+            //results.data.count
+            
+        })
+        console.log(this.items);
+        
+    },
+    (error) => {
+    this.setState({
+      isLoaded: true,
+      error
+        });
+    }
+    )
+}  
 
-console.log(measuresDetails[0].number);
-
-
-
-function Measures(props){
-
- 
-
-        return(
-                
-                //Intento de mapeo
-                
-                measuresDetails.map((item,n) => 
-
-
-                <div className ="col-md-4 mb-4" key ={n}>
+render() {
+    const { error, isLoaded, items } = this.state;
+    if (error) {
+      return <div>Error: {error.message}</div>;
+    } else if (!isLoaded) {
+      return <div>Loading...</div>;
+    } else {
+      return (
+        items.map((item,n) => 
+            <div className ="col-md-4 mb-4" key ={n}>
                     <div className = {item.cardBorder} >
                         <div className ="card-body">
                             <div className ="row no-gutters align-items-center">
@@ -65,12 +78,10 @@ function Measures(props){
                         </div>
                     </div>
                 </div>)
-
-                
-        ) //Cierra return
-        
-
-    }; // Cierra Function
+      );
+    }
+  }
+}
 
 
 export default Measures
