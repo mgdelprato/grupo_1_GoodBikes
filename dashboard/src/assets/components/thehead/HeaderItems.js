@@ -28,7 +28,7 @@ function HeaderItems(props){
     ))
 }
 
-console.log('Holis');
+
 
 gbResourses.users().then(function(results){
   console.log(results)

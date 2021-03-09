@@ -3,7 +3,7 @@ import Sidebar from './assets/components/Sidebar';
 import TheHead from './assets/components/TheHead';
 import Container from './assets/components/Container';
 import Categories from './assets/components/Categories';
-import Measures from './assets/components/Measures';
+import MeasuresFunc from './assets/components/MeasuresFunc';
 import TheFoot from './assets/components/TheFoot';
 
 
@@ -26,7 +26,7 @@ function App() {
                     </div>
  
                     <div className ="row">
-                      <Measures/>
+                      <MeasuresFunc/>
                     </div>
 
      

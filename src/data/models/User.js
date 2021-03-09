@@ -29,7 +29,7 @@ module.exports=function(sequelize,dataTypes){
             notNull:true,
             defaultValue:'YES'
         },
-        still_alive:{
+        is_admin:{
             type:dataTypes.STRING,
             notNull:true,
             defaultValue:'NO'
