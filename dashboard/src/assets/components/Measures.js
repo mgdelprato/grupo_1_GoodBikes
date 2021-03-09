@@ -5,11 +5,6 @@ let countUsers
 
 
 
-
-
-
-
-
 let measuresDetails = [
     {
         cardBorder: 'card border-left-primary shadow h-100 py-2',
@@ -35,11 +30,12 @@ let measuresDetails = [
 ]
 
 gbResourses.users().then(function(results){
-    console.log(results.data.count);
-    console.log(measuresDetails[0].number);
     measuresDetails[0].number = results.data.count
-    console.log(measuresDetails[0].number);
+    console.log(results.data.count);
+  
 })
+
+console.log(measuresDetails[0].number);
 
 
 
