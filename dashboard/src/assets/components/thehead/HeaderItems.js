@@ -1,4 +1,5 @@
 import React from 'react';
+import gbResourses from '../../../requests/gbResourses';
 
 let HeaderItemsDetails = 
 [{
@@ -28,5 +29,9 @@ function HeaderItems(props){
 }
 
 console.log('Holis');
+
+gbResourses.users().then(function(results){
+  console.log(results)
+});
 
 export default HeaderItems

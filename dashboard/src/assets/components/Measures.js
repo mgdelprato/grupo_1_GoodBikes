@@ -1,4 +1,14 @@
 import React from 'react';
+import gbResourses from '../../requests/gbResourses';
+
+let countUsers
+
+
+
+
+
+
+
 
 let measuresDetails = [
     {
@@ -17,17 +27,26 @@ let measuresDetails = [
     },
     {
         cardBorder: 'card border-left-warning shadow h-100 py-2',
-        number:'38',
+        number:countUsers,
         symbol:'fas fa-user-check fa-2x text-gray-300',
-        titleDescription:'USERS QUANTITY',
+        titleDescription:'Cantidad de usuarios',
         titleStyle:'text-xs font-weight-bold text-warning text-uppercase mb-1'
     }
 ]
 
+gbResourses.users().then(function(results){
+    console.log(results.data.count);
+    console.log(measuresDetails[0].number);
+    measuresDetails[0].number = results.data.count
+    console.log(measuresDetails[0].number);
+})
+
+
 
 function Measures(props){
 
-   
+ 
+
         return(
                 
                 //Intento de mapeo
