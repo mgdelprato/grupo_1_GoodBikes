@@ -5,6 +5,7 @@ import Container from './assets/components/Container';
 import Categories from './assets/components/Categories';
 import MeasuresFunc from './assets/components/MeasuresFunc';
 import TheFoot from './assets/components/TheFoot';
+import LastProduct from './assets/components/LastProduct';
 
 
 
@@ -32,16 +33,13 @@ function App() {
      
                     <div className ="row">
                      
-                      <Container text = "Last product in Data Dase" classDetails = "card-body">
-                                      <div className ="text-center">
-                                      <img className ="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 25 + 'rem'}} src="assets/images/product_dummy.svg" alt="image dummy"/>
-                                      </div>
-                                      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, consequatur explicabo officia inventore libero veritatis iure voluptate reiciendis a magnam, vitae, aperiam voluptatum non corporis quae dolorem culpa exercitationem ratione?</p>
-                                      <a target="_blank" rel="nofollow" href="/">View product detail</a>
+                      <Container text = "Último producto agregado" classDetails = "card-body">
+                                     <LastProduct/>
+                                     
                       </Container>
 
 
-                      <Container text = "Categories in Data Base" classDetails = "row">
+                      <Container text = "Categorias existentes" classDetails = "row">
                                       <Categories/>
                       </Container>
                     </div>

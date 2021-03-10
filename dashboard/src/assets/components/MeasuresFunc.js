@@ -15,7 +15,6 @@ function MeasuresFunc(props){
             
             gbResourses.products().then(function(productos){
               
-                console.log(productos.data.products);
                 let contadorPrecio =0;
                 parseInt(productos.data.products.price,10)
                 for(let i =0; i< productos.data.products.length; i++ ){

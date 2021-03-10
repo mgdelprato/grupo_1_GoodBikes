@@ -1,16 +1,13 @@
 import React from 'react';
 
-let containerDetails = 
-[
-  {text: 'Last product in Data Dase', classDetails:'card-body'},
-  {text: 'Categories in Data Base', classDetails:'row'}]
+// let containerDetails = 
+// [
+//   {text: 'Last product in Data Dase', classDetails:'card-body'},
+//   {text: 'Categorias existentes', classDetails:'row'}]
 
 function Container(props){
     return(
-        
-
-                   
-                      
+            
                     <div className ="col-lg-6 mb-4">
                       <div className ="card shadow mb-4">
                         <div className ="card-header py-3">
