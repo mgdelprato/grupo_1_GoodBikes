@@ -11,15 +11,14 @@ function MeasuresFunc(props){
     });
 
     useEffect( () => {
-        gbResourses.users().then(function(results){
-            // setCountUser(results.data.count)
-            setData({countUsers : results.data.count}) 
+        gbResourses.users().then(function(usuarios){
+            
+            gbResourses.products().then(function(productos){
+                // setCountUser(results.data.count)
+                setData({countProducts : productos.data.count,countUsers : usuarios.data.count}) 
+            })  
         })
             
-        gbResourses.products().then(function(results){
-            // setCountUser(results.data.count)
-            setData({countProducts : results.data.count}) 
-        })  
     }, []
     )
     

@@ -7,31 +7,7 @@ class Measures extends Component {
     constructor(props){
         super(props)
         this.state = {
-<<<<<<< HEAD
-            items: [{
-                cardBorder: 'card border-left-primary shadow h-100 py-2',
-                number:'135',
-                symbol:'fas fa-clipboard-list fa-2x text-gray-300',
-                titleDescription:'PRODUCTS IN DATA BASE',
-                titleStyle:'text-xs font-weight-bold text-primary text-uppercase mb-1'
-            },
-            {
-                cardBorder: 'card border-left-success shadow h-100 py-2',
-                number:'546456',
-                symbol:'fas fa-dollar-sign fa-2x text-gray-300',
-                titleDescription:'AMOUNT IN PRODUCTS',
-                titleStyle:'text-xs font-weight-bold text-success text-uppercase mb-1'
-            },
-            {
-                cardBorder: 'card border-left-warning shadow h-100 py-2',
-                number:'countUsers',
-                symbol:'fas fa-user-check fa-2x text-gray-300',
-                titleDescription:'Cantidad de usuarios',
-                titleStyle:'text-xs font-weight-bold text-warning text-uppercase mb-1'
-            }],
-=======
             items: [],
->>>>>>> 8212700f8d9087da560b3a989434df13b3b4cb0e
             error: null,
             isLoaded: false
         }
@@ -86,13 +62,8 @@ render() {
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
-<<<<<<< HEAD
-      return(
-        items.map((item,n) => 
-=======
       return (
         this.items.map((item,n) => 
->>>>>>> 8212700f8d9087da560b3a989434df13b3b4cb0e
             <div className ="col-md-4 mb-4" key ={n}>
                     <div className = {item.cardBorder} >
                         <div className ="card-body">
