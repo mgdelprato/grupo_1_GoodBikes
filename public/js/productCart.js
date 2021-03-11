@@ -20,9 +20,31 @@ let items = JSON.parse(localStorage.getItem('datos'))
 //Accionando sobre valores recuperados
 items.map(item => 
     
-    alert('Producto ' + item + '\n Precio: ' + document.getElementById('P'+item).textContent + 'Cantidad: ' + 
-    document.getElementById('Q'+item).value + 'Subtotal: ' + parseInt(document.getElementById('P'+item).textContent,10)*parseInt(document.getElementById('Q'+item).value,10)            
-            )) 
+        document.getElementById('PxQ'+item).innerHTML = 
+
+        '<p id="PxQ"' + item + 'class="valorProducto">' +  
+        parseInt(document.getElementById('P'+item).textContent,10)*parseInt(document.getElementById('Q'+item).value,10)
+        + '</p>'
+                   
+)
+
+let acumula = 0
+let valor
+
+for (let i = 0; i < items.length; i++) {
+    valor = parseInt(document.getElementById('PxQ'+items[i]).textContent,10)
+    acumula = acumula + valor
+    
+}
+
+document.getElementById('suma').innerHTML = '<p id="suma" class="precio">' + acumula + '</p>'
+    
+   
+        
+    
+
+               
+
 
 
 // document.getElementById('2') + document.getElementById('14')

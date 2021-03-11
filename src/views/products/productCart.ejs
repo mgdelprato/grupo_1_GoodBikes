@@ -71,7 +71,7 @@
 
                   <div id="subtotal">
                     <p class="tituloProducto">subtotal</p>
-                    <p id=<PxQ<%= producto[i].id %> class="valorProducto"><%= producto[i].price %></p><a href="#"></a>
+                    <p id="PxQ<%= producto[i].id %>" class="valorProducto">0</p><a href="#"></a>
                 </div>
 
                   
@@ -96,19 +96,10 @@
         <div id="precioTotal">
           <p class="precio">Total</p>
           
-          <% 
-          let acumula = 0
-          acumula = parseInt(acumula,10)
-          for (let i = 0; i< producto.length;i++)
-          {
-            acumula = acumula + parseInt(producto[i].price,10)
-            
-           } %>
+        
           
           
-          <p id = "suma" class="precio"> <%= acumula %>
-
-          </p>
+          <p id = "suma" class="precio"> 0 </p>
         </div>
 
         <form action="" id="botonComprarForm" name="botonComprar" method="POST"> 
