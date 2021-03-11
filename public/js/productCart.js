@@ -2,7 +2,7 @@
 function levantaID(){
 
         let elemento = document.getElementsByClassName('elItem'); 
-        let array_id = Array();
+        let array_id = [];
 
         for(let i = 0; i < elemento.length; i++){
             let id = elemento[i].getAttribute('id');
@@ -11,7 +11,25 @@ function levantaID(){
 
         console.log(array_id);
         localStorage.setItem('datos', JSON.stringify(array_id)); // Guardo el objeto como un string en Storage
+} //End function levantaID
+
+
+function guardaCantidades(){
+
+    let elementoQ = document.getElementsByClassName('CantidadProducto'); 
+    let array_idQ = [];
+
+    for(let i = 0; i < elementoQ.length; i++){
+        let idQ = elementoQ[i].getAttribute('id');
+        let Q = elementoQ[i].value
+        array_idQ.push([idQ,Q]);
     }
+
+    console.log(array_idQ);
+    localStorage.setItem('datosQ', JSON.stringify(array_idQ)); // Guardo el objeto como un string en Storage
+} //End function guardaCantidades
+
+
 
 
 function CambioEnCantidad(){
@@ -21,13 +39,14 @@ function CambioEnCantidad(){
     for(let n = 0; n < elementoClass.length; n++){
         elementoClass[n].addEventListener("change", function(){
             
+            guardaCantidades()
             recalcula()
 
         })
     }
 
     
-}
+}//End function CambioEnCantidad
 
 
 
@@ -53,17 +72,10 @@ function recalcula(){
 
     document.getElementById('suma').innerHTML = '<p id="suma" class="precio">' + acumula + '</p>'
         
-}
+}//End Function levantaID
         
 levantaID()
 CambioEnCantidad()
 recalcula()
                
 
-
-
-// document.getElementById('2') + document.getElementById('14')
-
-
-
-// Suma.innerHTML = ""
