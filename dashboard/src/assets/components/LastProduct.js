@@ -14,7 +14,7 @@ function LastProduct(props){
     let ultimoProd
     useEffect(()=>{
         gbResourses.products().then(function(productos){
-            ultimoProd = productos.data.products.length-1
+            ultimoProd = productos.data.products.length -1
             setData({
                 title:productos.data.products[ultimoProd].title,
                 detail:productos.data.products[ultimoProd].detail,

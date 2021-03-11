@@ -16,5 +16,13 @@ module.exports = {
             method: 'GET',
             url: url + 'products'
         })
+    },
+    detailUser: (id)=>{
+        return axios ({
+            ...defaults,
+            method: 'GET',
+            url: url + 'users/' + id
+        })
     }
 }
+
