@@ -11,15 +11,21 @@ function MeasuresFunc(props){
     });
 
     useEffect( () => {
-        gbResourses.users().then(function(results){
-            // setCountUser(results.data.count)
-            setData({countUsers : results.data.count}) 
+        gbResourses.users().then(function(usuarios){
+            
+            gbResourses.products().then(function(productos){
+              
+                let contadorPrecio =0;
+                parseInt(productos.data.products.price,10)
+                for(let i =0; i< productos.data.products.length; i++ ){
+                    contadorPrecio = contadorPrecio + parseInt(productos.data.products[i].price,10)
+                }
+                
+                // setCountUser(results.data.count)
+                setData({countProducts : productos.data.count,countUsers : usuarios.data.count, countAmount:contadorPrecio}) 
+            })  
         })
             
-        gbResourses.products().then(function(results){
-            // setCountUser(results.data.count)
-            setData({countProducts : results.data.count}) 
-        })  
     }, []
     )
     
@@ -29,12 +35,12 @@ function MeasuresFunc(props){
             cardBorder: 'card border-left-primary shadow h-100 py-2',
             number:data.countProducts,
             symbol:'fas fa-clipboard-list fa-2x text-gray-300',
-            titleDescription:'PRODUCTS IN DATA BASE',
+            titleDescription:'Productos en catálogo',
             titleStyle:'text-xs font-weight-bold text-primary text-uppercase mb-1'
         },
         {
             cardBorder: 'card border-left-success shadow h-100 py-2',
-            number:'546456',
+            number: data.countAmount,
             symbol:'fas fa-dollar-sign fa-2x text-gray-300',
             titleDescription:'Valor en $ de Inventario',
             titleStyle:'text-xs font-weight-bold text-success text-uppercase mb-1'
@@ -43,7 +49,7 @@ function MeasuresFunc(props){
             cardBorder: 'card border-left-warning shadow h-100 py-2',
             number:data.countUsers,
             symbol:'fas fa-user-check fa-2x text-gray-300',
-            titleDescription:'Cantidad de usuarios',
+            titleDescription:'Cantidad de usuarios activos',
             titleStyle:'text-xs font-weight-bold text-warning text-uppercase mb-1'
         }
     ]
