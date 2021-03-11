@@ -14,6 +14,20 @@ function levantaID(){
     }
 
 
+function CambioEnCantidad(){
+
+    let elementoClass = document.getElementsByClassName('CantidadProducto'); 
+
+    for(let n = 0; n < elementoClass.length; n++){
+        elementoClass[n].addEventListener("change", function(){
+            
+            recalcula()
+
+        })
+    }
+
+    
+}
 
 
 
@@ -42,6 +56,7 @@ function recalcula(){
 }
         
 levantaID()
+CambioEnCantidad()
 recalcula()
                
 
