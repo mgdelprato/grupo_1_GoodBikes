@@ -1,7 +1,7 @@
 const path = require('path')
 const { validationResult } = require('express-validator');
 const db = require('../data/models');
-const { Sequelize } = require('../data/models');
+const { Sequelize, sequelize } = require('../data/models');
 const Op = Sequelize.Op
 
 /* CONTROLLER QUE CONTIENE LA LÓGICA DE NEGOCIO RELACIONADA A PRODUCTOS */
@@ -77,6 +77,39 @@ let productsController = {
     //Luego del if renderizar la vista donde estaba parado
     res.redirect('./productCart')
 },
+
+
+
+
+
+
+
+
+
+
+Buy: function(req,res) {
+    
+    let usernum = 11
+    let payment = 9
+    let mount = 10000
+    let theproduct = 10
+    let Q = 1
+
+
+    sequelize.query(
+       "INSERT INTO purchases_transactions(user_id,payment_method_id,transaction_amount) VALUES(" + usernum + "," + payment + "," + mount + ")"
+        )
+    //Renderizo la vista enviando los productos que pertenecen a la categroia
+    .then(
+        sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
+        )
+    .then(function(producto){
+        res.redirect('../')     
+    })
+
+
+  
+},//Cierra método Buy
 
 
 

@@ -18,12 +18,16 @@ router.get('/productSearch/:categoria', productsController.buscarProducto); // T
 router.get('/search', productsController.buscador); // Trae listado de productos
 
 
-/* CARRITO */
+/* Carrito */
 router.get('/productCart',productsController.carritoCompras);
 router.get('/productCartAdd',productsController.carritoComprasAdd);
 router.post('/productCartAdd',productsController.carritoComprasAdd);
 router.get('/productCartRemove',productsController.carritoComprasRemove);
 router.get('/productCartRemove/:id',productsController.carritoComprasRemove);
+
+/*Compra final*/
+router.post('/Buy',productsController.Buy);
+router.get('/Buy',productsController.Buy);
 
 module.exports = router;
 
