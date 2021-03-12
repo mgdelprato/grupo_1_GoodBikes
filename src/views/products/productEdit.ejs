@@ -73,13 +73,13 @@
                             <small id="errorImagen" class="errores"><%=(locals.errors && errors.fileExtension) ? errors.fileExtension.msg : "" %> </small>
                             <input type="file" multiple name="files[]" id="imagen" name="archivo" value="<%= productoEditar.Imagen%>">
                        
-                        <button type="submit">Adjuntar</button>
+                        <!-- <button type="submit">Adjuntar</button> -->
                         <button type="submit" id="guardar">Guardar</button>
 
                     </div>
                     
                     
-                    <form action="">
+                    <!-- <form action="">
                         <div id="containerMini">
                             <% for(let i=0; i < productoEditar.ProductsImages.length; i++){ %>
                                 <img id="imagenMini" src="/images/products/<%= productoEditar.ProductsImages[i].image_name %>" alt="Principal1">
@@ -87,7 +87,7 @@
                         </div>
                      
                         <button id="tacho"><i id="tachitoImportado" class="fas fa-trash"></i></button>
-                    </form>
+                    </form> -->
                 
                 </div>
 
