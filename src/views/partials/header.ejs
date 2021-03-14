@@ -29,12 +29,14 @@
                     <li id="Tag_Dashboard_admin"><a target="_blank" href="http://localhost:3000">Dashboard</a></li>        
                     <li id="Tag_Profile_admin"><a href="/users/Profile">Mi Perfil</a></li>   
                     <li id="Tag_Login_admin"><a href="/users/logout">Log Out</a></li> 
-                    
+                    <li id="UserID:<%= locals.userID %>" style="display: none"> </li> 
+
                     <%} else {%>
 
                     <li id="User_Name"> Hola, <%= locals.user %> !</li>
                     <li id="Tag_Profile"><a href="/users/Profile">Mi Perfil</a></li>        
                     <li id="Tag_Login"><a href="/users/logout">Log Out</a></li> 
+                    <li id="UserID:<%= locals.userID %>" style="display: none"> </li> 
 
                                         
             <%}}%>
@@ -55,6 +57,7 @@
                 <li id="Tag_Profile_Mobile"><a href="/admin/products/productList">Administrar Productos</a></li>        
                 <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li> 
                 <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
+                <li id="UserID:<%= locals.userID %>" style="display: none"> </li> 
             </div>
             
             <%} else {%>
@@ -62,7 +65,8 @@
             <div id="container_header_Mobile_logged">   
                 <li id="User_Name_Mobile"> Hola, <%= locals.user %> !</li>
                 <li id="Tag_Profile_Mobile"><a href="/users/Profile">Mi Perfil</a></li>        
-                <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li> 
+                <li id="Tag_Login_Mobile"><a href="/users/logout">Log Out</a></li>
+                <li id="UserID:<%= locals.userID %>" style="display: none"> </li>  
             </div>
     <%}}%>
 
