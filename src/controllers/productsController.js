@@ -178,7 +178,7 @@ Buy: function(req,res) {
                 res.redirect('/admin/products/productList')
             })
         }else{
-            // Si hay errores, los mapeo y muestro la la vista de creación con los errores
+            // Si hay errores, los mapeo y muestro  la vista de creación con los errores
             return res.render(path.join(__dirname,'../views/products/productCreate'),{errors: errors.mapped()
             })
         }
@@ -241,9 +241,14 @@ Buy: function(req,res) {
 
         
         // Si hay errores, los mapeo y muestro la la vista de creación con los errores
-        return res.render(path.join(__dirname,'../views/products/productCreate'), {
-            errors: errors.mapped()
-        })
+        return (db.Product.findByPk(req.params.id,
+            {include: [{association: "ProductsImages"}]})
+        .then(function(productoEditar){
+    
+
+            //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
+            res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
+        }))
     }
 },
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos

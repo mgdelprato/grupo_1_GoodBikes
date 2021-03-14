@@ -112,3 +112,21 @@ SPRINT 7
 ## "Daily 3"
 - Definición de UX/UI para errores
 - Revisión final tareas de sprint
+**************************************************
+
+SPRINT 8
+
+## "Daily 1"
+- Revisión de enunciado de Sprint 8
+- Ingresar tareas al tablero
+- Asignar nuevas tareas y Correcciones del sprint anteriores y deudas técnicas
+
+## "Daily 2"
+- Chequeo de tareas y trabas, revisión de componentes en dashboard
+- Status y pasos a seguir
+
+## "Daily 3"
+- Incoporación de Emilio al equipo, revisión de status de los proyectos de cara a la entrega final.
+
+## "Daily 4"
+- Revisión final tareas de sprint
