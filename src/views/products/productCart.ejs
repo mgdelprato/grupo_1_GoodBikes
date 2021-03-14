@@ -26,15 +26,19 @@
     </div>
     
     <main>
-      
+       
+          
       <%if(locals.mensajito){%>
 
         <p style="text-align: center;font-size: 20px;margin-left: 3vw;font-weight: bold;">Nada por aquí</p>
         
         <%}        
       else
-      {
-          for (let i = 0; i< producto.length;i++)
+      {%>
+
+        <form action="/products/Buy" id="botonComprarForm" name="botonComprar" method="POST">
+
+          <%for (let i = 0; i< producto.length;i++) <!-- Este codigo se repite para cada uno de los productos del carrito -->
           {%>
               
               <section id="<%= producto[i].id %>" class='elItem'>
@@ -51,7 +55,7 @@
                    </div>
 
                   <div id="cantidad">
-                    <form action="">
+                    
                       <p class="tituloProducto">Cantidad</p>
                       <select id="Q<%= producto[i].id %>" name="ListaCantidades" form="CantidadesForm" class="CantidadProducto" value="5">
                         
@@ -61,7 +65,7 @@
                         <option value=4>4</option>
                         <option value=5>5</option>
                       </select>
-                    </form>
+                    
                   </div>
 
                   <div id="precio">
@@ -81,32 +85,36 @@
                   </figure>
 
               </section>
+
+
+
+      <%}%>       <!-- Cierra el for que trae cada item del carrito  -->
+
+
+
+        <div id="total">
+          <div id="precioTotal">
+            <p class="precio">Total</p>
+            
+            <input id = "suma" class="precio" name="suma"> </input>
+            
+          </div>
+  
+        </div>
+  
+     
+      <button type="submit" id="comprar">Comprar</button>
+    </form>     
+
+    <%}%>     <!-- Cierra IF que analiza si existen productos o no -->
+
     
-      <%}
-    }%>
-    
-
-
-
 
   <%if(locals.mensajito){}        
   else
   {%>
-    <div id="total">
-        <div id="precioTotal">
-          <p class="precio">Total</p>
-          
-        
-          
-          
-          <p id = "suma" class="precio"> 0 </p>
-        </div>
 
-        <form action="/products/Buy" id="botonComprarForm" name="botonComprar" method="POST"> 
-          <button type="submit" id="comprar">Comprar</button>
-        </form>
 
-    </div>
 
   <%}%>
 

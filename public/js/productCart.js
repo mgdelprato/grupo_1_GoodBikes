@@ -70,8 +70,11 @@ function recalcula(){
         acumula = acumula + valor        
         }
 
-    document.getElementById('suma').innerHTML = '<p id="suma" class="precio">' + acumula + '</p>'
-        
+    document.getElementById('suma').value = acumula
+
+//    document.getElementById('suma').innerHTML = '<p id="suma" class="precio">' + acumula + '</p>'
+//    document.getElementById('sumaBD').value = valor
+
 }//End Function levantaID
         
 levantaID()
