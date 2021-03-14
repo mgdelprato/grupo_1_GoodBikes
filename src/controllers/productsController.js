@@ -89,6 +89,11 @@ let productsController = {
 
 Buy: function(req,res) {
     
+    if(req.session.userID == undefined)
+    return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Goodbiker! Debes loguearte para concretar tu compra'})
+    else
+    {return res.send("Usuario " + req.session.userID)}
+
     let usernum = 11
     let payment = 9
     let mount = 10000
