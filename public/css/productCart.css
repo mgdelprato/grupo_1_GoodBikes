@@ -120,7 +120,8 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
     .valorProducto{
         font-family: 'Roboto', sans-serif;
     }
-
+    
+    .CantidadProducto{width: 3vw;text-align: center;}
     #tacho i{
         font-size: 25px;
         color: #333333;
