@@ -12,7 +12,7 @@ let productsController = {
     carritoCompras: function(req, res) {
 
             if(req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized.length === 0) //Sin productos en el carrito
-                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Nothing here'})}
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Nada por aquí'})}
             else
                 {    
                 db.Product.findAll({
@@ -80,13 +80,6 @@ let productsController = {
 
 
 
-
-
-
-
-
-
-
 Buy: function(req,res) {
     
     if(req.session.userID == undefined)
@@ -100,9 +93,7 @@ Buy: function(req,res) {
         
         
         console.log('El monto de compra es ' + req.body.suma);
-
-        
-    
+           
         
         sequelize.query(
         "INSERT INTO purchases_transactions(user_id,payment_method_id,transaction_amount) VALUES(" + usernum + "," + payment + "," + mount + ")"
@@ -113,6 +104,7 @@ Buy: function(req,res) {
                 let theproduct
                 let Q
 
+                //Se insertan en la BD el detalle de la transaccion en cantidades de productos comprados
                 for(let j=0;j<req.session.cartSQLOrganized.length;j++){
                     theproduct = req.session.cartSQLOrganized[j]
                     Q = req.body.Q[j]
@@ -120,11 +112,17 @@ Buy: function(req,res) {
                     console.log('Detalle de compra finalizada. Producto: ' + theproduct + ' Cantidad: ' + Q);
                     
                     sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
+                    
                 }//Cierra for
-                }//Cierra function de promesa
+            }//Cierra function de promesa
             ) //Cierra paso de promesa
+            .then(function(){
+                req.session.cartSQLOrganized = []
+            }
+            )
         .then(function(producto){
-            res.redirect('../')     
+            {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: '¡Compra realizada con éxito! En tu perfil puedes ver tu historial de compras'})}
+            //res.redirect('../')     
         })
 
 

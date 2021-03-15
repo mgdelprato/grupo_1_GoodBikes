@@ -264,7 +264,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
             #precioTotal{display:flex;flex-direction: row;justify-content: space-around;}
 
-            .precio{font-size: 13px;font-weight: bold;margin: 1vh;}
+            .precio{font-size: 13px;font-weight: bold;margin: 1vh;width: 20vw;text-align: center;}
 
             #comprar{
                 width: 40vw;

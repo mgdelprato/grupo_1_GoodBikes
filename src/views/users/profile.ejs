@@ -55,21 +55,18 @@
                     <div class="compras">
                  
                         <%for(let i=0; i<productos.length ;i++){%>
-                                <img src="/images/products/<%= productos[i].img_ppal %>" alt="casco">
+                                <div id='ContieneCompras'>
+                                    <img src="/images/products/<%= productos[i].img_ppal %>" alt="casco">
                                     <div class="detalles">
-                                    <p><%= productos[i].title %></p>
-                                    <p id="precio"><%= productos[i].price %></p>
-                                    <a href="#"><%= console.log(productos.length) %></a>
+                                        <p><%= productos[i].title %></p>
+                                        <p id="precio"><%= productos[i].price %></p>
+                                        <a href="#"><%= console.log(productos.length) %></a>
                                     </div>
+                                 </div>
                             <%}%>
                       
                          <br>
-                         <!-- <img src="/images/products/15424_800.jpg" alt="casco">
-                            <div class="detalles">
-                            <p>Piñon 18 Vel</p>
-                            <p id="precio">$1.234,03</p>
-                            <a href="#">Ver detalles></a>
-                         </div> -->
+              
                          <br>
                     </div>
                     

@@ -51,7 +51,13 @@ let usersController ={
                         res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar, userID: req.session.userID},{maxAge: 86400000})
                     }
                     //Ir al home logueado
-                    return res.redirect('/');
+                
+                    if(req.session.cartSQLOrganized != undefined)
+                    {return res.redirect('/products/ProductCart')} //Si esta comprando, al carrito
+                    else
+                    {return res.redirect('/');}//Sino al home
+                    
+                
                 }else{// Error en contraseña
                             req.session.destroy() //Por las dudas
                             res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
