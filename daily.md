@@ -112,3 +112,13 @@ SPRINT 7
 ## "Daily 3"
 - Definición de UX/UI para errores
 - Revisión final tareas de sprint
+
+## "Daily 4"
+- Repaso de temas pendientes para entrega final
+- Definición y asignado de pendientes del carrito
+- Definición y asignado de pendientes sobre el dashboard
+
+## "Daily 5"
+- Revisión estado del proyecto
+- Corrección de errores pre entrega de la web
+- Revisión de estilos y mejoras en el dashboard
