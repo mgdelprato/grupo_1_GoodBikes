@@ -99,8 +99,8 @@ Buy: function(req,res) {
         let mount = req.body.suma
         
         
-        console.log('El monto es ' + req.body.suma);
-        console.log('Lloro');
+        console.log('El monto de compra es ' + req.body.suma);
+
         
     
         
@@ -116,7 +116,9 @@ Buy: function(req,res) {
                 for(let j=0;j<req.session.cartSQLOrganized.length;j++){
                     theproduct = req.session.cartSQLOrganized[j]
                     Q = req.body.Q[j]
-                    console.log("El Q loco es " + Q);
+
+                    console.log('Detalle de compra finalizada. Producto: ' + theproduct + ' Cantidad: ' + Q);
+                    
                     sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
                 }//Cierra for
                 }//Cierra function de promesa

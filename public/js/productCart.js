@@ -1,6 +1,7 @@
   
     levantaID()
     recalcula()
+    levantaID_PrimeraVez()
     CambioEnCantidad()
 
 
@@ -33,26 +34,34 @@ function levantaID(){
     //Controles de array vacío
     if(items.length == 0){
        levantaID_PrimeraVez()
-       alert('Dice que no hay datos guardados en storage')
+       //alert('Dice que no hay datos guardados en storage')
        return recalcula()
 
     }
 
     if (elementoClass.length == 0) {
         levantaID_PrimeraVez()
-        alert('Dice que no hay datos productos en el carrito')
+        //alert('Dice que no hay datos productos en el carrito')
         return recalcula()
     }
 
-    levantaID_PrimeraVez()
 
-    //Distribuye cantidades
-    for (let n = 0; n < items.length; n++) {
-        document.getElementById("Q"+items[n].Producto).value = parseInt(items[n].Q,10)
-    } //Cierre for
 
-        recalcula()
+   
+        //Distribuye cantidades
+        try{
+            for (let n = 0; n < items.length; n++) {
+                document.getElementById("Q"+items[n].Producto).value = parseInt(items[n].Q,10)
+            } //Cierre for
+        } //try
+        catch(e){
+            console.log(e);
+            recalcula()
+            
+        }
         
+        recalcula()
+    
      
 } //Cierre funcion LevantaID
 
@@ -72,7 +81,6 @@ function recalcula(){
         + '</p>'
     }
 
-    
     
     
     //Calcula totales
