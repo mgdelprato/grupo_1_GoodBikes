@@ -11,8 +11,8 @@ function TheHead(props){
       </button>
       
       <ul className ="navbar-nav ml-auto">
-        <HeaderItems/>
-        <div className ="topbar-divider d-none d-sm-block"></div>
+       
+        
          <ImgProfile/>
       </ul>
       </nav>

@@ -43,12 +43,21 @@ let usersController ={
                     req.session.user = BuscaUser.first_name
                     req.session.userEmail = BuscaUser.email
                     req.session.avatar = BuscaUser.avatar
+                    req.session.userID = BuscaUser.id
+
+                    console.log("Paso por aca ATR y el user es: " + BuscaUser.id);
                     if(req.body.rememberme == 'si') // ¿Tildó recordame?
                     {
-                        res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
+                        res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar, userID: req.session.userID},{maxAge: 86400000})
                     }
                     //Ir al home logueado
-                    return res.redirect('/');
+                
+                    if(req.session.cartSQLOrganized != undefined)
+                    {return res.redirect('/products/ProductCart')} //Si esta comprando, al carrito
+                    else
+                    {return res.redirect('/');}//Sino al home
+                    
+                
                 }else{// Error en contraseña
                             req.session.destroy() //Por las dudas
                             res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})

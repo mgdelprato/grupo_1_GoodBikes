@@ -19,9 +19,8 @@ function Sidebar(props){
       <hr className ="sidebar-divider"/>
       <div className ="sidebar-heading">Actions</div>
 
-      <NavItems classOne="nav-item" classTwo="nav-link collapsed" classThree="fas fa-fw fa-folder" text = "Pages" />
-      <NavItems classOne="nav-item" classTwo="nav-link" classThree="fas fa-fw fa-chart-area" text = "Charts" />                
-      <NavItems classOne="nav-item" classTwo="nav-link" classThree="fas fa-fw fa-table" text = "Tables" />                
+      <NavItems classOne="nav-item" classTwo="nav-link collapsed" classThree="fas fa-fw fa-folder" text = "Home" />
+             
 
       <hr className ="sidebar-divider d-none d-md-block"/>
       </ul>

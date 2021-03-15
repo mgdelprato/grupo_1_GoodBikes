@@ -12,7 +12,7 @@ let productsController = {
     carritoCompras: function(req, res) {
 
             if(req.session.cartSQLOrganized == undefined || req.session.cartSQLOrganized.length === 0) //Sin productos en el carrito
-                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Nothing here'})}
+                     {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: 'Nada por aquí'})}
             else
                 {    
                 db.Product.findAll({
@@ -80,35 +80,53 @@ let productsController = {
 
 
 
-
-
-
-
-
-
-
 Buy: function(req,res) {
     
-    let usernum = 11
-    let payment = 9
-    let mount = 10000
-    let theproduct = 10
-    let Q = 1
+    if(req.session.userID == undefined)
+    return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Goodbiker! Debes loguearte para concretar tu compra. Luego puedes volver al carrito de compras.'})
+    else
+    {
+
+        let usernum = req.session.userID
+        let payment = 9
+        let mount = req.body.suma
+        
+        
+        console.log('El monto de compra es ' + req.body.suma);
+           
+        
+        sequelize.query(
+        "INSERT INTO purchases_transactions(user_id,payment_method_id,transaction_amount) VALUES(" + usernum + "," + payment + "," + mount + ")"
+            )
+        //Renderizo la vista enviando los productos que pertenecen a la categroia
+        .then(
+            function(){
+                let theproduct
+                let Q
+
+                //Se insertan en la BD el detalle de la transaccion en cantidades de productos comprados
+                for(let j=0;j<req.session.cartSQLOrganized.length;j++){
+                    theproduct = req.session.cartSQLOrganized[j]
+                    Q = req.body.Q[j]
+
+                    console.log('Detalle de compra finalizada. Producto: ' + theproduct + ' Cantidad: ' + Q);
+                    
+                    sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
+                    
+                }//Cierra for
+            }//Cierra function de promesa
+            ) //Cierra paso de promesa
+            .then(function(){
+                req.session.cartSQLOrganized = []
+            }
+            )
+        .then(function(producto){
+            {res.render( path.join(__dirname, '../views/products/productCart.ejs'),{mensajito: '¡Compra realizada con éxito! En tu perfil puedes ver tu historial de compras'})}
+            //res.redirect('../')     
+        })
 
 
-    sequelize.query(
-       "INSERT INTO purchases_transactions(user_id,payment_method_id,transaction_amount) VALUES(" + usernum + "," + payment + "," + mount + ")"
-        )
-    //Renderizo la vista enviando los productos que pertenecen a la categroia
-    .then(
-        sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
-        )
-    .then(function(producto){
-        res.redirect('../')     
-    })
-
-
-  
+    } // Cierra el if, si se encuentra logueado ante la compra
 },//Cierra método Buy
 
 
@@ -178,7 +196,7 @@ Buy: function(req,res) {
                 res.redirect('/admin/products/productList')
             })
         }else{
-            // Si hay errores, los mapeo y muestro la la vista de creación con los errores
+            // Si hay errores, los mapeo y muestro  la vista de creación con los errores
             return res.render(path.join(__dirname,'../views/products/productCreate'),{errors: errors.mapped()
             })
         }
@@ -241,9 +259,14 @@ Buy: function(req,res) {
 
         
         // Si hay errores, los mapeo y muestro la la vista de creación con los errores
-        return res.render(path.join(__dirname,'../views/products/productCreate'), {
-            errors: errors.mapped()
-        })
+        return (db.Product.findByPk(req.params.id,
+            {include: [{association: "ProductsImages"}]})
+        .then(function(productoEditar){
+    
+
+            //Renderizo la vista enviandole los valores del producto a editar para utilizarlos en la vista
+            res.render(path.join(__dirname, '../views/products/productEdit.ejs'),{productoEditar:productoEditar})
+        }))
     }
 },
     //Método (asociado a GET en el admin) para renderizar la vista de listado de productos

@@ -79,7 +79,7 @@ window.addEventListener("load",function(){
             console.log('sin imagen');
         } else if(bandera == undefined){
             console.log('problemas con extensión de imagenes');
-            errores.imagenes = "Por favor ingresar imagenes con extension JPG, JPG, PNG O GIF";
+            errores.imagenes = "Por favor ingresar imagenes con extension JPG, JPEG, PNG O GIF";
             errorImagen.innerText = errores.imagenes
         } else {
             console.log('pase ok imagenes');

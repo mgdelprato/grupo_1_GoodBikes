@@ -6,7 +6,7 @@ function NavItems(props){
 
                       
       <li className ={props.classOne}>
-        <a className ={props.classTwo} href="/">
+        <a className ={props.classTwo} href="http://localhost:5000">
           <i className ={props.classThree}></i>
           <span>{props.text}</span>
         </a>
