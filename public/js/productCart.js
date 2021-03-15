@@ -21,7 +21,7 @@ function levantaID_PrimeraVez(){
         console.log(array_id);
         localStorage.setItem('datos', JSON.stringify(array_id)); // Guardo el objeto como un string en Storage
 
-        alert('Pase por levanta por primera vez')
+        
 
     } //End function levantaIDprimeraVez
 
@@ -44,6 +44,7 @@ function levantaID(){
         return recalcula()
     }
 
+    levantaID_PrimeraVez()
 
     //Distribuye cantidades
     for (let n = 0; n < items.length; n++) {
@@ -58,6 +59,7 @@ function levantaID(){
 
 
 function recalcula(){
+    levantaID_PrimeraVez()
     let items = JSON.parse(localStorage.getItem('datos'))
 
     //Calcula subtotales
@@ -72,6 +74,7 @@ function recalcula(){
 
     
     
+    
     //Calcula totales
     let acumula = 0
     let valor
@@ -82,10 +85,32 @@ function recalcula(){
         }
 
     document.getElementById('suma').value = acumula
-
-
-
 }//End Function recalcula
+
+
+
+function CambioEnCantidad(){
+    
+    let items = JSON.parse(localStorage.getItem('datos'))
+
+    for(let i = 0; i < items.length; i++){
+        
+
+        document.getElementById('Q'+items[i].Producto).addEventListener("change", 
+        function(){
+
+            
+            levantaID_PrimeraVez()
+            recalcula()
+
+
+        })
+    }//End for
+
+}//End function CambioEnCantidad
+
+
+
 
 /*
 function guardaCantidades(){
@@ -121,20 +146,4 @@ function asignaCantidades(){
 
 */
 
-function CambioEnCantidad(){
-
-    let elementoClass = document.getElementsByClassName('CantidadProducto'); 
-
-    for(let n = 0; n < elementoClass.length; n++){
-        elementoClass[n].addEventListener("change", function(){
-            
-            levantaID_PrimeraVez()
-            recalcula()
-
-
-        })
-    }
-
-
-}//End function CambioEnCantidad
 
