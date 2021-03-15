@@ -16,6 +16,7 @@
 #fuente2{font-family: 'Roboto', sans-serif;}
 
 
+
 /*Aplicación de estilos Genéricos por defecto*/
 *{  margin: 0px;
     padding: 0px;
@@ -36,14 +37,14 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Bars{display: none;}
 .ocultoMovil{display: none;}
 
-    /*MAIN*/
+    /*main*/
 
 
     #Presentacion{display:flex; flex-direction: row;justify-content: center;align-items: center;margin: 3%;}
     #Titulo_Tienda{font-family: 'Anton', sans-serif; font-size: 2.2em;letter-spacing: 0.1em;}
     #img_tit{width:8%; height:auto}
 
-    main{
+    /* main{
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -51,10 +52,12 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
         width: 100%;
         height: auto;
 
-    }
+    } */
 
-        main section{
-            width: 70vw;
+    #CarritoFormulario{display: flex;flex-direction: column;align-items: center;justify-content: center;}
+
+        .elItem{
+            width: 80vw;
             height: 20vh;
             border-style: solid;
             border-width: 1px;
@@ -68,14 +71,14 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
             align-items: center;
         }
 
-                main section img{
+                .elItem img{
                     height: 15vh;
                     width: 15vh;
                     border-width: 0px;
                     border-radius: 10px;
                 }
 
-                main section div {
+                .elItem div {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -84,29 +87,24 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                     width: 18vh;
                 } 
 
-                    main section div form {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-                    } 
+ 
 
-                    main section div p {
+                    .elItem div p {
                         text-align: center;
                     } 
 
 
-            main section ul{
+            .elItem ul{
                 list-style:none;
                 text-align: center;
                 line-height: 30px;}
 
-            main section ul li{
+            .elItem ul li{
                 font-weight: 500;
                 color: #66c674;
             }
 
-            main section ul li:hover{
+           .elItem ul li:hover{
                 color: #333333;
             }
 
@@ -157,10 +155,9 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
                 width: 40%;
             }
 
-    #botonComprarForm{width: 20vw}
     
     #comprar{
-        width: 100%;
+        width: 20vw;
         height: 30px;
         margin: 10px;
         font-family: 'Anton', sans-serif;
@@ -227,7 +224,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 
         main section p{text-align: center;}
 
-            main img{
+           img{
                     border-radius: 10px;
                     border-style: solid;
                     margin: 2% 0% 2% 0%;

@@ -97,25 +97,27 @@ Buy: function(req,res) {
         let usernum = req.session.userID
         let payment = 9
         let mount = 100
-        let theproduct = 10
         let Q = 1
         
         
         console.log('El monto es ' + req.body.suma);
+        console.log('Lloro');
         
-        for(let j=0;j<req.session.cartSQLOrganized.length;j++){
-        console.log('Producto en el carrito ' + req.session.cartSQLOrganized[j])
-        }
-        
+    
         
         sequelize.query(
         "INSERT INTO purchases_transactions(user_id,payment_method_id,transaction_amount) VALUES(" + usernum + "," + payment + "," + mount + ")"
             )
         //Renderizo la vista enviando los productos que pertenecen a la categroia
         .then(
-    
-            sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
-            )
+            function(){
+                let theproduct
+                for(let j=0;j<req.session.cartSQLOrganized.length;j++){
+                    theproduct = req.session.cartSQLOrganized[j]
+                    sequelize.query("INSERT INTO purchases_details(user_id,purchase_transaction_id,product_id,quantity) VALUES(" + usernum + ",(SELECT MAX(id) from purchases_transactions as ultTransaccion WHERE user_id =" + usernum + ")," + theproduct + "," + Q + ")")
+                }//Cierra for
+                }//Cierra function de promesa
+            ) //Cierra paso de promesa
         .then(function(producto){
             res.redirect('../')     
         })

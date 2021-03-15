@@ -16,119 +16,99 @@
 </head>
   <body>
 
-  <div id='Contenedor'>
+<div id='Contenedor'>
     <%- include('../partials/header')%>
  
-    <div id='Presentacion'>
-      <img id='img_tit' src='/images/Carrito.PNG'>
-      <h2 id='Titulo_Tienda'>TiendaBike</h2>
-    
-    </div>
-    
-    <main>
-       
-          
-      <%if(locals.mensajito){%>
-
-        <p style="text-align: center;font-size: 20px;margin-left: 3vw;font-weight: bold;">Nada por aquí</p>
-        
-        <%}        
-      else
-      {%>
-
-        <form action="/products/Buy" id="botonComprarForm" name="botonComprar" method="POST">
-
-          <%for (let i = 0; i< producto.length;i++) <!-- Este codigo se repite para cada uno de los productos del carrito -->
-          {%>
-              
-              <section id="<%= producto[i].id %>" class='elItem'>
-                
-                  <figure>
-                      <img src="/images/products/<%= producto[i].img_ppal%>" alt="Producto carrito">
-                  </figure>
-                  
-                  <div id="resumenProducto">
-                    <p class="tituloProducto"> Producto</p> 
-                        
-                    <p class="valorProducto"> <%= producto[i].title %> </p> 
-     
-                   </div>
-
-                  <div id="cantidad">
-                    
-                      <p class="tituloProducto">Cantidad</p>
-                      <select id="Q<%= producto[i].id %>" name="ListaCantidades" form="CantidadesForm" class="CantidadProducto" value="5">
-                        
-                        <option value=1>1</option>
-                        <option value=2>2</option>
-                        <option value=3>3</option>
-                        <option value=4>4</option>
-                        <option value=5>5</option>
-                      </select>
-                    
-                  </div>
-
-                  <div id="precio">
-                      <p class="tituloProducto">Precio</p>
-                      <p id="P<%= producto[i].id %>"><%= producto[i].price %></p><a href="#"></a>
-                  </div>
-
-                  <div id="subtotal">
-                    <p class="tituloProducto">subtotal</p>
-                    <p id="PxQ<%= producto[i].id %>" class="valorProducto">0</p><a href="#"></a>
-                </div>
-
-                  
-                  
-                  <figure id="tacho">
-                    <a href="../products/productCartRemove/<%= producto[i].id %>"><i class="fas fa-trash-alt"></i></a>
-                  </figure>
-
-              </section>
-
-
-
-      <%}%>       <!-- Cierra el for que trae cada item del carrito  -->
-
-
-
-        <div id="total">
-          <div id="precioTotal">
-            <p class="precio">Total</p>
-            
-            <input id = "suma" class="precio" name="suma"> </input>
-            
-          </div>
-  
+        <div id='Presentacion'>
+          <img id='img_tit' src='/images/Carrito.PNG'>
+          <h2 id='Titulo_Tienda'>TiendaBike</h2>
         </div>
-  
-     
-      <button type="submit" id="comprar">Comprar</button>
-    </form>     
+        
+        <div id='main'>
+          
+              
+          <%if(locals.mensajito){%>
 
-    <%}%>     <!-- Cierra IF que analiza si existen productos o no -->
+            <p style="text-align: center;font-size: 20px;margin-left: 3vw;font-weight: bold;">Nada por aquí</p>
+            
+            <%}        
+          else
+          { %>
 
-    
+            <form action="/products/Buy" id="CarritoFormulario" method="POST">
 
-  <%if(locals.mensajito){}        
-  else
-  {%>
+             <% for (let i = 0; i< producto.length;i++) <!-- Este codigo se repite para cada uno de los productos del carrito -->
+              {%>
+                  
+                  <section id="<%= producto[i].id %>" class='elItem'>
+                    
+                      <figure>
+                          <img src="/images/products/<%= producto[i].img_ppal%>" alt="Producto carrito">
+                      </figure>
+                      
+                      <div id="resumenProducto">
+                        <p class="tituloProducto"> Producto</p> 
+                            
+                        <p class="valorProducto"> <%= producto[i].title %> </p> 
+        
+                      </div>
+
+                      <div id="cantidad">
+                        
+                          <p class="tituloProducto">Cantidad</p>
+                          <input id="Q<%= producto[i].id %>" name="ListaCantidades" class="CantidadProducto" type="number" value="1" min="1">
+
+                        
+                      </div>
+
+                      <div id="precio">
+                          <p class="tituloProducto">Precio</p>
+                          <p id="P<%= producto[i].id %>"><%= producto[i].price %></p><a href="#"></a>
+                      </div>
+
+                      <div id="subtotal">
+                        <p class="tituloProducto">subtotal</p>
+                        <p id="PxQ<%= producto[i].id %>" class="valorProducto">0</p><a href="#"></a>
+                    </div>
+
+                      
+                      
+                      <figure id="tacho">
+                        <a href="../products/productCartRemove/<%= producto[i].id %>"><i class="fas fa-trash-alt"></i></a>
+                      </figure>
+
+                  </section>
 
 
 
-  <%}%>
+              <%}%>       <!-- Cierra el for que trae cada item del carrito  -->
+
+
+        
+
+        
+                <p class="precio">Total</p>
+                
+                <input id="suma" class="precio" name="suma" readonly> 
+
+                <button type="submit" id="comprar" form="CarritoFormulario">Comprar</button>  
+        </form>     
+
+        
+
+        <%}%>     <!-- Cierra IF que analiza si existen productos o no -->
+
+        
 
 
 
+      
+        </div>  
 
-
-
-
-    </main>
-
-     <%- include('../partials/footer')%>
+    <%- include('../partials/footer')%>
  
-   </div>
+</div>
+
 <script src="/js/productCart.js">
 
 </script>
