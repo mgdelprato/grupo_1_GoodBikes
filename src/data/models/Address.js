@@ -11,19 +11,24 @@ module.exports=function(sequelize,dataTypes){
             notNull:true
         },
         street:{
-            type:dataTypes.STRING
+            type:dataTypes.STRING,
+            defaultValue:'-'
         },
         street_number:{
-            type:dataTypes.INTEGER
+            type:dataTypes.INTEGER,
+            defaultValue:'-'
         },
         street_locality:{
-            type:dataTypes.STRING
+            type:dataTypes.STRING,
+            defaultValue:'-'
         },
         street_apartment:{
-            type:dataTypes.STRING
+            type:dataTypes.STRING,
+            defaultValue:'-'
         },
         street_postal_code:{
-            type:dataTypes.STRING
+            type:dataTypes.STRING,
+            defaultValue:'-'
         },
     }
     let config={

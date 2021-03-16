@@ -17,15 +17,19 @@ module.exports=function(sequelize,dataTypes){
         },
         brand_card:{
             type:dataTypes.STRING,
-            notNull:true
+            notNull:true,
+            defaultValue:'-'
+
         },
         number_card:{
             type:dataTypes.STRING,
-            notNull:true
+            notNull:true,
+            defaultValue:'-'
         },
         bank:{
             type:dataTypes.STRING,
-            notNull:true
+            notNull:true,
+            defaultValue:'-'
         }
     };
     let config={
