@@ -133,3 +133,22 @@
 
 - Dejar de hacer
     merge final de entrega sin colchón.     
+
+
+    ##RETRO Sprint 8
+
+- Comenzar a hacer
+   Profundizar conocimientos de React
+   
+- Hacer más
+   Profundizar hooks, localstorage y librerias de estilos (Bootstrap)
+
+- Continuar haciendo
+    Seguir investigando 
+    
+    
+- Hacer menos
+    Cambios sobre la marcha
+    
+- Dejar de hacer
+    merge final de entrega sin colchón. 
