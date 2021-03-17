@@ -11,6 +11,7 @@ function levantaID_PrimeraVez(){
         let elemento = document.getElementsByClassName('elItem'); 
         let array_id = [];
 
+        try{
         
         for(let i = 0; i < elemento.length; i++){
             let id = elemento[i].getAttribute('id');
@@ -23,8 +24,8 @@ function levantaID_PrimeraVez(){
         console.log(array_id);
         localStorage.setItem('datos', JSON.stringify(array_id)); // Guardo el objeto como un string en Storage
         
-        
-        
+        } //Cierra try
+        catch{console.log('Error en recalcula');}
 
     } //End function levantaIDprimeraVez
 
@@ -56,8 +57,8 @@ function levantaID(){
                 document.getElementById("Q"+items[n].Producto).value = parseInt(items[n].Q,10)
             } //Cierre for
         } //try
-        catch(e){
-            console.log(e);
+        catch{
+            console.log('Borrado de elemento');
             recalcula()
             
         }
