@@ -78,26 +78,25 @@
                     <h2>Mi Dirección</h2>
                     <div class="primerSuperior">
                         <label for="calle">Calle</label>
-           
-                        
-                            <input class="info" disabled type="text" name="calle" id="calle" value="<%= BuscaUser.Addresses[0].street %>" >
+                                   
+                            <input class="info" disabled type="text" name="calle" id="calle" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street %>" >
                                                     
                             <label for="numero" id="labelNumero">Número</label>
-                            <input class="info" disabled type="text" name="numero" id="numero" value="<%= BuscaUser.Addresses[0].street_number%>" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
+                            <input class="info" disabled type="text" name="numero" id="numero" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_number %>" maxlength="10" required autocomplete="off" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
                             
                             <label for="depto">Depto/Casa/Lote</label>
-                            <input class="info" disabled type="text" name="depto" id="depto" value="<%= BuscaUser.Addresses[0].street_apartment%>">
+                            <input class="info" disabled type="text" name="depto" id="depto" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_apartment%>">
              
                     </div>
                     <div class="segundoSuperior">
                         <label for="provincia">Provincia</label>
-                        <input class="info" disabled type="text" name="provincia" id="provincia" value="<%= BuscaUser.Addresses[0].street_locality%>">
+                        <input class="info" disabled type="text" name="provincia" id="provincia" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_locality%>">
                         
                         <label for="localidad">Localidad</label>
-                        <input class="info" disabled type="text" name="localidad" id="localidad" value="<%= BuscaUser.Addresses[0].street_locality%>">
+                        <input class="info" disabled type="text" name="localidad" id="localidad" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_locality%>">
                         
                         <label for="cp">Código Postal</label>
-                        <input class="info" disabled type="text" name="cp" id="cp" maxlength="10"  value="<%= BuscaUser.Addresses[0].street_postal_code%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="cp" id="cp" maxlength="10"  value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_postal_code %>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="1" pattern="\d*"/>
                         
                     </div>
                     
@@ -109,18 +108,18 @@
                     <h2>Mi Medio de Pago</h2>
                     <div class="primerSuperior">
                         <label for="alias">Alias</label>
-                        <input class="info" disabled type="text" name="alias" id="alias"  value="<%= BuscaUser.PaymentMethod[0].alias%>">
+                        <input class="info" disabled type="text" name="alias" id="alias"  value="<%= (typeof(BuscaUser.PaymentMethod[0]) == 'undefined')?' ':BuscaUser.PaymentMethod[0].alias %>">
                         
                         <label for="medioPago">Nro de Tarjeta</label>
-                        <input class="info" disabled type="text" name="medioPago" id="medioPago"  required autocomplete="off" value="<%= BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
+                        <input class="info" disabled type="text" name="medioPago" id="medioPago"  required autocomplete="off" value="<%= (typeof(BuscaUser.PaymentMethod[0]) == 'undefined')?' ':BuscaUser.PaymentMethod[0].number_card%>" onkeypress="return (event.charCode >= 48 && event.charCode <= 57)" min="0" pattern="\d*"/>
                         
                     </div>
                     <div class="segundoSuperior">
                         <label for="operadora">Operadora</label>
-                        <input class="info" disabled type="text" name="operadora" id="operadora" value="<%= BuscaUser.PaymentMethod[0].brand_card%>">
+                        <input class="info" disabled type="text" name="operadora" id="operadora" value="<%= (typeof(BuscaUser.PaymentMethod[0]) == 'undefined')?' ':BuscaUser.PaymentMethod[0].brand_card %>">
                         
                         <label for="banco">Banco</label>
-                        <input class="info" disabled type="text" name="banco" id="banco" value="<%= BuscaUser.PaymentMethod[0].bank%>">
+                        <input class="info" disabled type="text" name="banco" id="banco" value="<%= (typeof(BuscaUser.PaymentMethod[0]) == 'undefined')?' ':BuscaUser.PaymentMethod[0].bank%>">
                         
                     </div>
                     <div class="terceroSuperior">

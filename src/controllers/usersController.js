@@ -87,7 +87,7 @@ perfil: async function(req, res){
                             productos.push(await db.Product.findOne({where:{id:BuscaUser.PurchaseDetails[i].product_id}}))
                         }
                         productos=productos.map((e)=>e.get({plain:true}))
-
+                      
                         return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,productos:productos})
                     }
     
@@ -143,7 +143,8 @@ perfil: async function(req, res){
         
     },
     editProfile: function(req,res){
-       
+        
+        console.log(req.body);
         db.User.update({
             first_name:req.body.nombre,
             last_name:req.body.apellido,
@@ -190,7 +191,6 @@ perfil: async function(req, res){
                     console.log("medio pago exitoso");
                 })
             })
-
         res.render( path.join(__dirname, '../views/users/login.ejs'))})
 
     },
