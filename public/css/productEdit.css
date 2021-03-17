@@ -110,8 +110,8 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                     
                     main div:nth-last-child(2) input{
                         height: 20px; 
-                        border-style: solid;
-                        border-color: rgb(212, 92, 13);
+                        border-style: none;
+                        /* border-color: rgb(212, 92, 13); */
                     }
     
                     
@@ -136,7 +136,18 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                             align-items: center;
                             position: relative;
                         }                               /*Contenedor de los botones de abajo*/
-                    
+                    #ContenedorElementosDeAbajo1{
+                        display: flex;
+                        flex-flow: wrap;
+                        flex-direction: row;
+                        width: 80%;
+                        height: 50vh;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                    }
+
+
                     #tituloImagenes{
                         position: absolute;
                         top: 1px;
@@ -181,10 +192,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                                 border-radius: 6px;
                                 border-style: none;
                             }                                           /*Dos botones azules*/
-    
-                            
 
-                            
                             main div:nth-child(3) #guardar{
                                 align-self: center;
                                 justify-content: center;
@@ -196,26 +204,42 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
     
                     
     
-                            main div:nth-child(3) #tacho{
-                            border: none;
-                            align-self: center;
-                            padding: 1px 0% 0% 1%;                       
-                            } /*Contenedor del tacho*/
+                            main div:nth-child(3) #tacho{border: none;} /*Contenedor del tacho*/
     
-                             main div:nth-child(3) button i{
-                                font-size: 25px;
-                                color: red;/*Tacho*/                           
+                                main div:nth-child(3) button i{
+                                    font-size: 25px;
+                                    color: red; /*Tacho*/                           
+                                }
 
-                            } 
-    
-                            #divDescripcion{
-                                width: 50%;
+                            main form div div img#imagenMini{
+                                background-color: rgb(19, 79, 107);
+                                width: 12%;}
+                            
+                            main form div div#containerMini {
+                                /* background-color: rgb(156, 188, 202); */
+                                width: 100%;
+                                height: inherit;
+                                display: flex;
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                align-items: center;
                             }
-
+                            
     
-       
+                            #divDescripcion{width: 50%;}
+
+                            .errores{color: red}
+    
 
  }
+
+
+
+
+
+
+
+
 
 
 
@@ -231,51 +255,30 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
     body
         {display: flex; 
         justify-content: center;
-        flex-direction: column;}
+        flex-direction: column;
+        background-color: #ebebeb }
 
         #Contenedor_Body
             {display: flex; 
             flex-direction: column;
             justify-content: space-between;
-            height: 100vh;
+            
             width: 100vw;
             background-color: #ebebeb;} 
            
 
-
-
-        
         .contenedor_del_Main{
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-around;
             width: 100vw;
-
+            background-color: #ebebeb 
             }
 
 
-         
-        main div h1 {
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 15px;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            text-align: center;
-            margin: 2%;
-        }
-       
-        main div h2{
-            font-family: 'Roboto', sans-serif;
-            text-transform: capitalize;
-            font-size: 13px;
-            text-align: center;
-            letter-spacing: 0.1em;
-            font-weight: bold;
-            margin: 0% 0% 3% 2%;
-        }
-
+            
+            
         main{
             display:flex;
             flex-wrap: wrap;
@@ -292,35 +295,56 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             justify-content: center;     
             
         } 
-
+        
         main div:nth-last-child(2){
             display: flex;
             flex-direction: column;
             align-items: center;
             padding-top: 10px;
+            
+        }
         
-            }
-
-            main div div .descripcion{
-                border: none;                    
-                width: 100%;
-                
-            }
-    
-            main div:nth-last-child(2) h4{
-                font-size: 18px;
-                text-align: left;
-                width: 70%;
-               
-            }
+        main div div .descripcion{
+            border: none;                    
+            width: 100%;
+            
+        }
+        
+       main div h1 {
+           font-family: 'Roboto', sans-serif;
+           text-transform: capitalize;
+           font-size: 15px;
+           letter-spacing: 0.1em;
+           font-weight: bold;
+           text-align: center;
+           margin: 1%;
+           margin-top: 5vh;
+       }
+        
+        main div h2{
+            font-family: 'Roboto', sans-serif;
+            text-transform: capitalize;
+            font-size: 13px;
+            text-align: center;
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            margin: 0% 0% 3% 2%;
+        }
+        
+        main div:nth-last-child(2) h4{
+            font-size: 18px;
+            text-align: left;
+            width: 70vw;
+            
+        }
             main div:nth-last-child(2) select{
                 font-size: 15px;
-                width: 60%;
+                width: 70vw;
             }
     
            
             main div:nth-last-child(2) .valores{
-                width: 70%;
+                width: 70vw;
                 margin-bottom: 10px;
                 border:none;
                
@@ -337,7 +361,7 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
             
             font-size: 18px;
             text-align: left;
-            width: 70%;
+            width: 70vw;
             
             }
     
@@ -373,19 +397,27 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 width: 100%;
                 align-items: center;
                 flex-wrap: wrap;
-            }                               /*Contenedor de los botones de abajo*/
+            }                               
             
             #ContenedorElementosDeAbajo{
                 display: flex;
                 flex-direction: column;
-                width: 100%;/*Tocas esto y se rompe todo*/
+                width: 70vw;
                 height: 25vh;
                 justify-content: space-between;
                 align-items: center;
-                flex-wrap: wrap;
-                /*Toca esto y se descajeta el boton guardar*/
+                
             }
 
+            #imagen{
+                    margin-right: 10px;
+                    background-color: #ffffff;
+                    padding: 0% 2% 0% 0%;
+                    font-weight: bold;
+                    height: 30px;
+                    width: 70vw;
+                    
+                }                           /*Todo el Input*/
 
 
             main div input[type=file]::-webkit-file-upload-button{
@@ -401,70 +433,48 @@ body{background-color: #ebebeb;}  /*Color de fondo del sitio*/
                 border-style: none;
             }                                   /*Botón Elegir archivo*/
             
-                main div:nth-child(3) input{
-                        margin-right: 10px;
-                        background-color: #ffffff;
-                        padding: 0% 2% 0% 0%;
-                        font-weight: bold;
-                        height: 30px;
-                        width: 70vw;
-                        
-                    }                           /*Todo el Input*/
             
-                main #adjuntar{
-                    align-items: center; 
-                    width: 25vw;
-                    margin: 1vh;
-                                                /*Boton Adjuntar*/
-                }
-                
-                main button[type="submit"]{
-                    height: 30px;
-                    font-family: 'Anton', sans-serif;
-                    text-transform: uppercase;
-                    letter-spacing: 0.1em;
-                    font-size: 15px;
-                    background-color: #3E3D40;
-                    color: #ffffff;
-                    border-radius: 6px;
-                    border-style: none;
                     
-                }                                           /*Dos botones azules*/
+                    main button[type="submit"]{
+                        height: 30px;
+                        font-family: 'Anton', sans-serif;
+                        text-transform: uppercase;
+                        letter-spacing: 0.1em;
+                        font-size: 15px;
+                        background-color: #3E3D40;
+                        color: #ffffff;
+                        border-radius: 6px;
+                        border-style: none;
+                        margin: 0.5vh
+                    }                                           /*Dos botones*/
+                    
+                    main #adjuntar{align-items: center; 
+                        width: 25vw;margin: 1vh; /*Boton Adjuntar*/
+                    }
+                    
+                    
+                    #guardar{width: 25vw;margin:1vh;}    /*Boton Guardar*/       
+                
 
                 main button[type="submit"]:hover{background-color: #882345;}
 
-                main div:nth-child(3) #guardar{
-                    width: 25vw;
-                    margin-bottom: 3%;                      /*Boton Guardar*/
- 
-                }
+                #divDescripcion{width: 70vw;}
 
-                #divDescripcion{
-                    width: 70%;
-                }
 
-        
+                #tacho{border: none;align-self: center;}
+                main div:nth-child(3) button i{font-size: 25px;color: red;}
 
-                #tacho{
-                border: none;
-                align-self: center;
-                padding: 1% 0% 1% 0%;
-                
-                }
 
-                main div:nth-child(3) button i{
-                    font-size: 25px;
+                #tachitoImportado{margin-top: 2vh;}
+                #Abajo{margin-bottom: 3vh;}
+
+                .errores{
                     color: red;
-                
-                    
-                    
+                    list-style: none;
+            
                 }
 
-                main div:nth-child(3) button[type="file"]{
-                margin-left: 20px;
-                
-                }
-
+                #imagenMini{width: auto;height: 15vh;}
 
 
 

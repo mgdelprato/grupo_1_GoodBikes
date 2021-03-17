@@ -35,7 +35,7 @@
             </div>
             <section id='Ofertas' class='ContenedorOfertas'>
             <% for(let i=0; i<2; i++){ %>
-                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>" class='Oferton' alt="Oferta1"></a></figure>
+                <figure id='Oferta0' ><a href="/products/productDetail/<%= productosCategorizados[i].id %>"><img src="/images/products/<%= productosCategorizados[i].img_ppal%>" class='Oferton' alt="Oferta1"></a></figure>
                 <% } %> 
             </section>
 
@@ -47,12 +47,15 @@
             <main>
                 
                 <% for(let i=0; i < productosCategorizados.length; i++){ %>
-                <section id=<%= productosCategorizados[i].ID %>>
-                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].ID %>"><img src="/images/products/<%= productosCategorizados[i].Imagen[0]%>"alt="Principal1"></a></figure>
+                <section id=<%= productosCategorizados[i].id %>>
+                    <figure ><a href="/products/productDetail/<%=productosCategorizados[i].id %>"><img src="/images/products/<%= productosCategorizados[i].img_ppal%>"alt="Principal1"></a></figure>
                     <div>
-                        <p><%= productosCategorizados[i].Titulo %></p>
-                        <span class="price"><%= productosCategorizados[i].Precio %></span>
-                        <button type="submit">Comprar</button>
+                        <p><%= productosCategorizados[i].title %></p>
+                        <span class="price"><%= productosCategorizados[i].price %></span>
+
+                        <form action="/products/productCartAdd" method="POST" id="form1"></form>
+                        <button type="submit" name="id_producto" form="form1" value='<%= productosCategorizados[i].id %>'>Agregar</button>
+                    
                     </div>       
                 </section>
                 <% } %> 

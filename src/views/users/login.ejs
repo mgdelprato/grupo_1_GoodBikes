@@ -22,38 +22,35 @@
 
         <div class="contenedor_del_Main"> 
             <main>
-                <form action="/users/login" method="POST">                   
+                <form action="/users/login" method="POST" class="login">                   
                     <div class="principal">
                         <h1>Logueate en GoodBikes</h1>
 
                         <%  if(locals.mensaje){ %>
-                            <small style="color: red;">
+                            <small id="session_logout" style="color: red;">
                             <%= mensaje %> </small>
                             <% } %> 
 
-                        <input class="campos" type="email" placeholder="Email" name="email">
-                    
-                        <%  if(locals.errors && errors.email){ %>
-                            <small style="color: red;">
-                            <%= errors.email.msg %> </small>
-                            <% } %> 
+                        <input class="campos" type="email" placeholder="Email" name="email" id="email">
 
-                        <input class="campos" type="password" placeholder="Password" name="password">                   
+                        <small id="errorEmail" class="errores"><%=(locals.errors && errors.email) ? errors.email.msg : ""%></small>
 
-                        <%  if(locals.errors && errors.password){ %>
-                            <small style="color: red;">
-                            <%= errors.password.msg %> </small>
-                            <% } %> 
+                        <input class="campos" type="password" placeholder="Password" name="password" id="password">                   
+
+                        <small id="errorPassword" class="errores"><%=(locals.errors && errors.password) ? errors.password.msg : ""%></small>
 
                         <button type="submit">Ingresar</button>
-                        <a href="#">¿Olvidaste tu password?</a>
+                        <!-- <a href="#">¿Olvidaste tu password?</a> -->
                         <label><input type="checkbox" value="si" name="rememberme"> Recordarme</label><br>
+                        <a href="/users/register"><p>¿Eres nuevo? Puedes registrarte</p></a>
                     </div>
                 </form>
             </main>
         </div>
         <%- include('../partials/footer')%>
     </div>    
-
+    <script src="/js/loginValidator.js"></script>
+    <script type="text/javascript" src="/js/header.js"></script>
+    
 </body>
 </html>

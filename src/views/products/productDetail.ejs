@@ -19,46 +19,59 @@
     <div id='Contenedor'>  
         <%- include('../partials/header')%>
        
-        <img src='/images/Banner11.png' width='100%' id='Banner_Product_Detail_web'>
+        
         <img src='/images/Fondos/Fondo1.png' width='100%' id='Banner_Product_Detail_mobile'> 
         <p id='Text_Hero_Mobile'>Lo mejor es Goodbike</p>
         <h3 id='Detalle_Producto'>Detalles del producto</h3>
 
     <main>
         <div id="DetalleCompleto">
-        
+            
             <div id="cuadrosSuperiores">     
                 <section id='CuadroIzquierdo'>
-                    <% for(let i=0; i < producto.Imagen.length; i++){ %>
-                        <figure><img class='imagenIzquierda'src="/images/products/<%= producto.Imagen[i] %>" alt="Principal1"></figure>
+                    
+                    <% for(let i=0; i < producto.ProductsImages.length; i++){ %>
+                        <figure><img class='imagenIzquierda'src="/images/products/<%= producto.ProductsImages[i].image_name %>" alt="Principal1"></figure>
                     <% } %>     
                 </section>
                 <section id='CuadroCentro'>
-                    <figure id='Principal1' ><img src="/images/products/<%= producto.Imagen[0] %>" alt="Principal1"></figure>
+                    <figure id='Principal1' ><img src="/images/products/<%= producto.img_ppal %>" alt="Principal1"></figure>
                 
                     
                 </section>
                 
                 <section id='CuadroDerecho'>
-                    <h1><%= producto.Titulo %></h1><br>
-                    <span><%= producto.Precio %></span>
+                    <h1><%= producto.title %></h1><br>
+                    <span><%= producto.price %></span>
                     <ul>
                         <br>
-                        <li><button type="submit">Agregar</button></li>
+                        <form action="/products/productCartAdd" method="POST" id="form1">
+                            <select id="Q" name="Q">
+                                <option value="1">1</option> 
+                                <option value="2">2</option> 
+                                <option value="3">3</option>
+                                <option value="4">4</option> 
+                                <option value="5">5</option> 
+                                <option value="6">6</option> 
+                                <option value="7">7</option> 
+                                <option value="8">8</option> 
+                             </select>
+                        </form>
+                        <li><button type="submit" name="id_producto" form="form1" value="<%= producto.id %>" >Agregar</button></li>
                     </ul>  
                 </section>
 
             </div>  
 
             <section id='CuadroHorizontal'>
-                <h3><%= producto.Marca %></h3>
-                <h3><%= producto.Modelo %></h3>
+                <h3><%= producto.brand %></h3>
+                <h3><%= producto.model %></h3>
                 <h3>Especificaciones:</h3>
                 <br>
                 
-                <p><%= producto.Detalles %></p>
+                <p><%= producto.detail %></p>
                 <ul>
-                    <li>+Info</li>
+                    <!-- <li>+Info</li> -->
                 </ul>  
             </section>
 

@@ -1,98 +1,77 @@
 const path = require('path')
-const fs = require('fs');
 const bcryptjs = require('bcryptjs');
-const {check, validationResult, body } = require('express-validator');
-const session = require('express-session')
-const cookieParser = require('cookie-parser')
-
-let usuarios = fs.readFileSync(path.join(__dirname,'../data/users.json'),'utf-8');
-usuarios = JSON.parse(usuarios);
-
-let ultimoId = 0
-for(let i=0; i<usuarios.length;i++){
-    if(ultimoId<usuarios[i].id){
-        ultimoId=usuarios[i].id;
-    }
-}
+const {validationResult} = require('express-validator');
+const db = require('../data/models');
 
 
+/*CONTROLLER QUE MANEJA LA LÓGICA DE USUARIOS */
 let usersController ={
+    //Método (asociado al GET) para renderizar la vista de registración de un usuario
     registrar: function(req, res) {
         res.render( path.join(__dirname, '../views/users/register.ejs') )
     },
     
-    //Al ingresar al Login    
+    //Método (asociado al GET) para renderizar la vista de login de un usuario 
     login:function(req, res) {
         res.render( path.join(__dirname, '../views/users/login.ejs') )
     },
     
-    
-    chequearLogin: function(req,res,next)
-    {
-        //Si no hay errores type en el ckeck
+    //Método (asociado al POST) para realizar el logueo de un usuario
+    chequearLogin: function(req,res)
+    {//Si no hay errores type en el check
         let errors = validationResult(req);
         if(errors.isEmpty()){
         //Si no hay errores se carga el formulario  
-
         //Busca al usuario por su mail
-        let BuscaUser = usuarios.find(usuarios =>{return usuarios.email == req.body.email})
-            
-                if(!BuscaUser)
-        
-                        //Si no encuentra al usuario avisa y detiene
+        db.User.findOne({
+                where:{
+                    email:req.body.email
+                }
+        })
+        .then(function(BuscaUser){
+            if(!BuscaUser){
+                return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'})
+            }else{//Si encuentra al usuario chequea contraseña
+                //Prepara para chequear pass ingresada
+                let encriptada = BuscaUser.password
+                let pass_ingresada = req.body.password
 
-                            {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'El usuario ' + req.body.email + ' no se encuentra registrado'} )}
-                            
-                else        
-                {
-                        //Si encuentra al usuario chequea contraseña
+                console.log(bcryptjs.compareSync(pass_ingresada,encriptada));
+                if(bcryptjs.compareSync(pass_ingresada,encriptada)){
+                    // Statments de Contraseña Correcta. 
+                    //Paso email, usuario y avatar al session
+                    req.session.user = BuscaUser.first_name
+                    req.session.userEmail = BuscaUser.email
+                    req.session.avatar = BuscaUser.avatar
+                    req.session.userID = BuscaUser.id
 
-                            //Prepara para chequear pass ingresada
-                            let encriptada = BuscaUser.password
-                            let pass_ingresada = req.body.password
-                           
-                            if(bcryptjs.compareSync(pass_ingresada,encriptada))
-                            {
-                            // Statments de Contraseña Correcta. 
-                                
-                                //Paso email, usuario y avatar al session
-                                req.session.user = BuscaUser.first_name
-                                req.session.userEmail = BuscaUser.email
-                                req.session.avatar = BuscaUser.avatar
-                                
-                                console.log('esto es lo que quiero ver '+req.session);
-                                
-                                
-                                if(req.body.rememberme == 'si') // ¿Tildó recordame?
-                                {
-                                  res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar},{maxAge: 86400000})
-                                }
-
-                                //Ir al home)
-                                return res.redirect('/');
-                            }
-
-                            else
-                            
-                            {// Error en contraseña
+                    console.log("Paso por aca ATR y el user es: " + BuscaUser.id);
+                    if(req.body.rememberme == 'si') // ¿Tildó recordame?
+                    {
+                        res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar, userID: req.session.userID},{maxAge: 86400000})
+                    }
+                    //Ir al home logueado
+                
+                    if(req.session.cartSQLOrganized != undefined)
+                    {return res.redirect('/products/ProductCart')} //Si esta comprando, al carrito
+                    else
+                    {return res.redirect('/');}//Sino al home
+                    
+                
+                }else{// Error en contraseña
                             req.session.destroy() //Por las dudas
                             res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'E-mail o contraseña incorrectos'})
-                            }
-                }                
-        }
-        
-        else
-        {//Si hay errores de carga, se renderiza el login compartiendo los errores
+                }
+            }
+        })
+                             
+        }else{//Si hay errores de carga, se renderiza el login compartiendo los errores
            return res.render( path.join(__dirname, '../views/users/login.ejs'),{errors: errors.mapped()} )
-     
         }
-        next()
     } ,
-
-    perfil: 
-                function(req, res) {
+//Método (asociado al GET) para obtener los datos y renderizar la vista de profile de un usuario
+perfil: async function(req, res){
                 //Si no esta logueado
-
                 if (req.session.userEmail == undefined)
                     { // Kick
                         res.render(path.join(__dirname, '../views/users/login.ejs'),{mensaje: "Registro exitoso! Debes loguearte para acceder a tu perfil"})    
@@ -100,65 +79,179 @@ let usersController ={
                 else
                     { //Log exitoso
                         
-                        //Trae datos del array
-                        let BuscaUser = usuarios.find( function(usuarios){
-                            return usuarios.email == req.session.userEmail})
-                        
-                        //Prepara variables locals para la vista profile
-                            res.locals.profileName = BuscaUser.first_name
-                            res.locals.profileLastName = BuscaUser.last_name
-                            res.locals.profileEmail = BuscaUser.email
-                            res.locals.profileAvatar = BuscaUser.avatar
-                     
-                        
-                        res.render( path.join(__dirname, '../views/users/profile.ejs') )
+                        let BuscaUser = await  db.User.findOne({where:{email:req.session.userEmail},include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}]})
+                        let compras = BuscaUser.PurchaseDetails.map((e)=> e.get({plain:true}))
+                        let productos =[]
+
+                        for(let i = 0; i<compras.length; i++){
+                            productos.push(await db.Product.findOne({where:{id:BuscaUser.PurchaseDetails[i].product_id}}))
+                        }
+                        productos=productos.map((e)=>e.get({plain:true}))
+                      
+                        return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,productos:productos})
                     }
-
+    
     },
-    save: function(req, res,next) {
+    save: function(req, res) {
         let errors = validationResult(req);
-
+        //Si no hay errores, recupero los datos ingresados del usuario y los guardo, luego renderizo su profile
         if(errors.isEmpty()){
-            let nuevoUsuario = {
-                id: ultimoId +1,
-                first_name: req.body.name,
-                last_name: req.body.apellido,
-                email: req.body.email,
-                password: bcryptjs.hashSync(req.body.password, 12),
-                avatar: req.files[0].filename
-            }
-
-            usuarios.push(nuevoUsuario)
-            fs.writeFileSync(path.join(__dirname,'../data/users.json'),JSON.stringify(usuarios,null,4))
-            res.redirect('/users/profile');
+  
+             db.User.findOne({where:{email:req.body.email}})
+            .then(function(emailExistente){
+          
+                
+                if(emailExistente == null){
+                  
+                    
+                    db.User.create({
+                        first_name:req.body.name,
+                        last_name:req.body.apellido,
+                        email:req.body.email,
+                        password: bcryptjs.hashSync(req.body.password, 12),
+                        avatar: req.files[0].filename
+        
+                    })
+                    .then(function(usuario){
+         
+                       res.render(path.join(__dirname, '../views/users/login.ejs'));
+                    })
+                }else{
+                 
+                    return res.render( path.join(__dirname, '../views/users/register.ejs'),{mensaje: 'El email ingresado ya se encuentra registrado'})
+                     }
+            })
+                
 
         } else {
-            // hay errores. Entonces...
+            // Si hay errores, los mapeo y renderizo la vista con los errores
             return res.render( path.join(__dirname, '../views/users/register.ejs'),{errors: errors.mapped(),old:req.body})
         }
-        next()
     },
-
-    logout: function(req, res) {
+    //Método (asociado al get) para cerrar la sesión de un usuario
+    logout: function(req, res){
         //Kill a todo dato y redirigimos al home
 
         res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
         req.session.destroy();               // Eliminar sesión
         
-        //Vaciamos las vistas
-        res.locals.user = undefined; 
-        res.locals.mail = undefined;
-
-        // Por si le da back
-        res.locals.profileName = undefined
-        res.locals.profileLastName = undefined
-        res.locals.profileEmail = undefined
-        res.locals.profileAvatar = undefined
+   
+        
 
         {return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Cerraste tu sesión. Te esperamos pronto!'} )}
-        //res.redirect('/') 
+        
+        
+    },
+    editProfile: function(req,res){
+        
+        console.log(req.body);
+        db.User.update({
+            first_name:req.body.nombre,
+            last_name:req.body.apellido,
+            street:req.body.calle 
+
+        },
+     
+            {
+            where:{
+                email:req.session.userEmail}
+                ,include: [{association: "Addresses"},{association:"PaymentMethod"},{association:"PurchaseDetails"}
+            ]
+        })
+        .then(function(usuario){
+
+            db.Address.update({
+                street: req.body.calle,
+                street_number: req.body.numero,
+                street_apartment:req.body.depto,
+                street_state: req.body.provincia,
+                street_locality: req.body.localidad,
+                street_postal_code: req.body.cp,
+               
+                
+            },{
+                where:
+                {
+                    user_id:usuario[0]
+                }
+            })
+            .then(function(direccion){
+                db.PaymentMethod.update({
+                    alias: req.body.alias,
+                    brand_card: req.body.operadora,
+                    number_card: req.body.medioPago,
+                    bank: req.body.banco
+                },{
+                    where:{
+                        user_id:usuario[0]
+                        
+                    }
+                })
+                .then(function(medioPago){
+                    console.log("medio pago exitoso");
+                })
+            })
+        res.render( path.join(__dirname, '../views/users/login.ejs'))})
+
+    },
+    listaUsuarios: function (req,res){
+        
+            db.User.findAll({attributes:['id','first_name','last_name','email'],
+                where:{
+                    still_alive:'YES'
+                }
+            })
+            .then(function(users){ 
+                if(users.length != 0){
+                    for(let i = 0; i<users.length;i++){
+                        users[i].dataValues.detail="localhost:5000/api/users/" + users[i].id
+                        console.log(users[i])
+                    }
+
+                    res.status(200).json({
+                        count:users.length,
+                        users:users
+                    })
+                }else{
+                    return res.status(204)
+                }
+                
+            })
+            .catch(function(error){
+                return res.json(error)
+            })
+      
+    },
+    detalleUsuario: function (req,res){
+        let detalle = {}
+        console.log(req.params.id)
+
+        db.User.findOne({where:{id:req.params.id}})
+        .then(function(usuario){
+            console.log(usuario);
+
+               res.status(200).json({
+   
+                   detalle:{
+                       id: usuario.id,
+                       first_name: usuario.first_name,
+                       last_name: usuario.last_name,
+                       email: usuario.email,
+                       avatar: "localhost:5000/images/users/avatars/" + usuario.avatar
+                   }
+               })
+           
+        })
+        .catch(function(error){
+            res.status(400).json({
+                error:error,
+                msg:"Usuario no encontrado",
+                ok: false
+                })
+        })
+        
     }
-    }
+}
     
 
 module.exports = usersController

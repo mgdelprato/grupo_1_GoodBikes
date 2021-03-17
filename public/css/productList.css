@@ -219,7 +219,8 @@ width: 100vw;
             letter-spacing: 0.1em;
             font-weight: bold;
             text-align: center;
-            margin: 2%;
+            margin: 1%;
+            margin-top: 5vh;
         }
        
         main div h2{

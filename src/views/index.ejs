@@ -35,7 +35,7 @@
             </div>
             <section id='Ofertas' class='ContenedorOfertas'>
             <% for(let i=9; i<15; i++){ %>
-                <figure id='Oferta0' ><a href="products/productDetail/<%= productos[i].ID %>"><img src="images/products/<%= productos[i].Imagen%>" class='Oferton' alt="Oferta1"></a></figure>
+                <figure id='Oferta0' ><a href="products/productDetail/<%= productos[i].id %>"><img src="images/products/<%= productos[i].img_ppal%>" class='Oferton' alt="Oferta1"></a></figure>
                 <% } %> 
             </section>
 
@@ -46,12 +46,15 @@
 
             <main>
                 <% for(let i=0; i < 10; i++){ %>
-                <section id=<%= productos[i].ID %>>
-                    <figure ><a href="products/productDetail/<%= productos[i].ID %>"><img src="images/products/<%= productos[i].Imagen%>"alt="Principal1"></a></figure>
+                <section id=<%= productos[i].id %>>
+                    <figure ><a href="products/productDetail/<%= productos[i].id %>"><img src="images/products/<%= productos[i].img_ppal%>"alt="Principal1"></a></figure>
                     <div>
-                        <p><%= productos[i].Titulo %></p>
-                        <span class="price"><%= productos[i].Precio %></span>
-                        <button type="submit">Comprar</button>
+                        <p><%= productos[i].title %></p>
+                        <span class="price"><%= productos[i].price %></span>
+                       
+                        <form action="/products/productCartAdd" method="POST" id="form1"></form>
+                        <button type="submit" name="id_producto" form="form1" value='<%= productos[i].id %>'>Agregar</button>
+
                     </div>       
                 </section>
                 <% } %> 

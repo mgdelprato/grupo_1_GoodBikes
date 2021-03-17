@@ -13,83 +13,107 @@
     <link rel="manifest" href="/icon/site.webmanifest">
 
     <title>Carrito de compras</title>
-</head>
-  <body>
 
-  <div id='Contenedor'>
+
+    
+
+</head>
+<body>
+
+<div id='Contenedor'>
     <%- include('../partials/header')%>
  
-    <div id='Presentacion'>
-      <img id='img_tit' src='/images/Carrito.PNG'>
-      <h2 id='Titulo_Tienda'>TiendaBike</h2>
-    
-    </div>
-    
-    <main>
-      <section id="productoUno">
-        <figure>
-            <img src="/images/products/bike1.PNG" alt="Producto carrito">
-        </figure>
-        <div id="resumenProducto">
-          <p class="tituloProducto">
-            Producto
-          </p> 
-          <p class="valorProducto">
-            Bici con 2 ruedas y una playera copada
-          </p>
+        <div id='Presentacion'>
+          <img id='img_tit' src='/images/Carrito.PNG'>
+          <h2 id='Titulo_Tienda'>TiendaBike</h2>
         </div>
-        <div id="cantidad">
-          <form action="">
-            <p class="tituloProducto">
-              Cantidad
-            </p>
-            <select id="CantidadesProducto" name="ListaCantidades" form="CantidadesForm" class="valorProducto">
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-              <option value=4>4</option>
-              <option value=4>5</option>
-              <option value=4>6</option>
-              <option value=4>7</option>
-              <option value=4>8</option>
-              <option value=4>9</option>
-              <option value=4>10</option>
-            </select>
-          </form>
-        </div>
-        <div id="precio">
-          <p class="tituloProducto">
-             Precio
-          </p>
-          <p class="valorProducto">
-            $12345
-          </p>
-          <a href="#"></a>
-        </div>
-        <div id="tacho">
-          <i class="fas fa-trash-alt"></i>
-        </div>
-      </section>
+        
+        <div id='main'>
+          
+              
+          <%if(locals.mensajito){%>
+
+            <p style="text-align: center;font-size: 20px;margin-left: 3vw;font-weight: bold;"><%= locals.mensajito %></p>
+            
+            <%}        
+          else
+          { %>
+
+            <form action="/products/Buy" id="CarritoFormulario" method="POST">
+
+             <% for (let i = 0; i< producto.length;i++) <!-- Este codigo se repite para cada uno de los productos del carrito -->
+              {%>
+                  
+                  <section id="<%= producto[i].id %>" class='elItem'>
+                    
+                      <figure>
+                          <img src="/images/products/<%= producto[i].img_ppal%>" alt="Producto carrito">
+                      </figure>
+                      
+                      <div id="resumenProducto">
+                        <p class="tituloProducto"> Producto</p> 
+                            
+                        <p class="valorProducto"> <%= producto[i].title %> </p> 
+        
+                      </div>
+
+                      <div id="cantidad">
+                        
+                          <p class="tituloProducto">Cantidad</p>
+                          <input id="Q<%= producto[i].id %>" name="Q" class="CantidadProducto" type="number" value="1" min="1">
+
+                        
+                      </div>
+
+                      <div id="precio">
+                          <p class="tituloProducto">Precio</p>
+                          <p id="P<%= producto[i].id %>"><%= producto[i].price %></p><a href="#"></a>
+                      </div>
+
+                      <div id="subtotal">
+                        <p class="tituloProducto">subtotal</p>
+                        <p id="PxQ<%= producto[i].id %>" class="valorProducto">0</p><a href="#"></a>
+                    </div>
+
+                      
+                      
+                      <figure id="tacho">
+                        <a href="../products/productCartRemove/<%= producto[i].id %>"><i class="fas fa-trash-alt"></i></a>
+                      </figure>
+
+                  </section>
+
+
+
+              <%}%>       <!-- Cierra el for que trae cada item del carrito  -->
+
+
+        
+
+        
+                <p class="precio">Total</p>
+                
+                <input id="suma" class="precio" name="suma" readonly> 
+
+                <button type="submit" id="comprar" form="CarritoFormulario">Comprar</button>  
+        </form>     
+
+        
+
+        <%}%>     <!-- Cierra IF que analiza si existen productos o no -->
+
+        
+
+
+
       
+        </div>  
 
-      <section id="total">
-        <div id="precioTotal">
-
-          <p class="precio">Total</p>
-          <p class="precio">$12345</p>
-
-        </div>
-        <form action="" id="botonComprarForm"> 
-          <button type="submit" id="comprar">Comprar</button>
-        </form>
-      </section>
-
-      
-
-    </main>
-
-     <%- include('../partials/footer')%>
+    <%- include('../partials/footer')%>
  
-   </div>
+</div>
+
+<script src="/js/productCart.js">
+</script>
 </body>
 </html>

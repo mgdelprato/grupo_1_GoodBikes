@@ -81,4 +81,74 @@
 
 - Dejar de hacer
     Trabajar en el mismo archivo que puedan generar conflictos
+
+
+##RETRO Sprint 6
+
+- Comenzar a hacer
+   Profundizar conceptos de Merge y pull request 
+   ordenar el código
+   smoke test del sitio
+
+- Hacer más
+   Actualizacion de tarjetas trello 
+   Mejor uso de buenas prácticas y nomenclatura de VARIABLES, TABLAS, ID'S, CAMPOS, manejo de   Pluralidad y Camel Case
+   Pedir ayuda ante las trabas
+
+
+- Continuar haciendo
+   Reuniones de equipo para coordinar avances y destrabar issues
+   Seguimiento de features
+   Volcado de teoría en el proyecto integrador de manera práctica
+
+- Hacer menos
+   Cambios de definición sobre la marcha o cambios en los diseños
+   Atrasos en la teoría
+   Manejo de tiempos y estimaciones mas precisas
+
+- Dejar de hacer
+   Obstinación indivudual en resolución de issues
     
+##RETRO Sprint 7
+
+- Comenzar a hacer
+    Definir un único patrón de UX/UI
+   
+- Hacer más
+    Actualizacion de tarjetas trello 
+    Mejor uso de buenas prácticas y nomenclatura de VARIABLES, TABLAS, ID'S, CAMPOS, manejo de   Pluralidad y   Camel Case
+    Enfocar en la funcionalidad del sitio
+    Pedir ayuda ante las trabas
+
+
+- Continuar haciendo
+    Ordenar el código
+    Smoke test del sitio
+    Profundizar conceptos de Merge y pull request 
+    Reuniones de equipo para coordinar avances y destrabar issues
+    
+- Hacer menos
+    Cambios de definición sobre la marcha o cambios en los diseños
+    Manejo de tiempos y estimaciones mas precisas
+
+- Dejar de hacer
+    merge final de entrega sin colchón.     
+
+
+    ##RETRO Sprint 8
+
+- Comenzar a hacer
+   Profundizar conocimientos de React
+   
+- Hacer más
+   Profundizar hooks, localstorage y librerias de estilos (Bootstrap)
+
+- Continuar haciendo
+    Seguir investigando 
+    
+    
+- Hacer menos
+    Cambios sobre la marcha
+    
+- Dejar de hacer
+    merge final de entrega sin colchón. 
