@@ -11,7 +11,7 @@ function levantaID_PrimeraVez(){
         let elemento = document.getElementsByClassName('elItem'); 
         let array_id = [];
 
-        try{
+        
         for(let i = 0; i < elemento.length; i++){
             let id = elemento[i].getAttribute('id');
             let Q = document.getElementById('Q'+id).value 
@@ -22,8 +22,8 @@ function levantaID_PrimeraVez(){
 
         console.log(array_id);
         localStorage.setItem('datos', JSON.stringify(array_id)); // Guardo el objeto como un string en Storage
-        }//Cierra try
-        catch{console.log('Sin productos en carrito');}
+        
+        
         
 
     } //End function levantaIDprimeraVez
@@ -34,14 +34,14 @@ function levantaID(){
     let elementoClass = document.getElementsByClassName('elItem')
 
     //Controles de array vacío
-    if(items.length == 0){
+    if(typeof items == null){
        levantaID_PrimeraVez()
        //alert('Dice que no hay datos guardados en storage')
        return recalcula()
 
     }
 
-    if (elementoClass.length == 0) {
+    if (typeof elementoClass == null) {
         levantaID_PrimeraVez()
         //alert('Dice que no hay datos productos en el carrito')
         return recalcula()
