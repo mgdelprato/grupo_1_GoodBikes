@@ -11,6 +11,7 @@ function levantaID_PrimeraVez(){
         let elemento = document.getElementsByClassName('elItem'); 
         let array_id = [];
 
+        try{
         for(let i = 0; i < elemento.length; i++){
             let id = elemento[i].getAttribute('id');
             let Q = document.getElementById('Q'+id).value 
@@ -21,7 +22,8 @@ function levantaID_PrimeraVez(){
 
         console.log(array_id);
         localStorage.setItem('datos', JSON.stringify(array_id)); // Guardo el objeto como un string en Storage
-
+        }//Cierra try
+        catch{console.log('Sin productos en carrito');}
         
 
     } //End function levantaIDprimeraVez
@@ -71,6 +73,7 @@ function recalcula(){
     levantaID_PrimeraVez()
     let items = JSON.parse(localStorage.getItem('datos'))
 
+    try{
     //Calcula subtotales
     for(let j=0;j<items.length;j++){
 
@@ -93,6 +96,8 @@ function recalcula(){
         }
 
     document.getElementById('suma').value = acumula
+    }//cierra tray
+    catch{console.log('Sin productos en el carrito');}
 }//End Function recalcula
 
 
