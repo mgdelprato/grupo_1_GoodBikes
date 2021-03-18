@@ -1,0 +1,19 @@
+/*Configuraciones*/
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+/*Aplicación de estilos Genéricos por defecto*/
+*{  margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
+    font-size: 12px;
+    color: #000000;
+    text-align: center; /*Este agregado es único para el login*/
+}
+
+
+h1{font-size: 2em;font-family: 'Anton', sans-serif;margin: 4vh;color: #bb0a21;}
+h3{font-size: 1.5em;font-family: 'Roboto', sans-serif;margin: 4vh;}
+h4{font-size: 1em;font-family: 'Roboto', sans-serif;margin: 4vh;}
+img{width: 50vh;border-radius: 10px;}
+
