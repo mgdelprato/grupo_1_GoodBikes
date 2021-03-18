@@ -51,10 +51,6 @@ USE goodbikesdb;
 	VALUES ('Bruno','Diaz','Batman@gmail.com','$2a$12$1KfWvfIf8X4EugwY2pFyC.LEodu/c3y.I5wyiESTbzhV7k3dqwgHG', 'batman@gotica.com-1610312169591.PNG');
 
 
-
-
-    
-    
     
 -- <EDITAR PROFILE>
 	-- <QUERY 1 editando datos de usuario>
