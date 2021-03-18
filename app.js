@@ -67,4 +67,9 @@ app.listen(process.env.PORT || 5000, function() {
 app.set('view engine', 'ejs');
 /*---------------------------------------------------------------------------------- */
 
-
+app.use(
+  (req,res,next) =>{
+    res.status(400).render(path.join(__dirname, '/src/views/users/notfound.ejs'))
+      
+  }
+)
