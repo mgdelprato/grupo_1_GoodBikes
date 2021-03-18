@@ -162,7 +162,7 @@ perfil: async function(req, res){
     },
     editProfile: function(req,res){
         
-        console.log(req.body.Addresses);
+        console.log(req.body);
         db.User.update({
             first_name:req.body.nombre,
             last_name:req.body.apellido,
@@ -177,6 +177,8 @@ perfil: async function(req, res){
             ]
         })
         .then(function(usuario){
+            console.log("jfklasjklfasjfsajklfjkasjkfasjjlk");
+            console.log(usuario[0]);
 
             db.Address.update({
                 street: req.body.calle,
@@ -188,7 +190,7 @@ perfil: async function(req, res){
             },{
                 where:
                 {
-                    user_id:usuario[0]
+                    user_id:req.session.userID
                 }
             })
             .then(function(direccion){
@@ -199,7 +201,7 @@ perfil: async function(req, res){
                     bank: req.body.banco
                 },{
                     where:{
-                        user_id:usuario[0]
+                        user_id:req.session.userID
                         
                     }
                 })
