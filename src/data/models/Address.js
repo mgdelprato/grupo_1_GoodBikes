@@ -18,6 +18,10 @@ module.exports=function(sequelize,dataTypes){
             type:dataTypes.INTEGER,
             defaultValue:'-'
         },
+        street_state:{
+            type:dataTypes.STRING,
+            defaultValue:'-'
+        },
         street_locality:{
             type:dataTypes.STRING,
             defaultValue:'-'

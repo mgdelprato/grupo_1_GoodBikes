@@ -90,7 +90,7 @@
                     </div>
                     <div class="segundoSuperior">
                         <label for="provincia">Provincia</label>
-                        <input class="info" disabled type="text" name="provincia" id="provincia" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_locality%>">
+                        <input class="info" disabled type="text" name="provincia" id="provincia" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_state%>">
                         
                         <label for="localidad">Localidad</label>
                         <input class="info" disabled type="text" name="localidad" id="localidad" value="<%= (typeof(BuscaUser.Addresses[0]) == 'undefined')?' ':BuscaUser.Addresses[0].street_locality%>">

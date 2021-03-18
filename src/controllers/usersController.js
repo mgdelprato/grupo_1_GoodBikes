@@ -165,8 +165,8 @@ perfil: async function(req, res){
         console.log(req.body);
         db.User.update({
             first_name:req.body.nombre,
-            last_name:req.body.apellido,
-            street:req.body.calle 
+            last_name:req.body.apellido
+             
 
         },
      
@@ -209,6 +209,8 @@ perfil: async function(req, res){
                     console.log("medio pago exitoso");
                 })
             })
+        res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
+        req.session.destroy();               // Eliminar sesión
         res.render( path.join(__dirname, '../views/users/login.ejs'))})
 
     },
