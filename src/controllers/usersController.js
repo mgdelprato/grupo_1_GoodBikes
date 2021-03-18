@@ -177,9 +177,7 @@ perfil: async function(req, res){
             ]
         })
         .then(function(usuario){
-            console.log("jfklasjklfasjfsajklfjkasjkfasjjlk");
-            console.log(usuario[0]);
-
+           
             db.Address.update({
                 street: req.body.calle,
                 street_number: req.body.numero,
@@ -200,19 +198,16 @@ perfil: async function(req, res){
                     number_card: req.body.medioPago,
                     bank: req.body.banco
                 },{
-                    where:{
+                    where:
+                    {
                         user_id:req.session.userID
-                        
                     }
                 })
                 .then(function(medioPago){
                     console.log("medio pago exitoso");
                 })
             })
-        res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
-        req.session.destroy();               // Eliminar sesión
-        res.render( path.join(__dirname, '../views/users/login.ejs'))})
-
+             res.render( path.join(__dirname, '../views/users/login.ejs'))})
     },
     listaUsuarios: function (req,res){
         
