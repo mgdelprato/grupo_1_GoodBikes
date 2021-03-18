@@ -45,7 +45,7 @@ let usersController ={
                     req.session.avatar = BuscaUser.avatar
                     req.session.userID = BuscaUser.id
 
-                    console.log("Paso por aca ATR y el user es: " + BuscaUser.id);
+                    
                     if(req.body.rememberme == 'si') // ¿Tildó recordame?
                     {
                         res.cookie('rememberme',{user: req.session.user, userEmail: req.session.userEmail,avatar: req.session.avatar, userID: req.session.userID},{maxAge: 86400000})
@@ -87,7 +87,7 @@ perfil: async function(req, res){
                             productos.push(await db.Product.findOne({where:{id:BuscaUser.PurchaseDetails[i].product_id}}))
                         }
                         productos=productos.map((e)=>e.get({plain:true}))
-                      
+                        
                         return res.render(path.join(__dirname,'../views/users/profile.ejs'),{BuscaUser:BuscaUser,productos:productos})
                     }
     
@@ -109,8 +109,26 @@ perfil: async function(req, res){
                         last_name:req.body.apellido,
                         email:req.body.email,
                         password: bcryptjs.hashSync(req.body.password, 12),
-                        avatar: req.files[0].filename
+                        avatar: req.files[0].filename,
+                        Addresses:[{
+                            street: '',
+                            street_number:'',
+                            street_locality:'',
+                            street_apartment:'',
+                            street_postal_code:''
+                        }],
+                        PaymentMethod:[{
+                            alias:'',
+                            brand_card:'',
+                            number_card:'',
+                            bank:''
+                        }]
         
+                    }, {
+                        include: [
+                            {association: 'Addresses'},
+                        {association: 'PaymentMethod'}
+                    ]
                     })
                     .then(function(usuario){
          
@@ -144,7 +162,7 @@ perfil: async function(req, res){
     },
     editProfile: function(req,res){
         
-        console.log(req.body);
+        console.log(req.body.Addresses);
         db.User.update({
             first_name:req.body.nombre,
             last_name:req.body.apellido,
@@ -166,9 +184,7 @@ perfil: async function(req, res){
                 street_apartment:req.body.depto,
                 street_state: req.body.provincia,
                 street_locality: req.body.localidad,
-                street_postal_code: req.body.cp,
-               
-                
+                street_postal_code: req.body.cp             
             },{
                 where:
                 {
