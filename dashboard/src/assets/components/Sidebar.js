@@ -13,14 +13,13 @@ function Sidebar(props){
       </a>
 
       <hr className ="sidebar-divider my-0"/>      
-
-      <NavItems classOne="nav-item active" classTwo="nav-link" classThree="fas fa-fw fa-tachometer-alt" text = "Dashboard" />
+      <NavItems classOne="nav-item" classTwo="nav-link collapsed" classThree="fas fa-fw fa-folder" text = "Home" enlace="http://localhost:5000" />
             
       <hr className ="sidebar-divider"/>
       <div className ="sidebar-heading">Actions</div>
 
-      <NavItems classOne="nav-item" classTwo="nav-link collapsed" classThree="fas fa-fw fa-folder" text = "Home" />
-             
+      <NavItems classOne="nav-item" classTwo="nav-link" classThree="fas fa-fw fa-tachometer-alt" text = "Dashboard" enlace = "http://localhost:3000" /> 
+      <NavItems classOne="nav-item" classTwo="nav-link collapsed" classThree="fas fa-fw fa-folder" text = "Presentación" enlace="/Presentation" />             
 
       <hr className ="sidebar-divider d-none d-md-block"/>
       </ul>

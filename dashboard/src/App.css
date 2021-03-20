@@ -1,3 +1,5 @@
+
+#Presentacion{margin: 4vh;}
 .App {
   text-align: center;
 }
@@ -9136,7 +9138,7 @@ a:focus {
   position: relative
 }
 .sidebar .nav-item:last-child {
-  margin-bottom: 1rem
+  margin-bottom: 0.5rem
 }
 .sidebar .nav-item .nav-link {
   text-align: center;
@@ -9286,7 +9288,7 @@ a:focus {
       display: block;
       width: 100%;
       text-align: left;
-      padding: 1rem;
+      padding: 0.1rem;
       width: 14rem
   }
   .sidebar .nav-item .nav-link i {
