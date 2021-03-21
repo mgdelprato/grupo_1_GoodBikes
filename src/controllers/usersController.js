@@ -207,7 +207,18 @@ perfil: async function(req, res){
                     console.log("medio pago exitoso");
                 })
             })
-             res.render( path.join(__dirname, '../views/users/login.ejs'))})
+            
+            //Agregado
+
+
+            res.cookie('rememberme',{maxAge: 0}) // Eliminar la cookie
+            req.session.destroy();               // Eliminar sesión
+
+            return res.render( path.join(__dirname, '../views/users/login.ejs'),{mensaje: 'Inicia sesión nuevamente para ver los cambios'} )
+            
+            //res.render( path.join(__dirname, '../views/users/login.ejs'))
+            
+            })
     },
     listaUsuarios: function (req,res){
         
