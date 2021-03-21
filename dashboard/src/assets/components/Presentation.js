@@ -7,6 +7,8 @@ import TheFoot from './TheFoot';
 import LastProduct from './LastProduct';
 import PresentationText from './PresentationText'
 
+
+
 function Home(props){
   return(
       <div id="wrapper">

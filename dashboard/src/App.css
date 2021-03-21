@@ -1,5 +1,8 @@
 
 #Presentacion{margin: 4vh;}
+#Perfil{height: 30vh;width: auto;}
+#resaltado{font-weight: bold;}
+
 .App {
   text-align: center;
 }
