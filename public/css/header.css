@@ -44,6 +44,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #User_Name_Mobile{display: none;}
 #Tag_Profile_Mobile{display: none;}      
 #Tag_Login_Mobile{display: none;}
+#Tag_Dashboard_admin_Mobile{display: none;}
 
     .Contenedor{width: 80%;display: flex;}    /*El contenedor genérico - Dejamos un 10% de espacio a cada lado*/
 
@@ -177,6 +178,7 @@ body{background-color: #ffffff;}  /*Color de fondo del sitio*/
 #Tag_Login{display: none;}
 #Tag_Register{display: none;}
 #Tag_Profile{display: none;}
+#Tag_Dashboard_admin{display: none;}
 #User_Name{display:none}
 #Oferta1{display: none;}
 #Oferta2{display: none;}

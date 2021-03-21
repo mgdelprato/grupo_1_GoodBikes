@@ -60,3 +60,4 @@ font-family: 'Roboto', sans-serif;
  sequelize
  mysql2
  npm init react-app dashboard
+ npm install --save react-router-dom

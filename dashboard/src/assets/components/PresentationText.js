@@ -3,6 +3,7 @@ import React from 'react';
 import Nagu from '../images/Nagu.JPG'
 import Nano from '../images/Nano.JPG'
 import Maurito from '../images/Maurito.JPG'
+import DER from '../images/DER.png'
 
 function PresentationText(props){
     return(
@@ -78,11 +79,29 @@ function PresentationText(props){
                   </ul>
               <li>Mostrar 404</li>
               </ol>
+     
       
+              <h3 id="Presentacion">Base de Datos</h3>
 
-      
-      
-      
+              <div className="row">
+                <div className="col">
+                <figure id='imagen' className="figure">
+                      <img id='DER' img src={DER} className="mx-auto d-block" alt="Imagen"/>
+                      <figcaption id='resaltado' className="figure-caption text-left">Diagrama Entidad Relación.</figcaption>
+                      
+                </figure>
+                </div>
+                </div>
+
+
+                <h3 id="Presentacion">API</h3>
+
+                <ul>
+                    <a target='a_blank' href='http://localhost:5000/api/products'><li>Productos</li></a>
+                    <a target='a_blank' href='http://localhost:5000/api/users'><li>Usuarios</li></a>
+                </ul>
+
+
       </div>
       
     )

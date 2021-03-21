@@ -2,6 +2,8 @@
 #Presentacion{margin: 4vh;}
 #Perfil{height: 30vh;width: auto;}
 #resaltado{font-weight: bold;}
+#DER{max-width: 60vw;}
+#imagen{display: flex;flex-direction: column;justify-content: center;align-items: center;}
 
 .App {
   text-align: center;
